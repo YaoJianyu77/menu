@@ -1,0 +1,20 @@
+location:
+  city: Williamsburg
+  state: Virginia
+  country: United States
+  timezone: America/New_York
+store:
+  store_id: null
+  name: Food Lion Grocery Store of Williamsburg
+  address: 1234 Richmond Road, Williamsburg, VA 23185, United States
+  source_url: https://stores.foodlion.com/va/williamsburg/1234-richmond-road
+  locator_entity_id: https://stores.foodlion.com/#5046160
+  selection_method: explicit user selection of 1234 Richmond Road
+  catalog_id_status: unknown; official locator entity ID is not assumed to be catalog store ID
+locator_url: https://stores.foodlion.com/va/williamsburg
+catalog_url: https://foodlion.com/
+# Set an explicitly verified store here to resolve ambiguity. Never choose silently.
+# store: {store_id: 'verified ID', name: 'store name', address: 'full address'}
+request_interval_seconds: 1.0
+concurrency: 4
+user_agent: PersonalRecipeResearch/1.0
