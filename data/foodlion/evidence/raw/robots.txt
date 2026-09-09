@@ -1,0 +1,167 @@
+# ==========================================
+# GROUP 0: Ad Crawlers (HIGH PRIORITY)
+# Strategy: Full access for landing page evaluation, rendering, and scoring
+# ==========================================
+
+User-agent: AdsBot-Google
+User-agent: AdsBot-Google-Mobile
+User-agent: AdIdxBot
+
+# Give Ad Bots full access to ensure proper rendering and evaluation
+Disallow:
+
+Allow: /
+
+# ==========================================
+
+# GROUP 1: AI / Answer Engine Crawlers
+
+# Strategy: Allow curated public content
+
+# Do not include: Disallow product ID pages that are linked from the best price buttons,
+# but keep it in Google Storebot for the Google Merchant Crawler
+
+# ==========================================
+
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
+Allow: /groceries/
+Allow: /savings/
+Allow: /pharmacy/
+Allow: /pages/
+Disallow: /product/
+Disallow: /product-search/
+Disallow: /browse-aisles/
+Disallow: /*returnurl=
+Disallow: /*searchRef=
+
+
+# ==========================================
+
+# GROUP 2: Traditional Search Engines
+
+# Strategy: Full SEO crawl with technical restrictions
+
+# ==========================================
+
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-Video
+User-agent: Googlebot-News
+User-agent: Google-InspectionTool
+User-agent: GoogleOther
+
+
+User-agent: bingbot
+User-agent: BingPreview
+
+User-agent: Applebot
+
+# Block Consumer Index
+Disallow: /consumerIndex.jhtml
+# Block Merchant Index
+Disallow: /merchantIndex.jhtml
+# Block Item Detail View
+Disallow: /itemDetailView.jhtml
+# Block expiredSession.html
+Disallow: /expiredSession.html
+# Block Patient Survey
+Disallow: /PatientSurvey.html
+# Block API endpoints
+Disallow: /api/
+# Block Additional API endpoints
+Disallow: /apis/
+# Block Additional API endpoints
+Disallow: /v1/
+# Block Tag Path
+Disallow: /tag_path/
+# Block WF
+Disallow: /wf/
+
+
+# Duplicate / low-value crawl paths
+
+# Duplicate with /groceries pages
+Disallow: /browse-aisles/
+# Block product search pages that have millions of variations to save crawl budget
+Disallow: /product-search/
+# Block the returnurl looping URLs
+Disallow: /*returnurl=
+# Block the site search parameter URLs
+Disallow: /*searchRef=
+
+# Block ONLY if these are helper/redirect pages
+
+Disallow: /product/
+
+# Faceted & parameter crawl reduction
+
+Disallow: /*?page=
+Disallow: /*?sort=
+Disallow: /*?facet=
+Disallow: /*?filter=
+Disallow: /*?ref=
+Disallow: /*utm_
+Disallow: /*fbclid=
+Disallow: /*gclid=
+
+# ==========================================
+
+# GROUP 3: Google Shopping / Merchant Crawlers
+
+# ==========================================
+
+User-agent: Storebot-Google
+Allow: /product/
+Disallow: /product-search/
+
+# ==========================================
+
+# GROUP 4: Social / Sharing Bots
+
+# ==========================================
+
+User-agent: facebookexternalhit
+User-agent: FacebookBot
+User-agent: meta-externalagent
+User-agent: Twitterbot
+User-agent: LinkedInBot
+User-agent: Pinterestbot
+User-agent: Slackbot
+User-agent: Discordbot
+
+Allow: /
+
+# ==========================================
+
+# GROUP 5: Training / Archive Crawlers
+
+# Strategy: Optional stricter control
+
+# ==========================================
+
+User-agent: CCBot
+Disallow: /
+
+# ==========================================
+
+# GROUP 6: Everyone Else
+
+# ==========================================
+
+User-agent: *
+Disallow: /product-search/
+Disallow: /browse-aisles/
+Disallow: /*returnurl=
+Disallow: /*searchRef=
+
+# ==========================================
+
+# SITEMAP
+
+# ==========================================
+
+Sitemap: https://foodlion.com/groceries/sitemap.xml

@@ -1,1 +1,22 @@
-{"cards":2235,"recipePages":3,"search":"passed","coverageFilter":"passed","notes":"passed","mobile":"passed","browserErrors":[]}
+{
+  "browserErrors": [],
+  "cards": 2589,
+  "coverageFilter": "passed",
+  "desktop_viewport": {
+    "height": 900,
+    "width": 1366
+  },
+  "duplicateVisibility": "passed",
+  "mobile": "passed",
+  "mobile_viewport": {
+    "height": 844,
+    "width": 390
+  },
+  "notes": "passed",
+  "recipePages": 3,
+  "search": "passed",
+  "unknownIngredientLabels": "passed",
+  "validated_at": "2026-09-09T00:50:39-04:00",
+  "verifiedStoreCoverage": "0% on inspected pages",
+  "visual_review": "Mobile browse and recipe screenshots inspected; no overflow; catalog likelihood and zero verified store coverage clearly displayed."
+}

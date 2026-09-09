@@ -1,4 +1,4 @@
-version: 1
+version: 2
 ingredients:
   tomato:
     aliases:
@@ -10,6 +10,7 @@ ingredients:
     - food lion roma tomatoes
     - 番茄
     - 西红柿
+    - cherry tomatos
     category: produce
     vegetable: true
   chicken breast:
@@ -22,7 +23,8 @@ ingredients:
     category: meat
     protein: true
   chicken:
-    aliases: []
+    aliases:
+    - 鸡肉
     category: meat
     protein: true
   olive oil:
@@ -174,6 +176,8 @@ ingredients:
     - extra firm tofu
     - extra-firm tofu
     - 豆腐
+    - 老豆腐
+    - 北豆腐
     category: plant-protein
     protein: true
   chickpea:
@@ -218,11 +222,15 @@ ingredients:
     - 食盐
     - 食用盐
     - 盐
+    - fine sea salt
+    - fine salt
     category: pantry
   black pepper:
     aliases:
     - ground black pepper
     - freshly ground black pepper
+    - 黑胡椒
+    - 黑胡椒粉
     category: spice
   sugar:
     aliases:
@@ -230,10 +238,13 @@ ingredients:
     - granulated sugar
     - 白砂糖
     - 白糖
+    - 糖
     category: pantry
   soy sauce:
     aliases:
     - light soy sauce
+    - 生抽
+    - 酱油
     category: condiment
   water:
     aliases:
@@ -256,6 +267,8 @@ ingredients:
   chicken thigh:
     aliases:
     - chicken thighs
+    - boneless skinless chicken thighs
+    - boneless skinless chicken thigh
     category: meat
     protein: true
   chicken drumstick:
@@ -273,3 +286,588 @@ ingredients:
     category: meat
     protein: true
     processed: true
+  baking soda:
+    aliases:
+    - bicarbonate of soda
+    - sodium bicarbonate
+    - 小苏打
+    category: pantry
+  baking powder:
+    aliases:
+    - 泡打粉
+    category: pantry
+  vanilla extract:
+    aliases:
+    - pure vanilla extract
+    - 香草精
+    category: pantry
+  vanilla:
+    aliases: []
+    category: pantry
+  brown sugar:
+    aliases:
+    - packed brown sugar
+    - firmly packed brown sugar
+    - brown sugar, packed
+    category: pantry
+  light brown sugar:
+    aliases:
+    - packed light brown sugar
+    - light brown sugar, packed
+    category: pantry
+  dark brown sugar:
+    aliases:
+    - packed dark brown sugar
+    - dark brown sugar, packed
+    category: pantry
+  powdered sugar:
+    aliases:
+    - confectioners sugar
+    - confectioners' sugar
+    - icing sugar
+    category: pantry
+  coconut sugar:
+    aliases: []
+    category: pantry
+  chocolate chips:
+    aliases: []
+    category: pantry
+  semisweet chocolate chips:
+    aliases:
+    - semi-sweet chocolate chips
+    - semi sweet chocolate chips
+    category: pantry
+  dark chocolate chips:
+    aliases: []
+    category: pantry
+  milk chocolate chips:
+    aliases: []
+    category: pantry
+  vegan chocolate chips:
+    aliases: []
+    category: pantry
+  cornstarch:
+    aliases:
+    - corn starch
+    - 玉米淀粉
+    category: pantry
+  starch:
+    aliases:
+    - 淀粉
+    - 生粉
+    category: pantry
+  garlic powder:
+    aliases:
+    - 蒜粉
+    category: spice
+  granulated garlic:
+    aliases: []
+    category: spice
+  cinnamon:
+    aliases:
+    - 肉桂
+    category: spice
+  ground cinnamon:
+    aliases:
+    - cinnamon powder
+    - 肉桂粉
+    category: spice
+  lemon juice:
+    aliases:
+    - fresh lemon juice
+    - freshly squeezed lemon juice
+    - 柠檬汁
+    category: produce
+  lime juice:
+    aliases:
+    - fresh lime juice
+    - freshly squeezed lime juice
+    category: produce
+  lemon:
+    aliases:
+    - lemons
+    - 柠檬
+    category: produce
+  lime:
+    aliases:
+    - limes
+    category: produce
+  vegetable oil:
+    aliases: []
+    category: pantry
+  cooking oil:
+    aliases:
+    - oil
+    - 食用油
+    - 油
+    category: pantry
+  canola oil:
+    aliases: []
+    category: pantry
+  coconut oil:
+    aliases: []
+    category: pantry
+  sesame oil:
+    aliases:
+    - 香油
+    - 芝麻油
+    category: pantry
+  toasted sesame oil:
+    aliases: []
+    category: pantry
+  honey:
+    aliases:
+    - 蜂蜜
+    category: pantry
+  maple syrup:
+    aliases:
+    - pure maple syrup
+    category: pantry
+  sour cream:
+    aliases: []
+    category: dairy
+  heavy cream:
+    aliases:
+    - heavy whipping cream
+    category: dairy
+  light cream:
+    aliases: []
+    category: dairy
+  cream cheese:
+    aliases: []
+    category: dairy
+  mozzarella:
+    aliases:
+    - mozzarella cheese
+    category: dairy
+  mayonnaise:
+    aliases:
+    - mayo
+    category: condiment
+  ground cumin:
+    aliases:
+    - cumin powder
+    category: spice
+  cumin:
+    aliases:
+    - 孜然
+    category: spice
+  chili powder:
+    aliases: []
+    category: spice
+  onion powder:
+    aliases: []
+    category: spice
+  dried oregano:
+    aliases: []
+    category: spice
+  oregano:
+    aliases: []
+    category: herb
+  dried thyme:
+    aliases: []
+    category: spice
+  fresh thyme:
+    aliases: []
+    category: herb
+  paprika:
+    aliases: []
+    category: spice
+  smoked paprika:
+    aliases: []
+    category: spice
+  cayenne pepper:
+    aliases:
+    - ground cayenne pepper
+    category: spice
+  bay leaf:
+    aliases:
+    - bay leaves
+    - dried bay leaves
+    - 月桂叶
+    - 香叶
+    category: spice
+  rolled oats:
+    aliases:
+    - old-fashioned rolled oats
+    - old fashioned rolled oats
+    - old-fashioned oats
+    - old fashioned oats
+    category: grain
+  quick oats:
+    aliases:
+    - quick cooking oats
+    - quick-cooking oats
+    category: grain
+  almond flour:
+    aliases: []
+    category: pantry
+  coconut flour:
+    aliases: []
+    category: pantry
+  xanthan gum:
+    aliases: []
+    category: pantry
+  cocoa powder:
+    aliases: []
+    category: pantry
+  unsweetened cocoa powder:
+    aliases: []
+    category: pantry
+  dutch-process cocoa:
+    aliases:
+    - dutch process cocoa
+    - dutch-processed cocoa powder
+    category: pantry
+  shortening:
+    aliases:
+    - vegetable shortening
+    category: pantry
+  egg yolk:
+    aliases:
+    - egg yolks
+    - large egg yolk
+    - large egg yolks
+    - 蛋黄
+    category: dairy
+  egg white:
+    aliases:
+    - egg whites
+    - large egg white
+    - large egg whites
+    - 蛋清
+    - 蛋白
+    category: dairy
+  walnut:
+    aliases:
+    - walnuts
+    - chopped walnuts
+    category: nuts
+  pecan:
+    aliases:
+    - pecans
+    - chopped pecans
+    category: nuts
+  almond:
+    aliases:
+    - almonds
+    category: nuts
+  peanut butter:
+    aliases: []
+    category: pantry
+  worcestershire sauce:
+    aliases: []
+    category: condiment
+  oyster sauce:
+    aliases:
+    - 蚝油
+    category: condiment
+  dark soy sauce:
+    aliases:
+    - 老抽
+    category: condiment
+  cooking wine:
+    aliases:
+    - 料酒
+    category: pantry
+  ginger:
+    aliases:
+    - fresh ginger
+    - ginger root
+    - 生姜
+    - 姜
+    category: produce
+  ground ginger:
+    aliases:
+    - ginger powder
+    category: spice
+  chicken seasoning:
+    aliases:
+    - 鸡精
+    category: condiment
+  doubanjiang:
+    aliases:
+    - 豆瓣酱
+    category: condiment
+  ketchup:
+    aliases:
+    - tomato ketchup
+    category: condiment
+  white vinegar:
+    aliases:
+    - distilled white vinegar
+    category: pantry
+  rice vinegar:
+    aliases:
+    - 米醋
+    category: pantry
+  cilantro:
+    aliases:
+    - fresh cilantro
+    - coriander leaves
+    - 香菜
+    category: herb
+  parsley:
+    aliases:
+    - fresh parsley
+    - flat-leaf parsley
+    - flat leaf parsley
+    - fresh flat-leaf parsley
+    - Italian parsley
+    category: herb
+  dried parsley:
+    aliases: []
+    category: spice
+  basil:
+    aliases:
+    - fresh basil
+    - basil leaves
+    - fresh basil leaves
+    category: herb
+  dried basil:
+    aliases: []
+    category: spice
+  green bean:
+    aliases:
+    - green beans
+    - 四季豆
+    category: produce
+    vegetable: true
+  cabbage:
+    aliases:
+    - green cabbage
+    - 卷心菜
+    - 圆白菜
+    - 包菜
+    category: produce
+    vegetable: true
+  napa cabbage:
+    aliases:
+    - 大白菜
+    category: produce
+    vegetable: true
+  celery:
+    aliases:
+    - 芹菜
+    category: produce
+    vegetable: true
+  eggplant:
+    aliases:
+    - aubergine
+    - aubergines
+    - eggplants
+    - 茄子
+    category: produce
+    vegetable: true
+  cucumber:
+    aliases:
+    - cucumbers
+    - 黄瓜
+    category: produce
+    vegetable: true
+  corn:
+    aliases:
+    - corn kernels
+    - sweetcorn
+    - 玉米
+    category: produce
+    vegetable: true
+  mushroom:
+    aliases:
+    - mushrooms
+    - 蘑菇
+    category: produce
+    vegetable: true
+  shiitake mushroom:
+    aliases:
+    - shiitake mushrooms
+    - 香菇
+    category: produce
+    vegetable: true
+  lettuce:
+    aliases:
+    - 生菜
+    category: produce
+    vegetable: true
+  chicken leg:
+    aliases:
+    - chicken legs
+    - 鸡腿
+    category: meat
+    protein: true
+  chicken wing:
+    aliases:
+    - chicken wings
+    - 鸡翅
+    category: meat
+    protein: true
+  pork belly:
+    aliases:
+    - 五花肉
+    category: meat
+    protein: true
+  pork:
+    aliases:
+    - pork meat
+    - 猪肉
+    category: meat
+    protein: true
+  beef:
+    aliases:
+    - beef meat
+    - 牛肉
+    category: meat
+    protein: true
+  shrimp:
+    aliases:
+    - shrimp, peeled and deveined
+    - 虾
+    - 虾仁
+    category: seafood
+    protein: true
+  chicken broth:
+    aliases: []
+    category: pantry
+  vegetable broth:
+    aliases: []
+    category: pantry
+  beef broth:
+    aliases: []
+    category: pantry
+  rotisserie chicken:
+    aliases: []
+    category: meat
+    protein: true
+  ground turkey:
+    aliases:
+    - turkey mince
+    - minced turkey
+    category: meat
+    protein: true
+  shaoxing wine:
+    aliases:
+    - shaoxing cooking wine
+    - 绍兴酒
+    category: pantry
+  greek yogurt:
+    aliases:
+    - plain Greek yogurt
+    category: dairy
+    protein: true
+  ham:
+    aliases:
+    - cooked ham
+    category: meat
+    protein: true
+    processed: true
+  green pepper:
+    aliases:
+    - green peppers
+    category: produce
+    vegetable: true
+  dill pickle:
+    aliases:
+    - dill pickles
+    category: condiment
+  watercress:
+    aliases: []
+    category: produce
+    vegetable: true
+  sage:
+    aliases:
+    - fresh sage
+    category: herb
+  dried sage:
+    aliases: []
+    category: spice
+  dill:
+    aliases:
+    - fresh dill
+    category: herb
+  dried dill:
+    aliases: []
+    category: spice
+  chicken leg quarter:
+    aliases:
+    - chicken leg quarters
+    - bone-in skin-on chicken leg quarters
+    - bone-in, skin-on chicken leg quarters
+    category: meat
+    protein: true
+  avocado:
+    aliases:
+    - avocados
+    - ripe avocado
+    - ripe avocados
+    category: produce
+  quinoa:
+    aliases: []
+    category: grain
+    protein: true
+  kimchi:
+    aliases: []
+    category: condiment
+  tamari:
+    aliases:
+    - gluten-free tamari
+    category: condiment
+  kale:
+    aliases:
+    - curly kale
+    - baby kale
+    category: produce
+    vegetable: true
+  ground pork:
+    aliases:
+    - minced pork
+    - pork mince
+    - 猪肉馅
+    category: meat
+    protein: true
+  sirloin steak:
+    aliases:
+    - sirloin steaks
+    category: meat
+    protein: true
+  ribeye steak:
+    aliases:
+    - ribeye steaks
+    - rib-eye steak
+    - rib-eye steaks
+    category: meat
+    protein: true
+  new york strip steak:
+    aliases:
+    - New York strip steaks
+    - strip steak
+    - strip steaks
+    category: meat
+    protein: true
+  tahini:
+    aliases: []
+    category: condiment
+  sesame seed:
+    aliases:
+    - sesame seeds
+    - toasted sesame seeds
+    - 芝麻
+    category: pantry
+  dijon mustard:
+    aliases:
+    - dijon mustard
+    category: condiment
+  red wine vinegar:
+    aliases: []
+    category: pantry
+  balsamic vinegar:
+    aliases: []
+    category: pantry
+  romaine lettuce:
+    aliases: []
+    category: produce
+    vegetable: true
+  feta:
+    aliases:
+    - feta cheese
+    - crumbled feta cheese
+    category: dairy

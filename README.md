@@ -2,7 +2,7 @@
 
 A local, private, static recipe library with independent, resumable collection pipelines. No backend, live rendering requests, paid services, deployment, or remote Git pushes are required.
 
-**Availability is evidence, not a guess.** The initial Food Lion run is blocked by catalog access restrictions. The selected store is **1234 Richmond Road, Williamsburg, VA 23185**, but its catalog store ID remains unverified. The site therefore shows unverified ingredient availability and does not approve recipes on invented inventory. See [collection report](docs/collection-report.md) for actual counts and remaining source failures.
+**Availability is evidence, not a guess.** The configured store remains **1234 Richmond Road, Williamsburg, VA 23185**. Its exact inventory is unverified, but Food Lion's permitted public grocery catalog supplies 22,994 product IDs/URLs and conservative likelihood evidence for 155 canonical ingredients. Other Food Lion stores may supply additional evidence without changing the selected store. See the [collection report](docs/collection-report.md), [Food Lion evidence](docs/foodlion-evidence.md), and [parser recovery audit](docs/parser-recovery.md) for measured coverage and remaining failures.
 
 ## Quick start
 
@@ -35,6 +35,9 @@ Match results + normalized recipes + personal annotations → site/content → s
 - `recipe_system/foodlion.py`: respectful access client, store resolution, product shards and snapshots.
 - `recipe_system/recipes.py`: `RecipeCoordinator`, source enumeration, `RecipeSourceAgent`, format adapters.
 - `recipe_system/normalize.py`: measurement/ingredient normalization and conservative duplicate grouping.
+- `recipe_system/evidence.py`: permitted first-party catalog observations and conservative ingredient evidence.
+- `recipe_system/recovery.py`, `archives.py`: root-cause audits and generalized failure recovery.
+- `recipe_system/quality.py`: source coverage and representative recommendation audits.
 - `recipe_system/match.py`: deterministic scoring; all evaluated records retained.
 - `recipe_system/publish.py`: explicit publication allowlist and static HTML generation.
 - `data/foodlion/`: current derived product and ingredient views.
@@ -76,11 +79,11 @@ Raw records retain source content, so normalization does not need the cache. The
 
 ## Completion and snapshots
 
-A candidate file can contain zero, one or multiple recipes. Manifests distinguish file accounting from actual recipe records: when parsing failed files prevents knowing the number of recipes, the recipe count is unknown rather than invented. Every discovered file must be processed or explicitly failed before an enabled source is accounted for. `complete-with-failures` means all declared candidates were attempted; it does **not** mean all recipe bodies were recovered. Blocked/unsupported sources stay listed separately from enabled-source completion.
+A candidate file can contain zero, one or multiple recipes. Manifests distinguish file accounting from actual recipe records: when parsing failed files prevents knowing the number of recipes, the recipe count is unknown rather than invented. Every discovered file must be processed or explicitly failed before an enabled source is accounted for. `candidate_accounting_complete` means all declared files were attempted. Source `COMPLETE` additionally requires no unresolved extraction failures, pending members or unexplored candidates. `PARTIAL`, `BLOCKED`, `NOT_A_RECIPE_SOURCE` and `UNSUPPORTED` remain distinct; the overall collection is currently `PARTIAL`. Blocked/unsupported sources stay listed separately from enabled-source completion.
 
 Food Lion snapshot dates and all collector timestamps use `America/New_York` with ISO 8601 UTC offsets. Store resolution records the official locator source and address. A locator entity identifier is not assumed to be an ecommerce catalog ID. The chosen store never silently changes. Finalized snapshots, including blocked ones, remain immutable; retry with a fresh date/suffix. `state/foodlion/latest.json` selects the current snapshot for normalization/matching. Previous snapshots remain intact.
 
-Food Lion's live catalog rejected this environment. No verified automated category/page enumerator could be established. The tested generic public JSON-LD product adapter and category partitioning primitives cannot turn national/global offers into store inventory. See [Food Lion collector documentation](agents/foodlion/README.md) for the supported manifest-based orchestration and its evidence requirements. Removing the HTTP block alone does not establish a complete live catalog adapter.
+Food Lion's store inventory interface returned HTTP 403. Its separate, robots-permitted `/groceries/` public catalog was collected through advertised sitemaps and an all-aisles listing. This is national catalog evidence, not local inventory. Product detail/category coverage is not exhaustive. The original blocked snapshot remains unchanged; catalog observations are separate under `data/foodlion/evidence/`. See the [evidence capability and collection commands](docs/foodlion-evidence.md).
 
 Collectors respect robots (including applicable AI-agent policies), authentication, CAPTCHA, rate limits and access restrictions. A restriction is a recorded blocker, never a reason to rotate identities or bypass protection. The BBC archive's remote bodies were not fetched because its robots rules disallow this use.
 
@@ -96,26 +99,31 @@ Personal annotations are separate from source records. Recipe pages support favo
 
 Ingredient aliases are explicit in `config/ingredient-aliases.yaml`; there is no LLM in the production pipeline. Unknown names remain unresolved. Preparation suffix removal is deliberately limited. Different chicken cuts remain separate. Substitutions are a separate evidence field and no substitutions are silently inferred.
 
-Measurements use deterministic kitchen conventions: small volume measures are 5/15 mL; a US cup is 240 mL. US fluid ounces, pints/quarts/gallons and mass ounces/pounds have explicit conversion constants. Fractions, ranges, decimal quantities and Fahrenheit temperatures are converted. No ingredient volume becomes a mass without density evidence. Counts remain counts with a null unit. Original measurements live only in raw/source-preservation fields. Unquantified measures are labelled by metric measure size instead of guessing a quantity. Unrecognized international wording is flagged for source verification.
+Measurements use deterministic kitchen conventions: small volume measures are 5/15 mL; a US cup is 240 mL. US fluid ounces, pints/quarts/gallons and mass ounces/pounds have explicit conversion constants. Fractions, ranges, decimal quantities and Fahrenheit temperatures are converted. No ingredient volume becomes a mass without density evidence. Counts remain counts with a null measurement unit and an explicit container/count unit where available. Package counts and per-package sizes stay separate; drained mass is never inferred. Original measurements live only in raw/source-preservation fields. Ambiguous ounce-labelled vessel capacities are marked for source checking rather than converted to an unsupported weight. Unquantified measures are labelled by metric measure size instead of guessing a quantity. Explicit French, German, Greek and Chinese small-volume forms are supported; unrecognized wording remains flagged for source verification.
 
-Active time remains null unless the source explicitly supplies active time; prep time is not silently substituted. Total time is normalized only from explicit supported timing. Nutrition is preserved when explicit, never invented. Cooking method and ingredient group signals are reproducible text/alias heuristics, not dietary assessments.
+Active time remains null unless the source explicitly supplies active time; prep time is not silently substituted. A source total time within the active-time budget can support an upper bound without filling in active time. Contradictory instruction durations and long advance preparation are flagged, not repaired with invented times. Total time is normalized only from explicit supported timing. Nutrition is preserved when explicit, never invented. Cooking method and ingredient group signals are reproducible text/alias heuristics, not dietary assessments.
 
-Deduplication fingerprints exact normalized title, cuisine, quantities, ingredient identities, optional flags and instruction text. Ingredient order does not affect the fingerprint. Exact duplicates are grouped with a stable representative ID; records and meaningful variants are retained. Grouping intentionally misses ambiguous near-duplicates instead of destroying variants.
+Deduplication fingerprints exact normalized title, cuisine, quantities, ingredient identities, optional flags and instruction text. Ingredient order does not affect the fingerprint. Exact duplicates are grouped with a stable representative ID; records and meaningful variants are retained. Package sizes and count units participate in fingerprints. Duplicate representatives appear by default; variants remain browsable. Grouping intentionally misses ambiguous near-duplicates instead of destroying variants.
 
 ## Deterministic ranking
 
-Defaults are in `config/preferences.yaml`; all four weights total 100:
+Defaults live in `config/preferences.yaml` and `config/meal-rules.yaml`. Nominal weights are Food Lion 40, time 25, meal balance 20, simplicity 15.
 
-| Component | Points | Formula |
-| --- | ---: | --- |
-| Food Lion | 40 | 85% essential coverage + 15% optional coverage. If no optional ingredients, use essential coverage for both. Only verified available ingredients receive credit. |
-| Time | 25 | 70% active + 30% total. Each earns `min(1, preferred_limit / actual_minutes)`; unknown evidence earns zero by default. |
-| Meal balance | 20 | Protein ingredient presence 40%, vegetable presence 35%, both 25%, normalized across enabled signals. A configured processed-ingredient fraction can reduce credit. |
-| Simplicity | 15 | Ingredient count 45%, instruction count 35%, method/common/reusable ingredient evidence 20%. Counts linearly decline from configured simple to complex limits. |
+Food Lion states are **Verified**, **Likely available**, **Unknown**, and **Unavailable** only with affirmative absence evidence. Verified requires configured-store evidence; another store or national catalog supports likelihood. Missing catalog entries are unknown. Every observed match cites real Food Lion product IDs, source URLs, store specificity and observation time. Catalog coverage is `(verified + likely) / ingredient count`; verified-store coverage is separate. Confidence is `(verified + 0.6 × likely) / count`, an evidence indicator, not a stock probability.
 
-Protein/vegetable presence is an explainable **proxy**. It does not establish sufficient portions, nutrient totals or nutritional adequacy. Simplicity method bonuses honor the selected one-pan, sheet-pan, air-fryer, oven and stovetop preferences, plus explicit low-cleanup/batch evidence. Normal equipment never incurs an equipment penalty. Common/reusable ingredient signals use the explicit canonical vocabulary; they are not inferred product prices or shopping histories.
+The availability component averages essential (85%) and optional (15%) groups, falling back to the essential group when no optional ingredients exist. Within each group verified earns 1, likely 0.85, explicitly unavailable 0. Let `c` be weighted credit per ingredient and `o` the weighted fraction with observed evidence. Unknown contributes neither credit nor observed weight. Displayed Food Lion score is `40 × c / o`, or null when nothing is observed. The overall base score is:
 
-Approval additionally requires minimum score, configured coverage and missing-ingredient limits, known active time by default, and active time within the limit. Unknown availability cannot receive approval. `needs-review` denotes unresolved inventory without a definitive conflicting restriction; other failures are rejected. Missing (explicit unavailable) and unknown (no verified evidence) remain distinct. Coverage counts each unique canonical ingredient once; if listed as both optional and essential, it is essential. Every result includes component scores, reasons, ingredient evidence and an input fingerprint. There is no clock or randomness in scoring.
+```text
+100 × (time + meal_balance + simplicity + 40 × c) / (60 + 40 × o)
+```
+
+Thus an inventory access block removes unobserved availability weight instead of assigning zero availability. A wholly unknown catalog does not artificially depress the score, but cannot support approval. All ingredient counts and the assessed denominator are persisted and displayed.
+
+Time uses 70% active and 30% total credit, each `min(1, preferred_limit / explicit_minutes)`. Missing times earn zero. Explicit total time no greater than 15 minutes supports the active-time upper bound; active minutes still remain null. Meal balance uses protein presence 40%, vegetable presence 35%, both 25%, normalized across enabled signals. These are ingredient-presence proxies, **not** measured nutrition or evidence of sufficient portions. Configured processed-food and rich-ingredient fractions reduce this proxy. Simplicity uses ingredient count 45%, instruction count 35%, method/common/reusable ingredient evidence 20%; thresholds and bonuses are configurable. Normal cookware receives no equipment penalty.
+
+Transparent adjustments then apply: non-meal roles multiply by 0.35; missing protein/vegetable structure by 0.8; unresolved ingredient identity by `1 − 0.5 × unresolved_fraction`; extraction/timing quality issues by 0.25. Unresolved identity is a parsing limitation, separate from missing stock evidence. Dish roles use explicit tags/title patterns; desserts, drinks, dips, sauces and components remain collected but are excluded from meal recommendations. Adjustments and evidence appear in every stored result.
+
+Strict approval requires configured verified coverage, every essential ingredient verified, supported active-time budget and score at least 65. Provisional recommendations require score at least 65, explicit total time at most 40 minutes, protein and vegetable signals, catalog evidence coverage at least 50%, at most 20 ingredients, at most 50% unresolved ingredient identities, and no exclusion/quality restriction. They are labelled **recommended with caveats**, requiring a check of active time and exact-store availability. Zero current recipes have verified-store approval. Duplicates do not flood recommendations. All results—including rejected and unassessed records—remain stored. Matching has no clock, randomness, or free-form LLM judgment.
 
 ## Publication and licensing
 
@@ -144,4 +152,17 @@ make serve  # keep running in another terminal
 PLAYWRIGHT_MODULE="$PWD/.cache/browser/node_modules/playwright" node tests/browser/smoke.cjs
 ```
 
-The browser smoke test uses the initial blocked-inventory dataset to check that a 100% verified-coverage filter returns no recipes. Adjust that fixture-specific expectation after a real verified inventory snapshot is collected. It creates annotations only in its temporary browser profile.
+The browser smoke test checks distinct catalog and verified-store coverage, duplicate visibility, recipe pages, local annotations and mobile layout against the generated dataset. It creates annotations only in its temporary browser profile.
+
+## Data quality workflows
+
+```sh
+.venv/bin/python -m recipe_system.recovery audit
+.venv/bin/python -m recipe_system.recovery retry --agent recipe-agent-03
+.venv/bin/python -m recipe_system.quality all
+.venv/bin/python -m recipe_system.recipes manifest
+.venv/bin/python -m recipe_system.evidence rebuild .
+make pipeline
+```
+
+Recovery retries only affected failed items accepted by the improved parser. `state/recipes/recovery/baseline.jsonl` freezes the original 934 failures; outcomes and per-shard improvement reports retain original errors and later resolution. New-source exclusions and archive member outcomes are separate. Source completeness is measured from pinned trees and actual checkpoints, not inferred from a zero pending-worker count. Quality audits preserve past manual review passes; new cohort rows require renewed review when inputs change.

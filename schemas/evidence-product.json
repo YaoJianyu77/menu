@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "product_id",
+    "source_url",
+    "retrieved_at",
+    "status",
+    "store_specificity",
+    "raw_path"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string",
+      "pattern": "^https://(?:www\\.)?foodlion\\.com/groceries/product/"
+    },
+    "status": {
+      "enum": [
+        "verified_available",
+        "likely_available",
+        "unknown",
+        "unavailable"
+      ]
+    },
+    "product_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

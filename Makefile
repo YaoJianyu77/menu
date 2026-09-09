@@ -17,3 +17,13 @@ test:
 check: format lint test pipeline
 serve:
 	$(PYTHON) -m http.server 8000 --bind 127.0.0.1 --directory site/dist
+
+.PHONY: audit-recipes rebuild-evidence validate-evidence
+audit-recipes:
+	$(PYTHON) -m recipe_system.recovery audit
+	$(PYTHON) -m recipe_system.quality all
+	$(PYTHON) -m recipe_system.recipes manifest
+rebuild-evidence:
+	$(PYTHON) -m recipe_system.evidence rebuild .
+validate-evidence:
+	$(PYTHON) -m recipe_system.evidence validate .

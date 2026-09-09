@@ -1,0 +1,31 @@
+version: 1
+roles:
+  dessert: (?i)\b(cookies?|brownies?|cupcakes?|cheesecakes?|cakes?|ice cream|gelato|fudge|truffles?|sweets?|desserts?|sorbet|panna
+    cotta|tiramisu|baklava|pudding|cobbler|crumble)\b|蛋糕|饼干|甜品|布丁|冰淇淋|曲奇|糖水|(?i:\b(frosting|icing|energy
+    balls|no.bake bites|chocolate bark)\b)
+  condiment: '(?i)\b(dressing|vinaigrette|marinade|seasoning|spice blend|hot sauce|ketchup|mayonnaise|aioli|pesto|salsa|guacamole|hummus|tzatziki|jam|jelly|chutney|za.atar)\b|\b(?:pistachio|almond|peanut|cashew|sunflower)
+    butter\b|\bsauce(?: recipe)?$|调味汁|蘸料|辣椒油'
+  drink: (?i)\b(cocktail|smoothie|lemonade|latte|milkshake|juice|iced tea|sangria)\b|奶茶|饮料|果汁
+  bread: (?i)\b(bread|bagels?|pizza dough|sourdough|biscuits?|muffins?)\b|面包|馒头
+  component: (?i)^(?:how to (?:boil|cook|make) |boiled ground beef|hard.boiled eggs?|chicken
+    stock|vegetable stock|bone broth|homemade broth|cooked rice|white rice|brown rice|croutons?|bacon)$
+  side: (?i)^(?:oven.roasted corn|sesame green beans|roasted vegetables|mashed potatoes|grilled
+    asparagus)|配菜
+meal_exceptions: (?i)\b(fish cakes?|crab cakes?|rice cakes?|beef patties|chicken salad|tuna
+  salad|sandwich|burger|pizza|pasta|chicken curry|sheet.pan chicken)\b|\bin (?:salsa|a? ?[a-z ]*sauce)\b
+non_meal_score_multiplier: 0.35
+quality_failure_score_multiplier: 0.25
+minimum_meaningful_ingredients: 2
+maximum_unresolved_fraction_for_recommendation: 0.5
+maximum_ingredients_for_recommendation: 20
+rich_ingredients:
+- butter
+- sugar
+- heavy cream
+- cream cheese
+- chocolate
+- coconut oil
+rich_fraction_threshold: 0.4
+rich_balance_multiplier: 0.5
+unresolved_score_penalty: 0.5
+no_meal_structure_multiplier: 0.8

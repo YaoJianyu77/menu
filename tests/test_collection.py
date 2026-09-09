@@ -161,7 +161,7 @@ def test_extend_plan_preserves_ownership_and_adds_only_new(tmp_path, monkeypatch
     monkeypatch.setattr("recipe_system.recipes.checkout", lambda url, path: "abc")
     monkeypatch.setattr(
         "recipe_system.recipes.git",
-        lambda path, *args: "old.md\n" if path.name == "old" else "new.md\n",
+        lambda path, *args: "old.md\0" if path.name == "old" else "new.md\0",
     )
     coordinator = RecipeCoordinator(tmp_path)
     extended = coordinator.extend_plan(workers=3)

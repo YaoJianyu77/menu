@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "required": [
+    "agent",
+    "source_id",
+    "key",
+    "revision",
+    "failure"
+  ],
+  "properties": {
+    "failure": {
+      "type": "object",
+      "required": [
+        "source",
+        "item_identifier",
+        "error_type",
+        "error_message",
+        "timestamp"
+      ]
+    },
+    "revision": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

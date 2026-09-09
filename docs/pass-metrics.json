@@ -1,0 +1,28 @@
+{
+  "active_time_known": 15,
+  "baseline_raw_records": 2235,
+  "baseline_recovered_files": 212,
+  "baseline_recovered_raw_records": 212,
+  "duplicate_groups": 27,
+  "duplicate_records": 33,
+  "generated_at": "2026-09-09T00:50:17-04:00",
+  "match_quality_issues": 416,
+  "new_scope_raw_records": 142,
+  "normalization_exceptions": 0,
+  "normalized_recipes": 2589,
+  "pages": 2590,
+  "raw_records": 2589,
+  "recipes_with_quality_issues": 399,
+  "recommendations": {
+    "not-recommended": 2585,
+    "recommended-with-caveats": 4
+  },
+  "recovered_raw_records_with_normalization_quality_issues": 9,
+  "statuses": {
+    "needs-review": 1290,
+    "rejected": 1299
+  },
+  "tests_passed": 98,
+  "total_time_known": 650,
+  "unique_recipes": 2556
+}

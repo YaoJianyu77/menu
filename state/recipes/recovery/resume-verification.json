@@ -1,0 +1,45 @@
+{
+  "raw_hashes_unchanged": true,
+  "raw_sha256": {
+    "data/recipes/raw/recipe-agent-01.jsonl": "d238688afb154d74d8e01f65701233d5ea5995d2b01e56a01c6bdd23cfc2d3b3",
+    "data/recipes/raw/recipe-agent-02.jsonl": "99748235189ee8133f4a9a9c7c7aafcc8483375f386f728ab37e836d1114b6ab",
+    "data/recipes/raw/recipe-agent-03.jsonl": "cc5b65ce3d83d53fa450d311261a53fcba7d51aef0a24f52a079439d621fdded",
+    "data/recipes/raw/recipe-agent-04.jsonl": "6000c3b20206f3cf0bd56773f2bd6eb14edb96a9eb2a14d962eebb59fbf76eb4",
+    "data/recipes/raw/recipe-agent-05.jsonl": "a93fa787982e4517f6372326b50c529299023a68cdef670518017cc1ea864257",
+    "data/recipes/raw/recipe-agent-06.jsonl": "c816009770d8509883482b48664d77a123b7c98d0f7d74769ddd067d691ae567",
+    "data/recipes/raw/recipe-agent-07.jsonl": "84f068ff387b21fe5df2757042faeb293376c96016a03c43d4ea93ff2d62bc52"
+  },
+  "retry_failures": false,
+  "shards": {
+    "recipe-agent-01": {
+      "failures": 233,
+      "processed": 822
+    },
+    "recipe-agent-02": {
+      "failures": 256,
+      "processed": 802
+    },
+    "recipe-agent-03": {
+      "failures": 233,
+      "processed": 821
+    },
+    "recipe-agent-04": {
+      "failures": 7,
+      "processed": 14
+    },
+    "recipe-agent-05": {
+      "failures": 11,
+      "processed": 9
+    },
+    "recipe-agent-06": {
+      "failures": 8,
+      "processed": 2
+    },
+    "recipe-agent-07": {
+      "failures": 0,
+      "processed": 1
+    }
+  },
+  "shards_checked": 7,
+  "verified_at": "2026-09-09T00:40:05-04:00"
+}

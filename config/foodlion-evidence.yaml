@@ -1,0 +1,345 @@
+# Prefix must immediately precede a numeric package size. No substring matching.
+version: 1
+source: https://foodlion.com/groceries/sitemap.xml
+store_specificity: national_catalog
+status: likely_available
+product_slug_prefixes:
+  tomato:
+  - plum-roma-tomatoes-apx-
+  - tomatoes-on-the-vine-apx-
+  chicken breast:
+  - food-lion-boneless-skinless-chicken-breasts-family-pack-fresh-apx-
+  chicken thigh:
+  - food-lion-boneless-skinless-chicken-thigh-fillets-fresh-apx-
+  chicken drumstick:
+  - food-lion-bone-in-skin-on-chicken-drumsticks-family-pack-fresh-apx-
+  whole chicken:
+  - food-lion-bone-in-skin-on-whole-young-chicken-fresh-apx-
+  olive oil:
+  - graza-drizzle-extra-virgin-olive-oil-
+  - graza-sizzle-extra-virgin-olive-oil-
+  rice:
+  - food-lion-enriched-long-grain-white-rice-
+  green onion:
+  - green-onions-scallions-
+  onion:
+  - yellow-onions-apx-
+  - white-onions-apx-
+  - red-onions-apx-
+  garlic:
+  - garlic-
+  broccoli:
+  - broccoli-crowns-apx-
+  - food-lion-broccoli-florets-frozen-
+  spinach:
+  - natures-promise-organic-baby-spinach-
+  carrot:
+  - whole-carrots-apx-
+  - food-lion-baby-carrots-
+  bell pepper:
+  - green-bell-peppers-
+  - red-bell-peppers-
+  - rainbow-bell-peppers-
+  zucchini:
+  - zucchini-squash-apx-
+  potato:
+  - baking-russet-potatoes-apx-
+  - russet-potatoes-bag-
+  sweet potato:
+  - sweet-potatoes-apx-
+  egg:
+  - food-lion-large-white-eggs-
+  milk:
+  - vitamin-d-whole-milk-
+  - food-lion-vitamin-d-whole-milk-
+  butter:
+  - food-lion-salted-sweet-cream-butter-sticks-
+  - food-lion-unsalted-sweet-cream-butter-sticks-
+  cheddar:
+  - food-lion-natural-sharp-cheddar-cheese-block-
+  - food-lion-natural-shredded-sharp-cheddar-cheese-
+  parmesan:
+  - food-lion-natural-fancy-shredded-parmesan-cheese-
+  ground beef:
+  - food-lion-93-lean-7-fat-ground-beef-fresh-apx-
+  - food-lion-85-lean-15-fat-ground-beef-round-fresh-apx-
+  salmon:
+  - food-lion-whole-atlantic-salmon-fillet-fresh-apx-
+  tuna:
+  - food-lion-wild-caught-chunk-light-tuna-in-water-
+  tofu:
+  - azumaya-extra-firm-tofu-
+  - azumaya-firm-tofu-
+  chickpea:
+  - food-lion-garbanzo-beans-chickpeas-
+  - food-lion-garbanzo-beans-
+  black bean:
+  - food-lion-black-beans-
+  lentil:
+  - food-lion-dry-lentils-
+  pasta:
+  - food-lion-pot-sized-spaghetti-pasta-
+  - food-lion-penne-rigate-pasta-
+  - food-lion-elbows-macaroni-pasta-
+  flour:
+  - food-lion-unbleached-all-purpose-flour-
+  salt:
+  - food-lion-iodized-salt-
+  black pepper:
+  - food-lion-ground-black-pepper-
+  sugar:
+  - food-lion-granulated-sugar-
+  soy sauce:
+  - food-lion-all-purpose-soy-sauce-
+  bacon:
+  - food-lion-genuine-hardwood-smoked-thick-cut-bacon-sliced-
+  sausage:
+  - jimmy-dean-premium-regular-pork-breakfast-sausage-roll-
+  ginger:
+  - ginger-root-apx-
+  cumin:
+  - food-lion-ground-cumin-
+  paprika:
+  - food-lion-paprika-
+  sesame oil:
+  - kikkoman-100-pure-sesame-oil-
+  - ty-ling-pure-sesame-oil-
+  vegetable oil:
+  - food-lion-vegetable-oil-
+  canola oil:
+  - food-lion-canola-oil-
+  cucumber:
+  - cucumber-
+  - hot-house-english-seedless-cucumber-
+  celery:
+  - celery-
+  cilantro:
+  - cilantro-fresh-
+  lemon:
+  - lemons-
+  lime:
+  - limes-
+  cabbage:
+  - green-cabbage-apx-
+  asparagus:
+  - asparagus-apx-
+  mushroom:
+  - food-lion-sliced-pre-cleaned-white-mushrooms-
+  shrimp:
+  - food-lion-raw-tail-off-large-peeled-deveined-shrimp-
+  chicken broth:
+  - food-lion-fat-free-chicken-broth-
+  almond:
+  - food-lion-raw-almonds-
+  - food-lion-almonds-sliced-
+  almond flour:
+  - natures-promise-blanched-almond-flour-
+  avocado:
+  - ripe-hass-avocados-
+  - avocados-bag-
+  baking powder:
+  - food-lion-gluten-aluminum-free-double-acting-pure-baking-powder-
+  baking soda:
+  - food-lion-baking-soda-
+  balsamic vinegar:
+  - food-lion-balsamic-vinegar-of-modena-
+  bay leaf:
+  - simply-organic-bay-leaf-
+  beef:
+  - food-lion-beef-chuck-roast-fresh-apx-
+  beef broth:
+  - food-lion-fat-free-beef-broth-
+  brown sugar:
+  - food-lion-dark-brown-sugar-
+  - food-lion-light-brown-sugar-
+  cayenne pepper:
+  - food-lion-ground-cayenne-pepper-
+  chicken:
+  - food-lion-bone-in-skin-on-whole-young-chicken-fresh-apx-
+  chicken leg quarter:
+  - food-lion-bone-in-skin-on-chicken-leg-quarters-family-pack-
+  chicken leg:
+  - food-lion-bone-in-skin-on-chicken-leg-quarters-family-pack-
+  chicken wing:
+  - food-lion-bone-in-skin-on-chicken-wings-fresh-apx-
+  chili powder:
+  - food-lion-chili-powder-
+  chocolate chips:
+  - food-lion-semi-sweet-chocolate-baking-morsel-chips-
+  cinnamon:
+  - food-lion-ground-cinnamon-
+  cocoa powder:
+  - food-lion-unsweetened-baking-cocoa-
+  coconut flour:
+  - bobs-red-mill-organic-gluten-free-coconut-flour-
+  coconut oil:
+  - food-lion-refined-coconut-oil-
+  coconut sugar:
+  - natures-promise-organic-coconut-palm-sugar-
+  cooking oil:
+  - food-lion-vegetable-oil-
+  - food-lion-canola-oil-
+  corn:
+  - untrimmed-sweet-corn-
+  - food-lion-white-corn-
+  cornstarch:
+  - food-lion-100-pure-corn-starch-
+  cream cheese:
+  - food-lion-original-cream-cheese-bar-
+  dark brown sugar:
+  - food-lion-dark-brown-sugar-
+  dark chocolate chips:
+  - food-lion-dark-chocolate-baking-morsel-chips-
+  dijon mustard:
+  - food-lion-savory-dijon-mustard-
+  dill:
+  - natures-promise-organic-baby-dill-
+  dill pickle:
+  - food-lion-kosher-baby-dill-pickles-
+  dried basil:
+  - litehouse-freeze-dried-basil-
+  - food-lion-basil-leaves-
+  dried dill:
+  - badia-dill-weed-
+  dried oregano:
+  - food-lion-oregano-leaves-
+  dried parsley:
+  - food-lion-parsley-flakes-
+  dried sage:
+  - food-lion-rubbed-sage-
+  dried thyme:
+  - mccormick-thyme-leaves-
+  egg white:
+  - food-lion-egg-whites-100-liquid-
+  eggplant:
+  - eggplant-apx-
+  feta:
+  - frigo-feta-cheese-crumbled-
+  garlic powder:
+  - food-lion-garlic-powder-
+  granulated garlic:
+  - food-lion-granulated-garlic-
+  greek yogurt:
+  - food-lion-non-fat-plain-greek-yogurt-
+  - food-lion-whole-milk-plain-greek-yogurt-
+  green bean:
+  - food-lion-green-beans-
+  green pepper:
+  - green-bell-peppers-
+  ground cinnamon:
+  - food-lion-ground-cinnamon-
+  ground cumin:
+  - food-lion-ground-cumin-
+  ground ginger:
+  - food-lion-ground-ginger-
+  ground pork:
+  - smithfield-signature-80-lean-20-fat-ground-pork-
+  ground turkey:
+  - food-lion-ground-turkey-85-lean-fresh-
+  ham:
+  - food-lion-ham-cooked-sliced-97-fat-free-
+  - food-lion-deli-cooked-ham-regular-sliced-apx-
+  heavy cream:
+  - food-lion-heavy-whipping-cream-
+  honey:
+  - food-lion-100-honey-
+  hot dog:
+  - stevens-hot-dogs-
+  kale:
+  - kale-
+  - curly-kale-
+  ketchup:
+  - food-lion-tomato-ketchup-
+  kimchi:
+  - cleveland-classic-kimchi-refrigerated-
+  lemon juice:
+  - food-lion-100-lemon-juice-
+  lettuce:
+  - iceberg-lettuce-
+  - romaine-lettuce-
+  light brown sugar:
+  - food-lion-light-brown-sugar-
+  light cream:
+  - food-lion-light-cream-
+  lime juice:
+  - food-lion-100-lime-juice-
+  maple syrup:
+  - food-lion-dark-amber-pure-maple-syrup-
+  mayonnaise:
+  - food-lion-real-mayonnaise-
+  milk chocolate chips:
+  - hersheys-milk-chocolate-chips-
+  mozzarella:
+  - food-lion-natural-shredded-part-skim-mozzarella-cheese-
+  napa cabbage:
+  - napa-cabbage-
+  new york strip steak:
+  - food-lion-boneless-beef-new-york-strip-steak-fresh-apx-
+  onion powder:
+  - food-lion-onion-powder-
+  parsley:
+  - curly-parsley-
+  peanut butter:
+  - food-lion-creamy-peanut-butter-
+  pecan:
+  - food-lion-pecan-halves-
+  pork:
+  - food-lion-pork-tenderloin-fresh-apx-
+  pork belly:
+  - swift-pork-belly-apx-
+  powdered sugar:
+  - food-lion-confectioners-powdered-sugar-
+  quick oats:
+  - natures-promise-organic-original-quick-oats-
+  quinoa:
+  - natures-promise-organic-classic-quinoa-
+  red wine vinegar:
+  - food-lion-red-wine-vinegar-
+  ribeye steak:
+  - food-lion-boneless-beef-ribeye-steak-
+  rice vinegar:
+  - kikkoman-rice-vinegar-
+  rolled oats:
+  - food-lion-100-whole-grain-old-fashioned-rolled-oats-
+  romaine lettuce:
+  - romaine-lettuce-
+  rotisserie chicken:
+  - food-lion-rotisserie-chicken-family-size-cold-
+  semisweet chocolate chips:
+  - food-lion-semi-sweet-chocolate-baking-morsel-chips-
+  sesame seed:
+  - badia-sesame-seeds-
+  shiitake mushroom:
+  - food-lion-sliced-shiitake-mushrooms-
+  shortening:
+  - food-lion-all-purpose-shortening-
+  sirloin steak:
+  - food-lion-boneless-beef-sirloin-steak-fresh-apx-
+  smoked paprika:
+  - badia-smoked-paprika-
+  sour cream:
+  - food-lion-original-sour-cream-
+  starch:
+  - food-lion-100-pure-corn-starch-
+  tahini:
+  - soom-premium-tahini-roasted-ground-sesame-seeds-
+  tamari:
+  - san-j-gluten-free-tamari-brewed-dark-soy-sauce-
+  toasted sesame oil:
+  - cookwell-toasted-sesame-oil-
+  unsweetened cocoa powder:
+  - food-lion-unsweetened-baking-cocoa-
+  vanilla extract:
+  - food-lion-pure-vanilla-extract-
+  vegetable broth:
+  - food-lion-fat-free-vegetable-broth-
+  walnut:
+  - food-lion-halves-pieces-walnuts-
+  water:
+  - food-lion-purified-drinking-water-
+  white vinegar:
+  - food-lion-white-distilled-vinegar-
+  worcestershire sauce:
+  - food-lion-worcestershire-sauce-
+  xanthan gum:
+  - bobs-red-mill-premium-gluten-free-xanthan-gum-

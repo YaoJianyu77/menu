@@ -1,0 +1,2174 @@
+{
+  "agent": "recipe-agent-05",
+  "archive_members": {
+    "mealie-recipes--mealie:tests/data/backups/backup-version-09aba125b57a-1.zip": [
+      {
+        "member": "__MACOSX/._mealie_2024",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:36-04:00"
+      },
+      {
+        "member": "__MACOSX/mealie_2024/",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:36-04:00"
+      },
+      {
+        "member": "__MACOSX/mealie_2024/._data",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:36-04:00"
+      },
+      {
+        "member": "__MACOSX/mealie_2024/._database.json",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:36-04:00"
+      },
+      {
+        "member": "__MACOSX/mealie_2024/data/",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:36-04:00"
+      },
+      {
+        "member": "__MACOSX/mealie_2024/data/._.PLACEHOLDER",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:36-04:00"
+      },
+      {
+        "member": "mealie_2024/data/",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:36-04:00"
+      },
+      {
+        "member": "mealie_2024/data/.PLACEHOLDER",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:36-04:00"
+      },
+      {
+        "classification": "NOT_A_RECIPE_SOURCE",
+        "inspected_recipe_text_fields": 710,
+        "member": "mealie_2024/database.json",
+        "reason": "All recipe names, instructions and ingredient text are randomized ten-letter tokens; erased cooking content, matching source backup anonymizer",
+        "recipe_rows": 42,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:36-04:00"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/backups/backup-version-1d9a002d7234-1.zip": [
+      {
+        "member": "data/.PLACEHOLDER",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      },
+      {
+        "classification": "NOT_A_RECIPE_SOURCE",
+        "inspected_recipe_text_fields": 0,
+        "member": "database.json",
+        "reason": "Empty recipe table",
+        "recipe_rows": 0,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/backups/backup-version-44e8d670719d-1.zip": [
+      {
+        "member": "data/.PLACEHOLDER",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      },
+      {
+        "classification": "NOT_A_RECIPE_SOURCE",
+        "inspected_recipe_text_fields": 6338,
+        "member": "database.json",
+        "reason": "All recipe names, instructions and ingredient text are randomized ten-letter tokens; erased cooking content, matching source backup anonymizer",
+        "recipe_rows": 349,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/backups/backup-version-44e8d670719d-2.zip": [
+      {
+        "member": "data/.PLACEHOLDER",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      },
+      {
+        "classification": "NOT_A_RECIPE_SOURCE",
+        "inspected_recipe_text_fields": 2176,
+        "member": "database.json",
+        "reason": "All recipe names, instructions and ingredient text are randomized ten-letter tokens; erased cooking content, matching source backup anonymizer",
+        "recipe_rows": 88,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/backups/backup-version-44e8d670719d-3.zip": [
+      {
+        "member": "data/.PLACEHOLDER",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      },
+      {
+        "classification": "NOT_A_RECIPE_SOURCE",
+        "inspected_recipe_text_fields": 1355,
+        "member": "database.json",
+        "reason": "All recipe names, instructions and ingredient text are randomized ten-letter tokens; erased cooking content, matching source backup anonymizer",
+        "recipe_rows": 69,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/backups/backup-version-44e8d670719d-4.zip": [
+      {
+        "member": "data/.PLACEHOLDER",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      },
+      {
+        "classification": "NOT_A_RECIPE_SOURCE",
+        "inspected_recipe_text_fields": 783,
+        "member": "database.json",
+        "reason": "All recipe names, instructions and ingredient text are randomized ten-letter tokens; erased cooking content, matching source backup anonymizer",
+        "recipe_rows": 44,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/backups/backup-version-86054b40fd06-1.zip": [
+      {
+        "member": "data/.PLACEHOLDER",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      },
+      {
+        "classification": "NOT_A_RECIPE_SOURCE",
+        "inspected_recipe_text_fields": 6194,
+        "member": "database.json",
+        "reason": "All recipe names, instructions and ingredient text are randomized ten-letter tokens; erased cooking content, matching source backup anonymizer",
+        "recipe_rows": 165,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/backups/backup-version-ba1e4a6cfe99-1.zip": [
+      {
+        "member": "data/.PLACEHOLDER",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      },
+      {
+        "classification": "NOT_A_RECIPE_SOURCE",
+        "inspected_recipe_text_fields": 5636,
+        "member": "database.json",
+        "reason": "All recipe names, instructions and ingredient text are randomized ten-letter tokens; erased cooking content, matching source backup anonymizer",
+        "recipe_rows": 218,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/backups/backup-version-bcfdad6b7355-1.zip": [
+      {
+        "member": "data/.PLACEHOLDER",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      },
+      {
+        "classification": "NOT_A_RECIPE_SOURCE",
+        "inspected_recipe_text_fields": 964,
+        "member": "database.json",
+        "reason": "All recipe names, instructions and ingredient text are randomized ten-letter tokens; erased cooking content, matching source backup anonymizer",
+        "recipe_rows": 46,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:36:37-04:00"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/chowdown.zip": [
+      {
+        "member": "chowdown-gh-pages/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "chowdown-gh-pages/_recipes/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "chowdown-gh-pages/_recipes/roasted-brussels-sprouts.md",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "chowdown-gh-pages/_recipes/roasted-okra.md",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "chowdown-gh-pages/images/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "chowdown-gh-pages/images/roasted-brussels-sprouts.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "chowdown-gh-pages/images/roasted-okra.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/cookn.zip": [
+      {
+        "member": "temp_recipe.dsv#610761",
+        "records": 1,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "processed",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_recipe.dsv#610763",
+        "records": 1,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "processed",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_recipe.dsv#610764",
+        "records": 1,
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "processed",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "197",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "198",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "199",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_baking-footer_bg.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_baking-header_bg.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_baking.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_baking2.jpg",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_bullet_bg.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_chapter.ftl",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_cookbook.ftl",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_cooknlogo.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_email.ftl",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_icon_chapter_20.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_icon_recipe_20.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_mdate",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_page.ftl",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_playvideo.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_preview.jpg",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_previewlg.jpg",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_print_3x5.jpg",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_print_4x6.jpg",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_print_full.jpg",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_recipe.ftl",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_recipe2.ftl",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_rollingpin_chapters.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_rollingpin_ingredients.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_rollingpin_instructions.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_rollingpin_recipes.png",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "5_search.jpg",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "Theme_5",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "__MACOSX/._197",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "__MACOSX/._198",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "__MACOSX/._199",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "__MACOSX/._temp_media.dsv",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "cp1252",
+        "reason": "Non-recipe asset or directory",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_brand.dsv",
+        "reason": "Auxiliary Cookn branding/theme/nutrient table; all recipe IDs enumerated from temp_recipe.dsv",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_chapter.dsv",
+        "reason": "Auxiliary Cookn branding/theme/nutrient table; all recipe IDs enumerated from temp_recipe.dsv",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_chapter_desc.dsv",
+        "reason": "Auxiliary Cookn branding/theme/nutrient table; all recipe IDs enumerated from temp_recipe.dsv",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_cookBook.dsv",
+        "reason": "Auxiliary Cookn branding/theme/nutrient table; all recipe IDs enumerated from temp_recipe.dsv",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_cookBook_desc.dsv",
+        "reason": "Auxiliary Cookn branding/theme/nutrient table; all recipe IDs enumerated from temp_recipe.dsv",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_food.dsv",
+        "reason": "Cookn recipe table rows joined through explicit ID references",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "processed",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_food_brand.dsv",
+        "reason": "Auxiliary Cookn branding/theme/nutrient table; all recipe IDs enumerated from temp_recipe.dsv",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_food_group.dsv",
+        "reason": "Auxiliary Cookn branding/theme/nutrient table; all recipe IDs enumerated from temp_recipe.dsv",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_ingredient.dsv",
+        "reason": "Cookn recipe table rows joined through explicit ID references",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "processed",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_media.dsv",
+        "reason": "Auxiliary Cookn branding/theme/nutrient table; all recipe IDs enumerated from temp_recipe.dsv",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_nutrient.dsv",
+        "reason": "Auxiliary Cookn branding/theme/nutrient table; all recipe IDs enumerated from temp_recipe.dsv",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_recipe.dsv",
+        "reason": "Cookn recipe table rows joined through explicit ID references",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "processed",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_recipe_desc.dsv",
+        "reason": "Cookn recipe table rows joined through explicit ID references",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "processed",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_theme.dsv",
+        "reason": "Auxiliary Cookn branding/theme/nutrient table; all recipe IDs enumerated from temp_recipe.dsv",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_unit.dsv",
+        "reason": "Cookn recipe table rows joined through explicit ID references",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "processed",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      },
+      {
+        "member": "temp_unit_equivalent.dsv",
+        "reason": "Auxiliary Cookn branding/theme/nutrient table; all recipe IDs enumerated from temp_recipe.dsv",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:22:42-04:00"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/copymethat.zip": [
+      {
+        "member": "images/classic_stuffed_shells_f89m7.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/crockpot_cilantro_lime_chicken_rhs9m.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/spam_zoodles_y92tv.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "recipes.html",
+        "reason": "Non-recipe asset or directory",
+        "records": 3,
+        "status": "processed"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/mealie.zip": [
+      {
+        "member": "__MACOSX/._mealie_2021-Dec-08",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/._.DS_Store",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/._recipes",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/._.DS_Store",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/._levain-chocolate-chip-cookies",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/._old-fashioned-beef-stew",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/._pizza-dough-basics-with-babish",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/._assets",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/._images",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/._levain-chocolate-chip-cookies.json",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/images/._min-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/images/._original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/images/._tiny-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/._.DS_Store",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/._assets",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/._images",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/._old-fashioned-beef-stew.json",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/images/._min-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/images/._original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/images/._tiny-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/._.DS_Store",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/._assets",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/._images",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/._pizza-dough-basics-with-babish.json",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/images/._min-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/images/._original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/images/._tiny-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/.DS_Store",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/.DS_Store",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/assets/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/images/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/images/min-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/images/original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/images/tiny-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/levain-chocolate-chip-cookies.json",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/.DS_Store",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/assets/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/images/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/images/min-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/images/original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/images/tiny-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/old-fashioned-beef-stew.json",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/.DS_Store",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/assets/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/images/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/images/min-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/images/original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/images/tiny-original.webp",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/pizza-dough-basics-with-babish.json",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/nextcloud.zip": [
+      {
+        "member": "Air Fryer Shrimp/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "Air Fryer Shrimp/full.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "Air Fryer Shrimp/recipe.json",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "Air Fryer Shrimp/thumb.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "Chicken Parmigiana/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "Chicken Parmigiana/full.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "Chicken Parmigiana/recipe.json",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "Chicken Parmigiana/thumb.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "Skillet Shepherd's Pie/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "Skillet Shepherd's Pie/recipe.json",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/paprika.zip": [
+      {
+        "member": "My Recipes/",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "My Recipes/.DS_Store",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "My Recipes/Zucchini Rolls with Goat Cheese and Mint.paprikarecipe",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "My Recipes/Zucchini-Kartoffel-Frittata.paprikarecipe",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "My Recipes/Zucchinipuffer.paprikarecipe",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "My Recipes/Zweimal gebratenes Ha╠êhnchen mit Gemu╠êse und Nudeln.paprikarecipe",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "My Recipes/Zwiebelrostbraten mit selbstgemachten Spa╠êtzle.paprikarecipe",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "__MACOSX/._My Recipes",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/My Recipes/._.DS_Store",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/My Recipes/._Zucchini Rolls with Goat Cheese and Mint.paprikarecipe",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/My Recipes/._Zucchini-Kartoffel-Frittata.paprikarecipe",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/My Recipes/._Zucchinipuffer.paprikarecipe",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/My Recipes/._Zweimal gebratenes Ha╠êhnchen mit Gemu╠êse und Nudeln.paprikarecipe",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "__MACOSX/My Recipes/._Zwiebelrostbraten mit selbstgemachten Spa╠êtzle.paprikarecipe",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/plantoeat.zip": [
+      {
+        "classification": "NOT_A_RECIPE_SOURCE",
+        "member": "plantoeat.csv",
+        "reason": "Explicit placeholder import fixture: Test Recipe title, test ingredients and Directions. Will go here. text",
+        "source": "https://github.com/mealie-recipes/mealie",
+        "status": "excluded",
+        "timestamp": "2026-09-09T00:37:57-04:00"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/recipekeeper.zip": [
+      {
+        "member": "images/09478db9-fb79-498f-89e6-27928d4d0995_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/0c5c570f-2520-4133-8b35-98d189baad21_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/11a2ec32-df47-4826-b0cf-6556cc2ea31b_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/159bdd2f-962e-45ad-a6b0-f64dd4113f28_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/15e1b11b-823a-4203-a547-032db012dc0b_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/2ab2c948-d0fe-4e4b-9e3f-c69444bc8cca_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/2c76fe7d-09b9-426a-b44c-8ba43493e85d_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/30021e99-5a08-428e-8d5d-19357e356d43_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/304d2778-fef1-420e-85e7-fb5e75b3fe9a_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/31adb931-743f-5e9d-b2a2-9269c0775a4a_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/32223dc2-0af9-40d0-8185-071c8bdc7a1d_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/35e910cc-e540-40c4-9081-ebdee93268d5_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/397ace63-e9ff-48bb-a30c-0e23fa210877_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/3c320cce-3ad4-4ed4-8b13-f777bfd91518_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/3f874c3a-788b-41a1-b09c-d89b56947427_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/3ff68d5a-7a1f-4094-b680-380c1b0cf259_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/4249e886-0504-4930-a0b9-0b2938637e3d_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/4297b0f7-02ac-4496-beb8-808f148f065f_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/438f20c5-9822-43f4-9f89-859485dbb976_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/45d7e488-0bf5-48f0-9fc7-c6a194631aec_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/47cf53de-a437-4044-a978-49e0d747b246_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/47f363fb-502c-49d2-bfcc-9021c6217949_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/53e4a351-d31e-43bb-8bc7-13ffddf6490b_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/546feec3-20c9-41b8-b1a6-ec99ea42047b_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/63afa1f4-baed-4904-94df-b97a53f38b65_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/6a58c6e4-0e43-4191-93e9-644b96b06e40_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/72e06c68-f183-4645-a02e-6f47d7df6a9c_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/75905d01-2e08-49d7-a076-d5dbdb9dedb3_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/7c593680-c33f-42bb-b7e8-f762f9a0340a_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/7f2decec-2e7f-594b-90ac-5fed6ed1b4c7_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/832a24d8-ae75-438c-8dee-66c4bc2897c2_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/85628e2b-0c2b-4b70-8a98-642079e74923_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/86284fac-d9d5-47a9-bad4-e7cfa73cfab9_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/872cc43c-7357-4fa3-a2e0-6126718a5570_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/8d15518d-ee80-4516-a3f6-858829d664be_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/8d734ec3-5480-4c41-bab3-a86071bc0339_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/8da94710-61e0-4d1c-9f08-c3594bc61849_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/8f4a47ea-1886-4cb2-9f2b-0d3e34c93ab1_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/944f082b-9efb-4091-b80c-edbd80ee1617_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/94af907b-a709-4990-b88d-c72e4fa8d6c1_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/98e43820-2cf4-465b-921a-85f51a2c3e05_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/994fd3ac-f0e3-4cee-9e56-63e20017162b_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/9bb3048b-f70d-4e5a-8090-6788a56c16b3_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/a2489b23-050f-5c8a-8e5d-12fdb9fdeea3_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/a38e66ae-6bda-4a2a-a6bb-7b8bfb597086_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/a43673aa-edeb-4ce6-b3c9-6ef6c759f540_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/a55d1924-007a-4f13-a52e-d5955599a1fd_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/afc0734f-43a0-4138-b58b-6ae0e2b47b42_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/b03cdaf1-8f41-4271-ad9c-df2abb05e124_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/b05310a1-15ec-560e-896d-e7a54223d0a0_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/b0bcddc4-23e8-50cc-a879-22b1b2e63919_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/b3dd8ae9-9dda-4918-b550-2e73bf9ec21f_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/b52872fe-6886-4788-af58-f5d895b4269e_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/b6c638dd-0462-4a38-b8ac-07a7c69d391f_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/bb45c66d-ed82-48f3-a279-95de911e9ef1_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/c216ad0d-7024-45e8-b926-5499585c7bec_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/c8a0b820-aa06-49ab-9fa8-44300898051a_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/cc325770-0377-4244-96b1-88c39cd23269_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/d017e2c8-24e6-5eee-8b68-931c0196bf5a_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/d01c0d44-ff46-4ac3-bc54-5a3bf1b608c1_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/d21f4386-d258-4f67-b62f-fc11b4d35338_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/d4664544-4fd6-4d8f-9ee0-6e04a1fb491f_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/d5005ed9-137a-494c-9d10-6a889a950992_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/d7280ab4-debf-4b59-a20a-6bedbe1192b0_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/d8112a19-4f28-46cf-b662-772c0434739e_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/dc0db49c-556b-4ca1-b707-b514936512c6_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/ddc1ed85-d4d1-430f-a2c1-b0780c4413b4_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/de5402d1-5cf4-47b6-9782-6771f85a6f8d_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/df8b5086-bca5-4a85-9f7e-5560f42b8893_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/e2b07ed6-4277-4318-8ba2-c2d0812c848c_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/e460cb48-bbfc-4a67-9e9a-61ac79c5a0bd_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/e5007618-5bee-4116-a74b-0b025cbabe34_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/e7605acd-2ac2-480f-ad15-d22d9b04f355_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/ead04fdd-6cab-4319-8d37-529a0d6a3296_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/f2964a9e-d632-4ead-ae7c-f9638d9e9b49_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/f4a6b044-7f21-4d31-800d-63fe70aa12af_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "images/f6120a90-a483-4507-832a-df17b8b0f974_0.jpg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "recipes.html",
+        "reason": "Non-recipe asset or directory",
+        "records": 95,
+        "status": "partial"
+      },
+      {
+        "member": "recipes.html#90",
+        "reason": "Missing explicit title, ingredient or instruction section",
+        "status": "failed"
+      }
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/tandoor.zip": [
+      {
+        "member": "1.zip",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      },
+      {
+        "member": "1.zip!image.jpeg",
+        "reason": "Non-recipe asset or directory",
+        "status": "excluded"
+      },
+      {
+        "member": "1.zip!recipe.json",
+        "reason": "Non-recipe asset or directory",
+        "records": 1,
+        "status": "processed"
+      }
+    ]
+  },
+  "completed_at": "2026-09-09T00:40:05-04:00",
+  "completion_status": "complete-with-failures",
+  "current_cursor": "mealie-recipes--mealie:tests/data/migrations/plantoeat.zip",
+  "failure_history": [
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-09aba125b57a-1.zip",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-1d9a002d7234-1.zip",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-1.zip",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-2.zip",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-3.zip",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-4.zip",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-86054b40fd06-1.zip",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-ba1e4a6cfe99-1.zip",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-bcfdad6b7355-1.zip",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/migrations/cookn.zip",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/migrations/plantoeat.csv",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/migrations/plantoeat.zip",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-09aba125b57a-1.zip",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:22:41-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-1d9a002d7234-1.zip",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:22:41-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-1.zip",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:22:41-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-2.zip",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:22:41-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-3.zip",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:22:42-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-4.zip",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:22:42-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-86054b40fd06-1.zip",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:22:42-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-ba1e4a6cfe99-1.zip",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:22:42-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-bcfdad6b7355-1.zip",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:22:42-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "tests/data/migrations/cookn.zip",
+      "resolved_at": "2026-09-09T00:22:42-04:00",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:11:20-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/migrations/plantoeat.csv",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:22:42-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/migrations/plantoeat.zip",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:22:42-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-09aba125b57a-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:36-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-1d9a002d7234-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-2.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-3.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-4.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-86054b40fd06-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-ba1e4a6cfe99-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/backups/backup-version-bcfdad6b7355-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Explicit placeholder import fixture: Test Recipe title, test ingredients and Directions. Will go here. text",
+      "error_type": "SyntheticRecipeError",
+      "event": "failure",
+      "item_identifier": "tests/data/migrations/plantoeat.csv",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/migrations/plantoeat.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/data/migrations/plantoeat.zip",
+      "retry_count": 3,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:37:57-04:00"
+    }
+  ],
+  "failures": {
+    "mealie-recipes--mealie:tests/data/backups/backup-version-09aba125b57a-1.zip": {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-09aba125b57a-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:36-04:00"
+    },
+    "mealie-recipes--mealie:tests/data/backups/backup-version-1d9a002d7234-1.zip": {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-1d9a002d7234-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    "mealie-recipes--mealie:tests/data/backups/backup-version-44e8d670719d-1.zip": {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    "mealie-recipes--mealie:tests/data/backups/backup-version-44e8d670719d-2.zip": {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-2.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    "mealie-recipes--mealie:tests/data/backups/backup-version-44e8d670719d-3.zip": {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-3.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    "mealie-recipes--mealie:tests/data/backups/backup-version-44e8d670719d-4.zip": {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-4.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    "mealie-recipes--mealie:tests/data/backups/backup-version-86054b40fd06-1.zip": {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-86054b40fd06-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    "mealie-recipes--mealie:tests/data/backups/backup-version-ba1e4a6cfe99-1.zip": {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-ba1e4a6cfe99-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    "mealie-recipes--mealie:tests/data/backups/backup-version-bcfdad6b7355-1.zip": {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-bcfdad6b7355-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    "mealie-recipes--mealie:tests/data/migrations/plantoeat.csv": {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Explicit placeholder import fixture: Test Recipe title, test ingredients and Directions. Will go here. text",
+      "error_type": "SyntheticRecipeError",
+      "item_identifier": "tests/data/migrations/plantoeat.csv",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    "mealie-recipes--mealie:tests/data/migrations/plantoeat.zip": {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/migrations/plantoeat.zip",
+      "retry_count": 3,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:37:57-04:00"
+    }
+  },
+  "processed": {
+    "mealie-recipes--mealie:tests/data/migrations/chowdown.zip": [
+      "f071a3502f1efdef3db0293d",
+      "cf78c902e64cd0c878775cd9"
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/cookn.zip": [
+      "599ca35bddb7a057ab46fdbd",
+      "aded8c3abe5ac966e160a0c3",
+      "d0398c6d15a5388da87ce311"
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/copymethat.zip": [
+      "c180614345cfa258f6e80714",
+      "9acd5ceb71dd0dee0d0ad70b",
+      "5040cd8ad5ada6a990189033"
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/mealie.zip": [
+      "ece2401a1266decb37580820",
+      "95e8e47a1484ad013d66a6f5",
+      "781885233efcddcbfff4447c"
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/myrecipebox.csv": [
+      "40668c5531f5cf2de3f40992",
+      "9b23c95386d64fb77113ce01",
+      "30946f67a25151062dafd00d",
+      "95ec2de0146f5e9c3ac3656a",
+      "a6a3c16fa7efea4db23d676b",
+      "6639d595bedd33eeb6ca7c83",
+      "af617197cb9577772ac30f40",
+      "d96583919c31973b01b4cd0d",
+      "53b8a683b2f24a13bd9e0bcc",
+      "b87d9e2c3a0f015c7d742156"
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/nextcloud.zip": [
+      "b5d42dd088c3846b3c1963c2",
+      "4bae3c9645cfb9db5b123921",
+      "10ff6ab898508de0aec91418"
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/paprika.zip": [
+      "b35f13b0b82d61f2328d6da1",
+      "2cd07f16a31c06569efeba43",
+      "2cd8b279431710ba47799b81",
+      "2b838c1083aca7e912016667",
+      "78243feae1e4ef1024d838ad"
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/recipekeeper.zip": [
+      "e9bdc594476a45dc096945e4",
+      "955df7369ea2c25d761a4b5f",
+      "7b1e103eead378267e1c3c72",
+      "f54fc15d835e3dc6da32481e",
+      "72456a25fd8a8dc6ccedddfd",
+      "ab93df56e46321fd56e620cf",
+      "6d8f0dd78e22dfe0253b539b",
+      "944cc762c93ee04e72181354",
+      "5169d064ac57c808577cb41f",
+      "a569653ec68a9ed4ab854c18",
+      "d56eff55e29f177b7a595571",
+      "2254729b0a33f6100352019e",
+      "51d6fea2c08126bb061c988c",
+      "e5c6289e19f4e8eae8aa81f4",
+      "81c1980d0a9093c6fe9979a2",
+      "888903c8ada97314ebcd2756",
+      "635cd5e07df8fa51899a1a5c",
+      "d1813d4c0ce4faeb56893200",
+      "22aa8630748762bf8d7d41bd",
+      "76219358de9b605ee71da333",
+      "ec612a28a989eded11d458ff",
+      "778a9fdadfff870441bef950",
+      "a71c992896b4f3513e1350bd",
+      "d49fdcf54723c3030722be18",
+      "c70431fc96a225c414c98886",
+      "4b6626a903adb3dcc514ca4b",
+      "70c9c839c690cbd720ea1ce8",
+      "5748f075812ce6ca8fd42300",
+      "53204178b95a68a8cf9eda3b",
+      "79bd12ed2b3fcc89273d060c",
+      "733a4fd08a5a1adbafb38677",
+      "7c7b369bc099de9ad71a4e18",
+      "1a14facc8753a9c8acaef086",
+      "8a645d89b27998b639ff2420",
+      "7af590a588b72dede21cded6",
+      "362f950c51c40c9246556c46",
+      "775dc1501385d5c6b5fd26bd",
+      "21dc6bc4220cf0dd57dee8b3",
+      "bd4c4fdb88952b35cd0d153f",
+      "4aa6a88c9ee97390ab4ac8fa",
+      "40c0eb334a8a394815b102e9",
+      "1bfe04de5b8e0d4a306cc2fe",
+      "d288c317a258de367c804224",
+      "e21975728a7fdd599fa9e2b2",
+      "2f534590127f3d989c351bc2",
+      "77d2b0f663e043692b0f6e66",
+      "74d81db57e60293d9335dc3d",
+      "85a6c2194e8f8e9e93f12b50",
+      "1b062b481ad95a9ec13477a1",
+      "316fd1bc106616c1f448cd12",
+      "9b0e8bf766420432e5749c4f",
+      "e67ab188be1b757f2c2d9d5f",
+      "ed9518ee6af398881cf85e28",
+      "7dd697e7c86d4e27621e1323",
+      "4ac679a480b5e9722af6b293",
+      "ea785675ba8a42cee63b5367",
+      "5332d7c29f72c3fa1f2794b6",
+      "db016bdf2f87f923a540ed2f",
+      "d071bb94d528153ba8727741",
+      "38536e1e792c1292c71328c6",
+      "c74acc9e05c185d0010223d6",
+      "b5d4e002e65755cdd85ac019",
+      "a2f4de1bfc53e4e7b0fd83b7",
+      "6db3970e78cdb0adb0702d9e",
+      "d8f98119610dc2057044a274",
+      "723059fc888459e41c6c9e16",
+      "438b725d9e986d12aa17ccdb",
+      "df08740cca910cf5eaf527e6",
+      "cdeb3d39ecccd037217e9679",
+      "71058b0ceb6c087aabe30bf3",
+      "2b15f8c0140289c1dbbdceec",
+      "8ad854c12db3c406d262108b",
+      "ddb1dff7993a33548685c399",
+      "2be94dabf670534b2292fd17",
+      "1cbe256d0141153baba1079e",
+      "482da842269d351e733121fe",
+      "17055e390031559f52aef8f5",
+      "a8c19ad0ac59d232933ed131",
+      "ef7b542b36d15ce80b961381",
+      "2e623ef1af0434e4cfb4a372",
+      "67a302b02f79e3b545d384cd",
+      "f0cb532c8cde5290faec438c",
+      "50f63bf0f9486b61b4271b9d",
+      "e51271785b10f6f6bebc68bc",
+      "8a63d99237772e5d66b057a0",
+      "35927dc758ce7d796a8fe54c",
+      "cac960c44aebbc7efeb216a7",
+      "0a50ff2ca5442aa4c6752582",
+      "730517f9d57f26b5d11338f2",
+      "bb36ca55620e51692982db3f",
+      "d7523778715214c89b3f6550",
+      "9bf78e53eb4b5dcf8ea8cd9f",
+      "65be2c0694d350888f104613",
+      "0e6cdf74a4a46cb67cd728f4",
+      "72f2d61177bd1ad427b648ea"
+    ],
+    "mealie-recipes--mealie:tests/data/migrations/tandoor.zip": [
+      "c04abbb67a98db0d3769081b"
+    ]
+  },
+  "sources": {
+    "mealie-recipes--mealie": {
+      "discovered": [
+        "tests/data/backups/backup-version-09aba125b57a-1.zip",
+        "tests/data/backups/backup-version-1d9a002d7234-1.zip",
+        "tests/data/backups/backup-version-44e8d670719d-1.zip",
+        "tests/data/backups/backup-version-44e8d670719d-2.zip",
+        "tests/data/backups/backup-version-44e8d670719d-3.zip",
+        "tests/data/backups/backup-version-44e8d670719d-4.zip",
+        "tests/data/backups/backup-version-86054b40fd06-1.zip",
+        "tests/data/backups/backup-version-ba1e4a6cfe99-1.zip",
+        "tests/data/backups/backup-version-bcfdad6b7355-1.zip",
+        "tests/data/migrations/chowdown.zip",
+        "tests/data/migrations/cookn.zip",
+        "tests/data/migrations/copymethat.zip",
+        "tests/data/migrations/mealie.zip",
+        "tests/data/migrations/myrecipebox.csv",
+        "tests/data/migrations/nextcloud.zip",
+        "tests/data/migrations/paprika.zip",
+        "tests/data/migrations/plantoeat.csv",
+        "tests/data/migrations/plantoeat.zip",
+        "tests/data/migrations/recipekeeper.zip",
+        "tests/data/migrations/tandoor.zip"
+      ],
+      "discovery_complete": true,
+      "revision": "7083998807081fc31c57984e54df0425268398af"
+    }
+  },
+  "started_at": "2026-09-09T00:11:20-04:00",
+  "updated_at": "2026-09-09T00:37:57-04:00"
+}

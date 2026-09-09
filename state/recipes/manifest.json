@@ -1,14 +1,5 @@
 {
-  "blocked_sources": [
-    "kmcconnell--recipyzer",
-    "user24--auntiesrecipes",
-    "usmanayubsh--cooking-recipes",
-    "frenchguycooking--doughsheeter"
-  ],
-  "candidate_files_discovered": 3167,
-  "candidate_files_failed": 934,
-  "candidate_files_processed": 2233,
-  "completed_source_ids": [
+  "accounted_source_ids": [
     "panozzaj--recipes",
     "obfuscurity--food-recipes",
     "dolph--recipes",
@@ -30,8 +21,28 @@
     "reaper47--recipya",
     "TandoorRecipes--recipes"
   ],
-  "completion_status": "complete-with-failures",
-  "completion_timestamp": "2026-09-08T23:38:29-04:00",
+  "blocked_sources": [
+    "kmcconnell--recipyzer",
+    "user24--auntiesrecipes",
+    "usmanayubsh--cooking-recipes",
+    "frenchguycooking--doughsheeter"
+  ],
+  "candidate_accounting_complete": true,
+  "candidate_files_discovered": 3219,
+  "candidate_files_failed": 748,
+  "candidate_files_processed": 2471,
+  "completed_source_ids": [
+    "obfuscurity--food-recipes",
+    "Anduin2017--HowToCook",
+    "douvy--tasty-cooking",
+    "hendricius--pizza-dough",
+    "buggymcbugfix--602f34214a37d972993830c2c9526cf0",
+    "andrewkern--bagels",
+    "pearofducks--foodprocessor",
+    "Brooke-white--RecipeParser"
+  ],
+  "completion_status": "PARTIAL",
+  "completion_timestamp": null,
   "failures": [
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
@@ -81,24 +92,6 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "recipes/sourdough/franconian-bread.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/hendricius/the-bread-code",
-      "timestamp": "2026-09-08T23:30:01-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "recipes/sourdough/sourdough-pasta.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/hendricius/the-bread-code",
-      "timestamp": "2026-09-08T23:30:01-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "recipes/sourdough/sourdough-pizza.md",
       "retry_count": 1,
       "retryable": false,
@@ -118,24 +111,6 @@
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "recipes/sweet/cocoa-bread.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/hendricius/the-bread-code",
-      "timestamp": "2026-09-08T23:30:01-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "recipes/sweet/date-walnut-bread.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/hendricius/the-bread-code",
-      "timestamp": "2026-09-08T23:30:01-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "recipes/sweet/full-milk-chocolate-bread.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/hendricius/the-bread-code",
@@ -306,24 +281,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0058925484a0d6490e892aed7b2b97f4.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/00becac908888876c483443f498d4cb7.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/01196bbd9614a9f6a3a93e189f5e207a.gz",
       "retry_count": 1,
       "retryable": false,
@@ -351,33 +308,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/01ed7f2bf712b365813d124d5eaefa70.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0261aafa3a2e06f4f083569da6bec3c1.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/02e2a1b069d2d6356b617b94ac92eb1e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/033d2f4a6bfe05840b341b4a4671951b.gz",
       "retry_count": 1,
       "retryable": false,
@@ -388,15 +318,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/034a148e4af94d8de645c7d2438787de.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/039ed8bfe8762f5383c7a47a3fc342ad.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -457,27 +378,9 @@
       "timestamp": "2026-09-08T23:29:22-04:00"
     },
     {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/050fe14f43ddd0efab1617a44db8f935.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/0577e31fccaef2939ff74250a706c4f1.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/05f3a8983e3bff92e5563d1ae9cdea50.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -496,15 +399,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/062c8f24b06aadfbad4c58fcefadb855.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/063ca5c7d3d6fc21b605b330813579e8.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -592,15 +486,6 @@
       "timestamp": "2026-09-08T23:29:22-04:00"
     },
     {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0972b302adbeb3489e101d3267770ec1.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/09907c04e0f52240a70533bcbb3726ed.gz",
@@ -612,52 +497,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/099cba4afbe468242ead4b10797cea03.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/09ede89962b9a27d9e2ebefe0d8ede78.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0a65e96572b6ee298ac340d2086896a9.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/0a6e31e7b239aba9fcf03f63d9863e1e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0a90f012d76960bdd93850b10fefbceb.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0ae8734b2da6ab2c417129373c2cc450.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -747,24 +587,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0e595ab2cd0b73d38c156edf71f3a37e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0e7989d0f5d4435fb3e66457901aaec2.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/0e9b0e759b15c676afab2c511900900d.gz",
       "retry_count": 1,
       "retryable": false,
@@ -835,15 +657,6 @@
       "timestamp": "2026-09-08T23:29:23-04:00"
     },
     {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/10c3102d0223ff4f9f44608e3ef7b1ef.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/11461820a2e916c745a9f8b8542304e3.gz",
@@ -864,15 +677,6 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/1317a8803cad576a41546d96e8d09341.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/1322d59c0d01953788b3752d2f95c935.gz",
       "retry_count": 1,
       "retryable": false,
@@ -883,15 +687,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/133a8939d22dda92a4e909883b05b181.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/13884ca7891b844a092d9952e0964dfe.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -945,34 +740,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/15e7fbac57866a046e61ba196ae1c8ad.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/1681490b09712bd5ee6eeeb72354990f.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/16b370be84b1e07e764606f1403ccbfc.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/17831bf286af8ac7629155b86cfd6012.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -991,15 +759,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/1870ff1e3d2f540fef36886254c19bf2.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/18b7b4d161da64bffe30467bf5865528.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -1027,15 +786,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/1a37d4ce1d966a911b206f50aec375c8.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/1b78553040b47a34392e78711c684f08.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -1134,15 +884,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/1e4dfaa8d836947da8fd55804d95be70.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/1ea888d0a831d6d7a7329906d5ade787.gz",
       "retry_count": 1,
       "retryable": false,
@@ -1222,15 +963,6 @@
       "timestamp": "2026-09-08T23:29:24-04:00"
     },
     {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/64b8fe4248429b42aadb166316558182.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/64ea2b511236f031377e98d9a781323b.gz",
@@ -1278,15 +1010,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/663c2aa9d3532712bd1ff10f6a79223b.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/6665ac5f413af6b8b675fa64b525c5b6.gz",
       "retry_count": 1,
       "retryable": false,
@@ -1324,15 +1047,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/67329365fb4263257dec609e488fbcf8.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/674a29fa2253ccedf737eafcca2949c3.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -1395,15 +1109,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/68ae2174c2b93dea638b624965cbe4f6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/68af63c1d8b64f261865edcd7a3e4b46.gz",
       "retry_count": 1,
       "retryable": false,
@@ -1423,15 +1128,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/691c6db3825fd473cb65d2106a5e277a.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6a66ceafa1f54aedb50982a2be19c211.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -1485,24 +1181,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6c875758ea6a3602b04d359cc0d697aa.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6d4aa984317b833d8e8a607d4fe31ab0.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/6d550490298484d6a48d1160d00e568a.gz",
       "retry_count": 1,
       "retryable": false,
@@ -1531,24 +1209,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/6e976c65eb9172dfe680ace3d4f53e4b.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6f1b6d4103eddd91ae48254f232d5c6a.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6fb5a8384ef8790918bb204f3d7b22d9.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -1630,15 +1290,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/731a942bfbe0a65c63bbb09427accc7e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/73d444518bac574e1997189ea4a4b006.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -1798,27 +1449,9 @@
       "timestamp": "2026-09-08T23:29:25-04:00"
     },
     {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/7adfb16d3478992df005901838f37b68.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
-    {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/7b312442b53b56361c60a3d0e1122baa.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/7be722962ccdf72f887978869eb7deea.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -1843,15 +1476,6 @@
       "timestamp": "2026-09-08T23:29:25-04:00"
     },
     {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/7cff131bd62208642716234b61408c44.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
-    {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/7e9718212ed3edc320427f4e0c6f7043.gz",
@@ -1864,24 +1488,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/7efcacae5bd4126e60573d8e5ad7f7f1.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/7f94c1beba7e5b7667bd739a77cd3292.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/802899b44418084a2a0c21b3920b44b2.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -1944,15 +1550,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/c0915ca93034aa3d30f3f889d3e06038.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/c0ea5103ba05feb353356de276cc1e17.gz",
       "retry_count": 1,
       "retryable": false,
@@ -1972,15 +1569,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/c175dacfac88cf6a5b4c5bb74a12a236.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/c20302cbe6d1436d63716851b7b1d2d5.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -2097,25 +1685,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/c80b625bb6ce511280c4a3c12edb64dc.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/c85881c12afa62ceffbece29f5deaf46.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/c85b48161b30b59092b4be87a1e10761.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -2134,15 +1704,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/c937746319e1ec3903bc3f696ee79163.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/c94d327adb8d07f854b8a6b17c19ee82.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -2169,43 +1730,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/ca1232a0aa99011bf3c86cc2ff144e32.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/cad2d531de425065a2271ed20c2d6d6d.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/caf357a97e9ec7cee17b7bda4349030c.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/cb0a4d1bd3e4f26f8d62923d77ed0286.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/cb461edf3aa42d62470ba8770d22c8e8.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -2340,15 +1865,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/d0e41b6e30d8740b85fbd43bded094fb.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/d1a2df5c131214911a9a915fdb72c71f.gz",
       "retry_count": 1,
       "retryable": false,
@@ -2377,15 +1893,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/d36131ec7b1db8598a92d9cd0593b629.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/d405423521425d1d086a3360446984a7.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -2466,25 +1973,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/d8507288a670843102686229230794e2.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/d8d200cf17348974b9c50b20afa72379.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/d8d81d71a74b828e832b5b1ba6b2fda9.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -2583,52 +2072,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/dd26c829b2eb5920c5c0ed63700fbee6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/ddec1dc3818da4e04e0205b79f44f9e7.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/de30b083129df0557d3f0e7fc3c574f4.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/de4bb18faa5a5ccbd243083a9332b441.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/de840b96c6f14f71d5758164e7cdf265.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/dea3cbfd95d015138a1b12184608b530.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -2696,15 +2140,6 @@
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:30:01-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "Recipes/Chipotle Sofritas.md",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/Brooke-white/RecipeParser",
-      "timestamp": "2026-09-08T23:37:39-04:00"
     },
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
@@ -2781,34 +2216,7 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "baked-chicken-alfredo.markdown",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/panozzaj/recipes",
-      "timestamp": "2026-09-08T23:37:39-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "chinese-restaurant-green-beans.markdown",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/panozzaj/recipes",
-      "timestamp": "2026-09-08T23:37:39-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "chorizo-meatloaf.markdown",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/panozzaj/recipes",
-      "timestamp": "2026-09-08T23:37:39-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "feta-and-spinach-turkey-burgers.markdown",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/panozzaj/recipes",
@@ -2835,24 +2243,6 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "oatmeal.markdown",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/panozzaj/recipes",
-      "timestamp": "2026-09-08T23:37:39-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "pressure-cooker-italian-sausage-in-sauce.markdown",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/panozzaj/recipes",
-      "timestamp": "2026-09-08T23:37:39-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "pumpkin-spice-usage.markdown",
       "retry_count": 2,
       "retryable": false,
@@ -2863,15 +2253,6 @@
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "ramen-upgrades.markdown",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/panozzaj/recipes",
-      "timestamp": "2026-09-08T23:37:39-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "salmon.markdown",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/panozzaj/recipes",
@@ -2944,15 +2325,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "internal/scraper/testdata/antilliaans-eten.html",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/reaper47/recipya",
-      "timestamp": "2026-09-08T23:37:34-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "internal/scraper/testdata/argiro.html",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/reaper47/recipya",
@@ -3321,15 +2693,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/2167933e35080c597ecae2fd2e2d28f6.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/219f2f000ca06e238f5cddd5ce2e5744.gz",
       "retry_count": 2,
       "retryable": false,
@@ -3366,43 +2729,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/22ee187add4066a3ee37041f9e5ec213.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/23897ea238676115103b379cf5e16643.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/238a1181f5e5565d8a83a0af294c15be.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/242249e6e51a0edbb9c66b32dd0fbc1d.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/24a9d3619d1a0901b1db547e22705b89.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3447,25 +2774,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/26304d5884678d5e2a9b27dc302c5892.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/263c8012096f6fa9c872527c2c4c4e74.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/26c7723033766556dcf423d9e44c19d4.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3501,15 +2810,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/277ea60d1bafbc0cb74b319f6fc0914e.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/287126de2568757a085798300b6e0d46.gz",
       "retry_count": 2,
       "retryable": false,
@@ -3519,25 +2819,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/28a327eb986822e1e6fda75b63b9eb44.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/297654e6f16dc725e258432730c78731.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/29fb3a53e00627aaf985d400a058f4bc.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3591,15 +2873,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/2be138431b534a1b79f3d5a06e9fbd96.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/2bf3984a016b8d5440f8a6c96ec88624.gz",
       "retry_count": 2,
       "retryable": false,
@@ -3627,25 +2900,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/2cf6e595d1e9cc20a0ab93ac43ce885f.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/2d04cdd978afaf244b42eb1c6411ba52.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/2d5833ad46e1fb3bafd920f6ad4e582d.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3691,15 +2946,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/2e745b8ad83217e756591e0448ac4b8d.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/2e93074efd34287c25a6c77bac5ecbc0.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3754,15 +3000,6 @@
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/33f35c43fa4ac70995a9582ed39c4eb9.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:35-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/33f8f54ce1b47c7af881c985b9ed3c6b.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3933,15 +3170,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/390f226bbb8c9cfaa0c263c9a193e059.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:36-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/393f42cb0e2dfa25ea3120cbbfffd1ad.gz",
       "retry_count": 2,
       "retryable": false,
@@ -3979,15 +3207,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/3a809a389818e784f5c9c1a75a4fd072.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:36-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/3a8dc554c5438537d6f5500ce4855d94.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4203,15 +3422,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/854b3dddc687c8bca9af859bd3e2e5d4.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:36-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/854f1e73ae22b851c2eaaa92ea1f2698.gz",
       "retry_count": 2,
       "retryable": false,
@@ -4284,15 +3494,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/8708de99386b31cf263a39e609d95a38.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:36-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/873aab5eb457ebadb729378a382e09e1.gz",
       "retry_count": 2,
       "retryable": false,
@@ -4329,24 +3530,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/889926a557af91886c502a678ffd30c3.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:36-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/88de08c7caf98842c31e204df988c797.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:36-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/890fcc7808ce510068a75b878bcd7f2d.gz",
       "retry_count": 2,
       "retryable": false,
@@ -4366,15 +3549,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/8a113f922a75bf6edba83aaa61e5f0a5.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:36-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/8a155057247aadbdcc31b37791ff5750.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4420,15 +3594,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/8d1ba2df0d152d042aafdef9f6c24325.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:37-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/8d63bfa6c1b3000c10f89b048669263b.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4635,15 +3800,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/96861bb4761033b574692b722112eb47.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:37-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/9694d103fd77e91589d013ed6250b97d.gz",
       "retry_count": 2,
       "retryable": false,
@@ -4681,15 +3837,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/986636687a5a2f273869399445ce399f.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:37-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/98a6ff2c5baddb6ce4f493500ac56cc5.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4788,15 +3935,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/9b4f597a735d9820f03dd828c0e3568f.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:37-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/9c717b4cf6045e9a6958854f50c7a1d7.gz",
       "retry_count": 2,
       "retryable": false,
@@ -4824,43 +3962,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/9ded56d41663c7ffb8b020d50eb81982.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:37-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/9e55d4415991dcc35fc0482255fdfc92.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:37-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/9e793bbf81e0c0be18b275d439cf1927.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:37-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/e040b597325f276f5c8360d0b82e3440.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:37-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/e09443c9665325e158ddebf83e278d41.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4959,24 +4061,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/e3d92ed9ab1de03fe08d8a0caf241518.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/e41cb54f858ec63275bd7ff1a451092b.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/e44617d1e618b33c0c2feb60043294e0.gz",
       "retry_count": 2,
       "retryable": false,
@@ -5058,15 +4142,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/e96d8c2343d76816c7acaf116d3f22b5.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/eaa8238db32a34fba7770d66a3646049.gz",
       "retry_count": 2,
       "retryable": false,
@@ -5085,15 +4160,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/eb743f98a191675ef849f22e675d8742.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/ebe55816cd7c43fa564db10bbbb63da4.gz",
       "retry_count": 2,
       "retryable": false,
@@ -5104,24 +4170,6 @@
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/ec091020d3d2fbf99a0065093bea641e.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/ec63585afba16202b0396624c43a9739.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/ec635caa82d1611754f1a9eeeb5a9b80.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -5175,34 +4223,7 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/ef12a388ae4c3263d2a8bce713589d88.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/ef8308cc960b968f7b6ad31ad050065a.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/f0130a06fbb4c2269b5e14c370b022c3.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/f022475d0b9cc616742dffd98f5ee246.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -5221,15 +4242,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/f225b20877b9c58757838c299337071f.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/f2a573c71157963da3b3b26bbc941957.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -5272,24 +4284,6 @@
       "timestamp": "2026-09-08T23:37:38-04:00"
     },
     {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/f3a77f21e25c8166b95c617e21ff6b01.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/f3d130779a201db5576a6841296a93b2.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/f3dc61c7f4d0a55180da9aa3cf43cbd9.gz",
@@ -5302,15 +4296,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/f4091b5845a708aaac01779f7d10cf04.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/f4242539c8eeeb1cf760aecf64e23253.gz",
       "retry_count": 2,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -5418,15 +4403,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/fb60bdd7acb4bcb72aa4b75febd01819.gz",
-      "retry_count": 2,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:37:38-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/fc0350bcb2540681dda4cb1ddba2f4a3.gz",
       "retry_count": 2,
       "retryable": false,
@@ -5472,34 +4448,7 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "APPETIZERS/diff_asian_chicken_wings.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "APPETIZERS/v3rtig0_Mashed_Potato_Croquettes.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "DESSERTS/acai_bowl.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "DESSERTS/keto_marbled_turtle_cheesecake.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
@@ -5517,29 +4466,11 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "ENTREES/wimzkl_caramelized-onion-mushroom-stuffin.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "ENTREES/wireheadlance_grandmothers_chicken_and_gravy.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
       "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "README.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/andrewkern/bagels",
-      "timestamp": "2026-09-08T23:36:21-04:00"
     },
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
@@ -5575,15 +4506,6 @@
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/aweijnitz/recipe-el_fuego_viviente",
-      "timestamp": "2026-09-08T23:36:21-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "sexy-chicken-schnitzel.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://gist.github.com/buggymcbugfix/602f34214a37d972993830c2c9526cf0",
       "timestamp": "2026-09-08T23:36:21-04:00"
     },
     {
@@ -5697,15 +4619,6 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "internal/scraper/testdata/livingthegreenlife.html",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/reaper47/recipya",
-      "timestamp": "2026-09-08T23:36:02-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "internal/scraper/testdata/maangchi2.html",
       "retry_count": 1,
       "retryable": false,
@@ -5752,15 +4665,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "internal/scraper/testdata/panelinha.html",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/reaper47/recipya",
-      "timestamp": "2026-09-08T23:36:06-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "internal/scraper/testdata/paninihappy.html",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/reaper47/recipya",
@@ -6075,15 +4979,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/414d12c7a15a4bbeea63c9c10ec0cbbd.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/4255d6dca231db0afdfe25cacbbf0e9e.gz",
       "retry_count": 1,
       "retryable": false,
@@ -6130,24 +5025,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/43bfbf19b50613306d28368a306bb018.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/43ff14353bdee28d44ee9d66a49c72d5.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/44310b842d060fb41376e4f1e5a371fe.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6228,25 +5105,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/47cd6d30edeef9b06c1ae204e740c582.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/4844b8ef5b9e75840a8d35a4d50fa4e6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/486f34508e8a0aa993cd77a7086f3359.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6273,52 +5132,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/48ec4474c7d048c59f0e653caa3d6359.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4960d988628bc584ae416d15fc777417.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4991026055db9ed01254155bc8ba0014.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/4a884eef6dadc17f9d91e94f4b1a0309.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4aef54257f3ca828afa9e7762f2905c9.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4b56b9ce746f704a10aa90b3290d1249.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6372,15 +5186,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4d7f1d468f33d67d6640b94bc6eb99db.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/4d867783eac47a637a06a0d1809ac122.gz",
       "retry_count": 1,
       "retryable": false,
@@ -6399,25 +5204,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4e4104e4ddfaa7d07c14f62ce86df0d3.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/4e488e2e00346f4e9165164c0a4f06a4.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4e7f33d958803edde521863da8cb584f.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6489,15 +5276,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5306c3b3a97fa2dcf3d27ddefcbe02d6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/5386b9ba11f211ade18b91504becf0c3.gz",
       "retry_count": 1,
       "retryable": false,
@@ -6526,15 +5304,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/5538cf5609d741280e05908f2b7a237b.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/554bd86f030eddafd6eb4f2bb4351a05.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6571,15 +5340,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/56770d0051b22be1eca217ed18732740.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/570b939d6f80273215296812c39ca998.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6651,34 +5411,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5a09daa9bb6df252cad92be643c5ec96.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/5a0bcf6ebbf0112d0f6af6d2899a005e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5a51970373fb3e58bbf44036bb697c6d.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5ac7bcb41683980e26e83a07e2b6fa7c.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6705,25 +5438,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5bca7afe81a6754547d03335fd10a417.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/5c9d3f298bb2a093ce0c927ccd6d3c81.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5dccfa5067b788e7c464ff90fb002bab.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6739,45 +5454,9 @@
       "timestamp": "2026-09-08T23:36:16-04:00"
     },
     {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5e5f6c2a0e6e4d3e1c36c2a195997585.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5e647654558f16fe321ce4136f36807c.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/5e7a2fa6573b4464ad36b597e7a9bd67.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5ea0054cd515009f55b7d1793185b6d9.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5ebc916e36229a32c1707e5b53e54b04.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6804,25 +5483,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/605dee9d96726c695b390e32eb901cd1.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/60c93ba1169ddb446f2fe7d1a10518e8.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/60e158cca908c504dfe4bd714aa173a5.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6840,15 +5501,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6140598eb408c16761ead6a1cc5e582f.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/61777ca4784392eee36e2142d4a4ea0e.gz",
       "retry_count": 1,
       "retryable": false,
@@ -6858,43 +5510,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/9ef007f1b294de5da6058f689fc6bd37.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/9f11144756acc4e98aac468ac10688c6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/9f8d708e3b4d712ce3c5004d490df4c9.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/9ffdf4d88b2cf98f93809950a9e592f7.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a0155a65412e5302ff953b5cfaa09530.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6939,25 +5555,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a20479de7cad37e7b7a838b7efab976f.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/a23672a9f850529105e26b632b7000c6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a23c6326fa433c12686eb2c05b55dbe6.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -7056,25 +5654,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a650d8424196a697aa9309e4763c0f11.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/a663d84291bd3f788f4168e3c93c18f7.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a68a4c4ee0dbac29cd0bd9fa0a0e94e9.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -7164,15 +5744,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a95c922c7bbe88f95e42d8f60bd97ae2.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/a96fa52ffe48350dc3963d33e8bdf5fd.gz",
       "retry_count": 1,
       "retryable": false,
@@ -7245,15 +5816,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/af7b39969b7a6a86e12a17b707e892cc.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/af8f4879d9e8087deef76d2c59fff5bb.gz",
       "retry_count": 1,
       "retryable": false,
@@ -7273,15 +5835,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/afc94ee841728b19513b1704fd6f27e0.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/b0fa89a22b760077df1ce7aa1211a853.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -7416,15 +5969,6 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/b50801b20c5484b9ef561cda70c5c3c3.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/b57f84ef795098efea443afaab2be56f.gz",
       "retry_count": 1,
       "retryable": false,
@@ -7435,15 +5979,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/b5a36488dc9e86ffaaacfd4e149659ec.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/b5d03ee93346cbd8ffb064ee8394f3e4.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -7497,34 +6032,7 @@
     {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/bad42be9d81a9a5344e982abd6d5ec7e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/bb310b0f6d18a2f2992f7655537d1428.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/bb3e5d2949b596a624375c95c622fc6a.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/bc1108884caa9eee6637d5682050aca8.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -7605,42 +6113,6 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "base_layers/asian_marinade.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/baja_beer_batter.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/basic_shredded_chicken.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/battered_catfish.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "base_layers/bellpepper.md",
       "retry_count": 1,
       "retryable": false,
@@ -7659,52 +6131,7 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "base_layers/bulgar_black_bean_filling.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/chopped_pork.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/chopped_steak.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/crock_pot_pulled_pork.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "base_layers/marinated_portobello.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/moroccan_lamb.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -7731,106 +6158,7 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "base_layers/pan_seared_salmon.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/pork_belly.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/puerco_pibil.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/rajas_poblanas.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/slow_cooked_salsa_verde_chicken.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/smokey_turkey.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/soyrizo.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/swiss_chard.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/Pico_de_gallo.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "condiments/avocado_mango_cilantro_salsa.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/baja_white_sauce.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/beet_salsa.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -7848,15 +6176,6 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "condiments/cashew_cheeze.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "condiments/cilantro_and_onion.md",
       "retry_count": 1,
       "retryable": false,
@@ -7866,79 +6185,7 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "condiments/european_sour_cream.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/garlic_lime_sauce.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/guacamole.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "condiments/lime.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/mango_lime_salsa.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/pickled_red_onions.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/pickled_vegetables.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/salsa_de_aguacate.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/salsa_sauce.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -8020,15 +6267,6 @@
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "full_tacos/fish_tacos.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "full_tacos/moroccan_lamb_taco.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -8136,15 +6374,6 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "like_tacos/Chicken_Makloub.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "like_tacos/Tunisian_makloub.md",
       "retry_count": 1,
       "retryable": false,
@@ -8163,43 +6392,7 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "like_tacos/beef_vindaloo_on_naan.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "like_tacos/pickle_pita.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "like_tacos/taco_burger.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "mixins/Corn_Salad.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "mixins/Potato_hash.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -8253,15 +6446,6 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "mixins/mushroom_wasabi_salad.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "mixins/pineapple.md",
       "retry_count": 1,
       "retryable": false,
@@ -8280,43 +6464,7 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "mixins/sweet_potato_and_apple_hash.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "mixins/tomatoes_traditional_us.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "mixins/traditional_taco_mixins.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "mixins/veg_for_fish_tacos.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "seasonings/basic_dry_rub.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -8343,25 +6491,7 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "seasonings/quick_and_dirty_spice_mix.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "seasonings/sriracha_marinade.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "seasonings/sriracha_salt.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -8375,15 +6505,6 @@
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "seasonings/universal_taco_seasoning.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:20-04:00"
     },
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
@@ -8406,24 +6527,6 @@
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
-      "item_identifier": "shells/homemade_tortillas.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "shells/low-carb_taco_shells.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
       "item_identifier": "shells/naan.md",
       "retry_count": 1,
       "retryable": false,
@@ -8438,436 +6541,913 @@
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:20-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/case2711.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:30-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseB.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:31-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseD.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:31-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseE.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:31-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseImage.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:32-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseIngredient.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:32-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseInstruction.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:32-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-09aba125b57a-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:36-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-1d9a002d7234-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-2.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-3.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-44e8d670719d-4.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-86054b40fd06-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-ba1e4a6cfe99-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/backups/backup-version-bcfdad6b7355-1.zip",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Explicit placeholder import fixture: Test Recipe title, test ingredients and Directions. Will go here. text",
+      "error_type": "SyntheticRecipeError",
+      "item_identifier": "tests/data/migrations/plantoeat.csv",
+      "retry_count": 2,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:36:37-04:00"
+    },
+    {
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "error_message": "Archive fully inspected: only assets and explicitly empty/anonymized recipe data",
+      "error_type": "ValueError",
+      "item_identifier": "tests/data/migrations/plantoeat.zip",
+      "retry_count": 3,
+      "retryable": false,
+      "source": "https://github.com/mealie-recipes/mealie",
+      "timestamp": "2026-09-09T00:37:57-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe2.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:33-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe3.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:33-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe4.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:34-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe5.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:34-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe6.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:35-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe7.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:35-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe8.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:36-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe9.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:36-04:00"
     }
   ],
   "item_accounting": "Recipe candidate files; a structured file can contain multiple records.",
   "recipes_discovered": null,
   "recipes_failed": null,
-  "recipes_successfully_processed": 2235,
-  "records_written": 2235,
+  "recipes_successfully_processed": 2589,
+  "records_written": 2589,
+  "source_status_counts": {
+    "BLOCKED": 4,
+    "COMPLETE": 8,
+    "NOT_A_RECIPE_SOURCE": 16,
+    "PARTIAL": 12,
+    "UNSUPPORTED": 2
+  },
   "sources": [
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 81,
-      "candidate_files_failed": 12,
-      "candidate_files_processed": 69,
-      "collection_complete": true,
+      "candidate_files_failed": 6,
+      "candidate_files_processed": 75,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 0,
       "id": "panozzaj--recipes",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 14,
       "candidate_files_failed": 0,
       "candidate_files_processed": 14,
       "collection_complete": true,
+      "completion_status": "COMPLETE",
+      "deliberately_excluded": 0,
       "id": "obfuscurity--food-recipes",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 151,
       "candidate_files_failed": 5,
       "candidate_files_processed": 146,
-      "collection_complete": true,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 2,
       "id": "dolph--recipes",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "BLOCKED",
+      "deliberately_excluded": 0,
       "id": "kmcconnell--recipyzer",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Command '['git', 'clone', '--depth', '1', '--filter=blob:none', '--sparse', 'https://github.com/kmcconnell/recipyzer', '.cache/recipes/kmcconnell--recipyzer']' returned non-zero exit status 128.",
-      "status": "blocked"
+      "status": "blocked",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 60,
-      "candidate_files_failed": 7,
-      "candidate_files_processed": 53,
-      "collection_complete": true,
+      "candidate_files_failed": 3,
+      "candidate_files_processed": 57,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 0,
       "id": "DEAD10C5--1337-Noms-The-Hacker-Cookbook",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "BLOCKED",
+      "deliberately_excluded": 0,
       "id": "user24--auntiesrecipes",
       "index_entries_discovered": 11161,
+      "potential_unexplored_candidates": 0,
       "reason": "11,161 title/search entries discovered. BBC robots explicitly disallow ChatGPT-User/GPTBot/OAI-SearchBot and agentic extraction; no remote sitemap or bodies fetched. See state/recipes/bbc-access.json.",
-      "status": "blocked"
+      "status": "blocked",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 370,
       "candidate_files_failed": 0,
       "candidate_files_processed": 370,
       "collection_complete": true,
+      "completion_status": "COMPLETE",
+      "deliberately_excluded": 0,
       "id": "Anduin2017--HowToCook",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 14,
-      "candidate_files_failed": 7,
-      "candidate_files_processed": 7,
-      "collection_complete": true,
+      "candidate_files_failed": 3,
+      "candidate_files_processed": 11,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 1,
       "id": "hendricius--the-bread-code",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "BLOCKED",
+      "deliberately_excluded": 0,
       "id": "usmanayubsh--cooking-recipes",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Command '['git', 'clone', '--depth', '1', '--filter=blob:none', '--sparse', 'https://github.com/usmanayubsh/cooking-recipes', '.cache/recipes/usmanayubsh--cooking-recipes']' returned non-zero exit status 128.",
-      "status": "blocked"
+      "status": "blocked",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "AshtarCodes--Con-Sazon",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Repository is a server application; recipes live in a separate authenticated database, no recipe corpus in the complete tree.",
-      "status": "not-a-recipe-source"
+      "status": "not-a-recipe-source",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 55,
       "candidate_files_failed": 0,
       "candidate_files_processed": 55,
       "collection_complete": true,
+      "completion_status": "COMPLETE",
+      "deliberately_excluded": 0,
       "id": "douvy--tasty-cooking",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "UNSUPPORTED",
+      "deliberately_excluded": 0,
       "id": "YunYouJun--cook",
       "index_entries_discovered": 599,
+      "potential_unexplored_candidates": 0,
       "reason": "CSV contains ingredient names and video links, but no written instructions. Video transcription adapter unavailable; index preserved for future collection.",
-      "status": "unsupported"
+      "status": "unsupported",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 5,
       "candidate_files_failed": 4,
       "candidate_files_processed": 1,
-      "collection_complete": true,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 0,
       "id": "aweijnitz--recipe-el_fuego_viviente",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 1,
       "candidate_files_failed": 0,
       "candidate_files_processed": 1,
       "collection_complete": true,
+      "completion_status": "COMPLETE",
+      "deliberately_excluded": 0,
       "id": "hendricius--pizza-dough",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 163,
-      "candidate_files_failed": 93,
-      "candidate_files_processed": 70,
-      "collection_complete": true,
+      "candidate_files_failed": 48,
+      "candidate_files_processed": 115,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 0,
       "id": "sinker--tacofancy",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 1,
-      "candidate_files_failed": 1,
-      "candidate_files_processed": 0,
+      "candidate_files_failed": 0,
+      "candidate_files_processed": 1,
       "collection_complete": true,
+      "completion_status": "COMPLETE",
+      "deliberately_excluded": 0,
       "id": "buggymcbugfix--602f34214a37d972993830c2c9526cf0",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "UNSUPPORTED",
+      "deliberately_excluded": 0,
       "id": "hendricius--the-sourdough-framework",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "LaTeX instructional book with formulas spread across chapters and included tables; no reliable recipe-boundary adapter yet.",
-      "status": "unsupported"
+      "status": "unsupported",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 1,
-      "candidate_files_failed": 1,
-      "candidate_files_processed": 0,
+      "candidate_files_failed": 0,
+      "candidate_files_processed": 1,
       "collection_complete": true,
+      "completion_status": "COMPLETE",
+      "deliberately_excluded": 0,
       "id": "andrewkern--bagels",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "BLOCKED",
+      "deliberately_excluded": 0,
       "id": "frenchguycooking--doughsheeter",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Command '['git', 'clone', '--depth', '1', '--filter=blob:none', '--sparse', 'https://github.com/frenchguycooking/doughsheeter', '.cache/recipes/frenchguycooking--doughsheeter']' returned non-zero exit status 128.",
-      "status": "blocked"
+      "status": "blocked",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "karlomikus--bar-assistant",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Cocktail-only software excluded by source type.",
-      "status": "disabled"
+      "status": "disabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "AndreWohnsland--CocktailBerry",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Cocktail machine software excluded by source type.",
-      "status": "disabled"
+      "status": "disabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "alfg--opendrinks",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Drinks/cocktail-only corpus excluded by source type.",
-      "status": "disabled"
+      "status": "disabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 37,
       "candidate_files_failed": 1,
       "candidate_files_processed": 36,
-      "collection_complete": true,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 0,
       "id": "clarklab--chowdown",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "domingoclub--fermenter-software",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Fermentation hardware control software, no recipe corpus in inspected tree.",
-      "status": "not-a-recipe-source"
+      "status": "not-a-recipe-source",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "Murgio--Food-Recipe-CNN",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "ML classification project excluded by source type (includes scraped classifier data).",
-      "status": "disabled"
+      "status": "disabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 1,
       "candidate_files_failed": 0,
       "candidate_files_processed": 1,
       "collection_complete": true,
+      "completion_status": "COMPLETE",
+      "deliberately_excluded": 0,
       "id": "pearofducks--foodprocessor",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "grocy--grocy",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Household management software; tree has synthetic data generators, no authored recipe corpus.",
-      "status": "not-a-recipe-source"
+      "status": "not-a-recipe-source",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "hmontazeri--is-vegan",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Vegan ingredient identification tool, not recipes.",
-      "status": "not-a-recipe-source"
+      "status": "not-a-recipe-source",
+      "unresolved_archive_members": []
     },
     {
-      "candidate_files_discovered": 22,
-      "candidate_files_failed": 3,
-      "candidate_files_processed": 19,
-      "collection_complete": true,
+      "candidate_accounting_complete": true,
+      "candidate_files_discovered": 42,
+      "candidate_files_failed": 14,
+      "candidate_files_processed": 28,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 11,
       "id": "mealie-recipes--mealie",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": [
+        {
+          "container": "tests/data/migrations/recipekeeper.zip",
+          "member": "recipes.html",
+          "reason": "Non-recipe asset or directory",
+          "records": 95,
+          "status": "partial"
+        },
+        {
+          "container": "tests/data/migrations/recipekeeper.zip",
+          "member": "recipes.html#90",
+          "reason": "Missing explicit title, ingredient or instruction section",
+          "status": "failed"
+        }
+      ]
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "kirmanak--Mealient",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Recipe-manager Android client; no recipe corpus in inspected tree.",
-      "status": "not-a-recipe-source"
+      "status": "not-a-recipe-source",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "eleow--IRS-MR-2019-07-01-IS1FT-GRP-MEWPlanner",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Meal planning software includes a nutrient/food database, not ingredient-and-instruction recipes.",
-      "status": "not-a-recipe-source"
+      "status": "not-a-recipe-source",
+      "unresolved_archive_members": []
     },
     {
-      "candidate_files_discovered": 1608,
-      "candidate_files_failed": 680,
-      "candidate_files_processed": 928,
-      "collection_complete": true,
+      "candidate_accounting_complete": true,
+      "candidate_files_discovered": 1609,
+      "candidate_files_failed": 533,
+      "candidate_files_processed": 1076,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 0,
       "id": "schollz--meanrecipe",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
-      "candidate_files_discovered": 26,
-      "candidate_files_failed": 17,
-      "candidate_files_processed": 9,
-      "collection_complete": true,
+      "candidate_accounting_complete": true,
+      "candidate_files_discovered": 47,
+      "candidate_files_failed": 24,
+      "candidate_files_processed": 23,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 9,
       "id": "nextcloud--cookbook",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "steve71--RasPiBrew",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Brewing/temperature-controller software excluded by source type.",
-      "status": "disabled"
+      "status": "disabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "bryceadams--Recipe-Hero",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Recipe management plugin, no recipe corpus in inspected tree.",
-      "status": "not-a-recipe-source"
+      "status": "not-a-recipe-source",
+      "unresolved_archive_members": []
     },
     {
-      "candidate_files_discovered": 114,
-      "candidate_files_failed": 1,
-      "candidate_files_processed": 113,
+      "candidate_accounting_complete": true,
+      "candidate_files_discovered": 115,
+      "candidate_files_failed": 0,
+      "candidate_files_processed": 115,
       "collection_complete": true,
+      "completion_status": "COMPLETE",
+      "deliberately_excluded": 0,
       "id": "Brooke-white--RecipeParser",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
-      "candidate_files_discovered": 416,
-      "candidate_files_failed": 97,
-      "candidate_files_processed": 319,
-      "collection_complete": true,
+      "candidate_accounting_complete": true,
+      "candidate_files_discovered": 425,
+      "candidate_files_failed": 102,
+      "candidate_files_processed": 323,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 0,
       "id": "reaper47--recipya",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "dpapathanasiou--recipebook",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Scraping application; site adapters present but no bundled recipe corpus.",
-      "status": "not-a-recipe-source"
+      "status": "not-a-recipe-source",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": true,
       "candidate_files_discovered": 27,
       "candidate_files_failed": 5,
       "candidate_files_processed": 22,
-      "collection_complete": true,
+      "collection_complete": false,
+      "completion_status": "PARTIAL",
+      "deliberately_excluded": 0,
       "id": "TandoorRecipes--recipes",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
-      "status": "enabled"
+      "status": "enabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "dytlabs--Cook-It-Android-XML-Template",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Developer Android XML UI template, excluded by source type.",
-      "status": "disabled"
+      "status": "disabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "mrezkys--hungry",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Developer Flutter UI template, excluded by source type.",
-      "status": "disabled"
+      "status": "disabled",
+      "unresolved_archive_members": []
     },
     {
+      "candidate_accounting_complete": false,
       "candidate_files_discovered": 0,
       "candidate_files_failed": 0,
       "candidate_files_processed": 0,
       "collection_complete": false,
+      "completion_status": "NOT_A_RECIPE_SOURCE",
+      "deliberately_excluded": 0,
       "id": "dopebase--react-native-recipes-app",
       "index_entries_discovered": null,
+      "potential_unexplored_candidates": 0,
       "reason": "Developer UI template with mock sample data, excluded by source type.",
-      "status": "disabled"
+      "status": "disabled",
+      "unresolved_archive_members": []
     }
   ],
-  "sources_completed": 20,
+  "sources_accounted": 20,
+  "sources_completed": 8,
   "sources_discovered": 42,
   "sources_enabled": 20,
   "start_timestamp": "2026-09-08T23:26:03-04:00",

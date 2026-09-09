@@ -1,0 +1,196 @@
+{
+  "agent": "recipe-agent-06",
+  "completed_at": "2026-09-09T00:40:05-04:00",
+  "completion_status": "complete-with-failures",
+  "current_cursor": "schollz--meanrecipe:src/testing/chocolate_chips.gz",
+  "failure_history": [
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "internal/models/testdata/ocr/recipe2.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:33-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "internal/models/testdata/ocr/recipe3.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:33-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "internal/models/testdata/ocr/recipe4.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:34-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "internal/models/testdata/ocr/recipe5.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:34-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "internal/models/testdata/ocr/recipe6.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:35-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "internal/models/testdata/ocr/recipe7.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:35-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "internal/models/testdata/ocr/recipe8.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:36-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "internal/models/testdata/ocr/recipe9.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:36-04:00"
+    }
+  ],
+  "failures": {
+    "reaper47--recipya:internal/models/testdata/ocr/recipe2.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe2.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:33-04:00"
+    },
+    "reaper47--recipya:internal/models/testdata/ocr/recipe3.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe3.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:33-04:00"
+    },
+    "reaper47--recipya:internal/models/testdata/ocr/recipe4.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe4.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:34-04:00"
+    },
+    "reaper47--recipya:internal/models/testdata/ocr/recipe5.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe5.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:34-04:00"
+    },
+    "reaper47--recipya:internal/models/testdata/ocr/recipe6.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe6.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:35-04:00"
+    },
+    "reaper47--recipya:internal/models/testdata/ocr/recipe7.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe7.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:35-04:00"
+    },
+    "reaper47--recipya:internal/models/testdata/ocr/recipe8.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe8.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:36-04:00"
+    },
+    "reaper47--recipya:internal/models/testdata/ocr/recipe9.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "internal/models/testdata/ocr/recipe9.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-09T00:07:36-04:00"
+    }
+  },
+  "processed": {
+    "reaper47--recipya:internal/models/testdata/ocr/recipe1.json": [
+      "179adcaf29649c9ef98131e8"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chips.gz": [
+      "9b89c6a984cd0e724f78b62a"
+    ]
+  },
+  "sources": {
+    "reaper47--recipya": {
+      "discovered": [
+        "internal/models/testdata/ocr/recipe1.json",
+        "internal/models/testdata/ocr/recipe2.json",
+        "internal/models/testdata/ocr/recipe3.json",
+        "internal/models/testdata/ocr/recipe4.json",
+        "internal/models/testdata/ocr/recipe5.json",
+        "internal/models/testdata/ocr/recipe6.json",
+        "internal/models/testdata/ocr/recipe7.json",
+        "internal/models/testdata/ocr/recipe8.json",
+        "internal/models/testdata/ocr/recipe9.json"
+      ],
+      "discovery_complete": true,
+      "revision": "7dad2d386faf26322c782ed28a8e124ea8190525"
+    },
+    "schollz--meanrecipe": {
+      "discovered": [
+        "src/testing/chocolate_chips.gz"
+      ],
+      "discovery_complete": true,
+      "revision": "10ee77d55eb318a464e00dc08bc7125fdf243667"
+    }
+  },
+  "started_at": "2026-09-09T00:07:33-04:00",
+  "updated_at": "2026-09-09T00:07:37-04:00"
+}

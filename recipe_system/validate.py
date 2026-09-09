@@ -13,7 +13,12 @@ def validate(root):
     counts = {}
     kinds = {
         "data/recipes/raw/*.jsonl": "raw-recipe",
-        "data/recipes/normalized/*.jsonl": "normalized-recipe",
+        "data/recipes/normalized/recipes.jsonl": "normalized-recipe",
+        "data/recipes/merged.jsonl": "raw-recipe",
+        "data/recipes/normalized/quality-issues.jsonl": "normalization-issue",
+        "data/foodlion/evidence/products.jsonl": "evidence-product",
+        "data/foodlion/evidence/ingredients.jsonl": "evidence-ingredient",
+        "state/recipes/recovery/*.jsonl": "recovery-item",
         "data/foodlion/raw/*.jsonl": "product",
         "data/foodlion/products.jsonl": "product",
         "data/foodlion/ingredients.jsonl": "ingredient",
@@ -63,12 +68,36 @@ def validate(root):
     for ingredient in read_jsonl(root / "data/foodlion/ingredients.jsonl"):
         assert all(pid in products for pid in ingredient["product_ids"])
         assert ingredient["product_count"] == len(ingredient["product_ids"])
+    catalog_products = {
+        p["product_id"]: p for p in read_jsonl(root / "data/foodlion/evidence/products.jsonl")
+    }
+    if catalog_products:
+        from .evidence import validate_evidence
+
+        validate_evidence(root)
     for result in read_jsonl(root / "data/matches/results.jsonl"):
         assert result["recipe_id"] in raw
         for item in result["ingredient_matches"]:
-            if item["status"] == "available":
+            if item["status"] == "verified_available":
                 assert item["product_ids"] and item["snapshot_id"] and item["store_id"]
                 assert all(pid in products for pid in item["product_ids"])
+            elif item["status"] == "likely_available":
+                assert item["product_ids"] and item["evidence"]
+                assert all(
+                    pid in catalog_products or pid in products for pid in item["product_ids"]
+                )
+                assert all(e.get("source_url") and e.get("retrieved_at") for e in item["evidence"])
+            elif item["status"] == "unknown":
+                assert not item["product_ids"]
+        assert result["total_ingredients"] == sum(
+            result[key]
+            for key in [
+                "verified_ingredient_count",
+                "likely_ingredient_count",
+                "unknown_ingredient_count",
+                "unsupported_ingredient_count",
+            ]
+        )
     for path in (root / "snapshots/foodlion").glob("*/manifest.json"):
         manifest = json.loads(path.read_text())
         if manifest["completion_status"] == "complete":
@@ -90,7 +119,16 @@ def validate(root):
     if content.exists():
 
         def check_content(value, key=""):
-            if key in {"source", "source_url", "original_source_url", "source_license_url", "url"}:
+            if key in {
+                "source",
+                "source_url",
+                "original_source_url",
+                "source_license_url",
+                "evidence_source_url",
+                "source_path",
+                "archive_member",
+                "url",
+            }:
                 return
             if isinstance(value, dict):
                 for child_key, child in value.items():

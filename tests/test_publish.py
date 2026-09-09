@@ -124,3 +124,84 @@ def test_source_urls_are_immutable_even_when_containing_measure_words(tmp_path):
     assert f'href="{original}"' in page
     assert f'href="{collected}"' in page
     assert not FORBIDDEN.search(visible_text(page))
+
+
+def test_evidence_states_and_unassessed_score_are_visible(tmp_path):
+    prepare(tmp_path)
+    data = publish(tmp_path)
+    row = data["recipes"][0]
+    row["ingredients"] += [
+        {"canonical_ingredient": "salt"},
+        {"canonical_ingredient": "tomato"},
+    ]
+    row["match"].update(
+        recommendation_status="recommended-with-caveats",
+        foodlion_score=None,
+        foodlion_coverage=0.67,
+        foodlion_verified_coverage=0,
+        verified_ingredient_count=0,
+        likely_ingredient_count=2,
+        unknown_ingredient_count=1,
+        unsupported_ingredient_count=0,
+        score_denominator=60,
+        ingredient_matches=[
+            {"canonical_ingredient": "olive oil", "status": "likely_available"},
+            {"canonical_ingredient": "salt", "status": "unknown"},
+            {"canonical_ingredient": "tomato", "status": "verified_available"},
+        ],
+    )
+    atomic_json(tmp_path / "site/content/recipes.json", data)
+    build(tmp_path)
+    page = (tmp_path / "site/dist/recipes/test.html").read_text()
+    assert "Likely available" in page
+    assert "data-availability='unknown'>Unknown" in page
+    assert "data-availability='verified_available'>Verified" in page
+    assert "Food Lion: Not assessed" in page
+    assert "Verified store coverage" in page
+    assert 'data-verified-coverage="0">0%' in page
+    assert "Food Lion catalog coverage" in page
+    assert "Provisional recommendation" in page
+    assert "60 assessed weight points" in page
+
+
+def test_variant_control_preserves_access_to_all_records(tmp_path):
+    prepare(tmp_path)
+    data = publish(tmp_path)
+    data["recipes"][0]["match"]["ranking_representative"] = False
+    atomic_json(tmp_path / "site/content/recipes.json", data)
+    build(tmp_path)
+    page = (tmp_path / "site/dist/index.html").read_text()
+    assert 'id="include-variants"' in page
+    assert 'data-representative="false"' in page
+    assert 'href="recipes/test.html"' in page
+
+
+def test_package_and_count_display_preserves_cooking_facts(tmp_path):
+    prepare(tmp_path)
+    from recipe_system.core import read_jsonl
+
+    path = tmp_path / "data/recipes/normalized/recipes.jsonl"
+    rows = read_jsonl(path)
+    rows[0]["ingredients"] = [
+        {
+            "canonical_ingredient": "chickpea",
+            "quantity": 2,
+            "display": "2 (425 g) cans chickpeas, drained",
+            "count_unit": "cans",
+            "package": {"count": 2, "quantity": 425, "unit": "g", "container": "can"},
+            "original_text": "2 (15 oz) cans chickpeas, drained",
+        }
+    ]
+    rows[0]["quality_issues"] = ["ingredient table contains an unresolved row"]
+    write_jsonl(path, rows)
+    data = publish(tmp_path)
+    ingredient = data["recipes"][0]["ingredients"][0]
+    assert ingredient["package"]["quantity"] == 425
+    assert ingredient["count_unit"] == "cans"
+    assert "original_text" not in ingredient
+    build(tmp_path)
+    page = (tmp_path / "site/dist/recipes/test.html").read_text()
+    assert "2 (425 g) cans chickpeas, drained" in page
+    assert "Recipe data needs review" in page
+    assert "ingredient table contains an unresolved row" in page
+    assert "15 oz" not in page

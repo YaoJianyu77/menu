@@ -1,0 +1,36 @@
+{
+  "by_initial_error": {
+    "Missing ingredient or instruction section; source retained for adapter improvement": 232,
+    "No supported Recipe structure; original file preserved in pinned Git cache": 702
+  },
+  "by_root_cause": {
+    "HTML": 113,
+    "alternate-markdown-layout": 74,
+    "captured-access-or-missing-page": 96,
+    "duplicate/non-recipe-file": 3,
+    "incomplete-cached-content": 64,
+    "instructions-parser-failure": 198,
+    "other": 55,
+    "repository-metadata": 9,
+    "unlabelled-or-index-archive": 322
+  },
+  "by_source": {
+    "Brooke-white--RecipeParser": 1,
+    "DEAD10C5--1337-Noms-The-Hacker-Cookbook": 7,
+    "TandoorRecipes--recipes": 5,
+    "andrewkern--bagels": 1,
+    "aweijnitz--recipe-el_fuego_viviente": 4,
+    "buggymcbugfix--602f34214a37d972993830c2c9526cf0": 1,
+    "clarklab--chowdown": 1,
+    "dolph--recipes": 5,
+    "hendricius--the-bread-code": 7,
+    "mealie-recipes--mealie": 3,
+    "nextcloud--cookbook": 17,
+    "panozzaj--recipes": 12,
+    "reaper47--recipya": 97,
+    "schollz--meanrecipe": 680,
+    "sinker--tacofancy": 93
+  },
+  "criterion": "Confident nonrecipe only explicit TODO/pointer or synthetic fixture tokens. Ambiguous index/prose remains unsupported. Explicit ingredient/component evidence without a complete parse is legitimate failure. Historical access responses remain blocked; no network retry bypass.",
+  "initial_failures": 934
+}

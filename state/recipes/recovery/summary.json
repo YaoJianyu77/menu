@@ -1,0 +1,22 @@
+{
+  "blocked": 96,
+  "by_root_cause": {
+    "HTML": 113,
+    "alternate-markdown-layout": 74,
+    "captured-access-or-missing-page": 96,
+    "duplicate/non-recipe-file": 3,
+    "incomplete-cached-content": 64,
+    "instructions-parser-failure": 198,
+    "other": 55,
+    "repository-metadata": 9,
+    "unlabelled-or-index-archive": 322
+  },
+  "classification_criterion": "Confident nonrecipe only explicit TODO/pointer or synthetic fixture tokens. Ambiguous index/prose remains unsupported. Explicit ingredient/component evidence without a complete parse is legitimate failure. Historical access responses remain blocked; no network retry bypass.",
+  "initial_failures": 934,
+  "non_recipe_candidates_correctly_rejected": 12,
+  "parser_version": "layout-recovery-v2",
+  "recovered": 212,
+  "remaining_legitimate_recipe_failures": 134,
+  "remaining_total": 722,
+  "unsupported": 480
+}

@@ -2,7 +2,11 @@
   "item_counts": [
     1055,
     1058,
-    1054
+    1054,
+    21,
+    20,
+    10,
+    1
   ],
   "partitions": {
     "recipe-agent-01": [
@@ -3898,7 +3902,382 @@
           "url": "https://github.com/hendricius/pizza-dough"
         }
       }
+    ],
+    "recipe-agent-04": [
+      {
+        "paths": [
+          "tests/Unit/Helper/HTMLParser/res_JsonLd/caseA.json",
+          "tests/Unit/Helper/HTMLParser/res_JsonLd/caseB.json",
+          "tests/Unit/Helper/HTMLParser/res_JsonLd/caseF.json",
+          "tests/Unit/Helper/HTMLParser/res_JsonLd/caseG.json",
+          "tests/Unit/Helper/HTMLParser/res_JsonLd/caseH.json",
+          "tests/Unit/Helper/HTMLParser/res_JsonLd/caseI.json",
+          "tests/Unit/Helper/HTMLParser/res_JsonLd/caseJ.json",
+          "tests/Unit/Helper/HTMLParser/res_JsonLd/caseK.json",
+          "tests/Unit/Helper/HTMLParser/res_JsonLd/caseL.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/case2711.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/caseA.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/caseB.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/caseD.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/caseE.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/caseFix1209.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/caseImage.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/caseIngredient.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/caseInstruction.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/caseIssue1617a.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/caseIssue1617b.json",
+          "tests/Unit/Helper/HTMLParser/res_Microdata/caseIssue1617c.json"
+        ],
+        "source": {
+          "estimated_items": 47,
+          "exclude": [],
+          "id": "nextcloud--cookbook",
+          "include": [
+            "tests/Unit/Helper/HTMLParser/**/*.html",
+            "tests/Unit/Helper/HTMLParser/**/*.json"
+          ],
+          "inspected_file_count": 976,
+          "license": "AGPL-3.0 (see source for exact grant)",
+          "license_note": "Repository software license does not establish third-party recipe redistribution rights.",
+          "license_path": "LICENSE",
+          "name": "Nextcloud Cookbook",
+          "publication_allowed": false,
+          "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
+          "recipe_license": "unknown",
+          "revision": "9dab723d4f6fdb62bee8eaf5fbc9c271129060e5",
+          "scope_audit_note": "Full pinned-tree second-pass audit added previously omitted corpus candidates. Archive files are explicitly unsupported, not excluded or complete.",
+          "status": "enabled",
+          "url": "https://github.com/nextcloud/cookbook"
+        }
+      }
+    ],
+    "recipe-agent-05": [
+      {
+        "paths": [
+          "tests/data/backups/backup-version-09aba125b57a-1.zip",
+          "tests/data/backups/backup-version-1d9a002d7234-1.zip",
+          "tests/data/backups/backup-version-44e8d670719d-1.zip",
+          "tests/data/backups/backup-version-44e8d670719d-2.zip",
+          "tests/data/backups/backup-version-44e8d670719d-3.zip",
+          "tests/data/backups/backup-version-44e8d670719d-4.zip",
+          "tests/data/backups/backup-version-86054b40fd06-1.zip",
+          "tests/data/backups/backup-version-ba1e4a6cfe99-1.zip",
+          "tests/data/backups/backup-version-bcfdad6b7355-1.zip",
+          "tests/data/migrations/chowdown.zip",
+          "tests/data/migrations/cookn.zip",
+          "tests/data/migrations/copymethat.zip",
+          "tests/data/migrations/mealie.zip",
+          "tests/data/migrations/myrecipebox.csv",
+          "tests/data/migrations/nextcloud.zip",
+          "tests/data/migrations/paprika.zip",
+          "tests/data/migrations/plantoeat.csv",
+          "tests/data/migrations/plantoeat.zip",
+          "tests/data/migrations/recipekeeper.zip",
+          "tests/data/migrations/tandoor.zip"
+        ],
+        "source": {
+          "estimated_items": 42,
+          "exclude": [],
+          "id": "mealie-recipes--mealie",
+          "include": [
+            "tests/data/html/*.html",
+            "tests/data/json/*.json",
+            "tests/data/migrations/*.csv",
+            "tests/data/migrations/*.zip",
+            "tests/data/backups/*.zip"
+          ],
+          "inspected_file_count": 1669,
+          "license": "AGPL-3.0 (see source for exact grant)",
+          "license_note": "Repository software license does not establish third-party recipe redistribution rights.",
+          "license_path": "LICENSE",
+          "name": "Mealie",
+          "publication_allowed": false,
+          "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
+          "recipe_license": "unknown",
+          "revision": "7083998807081fc31c57984e54df0425268398af",
+          "scope_audit_note": "Full pinned-tree second-pass audit added previously omitted corpus candidates. Archive files are explicitly unsupported, not excluded or complete.",
+          "status": "enabled",
+          "unsupported_containers": [
+            {
+              "member_count": 2,
+              "path": "tests/data/backups/backup-version-09aba125b57a-1.zip",
+              "potential_member_paths": [
+                "mealie_2024/database.json"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 2,
+              "path": "tests/data/backups/backup-version-1d9a002d7234-1.zip",
+              "potential_member_paths": [
+                "database.json"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 2,
+              "path": "tests/data/backups/backup-version-44e8d670719d-1.zip",
+              "potential_member_paths": [
+                "database.json"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 2,
+              "path": "tests/data/backups/backup-version-44e8d670719d-2.zip",
+              "potential_member_paths": [
+                "database.json"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 2,
+              "path": "tests/data/backups/backup-version-44e8d670719d-3.zip",
+              "potential_member_paths": [
+                "database.json"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 2,
+              "path": "tests/data/backups/backup-version-44e8d670719d-4.zip",
+              "potential_member_paths": [
+                "database.json"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 2,
+              "path": "tests/data/backups/backup-version-86054b40fd06-1.zip",
+              "potential_member_paths": [
+                "database.json"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 2,
+              "path": "tests/data/backups/backup-version-ba1e4a6cfe99-1.zip",
+              "potential_member_paths": [
+                "database.json"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 2,
+              "path": "tests/data/backups/backup-version-bcfdad6b7355-1.zip",
+              "potential_member_paths": [
+                "database.json"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 4,
+              "path": "tests/data/migrations/chowdown.zip",
+              "potential_member_paths": [
+                "chowdown-gh-pages/_recipes/roasted-brussels-sprouts.md",
+                "chowdown-gh-pages/_recipes/roasted-okra.md"
+              ],
+              "potential_recipe_or_data_member_count": 2,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 47,
+              "path": "tests/data/migrations/cookn.zip",
+              "potential_member_paths": [],
+              "potential_recipe_or_data_member_count": 0,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 4,
+              "path": "tests/data/migrations/copymethat.zip",
+              "potential_member_paths": [
+                "recipes.html"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 16,
+              "path": "tests/data/migrations/mealie.zip",
+              "potential_member_paths": [
+                "mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/pizza-dough-basics-with-babish.json",
+                "mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/levain-chocolate-chip-cookies.json",
+                "mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/old-fashioned-beef-stew.json"
+              ],
+              "potential_recipe_or_data_member_count": 3,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 7,
+              "path": "tests/data/migrations/nextcloud.zip",
+              "potential_member_paths": [
+                "Air Fryer Shrimp/recipe.json",
+                "Chicken Parmigiana/recipe.json",
+                "Skillet Shepherd's Pie/recipe.json"
+              ],
+              "potential_recipe_or_data_member_count": 3,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 6,
+              "path": "tests/data/migrations/paprika.zip",
+              "potential_member_paths": [
+                "My Recipes/Zucchinipuffer.paprikarecipe",
+                "My Recipes/Zucchini Rolls with Goat Cheese and Mint.paprikarecipe",
+                "My Recipes/Zweimal gebratenes Ha╠êhnchen mit Gemu╠êse und Nudeln.paprikarecipe",
+                "My Recipes/Zwiebelrostbraten mit selbstgemachten Spa╠êtzle.paprikarecipe",
+                "My Recipes/Zucchini-Kartoffel-Frittata.paprikarecipe"
+              ],
+              "potential_recipe_or_data_member_count": 5,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 1,
+              "path": "tests/data/migrations/plantoeat.zip",
+              "potential_member_paths": [
+                "plantoeat.csv"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 78,
+              "path": "tests/data/migrations/recipekeeper.zip",
+              "potential_member_paths": [
+                "recipes.html"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            },
+            {
+              "member_count": 1,
+              "path": "tests/data/migrations/tandoor.zip",
+              "potential_member_paths": [
+                "1.zip"
+              ],
+              "potential_recipe_or_data_member_count": 1,
+              "reason": "Container requires member-level recipe identification and provenance; account/config data must not be ingested as recipes.",
+              "status": "UNSUPPORTED"
+            }
+          ],
+          "url": "https://github.com/mealie-recipes/mealie"
+        }
+      }
+    ],
+    "recipe-agent-06": [
+      {
+        "paths": [
+          "internal/models/testdata/ocr/recipe1.json",
+          "internal/models/testdata/ocr/recipe2.json",
+          "internal/models/testdata/ocr/recipe3.json",
+          "internal/models/testdata/ocr/recipe4.json",
+          "internal/models/testdata/ocr/recipe5.json",
+          "internal/models/testdata/ocr/recipe6.json",
+          "internal/models/testdata/ocr/recipe7.json",
+          "internal/models/testdata/ocr/recipe8.json",
+          "internal/models/testdata/ocr/recipe9.json"
+        ],
+        "source": {
+          "estimated_items": 425,
+          "exclude": [],
+          "id": "reaper47--recipya",
+          "include": [
+            "internal/scraper/testdata/*.html",
+            "internal/models/testdata/ocr/*.json"
+          ],
+          "inspected_file_count": 860,
+          "license": "GPL-3.0 (see source for exact grant)",
+          "license_note": "Repository software license does not establish third-party recipe redistribution rights.",
+          "license_path": "LICENSE",
+          "name": "Recipya",
+          "publication_allowed": false,
+          "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
+          "recipe_license": "unknown",
+          "revision": "7dad2d386faf26322c782ed28a8e124ea8190525",
+          "scope_audit_note": "Full pinned-tree second-pass audit added previously omitted corpus candidates. Archive files are explicitly unsupported, not excluded or complete.",
+          "status": "enabled",
+          "url": "https://github.com/reaper47/recipya"
+        }
+      },
+      {
+        "paths": [
+          "src/testing/chocolate_chips.gz"
+        ],
+        "source": {
+          "estimated_items": 1609,
+          "exclude": [],
+          "id": "schollz--meanrecipe",
+          "include": [
+            "src/testing/**/*.gz",
+            "src/testing/*.gz"
+          ],
+          "inspected_file_count": 1658,
+          "license": "MIT",
+          "license_note": "Repository software license does not establish third-party recipe redistribution rights.",
+          "license_path": "LICENSE",
+          "name": "meanrecipe",
+          "publication_allowed": false,
+          "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
+          "recipe_license": "unknown",
+          "revision": "10ee77d55eb318a464e00dc08bc7125fdf243667",
+          "scope_audit_note": "Full pinned-tree second-pass audit added previously omitted corpus candidates. Archive files are explicitly unsupported, not excluded or complete.",
+          "status": "enabled",
+          "url": "https://github.com/schollz/meanrecipe"
+        }
+      }
+    ],
+    "recipe-agent-07": [
+      {
+        "paths": [
+          "Recipes/\"Mock\" Garlic Mashed Potatoes.md"
+        ],
+        "source": {
+          "estimated_items": 114,
+          "exclude": [],
+          "id": "Brooke-white--RecipeParser",
+          "include": [
+            "Recipes/*.md"
+          ],
+          "inspected_file_count": 122,
+          "license": "MIT",
+          "license_note": "Repository software license does not establish third-party recipe redistribution rights.",
+          "license_path": "LICENSE.txt",
+          "name": "RecipeParser",
+          "publication_allowed": false,
+          "reason": "Inspected complete Git tree; process every candidate in the declared corpus, preserving parse failures.",
+          "recipe_license": "unknown",
+          "revision": "53104805d8b49b9111a75a4e5604eaf027e96cbd",
+          "status": "enabled",
+          "url": "https://github.com/Brooke-white/RecipeParser"
+        }
+      }
     ]
   },
-  "workers": 3
+  "workers": 7
 }

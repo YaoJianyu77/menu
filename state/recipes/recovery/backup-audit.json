@@ -1,0 +1,90 @@
+{
+  "anonymizer_path": "dev/code-generation/utils/anonymize_backups.py",
+  "anonymizer_url": "https://github.com/mealie-recipes/mealie/blob/7083998807081fc31c57984e54df0425268398af/dev/code-generation/utils/anonymize_backups.py",
+  "archives": [
+    {
+      "anonymized_ten_lowercase_tokens": 710,
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "member": "mealie_2024/database.json",
+      "nonempty_recipe_text_fields": 710,
+      "path": "tests/data/backups/backup-version-09aba125b57a-1.zip",
+      "reason": "Every nonempty recipe name/instruction/ingredient text is a ten-character random lowercase token, matching source anonymizer; expressive recipe data has been erased.",
+      "recipe_rows": 42
+    },
+    {
+      "anonymized_ten_lowercase_tokens": 0,
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "member": "database.json",
+      "nonempty_recipe_text_fields": 0,
+      "path": "tests/data/backups/backup-version-1d9a002d7234-1.zip",
+      "reason": "Empty recipe table",
+      "recipe_rows": 0
+    },
+    {
+      "anonymized_ten_lowercase_tokens": 6338,
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "member": "database.json",
+      "nonempty_recipe_text_fields": 6338,
+      "path": "tests/data/backups/backup-version-44e8d670719d-1.zip",
+      "reason": "Every nonempty recipe name/instruction/ingredient text is a ten-character random lowercase token, matching source anonymizer; expressive recipe data has been erased.",
+      "recipe_rows": 349
+    },
+    {
+      "anonymized_ten_lowercase_tokens": 2176,
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "member": "database.json",
+      "nonempty_recipe_text_fields": 2176,
+      "path": "tests/data/backups/backup-version-44e8d670719d-2.zip",
+      "reason": "Every nonempty recipe name/instruction/ingredient text is a ten-character random lowercase token, matching source anonymizer; expressive recipe data has been erased.",
+      "recipe_rows": 88
+    },
+    {
+      "anonymized_ten_lowercase_tokens": 1355,
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "member": "database.json",
+      "nonempty_recipe_text_fields": 1355,
+      "path": "tests/data/backups/backup-version-44e8d670719d-3.zip",
+      "reason": "Every nonempty recipe name/instruction/ingredient text is a ten-character random lowercase token, matching source anonymizer; expressive recipe data has been erased.",
+      "recipe_rows": 69
+    },
+    {
+      "anonymized_ten_lowercase_tokens": 783,
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "member": "database.json",
+      "nonempty_recipe_text_fields": 783,
+      "path": "tests/data/backups/backup-version-44e8d670719d-4.zip",
+      "reason": "Every nonempty recipe name/instruction/ingredient text is a ten-character random lowercase token, matching source anonymizer; expressive recipe data has been erased.",
+      "recipe_rows": 44
+    },
+    {
+      "anonymized_ten_lowercase_tokens": 6194,
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "member": "database.json",
+      "nonempty_recipe_text_fields": 6194,
+      "path": "tests/data/backups/backup-version-86054b40fd06-1.zip",
+      "reason": "Every nonempty recipe name/instruction/ingredient text is a ten-character random lowercase token, matching source anonymizer; expressive recipe data has been erased.",
+      "recipe_rows": 165
+    },
+    {
+      "anonymized_ten_lowercase_tokens": 5636,
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "member": "database.json",
+      "nonempty_recipe_text_fields": 5636,
+      "path": "tests/data/backups/backup-version-ba1e4a6cfe99-1.zip",
+      "reason": "Every nonempty recipe name/instruction/ingredient text is a ten-character random lowercase token, matching source anonymizer; expressive recipe data has been erased.",
+      "recipe_rows": 218
+    },
+    {
+      "anonymized_ten_lowercase_tokens": 964,
+      "classification": "NOT_A_RECIPE_SOURCE",
+      "member": "database.json",
+      "nonempty_recipe_text_fields": 964,
+      "path": "tests/data/backups/backup-version-bcfdad6b7355-1.zip",
+      "reason": "Every nonempty recipe name/instruction/ingredient text is a ten-character random lowercase token, matching source anonymizer; expressive recipe data has been erased.",
+      "recipe_rows": 46
+    }
+  ],
+  "method": "Inspect only recipe table counts and textual field patterns; no account/config values persisted. All nine archives fully checked.",
+  "revision": "7083998807081fc31c57984e54df0425268398af",
+  "source": "https://github.com/mealie-recipes/mealie"
+}

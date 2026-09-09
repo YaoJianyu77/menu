@@ -1,8 +1,8 @@
 {
   "agent": "recipe-agent-01",
-  "completed_at": "2026-09-08T23:37:48-04:00",
+  "completed_at": "2026-09-09T00:40:05-04:00",
   "completion_status": "complete-with-failures",
-  "current_cursor": "schollz--meanrecipe:src/testing/chocolate_chip_cookies/ffc593722f5bfacff1748e7e402c70f2.gz",
+  "current_cursor": "schollz--meanrecipe:src/testing/chocolate_chip_cookies/de30b083129df0557d3f0e7fc3c574f4.gz",
   "failure_history": [
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
@@ -2963,6 +2963,699 @@
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:30:01-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/0058925484a0d6490e892aed7b2b97f4.gz",
+      "resolved_at": "2026-09-09T00:04:09-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/00becac908888876c483443f498d4cb7.gz",
+      "resolved_at": "2026-09-09T00:04:09-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/01ed7f2bf712b365813d124d5eaefa70.gz",
+      "resolved_at": "2026-09-09T00:04:10-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/0261aafa3a2e06f4f083569da6bec3c1.gz",
+      "resolved_at": "2026-09-09T00:04:10-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/02e2a1b069d2d6356b617b94ac92eb1e.gz",
+      "resolved_at": "2026-09-09T00:04:10-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/039ed8bfe8762f5383c7a47a3fc342ad.gz",
+      "resolved_at": "2026-09-09T00:04:10-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/050fe14f43ddd0efab1617a44db8f935.gz",
+      "resolved_at": "2026-09-09T00:04:10-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/05f3a8983e3bff92e5563d1ae9cdea50.gz",
+      "resolved_at": "2026-09-09T00:04:10-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/063ca5c7d3d6fc21b605b330813579e8.gz",
+      "resolved_at": "2026-09-09T00:04:11-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/0972b302adbeb3489e101d3267770ec1.gz",
+      "resolved_at": "2026-09-09T00:04:11-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/099cba4afbe468242ead4b10797cea03.gz",
+      "resolved_at": "2026-09-09T00:04:11-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/09ede89962b9a27d9e2ebefe0d8ede78.gz",
+      "resolved_at": "2026-09-09T00:04:11-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/0a65e96572b6ee298ac340d2086896a9.gz",
+      "resolved_at": "2026-09-09T00:04:11-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:22-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/0a90f012d76960bdd93850b10fefbceb.gz",
+      "resolved_at": "2026-09-09T00:04:11-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/0ae8734b2da6ab2c417129373c2cc450.gz",
+      "resolved_at": "2026-09-09T00:04:12-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/0e595ab2cd0b73d38c156edf71f3a37e.gz",
+      "resolved_at": "2026-09-09T00:04:12-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/0e7989d0f5d4435fb3e66457901aaec2.gz",
+      "resolved_at": "2026-09-09T00:04:12-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/10c3102d0223ff4f9f44608e3ef7b1ef.gz",
+      "resolved_at": "2026-09-09T00:04:12-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/1317a8803cad576a41546d96e8d09341.gz",
+      "resolved_at": "2026-09-09T00:04:12-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/13884ca7891b844a092d9952e0964dfe.gz",
+      "resolved_at": "2026-09-09T00:04:12-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/15e7fbac57866a046e61ba196ae1c8ad.gz",
+      "resolved_at": "2026-09-09T00:04:13-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/1681490b09712bd5ee6eeeb72354990f.gz",
+      "resolved_at": "2026-09-09T00:04:13-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/17831bf286af8ac7629155b86cfd6012.gz",
+      "resolved_at": "2026-09-09T00:04:13-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/18b7b4d161da64bffe30467bf5865528.gz",
+      "resolved_at": "2026-09-09T00:04:13-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/1b78553040b47a34392e78711c684f08.gz",
+      "resolved_at": "2026-09-09T00:04:13-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:23-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/1e4dfaa8d836947da8fd55804d95be70.gz",
+      "resolved_at": "2026-09-09T00:04:13-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:24-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/64b8fe4248429b42aadb166316558182.gz",
+      "resolved_at": "2026-09-09T00:04:14-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:24-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/663c2aa9d3532712bd1ff10f6a79223b.gz",
+      "resolved_at": "2026-09-09T00:04:14-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:24-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/674a29fa2253ccedf737eafcca2949c3.gz",
+      "resolved_at": "2026-09-09T00:04:14-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:24-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/68ae2174c2b93dea638b624965cbe4f6.gz",
+      "resolved_at": "2026-09-09T00:04:14-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:24-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/6a66ceafa1f54aedb50982a2be19c211.gz",
+      "resolved_at": "2026-09-09T00:04:14-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:24-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/6c875758ea6a3602b04d359cc0d697aa.gz",
+      "resolved_at": "2026-09-09T00:04:15-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:24-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/6d4aa984317b833d8e8a607d4fe31ab0.gz",
+      "resolved_at": "2026-09-09T00:04:15-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:24-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/6f1b6d4103eddd91ae48254f232d5c6a.gz",
+      "resolved_at": "2026-09-09T00:04:15-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:24-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/6fb5a8384ef8790918bb204f3d7b22d9.gz",
+      "resolved_at": "2026-09-09T00:04:15-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:24-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/73d444518bac574e1997189ea4a4b006.gz",
+      "resolved_at": "2026-09-09T00:04:15-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:25-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/7adfb16d3478992df005901838f37b68.gz",
+      "resolved_at": "2026-09-09T00:04:15-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:25-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/7be722962ccdf72f887978869eb7deea.gz",
+      "resolved_at": "2026-09-09T00:04:16-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:25-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/7cff131bd62208642716234b61408c44.gz",
+      "resolved_at": "2026-09-09T00:04:16-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:25-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/7f94c1beba7e5b7667bd739a77cd3292.gz",
+      "resolved_at": "2026-09-09T00:04:16-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:25-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/802899b44418084a2a0c21b3920b44b2.gz",
+      "resolved_at": "2026-09-09T00:04:16-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:25-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/c0915ca93034aa3d30f3f889d3e06038.gz",
+      "resolved_at": "2026-09-09T00:04:16-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:26-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/c20302cbe6d1436d63716851b7b1d2d5.gz",
+      "resolved_at": "2026-09-09T00:04:16-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:26-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/c80b625bb6ce511280c4a3c12edb64dc.gz",
+      "resolved_at": "2026-09-09T00:04:17-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:26-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/c85b48161b30b59092b4be87a1e10761.gz",
+      "resolved_at": "2026-09-09T00:04:17-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:26-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/c94d327adb8d07f854b8a6b17c19ee82.gz",
+      "resolved_at": "2026-09-09T00:04:17-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:26-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/ca1232a0aa99011bf3c86cc2ff144e32.gz",
+      "resolved_at": "2026-09-09T00:04:17-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:26-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/cad2d531de425065a2271ed20c2d6d6d.gz",
+      "resolved_at": "2026-09-09T00:04:17-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:26-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/cb0a4d1bd3e4f26f8d62923d77ed0286.gz",
+      "resolved_at": "2026-09-09T00:04:18-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:26-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/cb461edf3aa42d62470ba8770d22c8e8.gz",
+      "resolved_at": "2026-09-09T00:04:18-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:26-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/d0e41b6e30d8740b85fbd43bded094fb.gz",
+      "resolved_at": "2026-09-09T00:04:18-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:27-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/d405423521425d1d086a3360446984a7.gz",
+      "resolved_at": "2026-09-09T00:04:18-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:27-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/d8507288a670843102686229230794e2.gz",
+      "resolved_at": "2026-09-09T00:04:18-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:27-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/d8d81d71a74b828e832b5b1ba6b2fda9.gz",
+      "resolved_at": "2026-09-09T00:04:18-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:27-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/dd26c829b2eb5920c5c0ed63700fbee6.gz",
+      "resolved_at": "2026-09-09T00:04:19-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:27-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/ddec1dc3818da4e04e0205b79f44f9e7.gz",
+      "resolved_at": "2026-09-09T00:04:19-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:27-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/de4bb18faa5a5ccbd243083a9332b441.gz",
+      "resolved_at": "2026-09-09T00:04:19-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:27-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/dea3cbfd95d015138a1b12184608b530.gz",
+      "resolved_at": "2026-09-09T00:04:19-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:27-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "recipes/sourdough/franconian-bread.md",
+      "resolved_at": "2026-09-09T00:04:19-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/hendricius/the-bread-code",
+      "timestamp": "2026-09-08T23:30:01-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "recipes/sourdough/sourdough-pasta.md",
+      "resolved_at": "2026-09-09T00:04:19-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/hendricius/the-bread-code",
+      "timestamp": "2026-09-08T23:30:01-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "recipes/sweet/date-walnut-bread.md",
+      "resolved_at": "2026-09-09T00:04:20-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/hendricius/the-bread-code",
+      "timestamp": "2026-09-08T23:30:01-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "recipes/sweet/full-milk-chocolate-bread.md",
+      "resolved_at": "2026-09-09T00:04:20-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/hendricius/the-bread-code",
+      "timestamp": "2026-09-08T23:30:01-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/de30b083129df0557d3f0e7fc3c574f4.gz",
+      "resolved_at": "2026-09-09T00:05:21-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:29:27-04:00"
     }
   ],
   "failure_history_coverage": {
@@ -3018,24 +3711,6 @@
       "source": "https://github.com/dolph/recipes",
       "timestamp": "2026-09-08T23:29:45-04:00"
     },
-    "hendricius--the-bread-code:recipes/sourdough/franconian-bread.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "recipes/sourdough/franconian-bread.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/hendricius/the-bread-code",
-      "timestamp": "2026-09-08T23:30:01-04:00"
-    },
-    "hendricius--the-bread-code:recipes/sourdough/sourdough-pasta.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "recipes/sourdough/sourdough-pasta.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/hendricius/the-bread-code",
-      "timestamp": "2026-09-08T23:30:01-04:00"
-    },
     "hendricius--the-bread-code:recipes/sourdough/sourdough-pizza.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
@@ -3058,24 +3733,6 @@
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "recipes/sweet/cocoa-bread.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/hendricius/the-bread-code",
-      "timestamp": "2026-09-08T23:30:01-04:00"
-    },
-    "hendricius--the-bread-code:recipes/sweet/date-walnut-bread.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "recipes/sweet/date-walnut-bread.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/hendricius/the-bread-code",
-      "timestamp": "2026-09-08T23:30:01-04:00"
-    },
-    "hendricius--the-bread-code:recipes/sweet/full-milk-chocolate-bread.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "recipes/sweet/full-milk-chocolate-bread.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/hendricius/the-bread-code",
@@ -3243,24 +3900,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:22-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0058925484a0d6490e892aed7b2b97f4.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0058925484a0d6490e892aed7b2b97f4.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/00becac908888876c483443f498d4cb7.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/00becac908888876c483443f498d4cb7.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/01196bbd9614a9f6a3a93e189f5e207a.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -3288,33 +3927,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:22-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/01ed7f2bf712b365813d124d5eaefa70.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/01ed7f2bf712b365813d124d5eaefa70.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0261aafa3a2e06f4f083569da6bec3c1.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0261aafa3a2e06f4f083569da6bec3c1.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/02e2a1b069d2d6356b617b94ac92eb1e.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/02e2a1b069d2d6356b617b94ac92eb1e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/033d2f4a6bfe05840b341b4a4671951b.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -3328,15 +3940,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/034a148e4af94d8de645c7d2438787de.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/039ed8bfe8762f5383c7a47a3fc342ad.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/039ed8bfe8762f5383c7a47a3fc342ad.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3396,28 +3999,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:22-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/050fe14f43ddd0efab1617a44db8f935.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/050fe14f43ddd0efab1617a44db8f935.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0577e31fccaef2939ff74250a706c4f1.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/0577e31fccaef2939ff74250a706c4f1.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/05f3a8983e3bff92e5563d1ae9cdea50.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/05f3a8983e3bff92e5563d1ae9cdea50.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3436,15 +4021,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/062c8f24b06aadfbad4c58fcefadb855.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/063ca5c7d3d6fc21b605b330813579e8.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/063ca5c7d3d6fc21b605b330813579e8.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3531,15 +4107,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:22-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0972b302adbeb3489e101d3267770ec1.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0972b302adbeb3489e101d3267770ec1.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/09907c04e0f52240a70533bcbb3726ed.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -3549,55 +4116,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:22-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/099cba4afbe468242ead4b10797cea03.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/099cba4afbe468242ead4b10797cea03.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/09ede89962b9a27d9e2ebefe0d8ede78.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/09ede89962b9a27d9e2ebefe0d8ede78.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0a65e96572b6ee298ac340d2086896a9.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0a65e96572b6ee298ac340d2086896a9.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:22-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0a6e31e7b239aba9fcf03f63d9863e1e.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/0a6e31e7b239aba9fcf03f63d9863e1e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0a90f012d76960bdd93850b10fefbceb.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0a90f012d76960bdd93850b10fefbceb.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0ae8734b2da6ab2c417129373c2cc450.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0ae8734b2da6ab2c417129373c2cc450.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3684,24 +4206,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:23-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0e595ab2cd0b73d38c156edf71f3a37e.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0e595ab2cd0b73d38c156edf71f3a37e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0e7989d0f5d4435fb3e66457901aaec2.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/0e7989d0f5d4435fb3e66457901aaec2.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0e9b0e759b15c676afab2c511900900d.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -3774,15 +4278,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:23-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/10c3102d0223ff4f9f44608e3ef7b1ef.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/10c3102d0223ff4f9f44608e3ef7b1ef.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/11461820a2e916c745a9f8b8542304e3.gz": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
@@ -3801,15 +4296,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:23-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1317a8803cad576a41546d96e8d09341.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/1317a8803cad576a41546d96e8d09341.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1322d59c0d01953788b3752d2f95c935.gz": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
@@ -3823,15 +4309,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/133a8939d22dda92a4e909883b05b181.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/13884ca7891b844a092d9952e0964dfe.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/13884ca7891b844a092d9952e0964dfe.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3882,37 +4359,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:23-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/15e7fbac57866a046e61ba196ae1c8ad.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/15e7fbac57866a046e61ba196ae1c8ad.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1681490b09712bd5ee6eeeb72354990f.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/1681490b09712bd5ee6eeeb72354990f.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/16b370be84b1e07e764606f1403ccbfc.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/16b370be84b1e07e764606f1403ccbfc.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/17831bf286af8ac7629155b86cfd6012.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/17831bf286af8ac7629155b86cfd6012.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3931,15 +4381,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/1870ff1e3d2f540fef36886254c19bf2.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/18b7b4d161da64bffe30467bf5865528.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/18b7b4d161da64bffe30467bf5865528.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -3967,15 +4408,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/1a37d4ce1d966a911b206f50aec375c8.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:23-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1b78553040b47a34392e78711c684f08.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/1b78553040b47a34392e78711c684f08.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4071,15 +4503,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:24-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1e4dfaa8d836947da8fd55804d95be70.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/1e4dfaa8d836947da8fd55804d95be70.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1ea888d0a831d6d7a7329906d5ade787.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -4161,15 +4584,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:24-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/64b8fe4248429b42aadb166316558182.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/64b8fe4248429b42aadb166316558182.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/64ea2b511236f031377e98d9a781323b.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -4215,15 +4629,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:24-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/663c2aa9d3532712bd1ff10f6a79223b.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/663c2aa9d3532712bd1ff10f6a79223b.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6665ac5f413af6b8b675fa64b525c5b6.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -4264,15 +4669,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/67329365fb4263257dec609e488fbcf8.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/674a29fa2253ccedf737eafcca2949c3.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/674a29fa2253ccedf737eafcca2949c3.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4332,15 +4728,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:24-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/68ae2174c2b93dea638b624965cbe4f6.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/68ae2174c2b93dea638b624965cbe4f6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/68af63c1d8b64f261865edcd7a3e4b46.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -4363,15 +4750,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/691c6db3825fd473cb65d2106a5e277a.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6a66ceafa1f54aedb50982a2be19c211.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6a66ceafa1f54aedb50982a2be19c211.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4422,24 +4800,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:24-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6c875758ea6a3602b04d359cc0d697aa.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6c875758ea6a3602b04d359cc0d697aa.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6d4aa984317b833d8e8a607d4fe31ab0.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6d4aa984317b833d8e8a607d4fe31ab0.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6d550490298484d6a48d1160d00e568a.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -4471,24 +4831,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/6e976c65eb9172dfe680ace3d4f53e4b.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6f1b6d4103eddd91ae48254f232d5c6a.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6f1b6d4103eddd91ae48254f232d5c6a.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:24-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6fb5a8384ef8790918bb204f3d7b22d9.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6fb5a8384ef8790918bb204f3d7b22d9.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4570,15 +4912,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/731a942bfbe0a65c63bbb09427accc7e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/73d444518bac574e1997189ea4a4b006.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/73d444518bac574e1997189ea4a4b006.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4737,28 +5070,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:25-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7adfb16d3478992df005901838f37b68.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/7adfb16d3478992df005901838f37b68.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7b312442b53b56361c60a3d0e1122baa.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/7b312442b53b56361c60a3d0e1122baa.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7be722962ccdf72f887978869eb7deea.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/7be722962ccdf72f887978869eb7deea.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4782,15 +5097,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:25-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7cff131bd62208642716234b61408c44.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/7cff131bd62208642716234b61408c44.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7e9718212ed3edc320427f4e0c6f7043.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -4804,24 +5110,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/7efcacae5bd4126e60573d8e5ad7f7f1.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7f94c1beba7e5b7667bd739a77cd3292.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/7f94c1beba7e5b7667bd739a77cd3292.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:25-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/802899b44418084a2a0c21b3920b44b2.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/802899b44418084a2a0c21b3920b44b2.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -4881,15 +5169,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:26-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c0915ca93034aa3d30f3f889d3e06038.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/c0915ca93034aa3d30f3f889d3e06038.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c0ea5103ba05feb353356de276cc1e17.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -4912,15 +5191,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/c175dacfac88cf6a5b4c5bb74a12a236.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c20302cbe6d1436d63716851b7b1d2d5.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/c20302cbe6d1436d63716851b7b1d2d5.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -5034,28 +5304,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:26-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c80b625bb6ce511280c4a3c12edb64dc.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/c80b625bb6ce511280c4a3c12edb64dc.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c85881c12afa62ceffbece29f5deaf46.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/c85881c12afa62ceffbece29f5deaf46.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c85b48161b30b59092b4be87a1e10761.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/c85b48161b30b59092b4be87a1e10761.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -5079,15 +5331,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:26-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c94d327adb8d07f854b8a6b17c19ee82.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/c94d327adb8d07f854b8a6b17c19ee82.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c9966f158bf861f6e7d488d252e9f04a.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -5106,46 +5349,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:26-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/ca1232a0aa99011bf3c86cc2ff144e32.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/ca1232a0aa99011bf3c86cc2ff144e32.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/cad2d531de425065a2271ed20c2d6d6d.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/cad2d531de425065a2271ed20c2d6d6d.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/caf357a97e9ec7cee17b7bda4349030c.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/caf357a97e9ec7cee17b7bda4349030c.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/cb0a4d1bd3e4f26f8d62923d77ed0286.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/cb0a4d1bd3e4f26f8d62923d77ed0286.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:26-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/cb461edf3aa42d62470ba8770d22c8e8.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/cb461edf3aa42d62470ba8770d22c8e8.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -5277,15 +5484,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:27-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d0e41b6e30d8740b85fbd43bded094fb.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/d0e41b6e30d8740b85fbd43bded094fb.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d1a2df5c131214911a9a915fdb72c71f.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -5317,15 +5515,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/d36131ec7b1db8598a92d9cd0593b629.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d405423521425d1d086a3360446984a7.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/d405423521425d1d086a3360446984a7.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -5403,28 +5592,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:27-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d8507288a670843102686229230794e2.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/d8507288a670843102686229230794e2.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d8d200cf17348974b9c50b20afa72379.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/d8d200cf17348974b9c50b20afa72379.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d8d81d71a74b828e832b5b1ba6b2fda9.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/d8d81d71a74b828e832b5b1ba6b2fda9.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -5520,55 +5691,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:29:27-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/dd26c829b2eb5920c5c0ed63700fbee6.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/dd26c829b2eb5920c5c0ed63700fbee6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/ddec1dc3818da4e04e0205b79f44f9e7.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/ddec1dc3818da4e04e0205b79f44f9e7.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/de30b083129df0557d3f0e7fc3c574f4.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/de30b083129df0557d3f0e7fc3c574f4.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/de4bb18faa5a5ccbd243083a9332b441.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/de4bb18faa5a5ccbd243083a9332b441.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/de840b96c6f14f71d5758164e7cdf265.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/de840b96c6f14f71d5758164e7cdf265.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:29:27-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/dea3cbfd95d015138a1b12184608b530.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/dea3cbfd95d015138a1b12184608b530.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -6851,6 +6977,9 @@
     "hendricius--the-bread-code:recipes/sourdough/basic-sour-dough.md": [
       "b4783a0c7d88ef211eeb3afd"
     ],
+    "hendricius--the-bread-code:recipes/sourdough/franconian-bread.md": [
+      "85c24988a49fdc51159f3640"
+    ],
     "hendricius--the-bread-code:recipes/sourdough/make-sourdough-starter.md": [
       "46804329bf57f53c5cfd7dee"
     ],
@@ -6860,8 +6989,17 @@
     "hendricius--the-bread-code:recipes/sourdough/portuguese-broa-corn-bread.md": [
       "f875370b33a874efde42c1cb"
     ],
+    "hendricius--the-bread-code:recipes/sourdough/sourdough-pasta.md": [
+      "dd4a231be55e525200a1d86e"
+    ],
     "hendricius--the-bread-code:recipes/sweet/banana-bread.md": [
       "f5c113f3bd9e36034b8f6fd2"
+    ],
+    "hendricius--the-bread-code:recipes/sweet/date-walnut-bread.md": [
+      "50d868da14b5e093b91eef5f"
+    ],
+    "hendricius--the-bread-code:recipes/sweet/full-milk-chocolate-bread.md": [
+      "b75ef88b046d203efe479f61"
     ],
     "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_JsonLd/caseA.html": [
       "84076a44bc2b5e56317ee1d7"
@@ -6905,8 +7043,14 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/004e98551419a9cb7a198d7c7f6ee641.gz": [
       "ea1eaaf849d63f65f59ecea2"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0058925484a0d6490e892aed7b2b97f4.gz": [
+      "2426dbc643674523573d144f"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/005d94052cb6b5a2f3135e722a859065.gz": [
       "cc9a05de58c50ae3c60d0b53"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/00becac908888876c483443f498d4cb7.gz": [
+      "3cf90f0cd65a55f0d69bbd2f"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/00e4def1f44a05d389202ecd772489a5.gz": [
       "ae12d436a451f3db51e925ee"
@@ -6923,8 +7067,14 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/01ebdac1a60192090a50e0d096dd4456.gz": [
       "767ccb2d25818178c2ab6ded"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/01ed7f2bf712b365813d124d5eaefa70.gz": [
+      "4994c709c44b4bbfe2dac17a"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/024204f7e73e894c7a550aeaa2fab002.gz": [
       "7ff1ced2e4b816f79a0ead90"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0261aafa3a2e06f4f083569da6bec3c1.gz": [
+      "000ea47e329e2f3d5ed73a77"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/027d2e94433c979e80fcf4c98b3412f3.gz": [
       "c69e25994b0cad54dc3161a9"
@@ -6932,8 +7082,14 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/02b352bbf6e61d115f58064583f3d113.gz": [
       "026f49b21b2031c1fbd2d41c"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/02e2a1b069d2d6356b617b94ac92eb1e.gz": [
+      "06a3d009a6263d80e493a84f"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0315ac44b348469d9ae25e6c95812a5b.gz": [
       "db0e90fac10803174909892e"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/039ed8bfe8762f5383c7a47a3fc342ad.gz": [
+      "c1ffd745380af41302b6f3f2"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/03a507c274c33f708394e75e828e3069.gz": [
       "94bab2bbe0732b5d02bc2e84"
@@ -6944,6 +7100,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/045a7ced885c3fa55702f936593ca83c.gz": [
       "926c2bc580ee937b626920cf"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/050fe14f43ddd0efab1617a44db8f935.gz": [
+      "d58d35f67a8d422bb43cf0ba"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/05534024ec9e1f297efee509b0892b8a.gz": [
       "058ca78f135b4beca0654cde"
     ],
@@ -6952,6 +7111,12 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/05a6d2c024b4f6fa9ccffef588594a0c.gz": [
       "dc63e6c57a3cfef27606d0a0"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/05f3a8983e3bff92e5563d1ae9cdea50.gz": [
+      "0c14b19d40791db0c691d7a3"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/063ca5c7d3d6fc21b605b330813579e8.gz": [
+      "63aa047e64e300e78632c7f6"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0668480e960670a91bb1baf88be48406.gz": [
       "69ff59a5829e029a9ae0dba7"
@@ -6983,11 +7148,29 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/08b5227e25f493c2d90bf02929adf56d.gz": [
       "b2c8c9459f170b146f326c97"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0972b302adbeb3489e101d3267770ec1.gz": [
+      "740532e596f612c2b9e2d120"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/099cba4afbe468242ead4b10797cea03.gz": [
+      "4d9a6e8a4b725ac1b82ebc7e"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/09ede89962b9a27d9e2ebefe0d8ede78.gz": [
+      "7932d810ae9cca0f1a893ff0"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0a464873b394fc62f4a141f38acbf484.gz": [
       "a0eab6771d20a0d429ad139f"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0a65e96572b6ee298ac340d2086896a9.gz": [
+      "89578640e43dfc51183c3f7e"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0a811a2b4adc563c399903d594a19dbf.gz": [
       "e51a7f07f5df1672b9839ebf"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0a90f012d76960bdd93850b10fefbceb.gz": [
+      "acbcf97788ce65e9928396fe"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0ae8734b2da6ab2c417129373c2cc450.gz": [
+      "00d09a7abd448f939cfd17f1"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0b14bc30950aac49c72c451485b6350b.gz": [
       "2a128ccee3453c0d9091af46"
@@ -7010,8 +7193,14 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0d8b5b2ad219be3d61f3591ff83e185b.gz": [
       "06567ca6c22fedd4ba50855b"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0e595ab2cd0b73d38c156edf71f3a37e.gz": [
+      "fff03efe2b633bf2c35a47a8"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0e5ed276d2a63a0b9ab6d240688bc5c5.gz": [
       "7a2ec519a9c52ef9f897c24f"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0e7989d0f5d4435fb3e66457901aaec2.gz": [
+      "ecdbeca6a4bffddd3ec24e47"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/0eb8ef124996bb92a51e41385489ddaa.gz": [
       "8fefb0c0b7e1bc5a3666f271"
@@ -7031,6 +7220,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/104368a5d42f90ce78622515756e7242.gz": [
       "e3d6349be3c76ea45f9b77a3"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/10c3102d0223ff4f9f44608e3ef7b1ef.gz": [
+      "b2174da7784e2209d35d8c42"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/115c37c9e9b4627c96a4314351a50abd.gz": [
       "9884f07818489117836a6a2e"
     ],
@@ -7048,6 +7240,12 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/12c2af0a6e50a277e06f35aa9bad4a48.gz": [
       "03488c7c677d33ebd8df6c99"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1317a8803cad576a41546d96e8d09341.gz": [
+      "bb608f71b5541b2a3ce0675a"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/13884ca7891b844a092d9952e0964dfe.gz": [
+      "f6919265e29815359014337b"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/138a94923ce199e35096a8d29d20a23f.gz": [
       "fdd1768cb71e51b53f27d7c5"
@@ -7076,11 +7274,17 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/15b8533b70df3331d790dcf0fb1ba4ee.gz": [
       "ed49ef55257847da119763fd"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/15e7fbac57866a046e61ba196ae1c8ad.gz": [
+      "cc3e5fd676a5b9b424eff017"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1651391e16ab5221538e87cb2fa4b1a4.gz": [
       "0259ce96b8518719ebcc774c"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/167a71e4694c25b3add7c393067b81e8.gz": [
       "8d0526ddcd90467499b689ed"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1681490b09712bd5ee6eeeb72354990f.gz": [
+      "68108e0d2f24a883b8fbf359"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/169f9a4d9e5389c6ec71a5438bccf708.gz": [
       "8bc04d076f0ab4736fa3a4c9"
@@ -7093,6 +7297,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/178280526ba7a40366e15c829224db57.gz": [
       "30d0044aa02b80c7f23bc6ca"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/17831bf286af8ac7629155b86cfd6012.gz": [
+      "be448aad2042e66b6cbfcbfe"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1784e9d577845855db1108e1c1096496.gz": [
       "6566c692b7802814e3b4ab02"
@@ -7121,6 +7328,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/18989e2ccc82f046133017f95acaa09d.gz": [
       "a0d61286490a221285b83448"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/18b7b4d161da64bffe30467bf5865528.gz": [
+      "5f6d065c38e8d8e8d41169dd"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/192272dfb9d1553f05db5f6eccf99c6a.gz": [
       "b2e7567445968cbaabbb30c2"
     ],
@@ -7135,6 +7345,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/19af81fbeebdb15a7722148f4ab045b1.gz": [
       "723aa357110e47959e4cc130"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1b78553040b47a34392e78711c684f08.gz": [
+      "74f80a1a03206017bd13e95c"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1b97a9d0b3020057407ea789240fda4e.gz": [
       "204f911811f99682931d5226"
@@ -7162,6 +7375,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1e092f269a42e8fef3b42cbf62ce109c.gz": [
       "0f76d25796b8b1945c5f6b50"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1e4dfaa8d836947da8fd55804d95be70.gz": [
+      "e92eec92c6cdd9563f0030cc"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/1e92ee027542d66b8207f8672f33fc1b.gz": [
       "62b508b80f364034e08e8903"
@@ -7223,6 +7439,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/64902f127e1cdf32ccaf2c865b72b386.gz": [
       "97e72d55746690cbf351140c"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/64b8fe4248429b42aadb166316558182.gz": [
+      "d4ecdb89ca4a57f8fc97b30b"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/64d461be77182afc0e1818004d269424.gz": [
       "6279bdbde8434317e2d34460"
     ],
@@ -7247,6 +7466,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6635d3ec5af9dd0f890d26c2f625c9b4.gz": [
       "451125aa5a6aa89d6d0e8afe"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/663c2aa9d3532712bd1ff10f6a79223b.gz": [
+      "789f4467da5f84f9db65843e"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6695b3c42e13c40b004d28d25745b3e6.gz": [
       "0d0886974a0f85dade1f3ef3"
     ],
@@ -7258,6 +7480,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/67421d119fefb4bf925aa8f2035c9c05.gz": [
       "455ffca431954fda1f152c7b"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/674a29fa2253ccedf737eafcca2949c3.gz": [
+      "9118dd551a202cb31896655d"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/674f3bbc49fa7cfb14ac53125f092a35.gz": [
       "3b81de933836f917b6e8754f"
@@ -7277,11 +7502,17 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/68839ee82817940d2b2bc0503d93f296.gz": [
       "b4383a0a292a8da7508334d2"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/68ae2174c2b93dea638b624965cbe4f6.gz": [
+      "b230d35c27b5e96d5faa044b"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/69e3794f570a11b197a284de5d9ae384.gz": [
       "48ecf20adcdf3260c539f148"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6a384166aa2bce64ea2229af81d6b98b.gz": [
       "c679017a63dae87744f239e7"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6a66ceafa1f54aedb50982a2be19c211.gz": [
+      "25d0e3d794dd617fbafc612a"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6aa3fe8d34a36fadadb56fd1da244ddb.gz": [
       "ccc81156a65c84ee3556d27e"
@@ -7292,8 +7523,14 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6bfbeda9ce47a0304b8aa68ab52556ba.gz": [
       "09ef8b919fb9a58677b830b3"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6c875758ea6a3602b04d359cc0d697aa.gz": [
+      "31b8871902689071c4633b68"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6cd4cd49639d691be3a7e4ae83180740.gz": [
       "65dfd041b7637197a17f137f"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6d4aa984317b833d8e8a607d4fe31ab0.gz": [
+      "e24ba860b558a4111afe72de"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6d7013d695845246a6b015c09526d469.gz": [
       "e2c18a50e600f005e4ec511d"
@@ -7310,11 +7547,17 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6f01c41063cea07e993967bc14ea163f.gz": [
       "0aea3b2425c41aaaa5c563ca"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6f1b6d4103eddd91ae48254f232d5c6a.gz": [
+      "3bee7bd113cc8403814ffe27"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6f923429163a1cca748696bf68a711a6.gz": [
       "699d446829fe56139bd25321"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6f9435090f9f1e61ec66a8e094f3ce0f.gz": [
       "997437b300a30b0caa8ac473"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6fb5a8384ef8790918bb204f3d7b22d9.gz": [
+      "572b913dd71a3c1c086f88e3"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6fba1b178b8f695463606660c59c7f0f.gz": [
       "c249f8aa4f163fca9c9fd0dd"
@@ -7375,6 +7618,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/73d1f300dd493ba277458abbd47980ea.gz": [
       "af5bfb110b9eb49b30325108"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/73d444518bac574e1997189ea4a4b006.gz": [
+      "c8807a7703f281af00b67ed4"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/744fa97137c43e632e15d9d18872c99c.gz": [
       "22e6feae597cd733c7216f82"
@@ -7475,6 +7721,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7aab7f585af66af050bb3425054c60b4.gz": [
       "a4bac3f7e7c05f81fd16b22c"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7adfb16d3478992df005901838f37b68.gz": [
+      "0b6bc36a46a32847536095ce"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7b03e76a37632ffd1f0754dc865519ca.gz": [
       "611ff88a4e9652acdee184ee"
     ],
@@ -7489,6 +7738,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7bd52f986bed06a19f1e7b0101f7d58e.gz": [
       "9f61c31cabb892a8f148f0be"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7be722962ccdf72f887978869eb7deea.gz": [
+      "8a72abada52ea84a9cf16739"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7bf5b14f4b90bb36a1d8a0eca5035c71.gz": [
       "27fd8faf6f6d2873d30cf479"
@@ -7507,6 +7759,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7c98e339605987639d54950d3fb95254.gz": [
       "54ebd205d9c7688d6b09e1fe"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7cff131bd62208642716234b61408c44.gz": [
+      "2b4d5ca0de6b824f4314bacd"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7d19faf722dd02e906cd61eed803ad0a.gz": [
       "c7a070d15e768f1df86af99c"
@@ -7538,6 +7793,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7f51e12dc1bc68f1c8e034fcca400d4f.gz": [
       "bac03822ca6feaaad99d98af"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7f94c1beba7e5b7667bd739a77cd3292.gz": [
+      "9c867258a151c83ea248c47e"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/7faf88824f67240d013e3c2eee900e5d.gz": [
       "b92d7e0192b78f8c8cfb893f"
     ],
@@ -7552,6 +7810,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/8027522ecb0b740352bbaf780556abf3.gz": [
       "3f6072cf7ed54ead68c46262"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/802899b44418084a2a0c21b3920b44b2.gz": [
+      "269ce07fb0d037e65b11c151"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/80f1334f3573061480e64ffc1498f74b.gz": [
       "153038ae0686a61723eceea9"
@@ -7574,6 +7835,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c07cf4ba61368935d5c0a785de389f95.gz": [
       "dc6e3c8799629b135f5d7087"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c0915ca93034aa3d30f3f889d3e06038.gz": [
+      "87ea5dc973ab10006ef83cd9"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c0c01ece1b594047e3a1e4f9eab03dfa.gz": [
       "72a29062f6bbed5a03309d49"
     ],
@@ -7582,6 +7846,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c1a6c6f15b0b0c64747604820ffd5adf.gz": [
       "0001ddb49f5fc5617f0a9205"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c20302cbe6d1436d63716851b7b1d2d5.gz": [
+      "e691b3dcb03ca3cf2332ef8b"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c26229e57403602431481770f18f2c0f.gz": [
       "ab0e69b7533d5d0df06d5f10"
@@ -7667,11 +7934,17 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c740df2ed3a400c06dfdf4cf612a5e58.gz": [
       "9d9ac1f3781862515b76aaaa"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c80b625bb6ce511280c4a3c12edb64dc.gz": [
+      "084474d3e3514f3bf935ada3"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c8147105ab28f27ab71ef3c179f40ee6.gz": [
       "e3df2b15d4ff45c2997fee3f"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c83d740983f7f6205ff69473e2e83edd.gz": [
       "e37f9e77824f6ef320be354b"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c85b48161b30b59092b4be87a1e10761.gz": [
+      "13baf9aa3be1ae69b2cee431"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c862a4d7b1407af9342c6b1e47d41027.gz": [
       "14a473af8035a0f85f2f2c1d"
@@ -7685,6 +7958,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c90a32f464155f2d8c3838fbf63db590.gz": [
       "5ffc3dc686515dd0b221494c"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c94d327adb8d07f854b8a6b17c19ee82.gz": [
+      "e012630a6e044c25df4b0711"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c952f90f3582e1d4b76fb9eb2c453c22.gz": [
       "c5d931d90c5df112bdb2ffe7"
     ],
@@ -7693,6 +7969,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/c9dc9e4b7b7ef7ff8e98e2bceb59e52b.gz": [
       "fe34b3968f905669c57781ac"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/ca1232a0aa99011bf3c86cc2ff144e32.gz": [
+      "1fef7fe26ca317f336694832"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/ca4b73864b0443b3e4fc916ef1e46c9e.gz": [
       "b8a09c60004d243b0485222c"
@@ -7703,8 +7982,17 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/cac1feac78edb0e14fabec06e98e16cb.gz": [
       "aa0a7995f5e19ba3c8e4c172"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/cad2d531de425065a2271ed20c2d6d6d.gz": [
+      "209b2e2b1e4484048c9ab453"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/cb0a4d1bd3e4f26f8d62923d77ed0286.gz": [
+      "68d6af54fea501be16ef5d54"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/cb406b98b4247264d5a2fcad5ce8e284.gz": [
       "d812cf538c5f330c4be05c31"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/cb461edf3aa42d62470ba8770d22c8e8.gz": [
+      "4266be2dd774119bb95673b5"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/cbeca20e9b9b637945d814769121d9f6.gz": [
       "013719e503f7d524884d103a"
@@ -7763,6 +8051,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d03d5b11f1d1741977c326ef4b547034.gz": [
       "bae03d664df0b5a13157db37"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d0e41b6e30d8740b85fbd43bded094fb.gz": [
+      "73f88d2fd8c8fedafda34572"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d1aaa647878e207d370fe65838f534c0.gz": [
       "b6f38a9ffdfb78f2c89ae31c"
     ],
@@ -7780,6 +8071,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d2ea8f77a479955e05b49c580003e3a3.gz": [
       "a2a999555904fc588fe60a5b"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d405423521425d1d086a3360446984a7.gz": [
+      "c1c7f914fb2a9b0cd9811410"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d46a247be7fcc95613da005928ec05c3.gz": [
       "c28ffede7f99cb281627e47b"
@@ -7829,6 +8123,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d7f26547fe3d5ce4ad289d472d5e6d0f.gz": [
       "39745e3037264bfd30d74c7a"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d8507288a670843102686229230794e2.gz": [
+      "d08a9a9d4fca0b6040e9691d"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d89f414535f40bd49bfb0a970db355a0.gz": [
       "91485709f4f7090d4c6162ba"
     ],
@@ -7837,6 +8134,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d8d552e1681e90897eca13b66b18599d.gz": [
       "0fd21f1add121fa55d6138a7"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d8d81d71a74b828e832b5b1ba6b2fda9.gz": [
+      "f558eceb0f1c0d3b44ac5b48"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/d94170f1ee6c74ddf99ca7a80ec2a3de.gz": [
       "daa7c38a6925f261d72478d9"
@@ -7871,6 +8171,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/dc97adf4009ac21808edf4d8f8d9c1c0.gz": [
       "5008c9b864c160b3484db6ee"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/dd26c829b2eb5920c5c0ed63700fbee6.gz": [
+      "7dd0ef9733d9f29cba1bcb26"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/dd7fbd64bd1f2678bd894918f401977b.gz": [
       "6aefc4a1a9b83412f6fc0b7c"
     ],
@@ -7889,11 +8192,23 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/ddbcf63c9a9319ca9c6903a0ca6b5544.gz": [
       "cbe282af262c5271aeba7ee3"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/ddec1dc3818da4e04e0205b79f44f9e7.gz": [
+      "437e7ba5d14aabc7a8535552"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/de30b083129df0557d3f0e7fc3c574f4.gz": [
+      "b8dd32eb4f9e2fd53864785b"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/de3daee3fda1d20736c7891cef66049c.gz": [
       "93c5ddd1010fad74681886f7"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/de4bb18faa5a5ccbd243083a9332b441.gz": [
+      "7a0478783dac5d24f884c57f"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/de9da616d61688131b1bd2f52b54d919.gz": [
       "4e740d0b1c74b1316860fb00"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/dea3cbfd95d015138a1b12184608b530.gz": [
+      "f5ebfbb6a3646800d5030c95"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/ded5b4c891e308f71cdc152e28064f58.gz": [
       "9854d0ceaf815c5ed346fb98"
@@ -9017,5 +9332,5 @@
     }
   },
   "started_at": "2026-09-08T23:26:03-04:00",
-  "updated_at": "2026-09-08T23:30:01-04:00"
+  "updated_at": "2026-09-09T00:05:21-04:00"
 }

@@ -1,8 +1,8 @@
 {
   "agent": "recipe-agent-03",
-  "completed_at": "2026-09-08T23:37:14-04:00",
+  "completed_at": "2026-09-09T00:40:05-04:00",
   "completion_status": "complete-with-failures",
-  "current_cursor": "buggymcbugfix--602f34214a37d972993830c2c9526cf0:sexy-chicken-schnitzel.md",
+  "current_cursor": "sinker--tacofancy:mixins/veg_for_fish_tacos.md",
   "failure_history": [
     {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
@@ -6939,40 +6939,1080 @@
       "retryable": false,
       "source": "https://gist.github.com/buggymcbugfix/602f34214a37d972993830c2c9526cf0",
       "timestamp": "2026-09-08T23:36:21-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "internal/scraper/testdata/livingthegreenlife.html",
+      "resolved_at": "2026-09-09T00:04:32-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-08T23:36:02-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "internal/scraper/testdata/paninihappy.html",
+      "resolved_at": "2026-09-09T00:04:33-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/reaper47/recipya",
+      "timestamp": "2026-09-08T23:36:06-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/414d12c7a15a4bbeea63c9c10ec0cbbd.gz",
+      "resolved_at": "2026-09-09T00:04:34-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:15-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/43ff14353bdee28d44ee9d66a49c72d5.gz",
+      "resolved_at": "2026-09-09T00:04:35-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:15-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/44310b842d060fb41376e4f1e5a371fe.gz",
+      "resolved_at": "2026-09-09T00:04:36-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:15-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/47cd6d30edeef9b06c1ae204e740c582.gz",
+      "resolved_at": "2026-09-09T00:04:37-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:15-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/486f34508e8a0aa993cd77a7086f3359.gz",
+      "resolved_at": "2026-09-09T00:04:38-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:15-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/48ec4474c7d048c59f0e653caa3d6359.gz",
+      "resolved_at": "2026-09-09T00:04:39-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:15-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/4960d988628bc584ae416d15fc777417.gz",
+      "resolved_at": "2026-09-09T00:04:40-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/4991026055db9ed01254155bc8ba0014.gz",
+      "resolved_at": "2026-09-09T00:04:41-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/4aef54257f3ca828afa9e7762f2905c9.gz",
+      "resolved_at": "2026-09-09T00:04:42-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/4b56b9ce746f704a10aa90b3290d1249.gz",
+      "resolved_at": "2026-09-09T00:04:43-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/4d7f1d468f33d67d6640b94bc6eb99db.gz",
+      "resolved_at": "2026-09-09T00:04:44-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/4e4104e4ddfaa7d07c14f62ce86df0d3.gz",
+      "resolved_at": "2026-09-09T00:04:45-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/4e7f33d958803edde521863da8cb584f.gz",
+      "resolved_at": "2026-09-09T00:04:46-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/5306c3b3a97fa2dcf3d27ddefcbe02d6.gz",
+      "resolved_at": "2026-09-09T00:04:47-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/554bd86f030eddafd6eb4f2bb4351a05.gz",
+      "resolved_at": "2026-09-09T00:04:48-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/570b939d6f80273215296812c39ca998.gz",
+      "resolved_at": "2026-09-09T00:04:49-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/5a51970373fb3e58bbf44036bb697c6d.gz",
+      "resolved_at": "2026-09-09T00:04:50-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/5ac7bcb41683980e26e83a07e2b6fa7c.gz",
+      "resolved_at": "2026-09-09T00:04:51-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/5bca7afe81a6754547d03335fd10a417.gz",
+      "resolved_at": "2026-09-09T00:04:52-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/5dccfa5067b788e7c464ff90fb002bab.gz",
+      "resolved_at": "2026-09-09T00:04:53-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/5e5f6c2a0e6e4d3e1c36c2a195997585.gz",
+      "resolved_at": "2026-09-09T00:04:54-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/5e647654558f16fe321ce4136f36807c.gz",
+      "resolved_at": "2026-09-09T00:04:55-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/5ea0054cd515009f55b7d1793185b6d9.gz",
+      "resolved_at": "2026-09-09T00:04:56-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/5ebc916e36229a32c1707e5b53e54b04.gz",
+      "resolved_at": "2026-09-09T00:04:57-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/605dee9d96726c695b390e32eb901cd1.gz",
+      "resolved_at": "2026-09-09T00:04:58-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/60e158cca908c504dfe4bd714aa173a5.gz",
+      "resolved_at": "2026-09-09T00:04:59-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/6140598eb408c16761ead6a1cc5e582f.gz",
+      "resolved_at": "2026-09-09T00:05:00-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/9ef007f1b294de5da6058f689fc6bd37.gz",
+      "resolved_at": "2026-09-09T00:05:01-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/9f11144756acc4e98aac468ac10688c6.gz",
+      "resolved_at": "2026-09-09T00:05:02-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/9f8d708e3b4d712ce3c5004d490df4c9.gz",
+      "resolved_at": "2026-09-09T00:05:03-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/a0155a65412e5302ff953b5cfaa09530.gz",
+      "resolved_at": "2026-09-09T00:05:04-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/a20479de7cad37e7b7a838b7efab976f.gz",
+      "resolved_at": "2026-09-09T00:05:05-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/a23c6326fa433c12686eb2c05b55dbe6.gz",
+      "resolved_at": "2026-09-09T00:05:06-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/a650d8424196a697aa9309e4763c0f11.gz",
+      "resolved_at": "2026-09-09T00:05:07-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/a68a4c4ee0dbac29cd0bd9fa0a0e94e9.gz",
+      "resolved_at": "2026-09-09T00:05:08-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/a95c922c7bbe88f95e42d8f60bd97ae2.gz",
+      "resolved_at": "2026-09-09T00:05:09-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/af7b39969b7a6a86e12a17b707e892cc.gz",
+      "resolved_at": "2026-09-09T00:05:10-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/b0fa89a22b760077df1ce7aa1211a853.gz",
+      "resolved_at": "2026-09-09T00:05:11-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:17-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/b50801b20c5484b9ef561cda70c5c3c3.gz",
+      "resolved_at": "2026-09-09T00:05:12-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/b5d03ee93346cbd8ffb064ee8394f3e4.gz",
+      "resolved_at": "2026-09-09T00:05:13-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/bad42be9d81a9a5344e982abd6d5ec7e.gz",
+      "resolved_at": "2026-09-09T00:05:14-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/bb310b0f6d18a2f2992f7655537d1428.gz",
+      "resolved_at": "2026-09-09T00:05:15-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/bc1108884caa9eee6637d5682050aca8.gz",
+      "resolved_at": "2026-09-09T00:05:16-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/asian_marinade.md",
+      "resolved_at": "2026-09-09T00:05:17-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/baja_beer_batter.md",
+      "resolved_at": "2026-09-09T00:05:18-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/battered_catfish.md",
+      "resolved_at": "2026-09-09T00:05:19-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/pan_seared_salmon.md",
+      "resolved_at": "2026-09-09T00:05:19-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/pork_belly.md",
+      "resolved_at": "2026-09-09T00:05:20-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/puerco_pibil.md",
+      "resolved_at": "2026-09-09T00:05:21-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/slow_cooked_salsa_verde_chicken.md",
+      "resolved_at": "2026-09-09T00:05:22-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/smokey_turkey.md",
+      "resolved_at": "2026-09-09T00:05:23-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/swiss_chard.md",
+      "resolved_at": "2026-09-09T00:05:24-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/baja_white_sauce.md",
+      "resolved_at": "2026-09-09T00:05:25-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/cashew_cheeze.md",
+      "resolved_at": "2026-09-09T00:05:25-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/garlic_lime_sauce.md",
+      "resolved_at": "2026-09-09T00:05:26-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/mango_lime_salsa.md",
+      "resolved_at": "2026-09-09T00:05:27-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/pickled_red_onions.md",
+      "resolved_at": "2026-09-09T00:05:28-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/pickled_vegetables.md",
+      "resolved_at": "2026-09-09T00:05:29-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/salsa_de_aguacate.md",
+      "resolved_at": "2026-09-09T00:05:30-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/salsa_sauce.md",
+      "resolved_at": "2026-09-09T00:05:30-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "like_tacos/beef_vindaloo_on_naan.md",
+      "resolved_at": "2026-09-09T00:05:31-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "like_tacos/pickle_pita.md",
+      "resolved_at": "2026-09-09T00:05:32-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "mixins/Potato_hash.md",
+      "resolved_at": "2026-09-09T00:05:33-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "mixins/sweet_potato_and_apple_hash.md",
+      "resolved_at": "2026-09-09T00:05:34-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "mixins/traditional_taco_mixins.md",
+      "resolved_at": "2026-09-09T00:05:35-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "seasonings/basic_dry_rub.md",
+      "resolved_at": "2026-09-09T00:05:36-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "seasonings/quick_and_dirty_spice_mix.md",
+      "resolved_at": "2026-09-09T00:05:36-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "seasonings/sriracha_salt.md",
+      "resolved_at": "2026-09-09T00:05:37-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "seasonings/universal_taco_seasoning.md",
+      "resolved_at": "2026-09-09T00:05:38-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "shells/homemade_tortillas.md",
+      "resolved_at": "2026-09-09T00:05:39-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "shells/low-carb_taco_shells.md",
+      "resolved_at": "2026-09-09T00:05:40-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "APPETIZERS/diff_asian_chicken_wings.md",
+      "resolved_at": "2026-09-09T00:05:41-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
+      "timestamp": "2026-09-08T23:36:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "APPETIZERS/v3rtig0_Mashed_Potato_Croquettes.md",
+      "resolved_at": "2026-09-09T00:05:42-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
+      "timestamp": "2026-09-08T23:36:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "DESSERTS/keto_marbled_turtle_cheesecake.md",
+      "resolved_at": "2026-09-09T00:05:42-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
+      "timestamp": "2026-09-08T23:36:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "ENTREES/wimzkl_caramelized-onion-mushroom-stuffin.md",
+      "resolved_at": "2026-09-09T00:05:43-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
+      "timestamp": "2026-09-08T23:36:20-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "README.md",
+      "resolved_at": "2026-09-09T00:05:44-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/andrewkern/bagels",
+      "timestamp": "2026-09-08T23:36:21-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "sexy-chicken-schnitzel.md",
+      "resolved_at": "2026-09-09T00:05:45-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://gist.github.com/buggymcbugfix/602f34214a37d972993830c2c9526cf0",
+      "timestamp": "2026-09-08T23:36:21-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "src/testing/chocolate_chip_cookies/5a09daa9bb6df252cad92be643c5ec96.gz",
+      "resolved_at": "2026-09-09T00:07:33-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/schollz/meanrecipe",
+      "timestamp": "2026-09-08T23:36:16-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/basic_shredded_chicken.md",
+      "resolved_at": "2026-09-09T00:07:34-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/bulgar_black_bean_filling.md",
+      "resolved_at": "2026-09-09T00:07:35-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/chopped_pork.md",
+      "resolved_at": "2026-09-09T00:07:35-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/chopped_steak.md",
+      "resolved_at": "2026-09-09T00:07:36-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/crock_pot_pulled_pork.md",
+      "resolved_at": "2026-09-09T00:07:37-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/moroccan_lamb.md",
+      "resolved_at": "2026-09-09T00:07:38-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/rajas_poblanas.md",
+      "resolved_at": "2026-09-09T00:07:39-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "base_layers/soyrizo.md",
+      "resolved_at": "2026-09-09T00:07:40-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/Pico_de_gallo.md",
+      "resolved_at": "2026-09-09T00:07:41-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/beet_salsa.md",
+      "resolved_at": "2026-09-09T00:07:41-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:18-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/european_sour_cream.md",
+      "resolved_at": "2026-09-09T00:07:42-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "condiments/guacamole.md",
+      "resolved_at": "2026-09-09T00:07:43-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "full_tacos/moroccan_lamb_taco.md",
+      "resolved_at": "2026-09-09T00:07:44-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "like_tacos/Chicken_Makloub.md",
+      "resolved_at": "2026-09-09T00:07:45-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "mixins/Corn_Salad.md",
+      "resolved_at": "2026-09-09T00:07:46-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "mixins/mushroom_wasabi_salad.md",
+      "resolved_at": "2026-09-09T00:07:47-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
+    },
+    {
+      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
+      "error_type": "ValueError",
+      "event": "resolved",
+      "item_identifier": "mixins/veg_for_fish_tacos.md",
+      "resolved_at": "2026-09-09T00:07:47-04:00",
+      "retry_count": 1,
+      "retryable": false,
+      "source": "https://github.com/sinker/tacofancy",
+      "timestamp": "2026-09-08T23:36:19-04:00"
     }
   ],
   "failures": {
-    "DEAD10C5--1337-Noms-The-Hacker-Cookbook:APPETIZERS/diff_asian_chicken_wings.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "APPETIZERS/diff_asian_chicken_wings.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    "DEAD10C5--1337-Noms-The-Hacker-Cookbook:APPETIZERS/v3rtig0_Mashed_Potato_Croquettes.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "APPETIZERS/v3rtig0_Mashed_Potato_Croquettes.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
     "DEAD10C5--1337-Noms-The-Hacker-Cookbook:DESSERTS/acai_bowl.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "DESSERTS/acai_bowl.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    "DEAD10C5--1337-Noms-The-Hacker-Cookbook:DESSERTS/keto_marbled_turtle_cheesecake.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "DESSERTS/keto_marbled_turtle_cheesecake.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
@@ -6987,15 +8027,6 @@
       "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
       "timestamp": "2026-09-08T23:36:20-04:00"
     },
-    "DEAD10C5--1337-Noms-The-Hacker-Cookbook:ENTREES/wimzkl_caramelized-onion-mushroom-stuffin.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "ENTREES/wimzkl_caramelized-onion-mushroom-stuffin.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
     "DEAD10C5--1337-Noms-The-Hacker-Cookbook:ENTREES/wireheadlance_grandmothers_chicken_and_gravy.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
@@ -7004,15 +8035,6 @@
       "retryable": false,
       "source": "https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook",
       "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    "andrewkern--bagels:README.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "README.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/andrewkern/bagels",
-      "timestamp": "2026-09-08T23:36:21-04:00"
     },
     "aweijnitz--recipe-el_fuego_viviente:README-CN.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
@@ -7048,15 +8070,6 @@
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/aweijnitz/recipe-el_fuego_viviente",
-      "timestamp": "2026-09-08T23:36:21-04:00"
-    },
-    "buggymcbugfix--602f34214a37d972993830c2c9526cf0:sexy-chicken-schnitzel.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "sexy-chicken-schnitzel.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://gist.github.com/buggymcbugfix/602f34214a37d972993830c2c9526cf0",
       "timestamp": "2026-09-08T23:36:21-04:00"
     },
     "clarklab--chowdown:_recipes/red-berry-tart.md": {
@@ -7167,15 +8180,6 @@
       "source": "https://github.com/reaper47/recipya",
       "timestamp": "2026-09-08T23:36:02-04:00"
     },
-    "reaper47--recipya:internal/scraper/testdata/livingthegreenlife.html": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "internal/scraper/testdata/livingthegreenlife.html",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/reaper47/recipya",
-      "timestamp": "2026-09-08T23:36:02-04:00"
-    },
     "reaper47--recipya:internal/scraper/testdata/maangchi2.html": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
@@ -7225,15 +8229,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "internal/scraper/testdata/panelinha.html",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/reaper47/recipya",
-      "timestamp": "2026-09-08T23:36:06-04:00"
-    },
-    "reaper47--recipya:internal/scraper/testdata/paninihappy.html": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "internal/scraper/testdata/paninihappy.html",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/reaper47/recipya",
@@ -7545,15 +8540,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:15-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/414d12c7a15a4bbeea63c9c10ec0cbbd.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/414d12c7a15a4bbeea63c9c10ec0cbbd.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4255d6dca231db0afdfe25cacbbf0e9e.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -7603,24 +8589,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/43bfbf19b50613306d28368a306bb018.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/43ff14353bdee28d44ee9d66a49c72d5.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/43ff14353bdee28d44ee9d66a49c72d5.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/44310b842d060fb41376e4f1e5a371fe.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/44310b842d060fb41376e4f1e5a371fe.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -7698,28 +8666,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:15-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/47cd6d30edeef9b06c1ae204e740c582.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/47cd6d30edeef9b06c1ae204e740c582.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4844b8ef5b9e75840a8d35a4d50fa4e6.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/4844b8ef5b9e75840a8d35a4d50fa4e6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/486f34508e8a0aa993cd77a7086f3359.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/486f34508e8a0aa993cd77a7086f3359.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -7743,55 +8693,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:15-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/48ec4474c7d048c59f0e653caa3d6359.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/48ec4474c7d048c59f0e653caa3d6359.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:15-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4960d988628bc584ae416d15fc777417.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4960d988628bc584ae416d15fc777417.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4991026055db9ed01254155bc8ba0014.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4991026055db9ed01254155bc8ba0014.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4a884eef6dadc17f9d91e94f4b1a0309.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/4a884eef6dadc17f9d91e94f4b1a0309.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4aef54257f3ca828afa9e7762f2905c9.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4aef54257f3ca828afa9e7762f2905c9.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4b56b9ce746f704a10aa90b3290d1249.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4b56b9ce746f704a10aa90b3290d1249.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -7842,15 +8747,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:16-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4d7f1d468f33d67d6640b94bc6eb99db.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4d7f1d468f33d67d6640b94bc6eb99db.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4d867783eac47a637a06a0d1809ac122.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -7869,28 +8765,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:16-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4e4104e4ddfaa7d07c14f62ce86df0d3.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4e4104e4ddfaa7d07c14f62ce86df0d3.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4e488e2e00346f4e9165164c0a4f06a4.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/4e488e2e00346f4e9165164c0a4f06a4.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4e7f33d958803edde521863da8cb584f.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/4e7f33d958803edde521863da8cb584f.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -7959,15 +8837,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:16-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5306c3b3a97fa2dcf3d27ddefcbe02d6.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5306c3b3a97fa2dcf3d27ddefcbe02d6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5386b9ba11f211ade18b91504becf0c3.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -8004,15 +8873,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:16-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/554bd86f030eddafd6eb4f2bb4351a05.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/554bd86f030eddafd6eb4f2bb4351a05.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/554cc0a90d76f55408cb90f6c426b7f3.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -8044,15 +8904,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/56770d0051b22be1eca217ed18732740.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/570b939d6f80273215296812c39ca998.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/570b939d6f80273215296812c39ca998.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -8121,37 +8972,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:16-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5a09daa9bb6df252cad92be643c5ec96.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5a09daa9bb6df252cad92be643c5ec96.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5a0bcf6ebbf0112d0f6af6d2899a005e.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/5a0bcf6ebbf0112d0f6af6d2899a005e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5a51970373fb3e58bbf44036bb697c6d.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5a51970373fb3e58bbf44036bb697c6d.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5ac7bcb41683980e26e83a07e2b6fa7c.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5ac7bcb41683980e26e83a07e2b6fa7c.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -8175,28 +8999,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:16-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5bca7afe81a6754547d03335fd10a417.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5bca7afe81a6754547d03335fd10a417.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5c9d3f298bb2a093ce0c927ccd6d3c81.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/5c9d3f298bb2a093ce0c927ccd6d3c81.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5dccfa5067b788e7c464ff90fb002bab.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5dccfa5067b788e7c464ff90fb002bab.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -8211,46 +9017,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:16-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5e5f6c2a0e6e4d3e1c36c2a195997585.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5e5f6c2a0e6e4d3e1c36c2a195997585.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5e647654558f16fe321ce4136f36807c.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5e647654558f16fe321ce4136f36807c.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5e7a2fa6573b4464ad36b597e7a9bd67.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/5e7a2fa6573b4464ad36b597e7a9bd67.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5ea0054cd515009f55b7d1793185b6d9.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5ea0054cd515009f55b7d1793185b6d9.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:16-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5ebc916e36229a32c1707e5b53e54b04.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/5ebc916e36229a32c1707e5b53e54b04.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -8274,28 +9044,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:16-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/605dee9d96726c695b390e32eb901cd1.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/605dee9d96726c695b390e32eb901cd1.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/60c93ba1169ddb446f2fe7d1a10518e8.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/60c93ba1169ddb446f2fe7d1a10518e8.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/60e158cca908c504dfe4bd714aa173a5.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/60e158cca908c504dfe4bd714aa173a5.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -8310,15 +9062,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:17-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6140598eb408c16761ead6a1cc5e582f.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/6140598eb408c16761ead6a1cc5e582f.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/61777ca4784392eee36e2142d4a4ea0e.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -8328,46 +9071,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:17-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9ef007f1b294de5da6058f689fc6bd37.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/9ef007f1b294de5da6058f689fc6bd37.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9f11144756acc4e98aac468ac10688c6.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/9f11144756acc4e98aac468ac10688c6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9f8d708e3b4d712ce3c5004d490df4c9.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/9f8d708e3b4d712ce3c5004d490df4c9.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9ffdf4d88b2cf98f93809950a9e592f7.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/9ffdf4d88b2cf98f93809950a9e592f7.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a0155a65412e5302ff953b5cfaa09530.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a0155a65412e5302ff953b5cfaa09530.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -8409,28 +9116,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:17-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a20479de7cad37e7b7a838b7efab976f.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a20479de7cad37e7b7a838b7efab976f.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a23672a9f850529105e26b632b7000c6.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/a23672a9f850529105e26b632b7000c6.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a23c6326fa433c12686eb2c05b55dbe6.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a23c6326fa433c12686eb2c05b55dbe6.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -8526,28 +9215,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:17-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a650d8424196a697aa9309e4763c0f11.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a650d8424196a697aa9309e4763c0f11.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a663d84291bd3f788f4168e3c93c18f7.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/a663d84291bd3f788f4168e3c93c18f7.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a68a4c4ee0dbac29cd0bd9fa0a0e94e9.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a68a4c4ee0dbac29cd0bd9fa0a0e94e9.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -8634,15 +9305,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:17-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a95c922c7bbe88f95e42d8f60bd97ae2.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/a95c922c7bbe88f95e42d8f60bd97ae2.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a96fa52ffe48350dc3963d33e8bdf5fd.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -8715,15 +9377,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:17-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/af7b39969b7a6a86e12a17b707e892cc.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/af7b39969b7a6a86e12a17b707e892cc.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/af8f4879d9e8087deef76d2c59fff5bb.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -8746,15 +9399,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/afc94ee841728b19513b1704fd6f27e0.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:17-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b0fa89a22b760077df1ce7aa1211a853.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/b0fa89a22b760077df1ce7aa1211a853.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -8886,15 +9530,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:18-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b50801b20c5484b9ef561cda70c5c3c3.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/b50801b20c5484b9ef561cda70c5c3c3.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b57f84ef795098efea443afaab2be56f.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
@@ -8908,15 +9543,6 @@
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/b5a36488dc9e86ffaaacfd4e149659ec.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b5d03ee93346cbd8ffb064ee8394f3e4.gz": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/b5d03ee93346cbd8ffb064ee8394f3e4.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -8967,37 +9593,10 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:18-04:00"
     },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bad42be9d81a9a5344e982abd6d5ec7e.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/bad42be9d81a9a5344e982abd6d5ec7e.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bb310b0f6d18a2f2992f7655537d1428.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/bb310b0f6d18a2f2992f7655537d1428.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bb3e5d2949b596a624375c95c622fc6a.gz": {
       "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
       "error_type": "ValueError",
       "item_identifier": "src/testing/chocolate_chip_cookies/bb3e5d2949b596a624375c95c622fc6a.gz",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/schollz/meanrecipe",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bc1108884caa9eee6637d5682050aca8.gz": {
-      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
-      "error_type": "ValueError",
-      "item_identifier": "src/testing/chocolate_chip_cookies/bc1108884caa9eee6637d5682050aca8.gz",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/schollz/meanrecipe",
@@ -9075,42 +9674,6 @@
       "source": "https://github.com/schollz/meanrecipe",
       "timestamp": "2026-09-08T23:36:18-04:00"
     },
-    "sinker--tacofancy:base_layers/asian_marinade.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/asian_marinade.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/baja_beer_batter.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/baja_beer_batter.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/basic_shredded_chicken.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/basic_shredded_chicken.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/battered_catfish.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/battered_catfish.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
     "sinker--tacofancy:base_layers/bellpepper.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
@@ -9129,55 +9692,10 @@
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:18-04:00"
     },
-    "sinker--tacofancy:base_layers/bulgar_black_bean_filling.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/bulgar_black_bean_filling.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/chopped_pork.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/chopped_pork.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/chopped_steak.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/chopped_steak.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/crock_pot_pulled_pork.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/crock_pot_pulled_pork.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
     "sinker--tacofancy:base_layers/marinated_portobello.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "base_layers/marinated_portobello.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/moroccan_lamb.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/moroccan_lamb.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -9201,109 +9719,10 @@
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:18-04:00"
     },
-    "sinker--tacofancy:base_layers/pan_seared_salmon.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/pan_seared_salmon.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/pork_belly.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/pork_belly.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/puerco_pibil.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/puerco_pibil.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/rajas_poblanas.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/rajas_poblanas.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/slow_cooked_salsa_verde_chicken.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/slow_cooked_salsa_verde_chicken.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/smokey_turkey.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/smokey_turkey.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/soyrizo.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/soyrizo.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:base_layers/swiss_chard.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "base_layers/swiss_chard.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:condiments/Pico_de_gallo.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/Pico_de_gallo.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
     "sinker--tacofancy:condiments/avocado_mango_cilantro_salsa.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "condiments/avocado_mango_cilantro_salsa.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:condiments/baja_white_sauce.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/baja_white_sauce.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
-    "sinker--tacofancy:condiments/beet_salsa.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/beet_salsa.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -9318,15 +9737,6 @@
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:18-04:00"
     },
-    "sinker--tacofancy:condiments/cashew_cheeze.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/cashew_cheeze.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:18-04:00"
-    },
     "sinker--tacofancy:condiments/cilantro_and_onion.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
@@ -9336,82 +9746,10 @@
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:19-04:00"
     },
-    "sinker--tacofancy:condiments/european_sour_cream.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/european_sour_cream.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:condiments/garlic_lime_sauce.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/garlic_lime_sauce.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:condiments/guacamole.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/guacamole.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
     "sinker--tacofancy:condiments/lime.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "condiments/lime.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:condiments/mango_lime_salsa.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/mango_lime_salsa.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:condiments/pickled_red_onions.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/pickled_red_onions.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:condiments/pickled_vegetables.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/pickled_vegetables.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:condiments/salsa_de_aguacate.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/salsa_de_aguacate.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:condiments/salsa_sauce.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "condiments/salsa_sauce.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -9493,15 +9831,6 @@
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "full_tacos/fish_tacos.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:full_tacos/moroccan_lamb_taco.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "full_tacos/moroccan_lamb_taco.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -9606,15 +9935,6 @@
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:19-04:00"
     },
-    "sinker--tacofancy:like_tacos/Chicken_Makloub.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "like_tacos/Chicken_Makloub.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
     "sinker--tacofancy:like_tacos/Tunisian_makloub.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
@@ -9633,46 +9953,10 @@
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:19-04:00"
     },
-    "sinker--tacofancy:like_tacos/beef_vindaloo_on_naan.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "like_tacos/beef_vindaloo_on_naan.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:like_tacos/pickle_pita.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "like_tacos/pickle_pita.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
     "sinker--tacofancy:like_tacos/taco_burger.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "like_tacos/taco_burger.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:mixins/Corn_Salad.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "mixins/Corn_Salad.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:mixins/Potato_hash.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "mixins/Potato_hash.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -9723,15 +10007,6 @@
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:19-04:00"
     },
-    "sinker--tacofancy:mixins/mushroom_wasabi_salad.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "mixins/mushroom_wasabi_salad.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
     "sinker--tacofancy:mixins/pineapple.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
@@ -9750,46 +10025,10 @@
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:19-04:00"
     },
-    "sinker--tacofancy:mixins/sweet_potato_and_apple_hash.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "mixins/sweet_potato_and_apple_hash.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
     "sinker--tacofancy:mixins/tomatoes_traditional_us.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "mixins/tomatoes_traditional_us.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:mixins/traditional_taco_mixins.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "mixins/traditional_taco_mixins.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:mixins/veg_for_fish_tacos.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "mixins/veg_for_fish_tacos.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:seasonings/basic_dry_rub.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "seasonings/basic_dry_rub.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -9813,28 +10052,10 @@
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:19-04:00"
     },
-    "sinker--tacofancy:seasonings/quick_and_dirty_spice_mix.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "seasonings/quick_and_dirty_spice_mix.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
     "sinker--tacofancy:seasonings/sriracha_marinade.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "seasonings/sriracha_marinade.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:19-04:00"
-    },
-    "sinker--tacofancy:seasonings/sriracha_salt.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "seasonings/sriracha_salt.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -9849,15 +10070,6 @@
       "source": "https://github.com/sinker/tacofancy",
       "timestamp": "2026-09-08T23:36:19-04:00"
     },
-    "sinker--tacofancy:seasonings/universal_taco_seasoning.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "seasonings/universal_taco_seasoning.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
     "sinker--tacofancy:seasonings/zaatar.md": {
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
@@ -9871,24 +10083,6 @@
       "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
       "error_type": "ValueError",
       "item_identifier": "shells/hard_corn_traditional_us.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    "sinker--tacofancy:shells/homemade_tortillas.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "shells/homemade_tortillas.md",
-      "retry_count": 1,
-      "retryable": false,
-      "source": "https://github.com/sinker/tacofancy",
-      "timestamp": "2026-09-08T23:36:20-04:00"
-    },
-    "sinker--tacofancy:shells/low-carb_taco_shells.md": {
-      "error_message": "Missing ingredient or instruction section; source retained for adapter improvement",
-      "error_type": "ValueError",
-      "item_identifier": "shells/low-carb_taco_shells.md",
       "retry_count": 1,
       "retryable": false,
       "source": "https://github.com/sinker/tacofancy",
@@ -10430,11 +10624,17 @@
     "DEAD10C5--1337-Noms-The-Hacker-Cookbook:APPETIZERS/boredsillys_angry_guacamole.md": [
       "a3e27d80cd2ec902eaa2ce44"
     ],
+    "DEAD10C5--1337-Noms-The-Hacker-Cookbook:APPETIZERS/diff_asian_chicken_wings.md": [
+      "a136fef779ff4ef1690f5983"
+    ],
     "DEAD10C5--1337-Noms-The-Hacker-Cookbook:APPETIZERS/sl3dge_bone_marrow_mushrooms_and_broccolini.md": [
       "9ce14e4bc02935f2e376c7d8"
     ],
     "DEAD10C5--1337-Noms-The-Hacker-Cookbook:APPETIZERS/theDevilsVoice_street_corn.md": [
       "436c78a404c231b4198e6dd8"
+    ],
+    "DEAD10C5--1337-Noms-The-Hacker-Cookbook:APPETIZERS/v3rtig0_Mashed_Potato_Croquettes.md": [
+      "0741d1357476e99491f160c9"
     ],
     "DEAD10C5--1337-Noms-The-Hacker-Cookbook:BREAKFAST/Marler_quick_migas.md": [
       "0881cfe1f4f3d3094a27dbbb"
@@ -10462,6 +10662,9 @@
     ],
     "DEAD10C5--1337-Noms-The-Hacker-Cookbook:DESSERTS/WireGhost_Key_Lime_Pyrewall.md": [
       "c84afea24a8469e1b0c37227"
+    ],
+    "DEAD10C5--1337-Noms-The-Hacker-Cookbook:DESSERTS/keto_marbled_turtle_cheesecake.md": [
+      "73c8c481c2b34adfc6d63bdf"
     ],
     "DEAD10C5--1337-Noms-The-Hacker-Cookbook:DESSERTS/wishperactual_peppernuts.md": [
       "480db6d2f41c973748ea2339"
@@ -10544,6 +10747,9 @@
     "DEAD10C5--1337-Noms-The-Hacker-Cookbook:ENTREES/travelars_southwest_porkchops.md": [
       "e697f003d5d45a03481569e2"
     ],
+    "DEAD10C5--1337-Noms-The-Hacker-Cookbook:ENTREES/wimzkl_caramelized-onion-mushroom-stuffin.md": [
+      "337f663651c4560eacfe188c"
+    ],
     "DEAD10C5--1337-Noms-The-Hacker-Cookbook:SAUCES/elegin_vegan_tarter_sauce.md": [
       "bd05f91e4e8fc95468b4c02c"
     ],
@@ -10583,8 +10789,14 @@
     "DEAD10C5--1337-Noms-The-Hacker-Cookbook:SNACKS/iHeartMalwares_kettle_corn.md": [
       "a153dc396b769928f1bb3d7c"
     ],
+    "andrewkern--bagels:README.md": [
+      "0c5e619d9e6fbc59baac499a"
+    ],
     "aweijnitz--recipe-el_fuego_viviente:README.md": [
       "7a750a3138e30dcddefb85c6"
+    ],
+    "buggymcbugfix--602f34214a37d972993830c2c9526cf0:sexy-chicken-schnitzel.md": [
+      "448333ff0f355774235d8b93"
     ],
     "clarklab--chowdown:_components/graham-cracker-crust.md": [
       "200705053b0e2b0313a2a060"
@@ -10748,6 +10960,9 @@
     "reaper47--recipya:internal/scraper/testdata/livelytable.html": [
       "55a7a386b7e6dd34dbf76ea2"
     ],
+    "reaper47--recipya:internal/scraper/testdata/livingthegreenlife.html": [
+      "97995d955c1d38001d834771"
+    ],
     "reaper47--recipya:internal/scraper/testdata/loveandlemons.html": [
       "9b323a31c19949cdc64e980d"
     ],
@@ -10889,6 +11104,9 @@
     ],
     "reaper47--recipya:internal/scraper/testdata/paleorunningmomma.html": [
       "07eb89ef55cf4b148776760a"
+    ],
+    "reaper47--recipya:internal/scraper/testdata/paninihappy.html": [
+      "87162051238fdeb6e156fa5d"
     ],
     "reaper47--recipya:internal/scraper/testdata/parsleyandparm.html": [
       "065c427efaea6c283834cbb8"
@@ -11206,6 +11424,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/414cbd5e5c8c4ef74f65b51e4cbc0b2b.gz": [
       "841ba7fe392b5fac864921b2"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/414d12c7a15a4bbeea63c9c10ec0cbbd.gz": [
+      "4493dee40d23089c46b2ca87"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4260bf8a6a34ca349e1e1d887d256068.gz": [
       "75488f0620f4487b053aa0b7"
     ],
@@ -11215,8 +11436,14 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/43d43d762aaf2920aba5cec305573401.gz": [
       "20669e150ef98846f0e6a1ba"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/43ff14353bdee28d44ee9d66a49c72d5.gz": [
+      "f0fba3a05bb011e68bb02bef"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4414b3913cf2393698f2d1a08e24b45e.gz": [
       "b00ebecd7bce7f7ae58fb20e"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/44310b842d060fb41376e4f1e5a371fe.gz": [
+      "6e5b9d48c1bd9910e6c25cce"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/443fa8ca64ff1f9596ca14d3d92e25ab.gz": [
       "62192860776f45f5b2b52b3f"
@@ -11254,8 +11481,14 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/479fb4565353877a653b56e1b26fda86.gz": [
       "f483c0a2e704244bf105143f"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/47cd6d30edeef9b06c1ae204e740c582.gz": [
+      "7b769029838534145f9ccaf2"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/48254c036b7e24f15dd40f3a72981098.gz": [
       "17664f2acfeda4ab59b4496c"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/486f34508e8a0aa993cd77a7086f3359.gz": [
+      "b0ab8e81e21a7c6606b01c99"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4871a741b5b4293b7178702f1c12fba4.gz": [
       "7c9a97aa4cf019c93bb7b531"
@@ -11266,6 +11499,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/48be2b889aeda439f65c2113ce88b593.gz": [
       "e7a7ba17d399647992b9b89b"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/48ec4474c7d048c59f0e653caa3d6359.gz": [
+      "149b84bcaf0951b9ad79113b"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/49295bf344e89aae2759182e41428da3.gz": [
       "b06ea4588b855bbfe1216a66"
     ],
@@ -11274,6 +11510,12 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/495fea14f38f88b15d373c20ac1c412c.gz": [
       "744953cae1b75048f6820c72"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4960d988628bc584ae416d15fc777417.gz": [
+      "6e2092086b38c4e06d13a4e2"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4991026055db9ed01254155bc8ba0014.gz": [
+      "ef7ec48802cbb0fa8fdaf06e"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/49ce38292013cc33aca17ca3fc1e8bd4.gz": [
       "91fb6960c201b4b9d48b817f"
@@ -11295,6 +11537,12 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4ae76b7b00f09355c70f913d4c899e90.gz": [
       "3054819f7af592bcf005e2d6"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4aef54257f3ca828afa9e7762f2905c9.gz": [
+      "94e609bf738bd2102d129226"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4b56b9ce746f704a10aa90b3290d1249.gz": [
+      "79b02bd71ed14c42cc7f57e7"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4b6c77bf1d4a71d3ccfd622c6cd47cb1.gz": [
       "c1913cee500763d25ebc473c"
@@ -11320,6 +11568,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4d44449cefe921d69818cd2d7938b744.gz": [
       "85097fcb215947bd1c44cce5"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4d7f1d468f33d67d6640b94bc6eb99db.gz": [
+      "ee133bd14ef95381b51b5e33"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4dcc93ecb5946ad5df58a9239233bab7.gz": [
       "f0f391240fe537d4f30ce967"
     ],
@@ -11338,8 +11589,14 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4e3776f8498870c6f897d3e8d24a1336.gz": [
       "6556e68138895d85cffbc0ee"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4e4104e4ddfaa7d07c14f62ce86df0d3.gz": [
+      "4acaf935121ac59030d4cab8"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4e655c5de6c0a60baba4e9b3442bdb7c.gz": [
       "f3ecf50982afc69afcb1b9e6"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4e7f33d958803edde521863da8cb584f.gz": [
+      "45587b6a9978d38dae977889"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/4ef2f7fb4a3a86924d8db0879896f1a8.gz": [
       "e95c8f41ad3e99771d7db5ce"
@@ -11392,6 +11649,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5302c84e98f061bd3ee4373a2af00a94.gz": [
       "455ec45d1d8660fa856b02de"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5306c3b3a97fa2dcf3d27ddefcbe02d6.gz": [
+      "b75f356e3bceebc9dd186d89"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/53275b5516ea1bd2e3553f7a3fe051b3.gz": [
       "7fe4b68c32e19311fc9c03b1"
     ],
@@ -11419,6 +11679,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/54a69d18b449a7ca3ee2f49079cce1ea.gz": [
       "b4a16b045932b023fcaa4d6a"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/554bd86f030eddafd6eb4f2bb4351a05.gz": [
+      "7f79c6d55bd900f78cf2dc23"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/556bfd1fc9acdbb91f2627c4fba8a5db.gz": [
       "2ddbb788aae1b26f3358a593"
     ],
@@ -11436,6 +11699,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/56759e1eea7e05480aaaae7ab7950c97.gz": [
       "fae40cc8dc41edbe9ef0968a"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/570b939d6f80273215296812c39ca998.gz": [
+      "21c841a2177f9b0fc0e40fe6"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/572bb597c9f633dec16bde3c1f50891b.gz": [
       "61fe357ebaf4781581dafada"
@@ -11470,17 +11736,26 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5994ee4ab00fc7415164329f05461391.gz": [
       "fc0b346f00dbfcefad78c4bb"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5a09daa9bb6df252cad92be643c5ec96.gz": [
+      "aebb285729d0bf7c36ab8a1c"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5a14d6b7f4c26776e2f4a47f271d21ba.gz": [
       "01cc1e6ef09267f862d9a183"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5a3a781e3f4fa057789ece957f70a87a.gz": [
       "9764e61569b263a5647dd457"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5a51970373fb3e58bbf44036bb697c6d.gz": [
+      "269fbda58688fce86ed43395"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5a781ae70c5c3b921b22a6c46c181500.gz": [
       "f58fd60b63e97ccc7cce6f2f"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5a959c2d65d5652fc62e39ce6d9a36b8.gz": [
       "f5172a5dbbe051a3aceb0290"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5ac7bcb41683980e26e83a07e2b6fa7c.gz": [
+      "b84207e9f78bf96b4ff9dd9e"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5b0f97bf744c2af37755aef6b7f30bc0.gz": [
       "fb9c4574c9f268ae5b1cd282"
@@ -11493,6 +11768,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5b9b59e1c714888af6ad0d7fc0138cad.gz": [
       "464e61a1ca2e61e359f0cd69"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5bca7afe81a6754547d03335fd10a417.gz": [
+      "16406bd1438c870f8a995369"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5c758e8fbbdc3f3cc580280b10e22da3.gz": [
       "ae77ba85cbdff61695e2a191"
@@ -11509,11 +11787,26 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5d5aa7c82ecf0d95e43b93f2d8871813.gz": [
       "41ca74db2e07bd539dfff000"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5dccfa5067b788e7c464ff90fb002bab.gz": [
+      "943f6635697e9d9d5bbfb003"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5e3d9c35ae242753149d17f3ba4401b7.gz": [
       "fe521bb06cbc04c1e57851fe"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5e5f6c2a0e6e4d3e1c36c2a195997585.gz": [
+      "58464b7ac8bd92f37bd99606"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5e647654558f16fe321ce4136f36807c.gz": [
+      "9d12a86bbb20f78c56a5fa98"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5e9e631109465c73f50d9d53af464342.gz": [
       "8e4f614b1bebf781e997925f"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5ea0054cd515009f55b7d1793185b6d9.gz": [
+      "f88569af91df07486f3eace1"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5ebc916e36229a32c1707e5b53e54b04.gz": [
+      "5d47f1f0db6c28ab3d534cdb"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5ecb7ef2f82401a99fc52ba65bd4ef11.gz": [
       "e639dbf4fdf400e6e2bd4ca6"
@@ -11521,11 +11814,20 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/5fffb5dc71a11819f472e5824b881c40.gz": [
       "7159a8e23434f0e149ea2008"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/605dee9d96726c695b390e32eb901cd1.gz": [
+      "b585316282191a3521b93f1b"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/606f85b1d1e6f6fc41e0d51ca8d165ee.gz": [
       "825b8ec34d8eeb509561a3a1"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/60bed08688d8291ceb2a7b23b9b44f71.gz": [
       "eb069baf1254bd721aac274d"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/60e158cca908c504dfe4bd714aa173a5.gz": [
+      "27bd5887ac347b5fb3341cc7"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/6140598eb408c16761ead6a1cc5e582f.gz": [
+      "f547bcbb857b66acb7648d9a"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9eb1b65aa9718d74b08aab61a099800a.gz": [
       "26fb6f43ff39ad755fef4a73"
@@ -11536,11 +11838,20 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9ee09afc04eb36b2680bc1ee8c7ece77.gz": [
       "f6412f4e5e27fca6bb2a0beb"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9ef007f1b294de5da6058f689fc6bd37.gz": [
+      "821b5a09b0dda34f0d33792d"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9f11144756acc4e98aac468ac10688c6.gz": [
+      "00906555b1f2f5a8fe14c15f"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9f27dc4aa5d3e0a57ca6dd46c65dd361.gz": [
       "f7a76ba7f44d293fbb9c3358"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9f72417c7b50d359496bbe306d7342b1.gz": [
       "3ea7076bee3a28ac9761a003"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9f8d708e3b4d712ce3c5004d490df4c9.gz": [
+      "ef282e7a8fcb2606a6b8da74"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9f94d4c67fef347a93885924a3df7e08.gz": [
       "0893f17ef158a28c998b6262"
@@ -11550,6 +11861,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/9fa3bda6e74679d9902a9a8aeac6886d.gz": [
       "ce0b2acb14974d573917dc9a"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a0155a65412e5302ff953b5cfaa09530.gz": [
+      "a2ac9fc528a2dccfaba359a7"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a05706816c5ab4f60f9055f5394fe5d8.gz": [
       "1ca5fbd8e9ebe2b1d7ef6257"
@@ -11574,6 +11888,12 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a0fafa0f9004d5194a562482773d2cc7.gz": [
       "61988ef110505abf3f06c3f7"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a20479de7cad37e7b7a838b7efab976f.gz": [
+      "54976166f530c22696b901c1"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a23c6326fa433c12686eb2c05b55dbe6.gz": [
+      "9ad6b800135c26d9245f1c6c"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a2519be2b66a37ff06c62296668c1e19.gz": [
       "ffe57dacd550dbf92bc17e5f"
@@ -11641,8 +11961,14 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a5d2121a3e10bbe629af438f30ac7ed3.gz": [
       "00c94fd924089cc98f61c708"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a650d8424196a697aa9309e4763c0f11.gz": [
+      "c647a063864f320aae63a910"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a666714a4d489f13a784fd18bf4a4d84.gz": [
       "f946ab3e0a5f8706a07f8299"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a68a4c4ee0dbac29cd0bd9fa0a0e94e9.gz": [
+      "c272ee0d111bd6fc165e955d"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a6ab6ac9625ef3312bb049ef93db02c8.gz": [
       "71090b603ec4ddfbdb5aca0a"
@@ -11682,6 +12008,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a91103313716e6c21561e0ec8a77a992.gz": [
       "08eac3fa1cdccfc3a5e17ec2"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a95c922c7bbe88f95e42d8f60bd97ae2.gz": [
+      "c8bb1cb657070c8df06f994e"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/a97540783c04b3e757129666ea6f9a5d.gz": [
       "24415365523db14404cf6a1c"
@@ -11761,6 +12090,9 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/af5a37c1bddab94446d0141ae415c854.gz": [
       "5f172807f8164f1379792b7f"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/af7b39969b7a6a86e12a17b707e892cc.gz": [
+      "9404ab62890a40e092780da8"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/afadd7412ee4abe2f99bc9a7a08d4a56.gz": [
       "59e9545fd62d84a9bae4a4e3"
     ],
@@ -11769,6 +12101,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b0c256b04a0f562ce258f61d11eb3171.gz": [
       "dfbc637c92a6daf245046f4d"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b0fa89a22b760077df1ce7aa1211a853.gz": [
+      "e9979e18e9db3e360d210acb"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b11656b891a42e3d49ed7c2c7d1578c1.gz": [
       "f19912b696a704ff731cf5f3"
@@ -11797,8 +12132,14 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b4bf94b7b962f6de425320ffaa28cf27.gz": [
       "193de8b545d68e82c81cdbea"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b50801b20c5484b9ef561cda70c5c3c3.gz": [
+      "b3f1d46f1fed1a636dde81cd"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b5c45d59eaf0c1a169004e90d8597380.gz": [
       "5fa9a35f0d9e161cd4b185e5"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b5d03ee93346cbd8ffb064ee8394f3e4.gz": [
+      "2e89dda5db273f53263e5d5f"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/b5ed75ed39571212e5008c3b0b57e437.gz": [
       "95b9f26e9c198e27587ca694"
@@ -11836,8 +12177,14 @@
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bacfba1cf4eec8375d9231acb23f3c8c.gz": [
       "26273d8167576faa211ea69c"
     ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bad42be9d81a9a5344e982abd6d5ec7e.gz": [
+      "80431c6e5666403836da89a7"
+    ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bb07867915bcf55f70fd1d6a6a15c5ae.gz": [
       "fd4818a6620ac8ff9c41bd23"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bb310b0f6d18a2f2992f7655537d1428.gz": [
+      "ea29b0fe549a18f6db693afa"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bb3a18d90075d488e1e4f36a42bc538c.gz": [
       "20ad72a393871dad4c2c0890"
@@ -11847,6 +12194,9 @@
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bbbe4078531dd081ff8ea88c5a606a06.gz": [
       "ed6e93bbb9697c79873de0c0"
+    ],
+    "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bc1108884caa9eee6637d5682050aca8.gz": [
+      "69cac13abfac6dbe5e81c323"
     ],
     "schollz--meanrecipe:src/testing/chocolate_chip_cookies/bc439db3bb44ec8ccb17bb565855c1cf.gz": [
       "7e28848dd438e5c9e86deeae"
@@ -11881,11 +12231,26 @@
     "sinker--tacofancy:base_layers/aredridel_lightly_seasoned_beef.md": [
       "cc1244a74a32e5ea7847e955"
     ],
+    "sinker--tacofancy:base_layers/asian_marinade.md": [
+      "320f50a90af7da33132dca12"
+    ],
+    "sinker--tacofancy:base_layers/baja_beer_batter.md": [
+      "04c00657303b8ecd9c6a0801"
+    ],
     "sinker--tacofancy:base_layers/baked_tilapia.md": [
       "ea7c9092c499cd0ae16e9149"
     ],
+    "sinker--tacofancy:base_layers/basic_shredded_chicken.md": [
+      "49da7e1a9a9fafb31da71315"
+    ],
+    "sinker--tacofancy:base_layers/battered_catfish.md": [
+      "41ff812292f15400aa50c5ba"
+    ],
     "sinker--tacofancy:base_layers/boiled_ground_beef.md": [
       "e0ffe5a0ab9f1dc000834562"
+    ],
+    "sinker--tacofancy:base_layers/bulgar_black_bean_filling.md": [
+      "3c64c478e4ce9c86590a853a"
     ],
     "sinker--tacofancy:base_layers/butternut_squash.md": [
       "33f1716efaf2a4f8408aee6a"
@@ -11896,6 +12261,12 @@
     "sinker--tacofancy:base_layers/chipotle_shrimp.md": [
       "dd6e47a1d28bd308ea472307"
     ],
+    "sinker--tacofancy:base_layers/chopped_pork.md": [
+      "1946b2f98e85bb450df6fdf2"
+    ],
+    "sinker--tacofancy:base_layers/chopped_steak.md": [
+      "fc72924884d8272ab524b75f"
+    ],
     "sinker--tacofancy:base_layers/chorizo.md": [
       "591132e30d6684deaaf4fac5"
     ],
@@ -11904,6 +12275,9 @@
     ],
     "sinker--tacofancy:base_layers/crock_pot_fake_al_pastor.md": [
       "e5a399861a719df5fada70a3"
+    ],
+    "sinker--tacofancy:base_layers/crock_pot_pulled_pork.md": [
+      "f42ed092657661cedff6f9e1"
     ],
     "sinker--tacofancy:base_layers/fat_poached_carnitas.md": [
       "c1f5e7e8165ba4363cf4b3d6"
@@ -11917,14 +12291,29 @@
     "sinker--tacofancy:base_layers/insane_garlic_ground_turkey.md": [
       "6dea7474f3f8aaeb4c673356"
     ],
+    "sinker--tacofancy:base_layers/moroccan_lamb.md": [
+      "36b51e0a4fc2a8a15b784cb6"
+    ],
     "sinker--tacofancy:base_layers/no_bean_chili.md": [
       "ef9412465d0673571d329046"
+    ],
+    "sinker--tacofancy:base_layers/pan_seared_salmon.md": [
+      "67ba3230edc32d2f0e48935f"
     ],
     "sinker--tacofancy:base_layers/pepper_tempeh.md": [
       "6e801b7d6f2ec2db19391d50"
     ],
+    "sinker--tacofancy:base_layers/pork_belly.md": [
+      "5c23e79c0b12f33430666dae"
+    ],
     "sinker--tacofancy:base_layers/pork_shoulder_with_chile_and_onions.md": [
       "44ec1df9ef3f2d6cd3b2be82"
+    ],
+    "sinker--tacofancy:base_layers/puerco_pibil.md": [
+      "be62175bb6e2ba1288a1f630"
+    ],
+    "sinker--tacofancy:base_layers/rajas_poblanas.md": [
+      "f02d12743ab6dfa1a7fad00b"
     ],
     "sinker--tacofancy:base_layers/red_cabbage.md": [
       "7cef562729ce75d86f365e85"
@@ -11938,8 +12327,20 @@
     "sinker--tacofancy:base_layers/seasoned_lentils.md": [
       "95cb0f5a5b4def23ebca79ae"
     ],
+    "sinker--tacofancy:base_layers/slow_cooked_salsa_verde_chicken.md": [
+      "5e8732e3ffa6481365f97554"
+    ],
+    "sinker--tacofancy:base_layers/smokey_turkey.md": [
+      "f0aefe957c9dcce1b8506855"
+    ],
+    "sinker--tacofancy:base_layers/soyrizo.md": [
+      "217073dbc9354a08ce9d98b2"
+    ],
     "sinker--tacofancy:base_layers/spaghetti_squash.md": [
       "f86c39dd36b448940f594c99"
+    ],
+    "sinker--tacofancy:base_layers/swiss_chard.md": [
+      "a310122916c67fe4a7ea1a5f"
     ],
     "sinker--tacofancy:base_layers/tacosdelengua.md": [
       "6899cd43eba6eff4a4f18d89"
@@ -11947,8 +12348,17 @@
     "sinker--tacofancy:base_layers/zucchini_corn.md": [
       "dd3451c354158a5056114a92"
     ],
+    "sinker--tacofancy:condiments/Pico_de_gallo.md": [
+      "5cf0688d747abd4ca49bd5a7"
+    ],
     "sinker--tacofancy:condiments/asian_cabbage.md": [
       "74e44ff0084fc3bf9c730e48"
+    ],
+    "sinker--tacofancy:condiments/baja_white_sauce.md": [
+      "1ffb180d00d4108eeb0295c3"
+    ],
+    "sinker--tacofancy:condiments/beet_salsa.md": [
+      "3ae396c6bd82bcdd19303d02"
     ],
     "sinker--tacofancy:condiments/cabbage_slaw.md": [
       "fc43c92d7e4f9a16612b30bb"
@@ -11958,6 +12368,9 @@
     ],
     "sinker--tacofancy:condiments/caramelized_red_onions.md": [
       "cb758de1cc4b8aa256ade59b"
+    ],
+    "sinker--tacofancy:condiments/cashew_cheeze.md": [
+      "7a6915dda3e39b60592e371f"
     ],
     "sinker--tacofancy:condiments/charred_corn.md": [
       "2461a9b8d0a3f2432dea4be6"
@@ -11977,11 +12390,20 @@
     "sinker--tacofancy:condiments/creamy_mustard_sauce.md": [
       "40a584bbee58d47b0620fce4"
     ],
+    "sinker--tacofancy:condiments/european_sour_cream.md": [
+      "e3f76787b96a4f84839157cf"
+    ],
+    "sinker--tacofancy:condiments/garlic_lime_sauce.md": [
+      "46d2d3e8b645d86bf922fadb"
+    ],
     "sinker--tacofancy:condiments/gochjang_cucumbers.md": [
       "a91f4fb2e9634e572867a3f7"
     ],
     "sinker--tacofancy:condiments/grilled_pineapple_pear_salsa.md": [
       "6d8192e675d2fa7c611dfe14"
+    ],
+    "sinker--tacofancy:condiments/guacamole.md": [
+      "da6c81821ed4ad8f780b3269"
     ],
     "sinker--tacofancy:condiments/guacamole_simple.md": [
       "a0a7f2c1c0a2a4ddfd54a3a0"
@@ -11998,6 +12420,9 @@
     "sinker--tacofancy:condiments/mango_avocado_salsa.md": [
       "d5d84a80068125f3022939c5"
     ],
+    "sinker--tacofancy:condiments/mango_lime_salsa.md": [
+      "3fc066389c74eaea7d9c55cd"
+    ],
     "sinker--tacofancy:condiments/onions_and_cilantro.md": [
       "e351e1e682dac1030bd85f71"
     ],
@@ -12007,11 +12432,23 @@
     "sinker--tacofancy:condiments/pickled_jalapeños.md": [
       "1e59911af103bcf62a3d2450"
     ],
+    "sinker--tacofancy:condiments/pickled_red_onions.md": [
+      "999b5c287695dc603248e651"
+    ],
+    "sinker--tacofancy:condiments/pickled_vegetables.md": [
+      "0e7553524971752cb395fe9e"
+    ],
     "sinker--tacofancy:condiments/pineapple_lime_crema.md": [
       "7cbb0b7430518afea90595f2"
     ],
     "sinker--tacofancy:condiments/roasted_tomatillo.md": [
       "36b307542307815699ffb5fb"
+    ],
+    "sinker--tacofancy:condiments/salsa_de_aguacate.md": [
+      "ea1c3f45239d45911eb69c13"
+    ],
+    "sinker--tacofancy:condiments/salsa_sauce.md": [
+      "0df060b65b987afabec979bc"
     ],
     "sinker--tacofancy:condiments/spicy_mayo.md": [
       "f40f1dd6556324829c048184"
@@ -12040,6 +12477,9 @@
     "sinker--tacofancy:full_tacos/chorizo_scramble_tacos.md": [
       "d19f8a0a1284aec5a03fb114"
     ],
+    "sinker--tacofancy:full_tacos/moroccan_lamb_taco.md": [
+      "76b222b4382a9a484f0397a0"
+    ],
     "sinker--tacofancy:full_tacos/spaghetti_squash_tacos.md": [
       "773d77420642357a1b797a01"
     ],
@@ -12055,8 +12495,14 @@
     "sinker--tacofancy:full_tacos/traditional_american_taco.md": [
       "f647089551cfafea7719d5c6"
     ],
+    "sinker--tacofancy:like_tacos/Chicken_Makloub.md": [
+      "1221f0aa9f40026a6b0273b5"
+    ],
     "sinker--tacofancy:like_tacos/Sad_Mexican_Grilled_Cheese.md": [
       "557596519214c8b0a5d755f9"
+    ],
+    "sinker--tacofancy:like_tacos/beef_vindaloo_on_naan.md": [
+      "abf70d18875ce6f4502f595d"
     ],
     "sinker--tacofancy:like_tacos/choco_taco.md": [
       "e0904f35d3f4e45f4c223817"
@@ -12064,8 +12510,17 @@
     "sinker--tacofancy:like_tacos/drunk_nachos.md": [
       "090d7bb7fa6baf5dbbc71b95"
     ],
+    "sinker--tacofancy:like_tacos/pickle_pita.md": [
+      "4dc5db12a78ea35b4ff3759d"
+    ],
     "sinker--tacofancy:like_tacos/taco_soup.md": [
       "30afd2ec283bb8bf05361259"
+    ],
+    "sinker--tacofancy:mixins/Corn_Salad.md": [
+      "29c360f7125d58bb1eb67791"
+    ],
+    "sinker--tacofancy:mixins/Potato_hash.md": [
+      "ec30f9625881f9e7fe9a1ba3"
     ],
     "sinker--tacofancy:mixins/brussels.md": [
       "1eb297d24ae10aed6e0fa3dc"
@@ -12073,8 +12528,23 @@
     "sinker--tacofancy:mixins/green_chile_cabbage_salad.md": [
       "58ed43de6ab64c584b274554"
     ],
+    "sinker--tacofancy:mixins/mushroom_wasabi_salad.md": [
+      "ae6671af190b7c553d820df3"
+    ],
     "sinker--tacofancy:mixins/peppers_onions_and_shrooms.md": [
       "20cba242f9b18473142d1673"
+    ],
+    "sinker--tacofancy:mixins/sweet_potato_and_apple_hash.md": [
+      "c90f82dd72d1d6b2d9d4a4e4"
+    ],
+    "sinker--tacofancy:mixins/traditional_taco_mixins.md": [
+      "9d4424ed2ef7331dce2e7695"
+    ],
+    "sinker--tacofancy:mixins/veg_for_fish_tacos.md": [
+      "fab768ef628bbe06c83aa00b"
+    ],
+    "sinker--tacofancy:seasonings/basic_dry_rub.md": [
+      "cd326a4b2e4b655702428cee"
     ],
     "sinker--tacofancy:seasonings/chipotle_rub.md": [
       "fe80bcb362b9540b775e1cac"
@@ -12082,11 +12552,26 @@
     "sinker--tacofancy:seasonings/homemade_sriracha.md": [
       "81908e0e16b065151e5e4df6"
     ],
+    "sinker--tacofancy:seasonings/quick_and_dirty_spice_mix.md": [
+      "1bea98f8b9aef66b1d5b203e"
+    ],
     "sinker--tacofancy:seasonings/simple_beef_seasoning.md": [
       "c02f2fbfb03e54a8b8cb2dd6"
     ],
+    "sinker--tacofancy:seasonings/sriracha_salt.md": [
+      "6b70bbe5ceb181db6a757424"
+    ],
+    "sinker--tacofancy:seasonings/universal_taco_seasoning.md": [
+      "b346e7e79d89b73448c9b834"
+    ],
     "sinker--tacofancy:shells/Fresh_corn_tortillas.md": [
       "30d196c75e4c0e78249c0c21"
+    ],
+    "sinker--tacofancy:shells/homemade_tortillas.md": [
+      "99e981db054e08f3b6ad8c98"
+    ],
+    "sinker--tacofancy:shells/low-carb_taco_shells.md": [
+      "96c2a395b11aeeb1581e9d0c"
     ]
   },
   "sources": {
@@ -13206,5 +13691,5 @@
     }
   },
   "started_at": "2026-09-08T23:26:36-04:00",
-  "updated_at": "2026-09-08T23:36:21-04:00"
+  "updated_at": "2026-09-09T00:07:47-04:00"
 }

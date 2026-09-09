@@ -1,0 +1,24 @@
+{
+  "agent": "recipe-agent-07",
+  "completed_at": "2026-09-09T00:40:05-04:00",
+  "completion_status": "complete",
+  "current_cursor": "Brooke-white--RecipeParser:Recipes/\"Mock\" Garlic Mashed Potatoes.md",
+  "failure_history": [],
+  "failures": {},
+  "processed": {
+    "Brooke-white--RecipeParser:Recipes/\"Mock\" Garlic Mashed Potatoes.md": [
+      "c927876e3aa574c842658065"
+    ]
+  },
+  "sources": {
+    "Brooke-white--RecipeParser": {
+      "discovered": [
+        "Recipes/\"Mock\" Garlic Mashed Potatoes.md"
+      ],
+      "discovery_complete": true,
+      "revision": "53104805d8b49b9111a75a4e5604eaf027e96cbd"
+    }
+  },
+  "started_at": "2026-09-09T00:36:30-04:00",
+  "updated_at": "2026-09-09T00:36:30-04:00"
+}

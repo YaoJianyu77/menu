@@ -14,10 +14,12 @@
       select.add(new Option(value, value));
   }
   const search = document.querySelector("#search");
+  const includeVariants = document.querySelector("#include-variants");
   function filter() {
     let count = 0;
     for (const card of cards) {
       const visible =
+        (includeVariants.checked || card.dataset.representative !== "false") &&
         card.dataset.name.toLowerCase().includes(search.value.toLowerCase()) &&
         filters.every((input) => {
           if (!input.value) return true;
@@ -38,15 +40,18 @@
     document.querySelector("#empty").hidden = count > 0;
   }
   if (search) {
+    includeVariants.addEventListener("change", filter);
     [search, ...filters].forEach((input) =>
       input.addEventListener("input", filter),
     );
     document.querySelector("#reset").addEventListener("click", () => {
+      includeVariants.checked = false;
       [search, ...filters].forEach((input) => {
         input.value = "";
       });
       filter();
     });
+    filter();
   }
   const payload = document.querySelector("#recipe-data");
   if (!payload) return;

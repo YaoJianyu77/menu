@@ -1,0 +1,218 @@
+{
+  "agent": "recipe-agent-04",
+  "completed_at": "2026-09-09T00:40:05-04:00",
+  "completion_status": "complete-with-failures",
+  "current_cursor": "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseIssue1617c.json",
+  "failure_history": [
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/case2711.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:30-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseB.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:31-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseD.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:31-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseE.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:31-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseImage.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:32-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseIngredient.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:32-04:00"
+    },
+    {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "event": "failure",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseInstruction.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:32-04:00"
+    }
+  ],
+  "failures": {
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/case2711.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/case2711.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:30-04:00"
+    },
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseB.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseB.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:31-04:00"
+    },
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseD.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseD.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:31-04:00"
+    },
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseE.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseE.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:31-04:00"
+    },
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseImage.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseImage.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:32-04:00"
+    },
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseIngredient.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseIngredient.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:32-04:00"
+    },
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseInstruction.json": {
+      "error_message": "No supported Recipe structure; original file preserved in pinned Git cache",
+      "error_type": "ValueError",
+      "item_identifier": "tests/Unit/Helper/HTMLParser/res_Microdata/caseInstruction.json",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "https://github.com/nextcloud/cookbook",
+      "timestamp": "2026-09-09T00:07:32-04:00"
+    }
+  },
+  "processed": {
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_JsonLd/caseA.json": [
+      "68d2e424f6c199aeaab2d3ca"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_JsonLd/caseB.json": [
+      "3d77c7ed0823c647a458546b"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_JsonLd/caseF.json": [
+      "ff15fd03de9de94535c931b0"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_JsonLd/caseG.json": [
+      "116381cba90053b7d99b91bc"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_JsonLd/caseH.json": [
+      "56325d4c0d19068eba68eb91"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_JsonLd/caseI.json": [
+      "8b4d197fa733454a5cda0c96"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_JsonLd/caseJ.json": [
+      "d9b127f2581b536eed4e8ce8"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_JsonLd/caseK.json": [
+      "b1b2eed45d5955336f6372d9"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_JsonLd/caseL.json": [
+      "3ca51168967a4ae33fe10ae4"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseA.json": [
+      "a8734a16077846753da39b4e"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseFix1209.json": [
+      "ef2f024384b3ce0b39302400"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseIssue1617a.json": [
+      "25a1a8942ee5ec5cffb38b09"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseIssue1617b.json": [
+      "41a3d4f9e2ebf0197c5c54e7"
+    ],
+    "nextcloud--cookbook:tests/Unit/Helper/HTMLParser/res_Microdata/caseIssue1617c.json": [
+      "f6e96ec98ec90dfa26b5cece"
+    ]
+  },
+  "sources": {
+    "nextcloud--cookbook": {
+      "discovered": [
+        "tests/Unit/Helper/HTMLParser/res_JsonLd/caseA.json",
+        "tests/Unit/Helper/HTMLParser/res_JsonLd/caseB.json",
+        "tests/Unit/Helper/HTMLParser/res_JsonLd/caseF.json",
+        "tests/Unit/Helper/HTMLParser/res_JsonLd/caseG.json",
+        "tests/Unit/Helper/HTMLParser/res_JsonLd/caseH.json",
+        "tests/Unit/Helper/HTMLParser/res_JsonLd/caseI.json",
+        "tests/Unit/Helper/HTMLParser/res_JsonLd/caseJ.json",
+        "tests/Unit/Helper/HTMLParser/res_JsonLd/caseK.json",
+        "tests/Unit/Helper/HTMLParser/res_JsonLd/caseL.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/case2711.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/caseA.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/caseB.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/caseD.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/caseE.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/caseFix1209.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/caseImage.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/caseIngredient.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/caseInstruction.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/caseIssue1617a.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/caseIssue1617b.json",
+        "tests/Unit/Helper/HTMLParser/res_Microdata/caseIssue1617c.json"
+      ],
+      "discovery_complete": true,
+      "revision": "9dab723d4f6fdb62bee8eaf5fbc9c271129060e5"
+    }
+  },
+  "started_at": "2026-09-09T00:07:30-04:00",
+  "updated_at": "2026-09-09T00:07:33-04:00"
+}

@@ -1,0 +1,29 @@
+{
+  "affected_failed_items": 1,
+  "agent": "recipe-agent-01",
+  "improvements": [
+    {
+      "affected_failed_items": 62,
+      "agent": "recipe-agent-01",
+      "method": "Retry only baseline failed items accepted by generalized adapter. Prior successful records untouched; error history retained.",
+      "parser_version": "layout-recovery-v1",
+      "recovered": 62,
+      "remaining": 234,
+      "timestamp": "2026-09-09T00:04:20-04:00"
+    },
+    {
+      "affected_failed_items": 1,
+      "agent": "recipe-agent-01",
+      "method": "Retry only baseline failed items accepted by generalized adapter. Prior successful records untouched; error history retained.",
+      "parser_version": "layout-recovery-v2",
+      "recovered": 1,
+      "remaining": 233,
+      "timestamp": "2026-09-09T00:05:21-04:00"
+    }
+  ],
+  "method": "Retry only baseline failed items accepted by generalized adapter. Prior successful records untouched; error history retained.",
+  "parser_version": "layout-recovery-v2",
+  "recovered": 1,
+  "remaining": 233,
+  "timestamp": "2026-09-09T00:05:21-04:00"
+}

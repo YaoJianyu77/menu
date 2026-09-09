@@ -1,0 +1,85 @@
+{
+  "canonical_ingredients_with_likely_evidence": 155,
+  "configured_store_address": "1234 Richmond Road, Williamsburg, VA 23185, United States",
+  "configured_store_id": null,
+  "discovery_status": "COMPLETE_ADVERTISED_PRODUCT_SITEMAPS",
+  "failures": [],
+  "limitations": [
+    "Root/store catalog previously HTTP403; public SEO /groceries/ surface HTTP200 and robots allowed.",
+    "Sitemap inclusion proves catalog existence, not current stock, prices, store range or orderability.",
+    "Store catalog ID unknown. No selected store context on public SEO pages.",
+    "Category pages not exhaustively visited; advertised sitemap enumeration is not all possible national products."
+  ],
+  "mapping_config_sha256": "9ffea8cfb4cdefa5d2d860ec3460281a2d8d8b85ebe69a519d2656d1195cc2cb",
+  "mapping_updated_at": "2026-09-09T00:27:06-04:00",
+  "observations": [
+    {
+      "http_status": 200,
+      "raw_path": "data/foodlion/evidence/raw/categories-0.xml",
+      "retrieved_at": "2026-09-09T00:00:55-04:00",
+      "sha256": "4974b9bb2f85033dfacaadd4fdc49fe714327a7a23a6939f9ae04899e4af468b",
+      "source_url": "https://foodlion.com/groceries/sitemaps/categories-0.xml"
+    },
+    {
+      "http_status": 200,
+      "raw_path": "data/foodlion/evidence/raw/groceries.txt",
+      "retrieved_at": "2026-09-09T00:00:55-04:00",
+      "sha256": "fafe37f1d93f12fa06f9d6716bb8471db1757d767474484e24fd448a63abca19",
+      "source_url": "https://foodlion.com/groceries/"
+    },
+    {
+      "http_status": 200,
+      "raw_path": "data/foodlion/evidence/raw/products-0.xml",
+      "retrieved_at": "2026-09-09T00:00:55-04:00",
+      "sha256": "a2857928d2b9120db4656b8ad390e6db168d81fd5c2d751828233622c19b18ba",
+      "source_url": "https://foodlion.com/groceries/sitemaps/products-0.xml"
+    },
+    {
+      "http_status": 200,
+      "raw_path": "data/foodlion/evidence/raw/products-1.xml",
+      "retrieved_at": "2026-09-09T00:00:55-04:00",
+      "sha256": "7b92d421158156e4737d64469338f9daaea458dfe066afc2f11cd5c51b3baaa2",
+      "source_url": "https://foodlion.com/groceries/sitemaps/products-1.xml"
+    },
+    {
+      "http_status": 200,
+      "raw_path": "data/foodlion/evidence/raw/products-2.xml",
+      "retrieved_at": "2026-09-09T00:00:55-04:00",
+      "sha256": "873c5b60e1d2fcd407c1142a50a697270a9fa2b4b1cf9fdee4e6fe950026df0f",
+      "source_url": "https://foodlion.com/groceries/sitemaps/products-2.xml"
+    },
+    {
+      "http_status": 200,
+      "raw_path": "data/foodlion/evidence/raw/robots.txt",
+      "retrieved_at": "2026-09-09T00:00:55-04:00",
+      "sha256": "b17803b76e37b7f70c50eaad08a6525173be46f3f8e2b99d3b07f90b955df6ac",
+      "source_url": "https://foodlion.com/robots.txt"
+    },
+    {
+      "http_status": 200,
+      "raw_path": "data/foodlion/evidence/raw/sitemap.txt",
+      "retrieved_at": "2026-09-09T00:00:55-04:00",
+      "sha256": "15008e881e9f6850e61f3046774b697c3cc5a035e7f13717c2dae66c6ccca7ae",
+      "source_url": "https://foodlion.com/groceries/sitemap.xml"
+    }
+  ],
+  "product_enrichment_status": "PARTIAL",
+  "products_linked_to_canonical_ingredients": 239,
+  "products_processed": 22994,
+  "products_with_structured_names": 518,
+  "public_catalog_listing_pages_processed": 1,
+  "public_category_details_processed": 0,
+  "public_category_urls_discovered": 2866,
+  "public_product_details_processed": 0,
+  "public_product_sitemaps_discovered": 3,
+  "public_product_sitemaps_processed": 3,
+  "public_product_urls_discovered": 22994,
+  "retrieved_at": "2026-09-09T00:00:55-04:00",
+  "source_urls": [
+    "https://foodlion.com/robots.txt",
+    "https://foodlion.com/groceries/",
+    "https://foodlion.com/groceries/sitemap.xml"
+  ],
+  "store_inventory_status": "BLOCKED",
+  "store_verified_products": 0
+}

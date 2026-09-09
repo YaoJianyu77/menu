@@ -1,0 +1,25 @@
+{
+  "canonical_ingredient_count": 155,
+  "matched_product_count": 239,
+  "method": "Human-reviewed exact catalog slug prefixes; every prefix requires following numeric package size; no substring matching.",
+  "previous_canonical_ingredient_count": 53,
+  "unmapped_canonical_ingredients": [
+    "basil",
+    "chicken seasoning",
+    "cooking wine",
+    "dark soy sauce",
+    "doubanjiang",
+    "dutch-process cocoa",
+    "egg yolk",
+    "fresh thyme",
+    "oregano",
+    "oyster sauce",
+    "sage",
+    "shaoxing wine",
+    "vanilla",
+    "vegan chocolate chips",
+    "watercress"
+  ],
+  "unmapped_interpretation": "Unknown: no sufficiently specific configured product/form mapping; this is not evidence of absence.",
+  "updated_at": "2026-09-09T00:27:06-04:00"
+}

@@ -424,11 +424,215 @@ sources:
   include:
   - tests/data/html/*.html
   - tests/data/json/*.json
+  - tests/data/migrations/*.csv
+  - tests/data/migrations/*.zip
+  - tests/data/backups/*.zip
   exclude: []
-  estimated_items: 22
+  estimated_items: 42
   license_note: Repository software license does not establish third-party recipe
     redistribution rights.
   publication_allowed: false
+  scope_audit_note: Full pinned tree inspected. Migration CSV and ZIP files and backup
+    ZIPs are included; member-level results distinguish genuine recipes, anonymized/placeholder
+    non-recipes, and explicit incomplete recipe cards.
+  archive_containers:
+  - path: tests/data/backups/backup-version-09aba125b57a-1.zip
+    status: NOT_A_RECIPE_SOURCE
+    reason: All archive members accounted; only auxiliary assets and explicitly anonymized/empty/placeholder
+      recipe data.
+    member_count: 2
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - mealie_2024/database.json
+    member_status_counts:
+      excluded: 9
+  - path: tests/data/backups/backup-version-1d9a002d7234-1.zip
+    status: NOT_A_RECIPE_SOURCE
+    reason: All archive members accounted; only auxiliary assets and explicitly anonymized/empty/placeholder
+      recipe data.
+    member_count: 2
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - database.json
+    member_status_counts:
+      excluded: 2
+  - path: tests/data/backups/backup-version-44e8d670719d-1.zip
+    status: NOT_A_RECIPE_SOURCE
+    reason: All archive members accounted; only auxiliary assets and explicitly anonymized/empty/placeholder
+      recipe data.
+    member_count: 2
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - database.json
+    member_status_counts:
+      excluded: 2
+  - path: tests/data/backups/backup-version-44e8d670719d-2.zip
+    status: NOT_A_RECIPE_SOURCE
+    reason: All archive members accounted; only auxiliary assets and explicitly anonymized/empty/placeholder
+      recipe data.
+    member_count: 2
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - database.json
+    member_status_counts:
+      excluded: 2
+  - path: tests/data/backups/backup-version-44e8d670719d-3.zip
+    status: NOT_A_RECIPE_SOURCE
+    reason: All archive members accounted; only auxiliary assets and explicitly anonymized/empty/placeholder
+      recipe data.
+    member_count: 2
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - database.json
+    member_status_counts:
+      excluded: 2
+  - path: tests/data/backups/backup-version-44e8d670719d-4.zip
+    status: NOT_A_RECIPE_SOURCE
+    reason: All archive members accounted; only auxiliary assets and explicitly anonymized/empty/placeholder
+      recipe data.
+    member_count: 2
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - database.json
+    member_status_counts:
+      excluded: 2
+  - path: tests/data/backups/backup-version-86054b40fd06-1.zip
+    status: NOT_A_RECIPE_SOURCE
+    reason: All archive members accounted; only auxiliary assets and explicitly anonymized/empty/placeholder
+      recipe data.
+    member_count: 2
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - database.json
+    member_status_counts:
+      excluded: 2
+  - path: tests/data/backups/backup-version-ba1e4a6cfe99-1.zip
+    status: NOT_A_RECIPE_SOURCE
+    reason: All archive members accounted; only auxiliary assets and explicitly anonymized/empty/placeholder
+      recipe data.
+    member_count: 2
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - database.json
+    member_status_counts:
+      excluded: 2
+  - path: tests/data/backups/backup-version-bcfdad6b7355-1.zip
+    status: NOT_A_RECIPE_SOURCE
+    reason: All archive members accounted; only auxiliary assets and explicitly anonymized/empty/placeholder
+      recipe data.
+    member_count: 2
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - database.json
+    member_status_counts:
+      excluded: 2
+  - path: tests/data/migrations/chowdown.zip
+    status: COMPLETE
+    reason: Member-level recipe extraction complete; non-recipe assets explicitly
+      excluded.
+    member_count: 4
+    potential_recipe_or_data_member_count: 2
+    potential_member_paths:
+    - chowdown-gh-pages/_recipes/roasted-brussels-sprouts.md
+    - chowdown-gh-pages/_recipes/roasted-okra.md
+    member_status_counts:
+      excluded: 5
+      processed: 2
+  - path: tests/data/migrations/cookn.zip
+    status: COMPLETE
+    reason: Member-level recipe extraction complete; non-recipe assets explicitly
+      excluded.
+    member_count: 47
+    potential_recipe_or_data_member_count: 0
+    potential_member_paths: []
+    member_status_counts:
+      processed: 8
+      excluded: 46
+  - path: tests/data/migrations/copymethat.zip
+    status: COMPLETE
+    reason: Member-level recipe extraction complete; non-recipe assets explicitly
+      excluded.
+    member_count: 4
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - recipes.html
+    member_status_counts:
+      excluded: 3
+      processed: 1
+  - path: tests/data/migrations/mealie.zip
+    status: COMPLETE
+    reason: Member-level recipe extraction complete; non-recipe assets explicitly
+      excluded.
+    member_count: 16
+    potential_recipe_or_data_member_count: 3
+    potential_member_paths:
+    - mealie_2021-Dec-08/recipes/pizza-dough-basics-with-babish/pizza-dough-basics-with-babish.json
+    - mealie_2021-Dec-08/recipes/levain-chocolate-chip-cookies/levain-chocolate-chip-cookies.json
+    - mealie_2021-Dec-08/recipes/old-fashioned-beef-stew/old-fashioned-beef-stew.json
+    member_status_counts:
+      excluded: 51
+      processed: 3
+  - path: tests/data/migrations/nextcloud.zip
+    status: COMPLETE
+    reason: Member-level recipe extraction complete; non-recipe assets explicitly
+      excluded.
+    member_count: 7
+    potential_recipe_or_data_member_count: 3
+    potential_member_paths:
+    - Air Fryer Shrimp/recipe.json
+    - Chicken Parmigiana/recipe.json
+    - Skillet Shepherd's Pie/recipe.json
+    member_status_counts:
+      excluded: 7
+      processed: 3
+  - path: tests/data/migrations/paprika.zip
+    status: COMPLETE
+    reason: Member-level recipe extraction complete; non-recipe assets explicitly
+      excluded.
+    member_count: 6
+    potential_recipe_or_data_member_count: 5
+    potential_member_paths:
+    - My Recipes/Zucchinipuffer.paprikarecipe
+    - My Recipes/Zucchini Rolls with Goat Cheese and Mint.paprikarecipe
+    - My Recipes/Zweimal gebratenes Ha╠êhnchen mit Gemu╠êse und Nudeln.paprikarecipe
+    - My Recipes/Zwiebelrostbraten mit selbstgemachten Spa╠êtzle.paprikarecipe
+    - My Recipes/Zucchini-Kartoffel-Frittata.paprikarecipe
+    member_status_counts:
+      excluded: 9
+      processed: 5
+  - path: tests/data/migrations/plantoeat.zip
+    status: NOT_A_RECIPE_SOURCE
+    reason: All archive members accounted; only auxiliary assets and explicitly anonymized/empty/placeholder
+      recipe data.
+    member_count: 1
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - plantoeat.csv
+    member_status_counts:
+      failed: 1
+  - path: tests/data/migrations/recipekeeper.zip
+    status: PARTIAL
+    reason: Member-level extraction retained recipes and explicitly excluded non-recipe
+      files; unresolved members remain recorded.
+    member_count: 78
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - recipes.html
+    member_status_counts:
+      excluded: 77
+      partial: 1
+      failed: 1
+  - path: tests/data/migrations/tandoor.zip
+    status: COMPLETE
+    reason: Member-level recipe extraction complete; non-recipe assets explicitly
+      excluded.
+    member_count: 1
+    potential_recipe_or_data_member_count: 1
+    potential_member_paths:
+    - 1.zip
+    member_status_counts:
+      processed: 2
+      excluded: 1
 - id: kirmanak--Mealient
   name: Mealient
   url: https://github.com/kirmanak/Mealient
@@ -465,11 +669,14 @@ sources:
     preserving parse failures.
   include:
   - src/testing/**/*.gz
+  - src/testing/*.gz
   exclude: []
-  estimated_items: 1608
+  estimated_items: 1609
   license_note: Repository software license does not establish third-party recipe
     redistribution rights.
   publication_allowed: false
+  scope_audit_note: Full pinned-tree second-pass audit added previously omitted corpus
+    candidates. Archive files are explicitly unsupported, not excluded or complete.
 - id: nextcloud--cookbook
   name: Nextcloud Cookbook
   url: https://github.com/nextcloud/cookbook
@@ -483,11 +690,14 @@ sources:
     preserving parse failures.
   include:
   - tests/Unit/Helper/HTMLParser/**/*.html
+  - tests/Unit/Helper/HTMLParser/**/*.json
   exclude: []
-  estimated_items: 26
+  estimated_items: 47
   license_note: Repository software license does not establish third-party recipe
     redistribution rights.
   publication_allowed: false
+  scope_audit_note: Full pinned-tree second-pass audit added previously omitted corpus
+    candidates. Archive files are explicitly unsupported, not excluded or complete.
 - id: steve71--RasPiBrew
   name: RasPiBrew
   url: https://github.com/steve71/RasPiBrew
@@ -524,7 +734,7 @@ sources:
   include:
   - Recipes/*.md
   exclude: []
-  estimated_items: 114
+  estimated_items: 115
   license_note: Repository software license does not establish third-party recipe
     redistribution rights.
   publication_allowed: false
@@ -541,11 +751,14 @@ sources:
     preserving parse failures.
   include:
   - internal/scraper/testdata/*.html
+  - internal/models/testdata/ocr/*.json
   exclude: []
-  estimated_items: 416
+  estimated_items: 425
   license_note: Repository software license does not establish third-party recipe
     redistribution rights.
   publication_allowed: false
+  scope_audit_note: Full pinned-tree second-pass audit added previously omitted corpus
+    candidates. Archive files are explicitly unsupported, not excluded or complete.
 - id: dpapathanasiou--recipebook
   name: recipebook
   url: https://github.com/dpapathanasiou/recipebook

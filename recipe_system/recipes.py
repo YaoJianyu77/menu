@@ -4,10 +4,12 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+import csv
 import fcntl
 import fnmatch
 import gzip
 import html
+import io
 import json
 import re
 import subprocess
@@ -22,6 +24,20 @@ from .core import atomic_json, atomic_text, load_yaml, now, read_jsonl, stable_i
 INDEX_URL = "https://github.com/bbbenji/awesome-recipes"
 
 
+class SyntheticRecipeError(ValueError):
+    """Explicit placeholder recipe content, rather than a recipe parsing failure."""
+
+    classification = "NOT_A_RECIPE_SOURCE"
+
+
+def synthetic_placeholder(title, ingredients, instructions):
+    return bool(
+        re.fullmatch(r"test recipe\s*\d*", str(title).strip(), re.IGNORECASE)
+        and re.search(r"\btest\b", str(ingredients), re.IGNORECASE)
+        and re.search(r"directions\.\s*will go here\.", str(instructions), re.IGNORECASE)
+    )
+
+
 def git(path, *args, binary=False):
     result = subprocess.run(
         ["git", "-C", str(path), "-c", "core.quotePath=false", *args],
@@ -32,6 +48,12 @@ def git(path, *args, binary=False):
     if result.returncode:
         raise RuntimeError(result.stderr.decode(errors="replace").strip())
     return result.stdout if binary else result.stdout.decode("utf-8", errors="replace")
+
+
+def git_paths(repo, revision):
+    """Git's NUL delimiter preserves quotes, tabs and embedded newlines in names."""
+    paths = git(repo, "ls-tree", "-rz", "--name-only", revision)
+    return paths.rstrip("\0").split("\0") if paths else []
 
 
 def checkout(url, cache):
@@ -95,7 +117,8 @@ def recipe_objects(obj):
             yield from recipe_objects(item)
     elif isinstance(obj, dict):
         if (obj.get("name") or obj.get("title")) and any(
-            k in obj for k in ("recipeIngredient", "ingredients", "what")
+            k in obj
+            for k in ("recipeIngredient", "recipe_ingredient", "ingredients", "what", "steps")
         ):
             yield obj
         else:
@@ -105,6 +128,36 @@ def recipe_objects(obj):
 
 
 def structured(obj):
+    obj = dict(obj)
+    for old, new in {
+        "recipe_ingredient": "recipeIngredient",
+        "recipe_instructions": "recipeInstructions",
+        "recipe_yield": "recipeYield",
+        "recipe_category": "recipeCategory",
+        "total_time": "totalTime",
+        "org_url": "url",
+    }.items():
+        if old in obj and new not in obj:
+            obj[new] = obj[old]
+    if isinstance(obj.get("steps"), list) and not obj.get("ingredients"):
+        obj["ingredients"] = [
+            " ".join(
+                str(value)
+                for value in [
+                    None if item.get("no_amount") else item.get("amount"),
+                    (item.get("unit") or {}).get("name"),
+                    (item.get("food") or {}).get("name"),
+                    item.get("note"),
+                ]
+                if value is not None and value != ""
+            )
+            for step in obj["steps"]
+            for item in step.get("ingredients", [])
+            if not item.get("is_header")
+        ]
+        obj["instructions"] = [
+            step["instruction"] for step in obj["steps"] if step.get("instruction")
+        ]
     ingredients = strings(obj.get("recipeIngredient", obj.get("ingredients")))
     if not ingredients and obj.get("ingredients_subsections"):
         ingredients = [
@@ -342,31 +395,69 @@ class MicrodataRecipe(HTMLParser):
 
 
 def scraped_text(text, path):
-    """Conservative plain-text archive adapter: reject navigation-only pages."""
-    lines = text.splitlines()
-    original_url = (
-        lines[0].strip() if lines and lines[0].startswith(("http://", "https://")) else None
-    )
-    start = re.search(r"(?im)^\s*[#*_ ]*(?:recipe )?ingredients\s*[*_:]*\s*$", text)
-    if not start:
-        return []
-    body = text[start.start() :]
-    stop = re.search(
-        r"(?im)^\s*(?:nutrition(?:al information| facts)?|notes|comments|did you make this recipe\??|you may also like|recipe notes|related recipes|leave a reply|share this|rate this recipe)\s*[:?]*\s*$",
-        body,
-    )
-    if stop:
-        body = body[: stop.start()]
-    record = markdown(body, path)[0]
-    slug = original_url.rstrip("/").rsplit("/", 1)[-1] if original_url else Path(path).stem
-    record["title"] = slug.replace("-", " ").replace("_", " ")
-    record["title_method"] = "source-url-slug (original page heading unavailable)"
-    record["original_url"] = original_url
-    return [record]
+    """Extract archive recipe body with bounded component-aware recovery."""
+    from .parser_recovery import recover_markdown
+
+    return recover_markdown(text, path, archive=True)
 
 
-def parse_content(text, path):
+def _parse_content(text, path):
     lower = path.lower()
+    if lower.endswith((".md", ".markdown")):
+        boundaries = list(re.finditer(r"(?m)^# +[^\n]+$", text))
+        if len(boundaries) > 1:
+            sections = [
+                text[
+                    m.start() : boundaries[i + 1].start() if i + 1 < len(boundaries) else len(text)
+                ]
+                for i, m in enumerate(boundaries)
+            ]
+            explicit_cards = all(
+                re.search(r"(?im)^#+ +ingredients?\b", section)
+                and re.search(r"(?im)^#+ +(?:instructions?|directions?|method)\b", section)
+                for section in sections
+            )
+            if explicit_cards:
+                return [record for section in sections for record in markdown(section, path)]
+    if lower.endswith((".html", ".htm")) and re.search(
+        r'class\s*=\s*["\'](?:recipe-details|recipe)["\']', text
+    ):
+        from .archives import export_html
+
+        cards = export_html(text)
+        if cards:
+            return cards
+    if lower.endswith(".csv"):
+        output = []
+        for row in csv.DictReader(io.StringIO(text)):
+            fields = {re.sub(r"\s+", "", k).lower(): v for k, v in row.items() if k}
+            if not fields.get("title") or not fields.get("ingredients"):
+                continue
+            if synthetic_placeholder(
+                fields["title"],
+                fields["ingredients"],
+                fields.get("instructions", fields.get("directions", "")),
+            ):
+                raise SyntheticRecipeError(
+                    "Explicit placeholder import fixture: Test Recipe title, test ingredients and Directions. Will go here. text"
+                )
+            record = structured(
+                {
+                    "title": fields["title"],
+                    "ingredients": fields["ingredients"],
+                    "instructions": fields.get("instructions", fields.get("directions")),
+                    "cuisine": fields.get("cuisine"),
+                    "tags": fields.get("tags"),
+                    "servings": fields.get("servings"),
+                    "nutrition": fields.get("nutrition"),
+                    "url": fields.get("url", fields.get("source")),
+                }
+            )
+            total = fields.get("totaltime")
+            if total and re.fullmatch(r"\d+(?:\.\d+)?", total):
+                record["timing"]["total_minutes"] = float(total)
+            output.append(record)
+        return output
     if "dolph--recipes" in path:
         return interleaved_markdown(text, path)
     if lower.endswith(".gz"):
@@ -375,6 +466,21 @@ def parse_content(text, path):
         return [structured(yaml.safe_load(text))]
     if lower.endswith((".json", ".yaml", ".yml")):
         obj = json.loads(text) if lower.endswith(".json") else yaml.safe_load(text)
+        if (
+            isinstance(obj, dict)
+            and isinstance(obj.get("analyzeResult"), dict)
+            and obj["analyzeResult"].get("content")
+        ):
+            from .parser_recovery import recover_markdown
+
+            records = recover_markdown(obj["analyzeResult"]["content"], path)
+            for record in records:
+                record["title"] = obj["analyzeResult"]["content"].splitlines()[0]
+                record["parser_method"] = "ocr-content-layout-v1"
+                record["quality_warnings"] = [
+                    "OCR transcript may contain recognition errors; retained without correction."
+                ]
+            return records
         return [structured(r) for r in recipe_objects(obj)]
     if lower.endswith((".html", ".htm")):
         output = []
@@ -393,6 +499,27 @@ def parse_content(text, path):
             output = parser.records()
         return output
     return markdown(text, path)
+
+
+def parse_content(text, path):
+    """Pure parser; fallback only when established adapter lacks required fields."""
+    from .parser_recovery import RecipeLayout, recover_markdown
+
+    try:
+        records = _parse_content(text, path)
+    except SyntheticRecipeError:
+        raise
+    except (ValueError, TypeError, yaml.YAMLError):
+        records = []
+    if records and all(r.get("ingredients") and r.get("instructions") for r in records):
+        return records
+    if path.lower().endswith((".html", ".htm")):
+        parser = RecipeLayout()
+        parser.feed(text)
+        return parser.records() or records
+    if path.lower().endswith((".md", ".markdown", ".gz")):
+        return recover_markdown(text, path, archive=path.lower().endswith(".gz")) or records
+    return records
 
 
 class RecipeSourceAgent:
@@ -484,15 +611,46 @@ class RecipeSourceAgent:
                 timestamp = now()
                 try:
                     payload = git(cache, "show", f"{revision}:{path}", binary=True)
-                    if path.endswith(".gz"):
-                        payload = gzip.decompress(payload)
-                    text = payload.decode("utf-8", errors="replace")
-                    if source["id"] == "dolph--recipes":
-                        parsed = interleaved_markdown(text, path)
-                    elif source["id"] == "obfuscurity--food-recipes":
-                        parsed = leading_list_markdown(text, path)
+                    if path.lower().endswith(".zip"):
+                        from .archives import collect_archive
+
+                        parsed, members = collect_archive(payload, parse_content)
+                        previous_members = {
+                            m["member"]: m for m in state.get("archive_members", {}).get(key, [])
+                        }
+                        for member in members:
+                            member.update(source=source["url"], timestamp=timestamp)
+                            if member["status"] in ["failed", "unsupported", "partial"]:
+                                member.update(
+                                    error_type="UnsupportedArchiveMember"
+                                    if member["status"] == "unsupported"
+                                    else "ArchiveMemberParseFailure",
+                                    error_message=member.get(
+                                        "reason", "Some recipe cards lack required fields"
+                                    ),
+                                    item_identifier=path + "!" + member["member"],
+                                    retry_count=previous_members.get(member["member"], {}).get(
+                                        "retry_count", -1
+                                    )
+                                    + 1,
+                                    retryable=False,
+                                )
+                        state.setdefault("archive_members", {})[key] = members
+                        text = ""  # Binary containers and non-recipe metadata never enter raw text.
                     else:
-                        parsed = parse_content(text, path)
+                        if path.endswith(".gz"):
+                            payload = gzip.decompress(payload)
+                        text = payload.decode("utf-8", errors="replace")
+                        if source["id"] == "dolph--recipes":
+                            parsed = interleaved_markdown(text, path)
+                        elif source["id"] == "obfuscurity--food-recipes":
+                            parsed = leading_list_markdown(text, path)
+                        else:
+                            parsed = parse_content(text, path)
+                    if not parsed or not all(
+                        r.get("ingredients") and r.get("instructions") for r in parsed
+                    ):
+                        parsed = parse_content(text, source["id"] + "/" + path)
                     if not parsed:
                         raise ValueError(
                             "No supported Recipe structure; original file preserved in pinned Git cache"
@@ -505,6 +663,10 @@ class RecipeSourceAgent:
                                 "Missing ingredient or instruction section; source retained for adapter improvement"
                             )
                         original_url = record.pop("original_url", None)
+                        member_text = record.pop("_raw_member_text", text)
+                        member_parse_path = record.pop("_parse_member_path", None)
+                        if member_parse_path:
+                            record["archive_parse_path"] = member_parse_path
                         rid = stable_id(source["id"], path, str(position))
                         raw = dict(
                             record,
@@ -519,7 +681,7 @@ class RecipeSourceAgent:
                             attribution=source["name"],
                             retrieved_at=timestamp,
                             source_revision=revision,
-                            raw_text=text,
+                            raw_text=member_text,
                         )
                         raw["original_source_url"] = original_url
                         raw["publication_allowed"] = source.get("publication_allowed", False)
@@ -551,6 +713,18 @@ class RecipeSourceAgent:
                         "retry_count": previous.get("retry_count", -1) + 1,
                         "retryable": not isinstance(exc, ValueError),
                     }
+                    if isinstance(exc, SyntheticRecipeError):
+                        state["failures"][key]["classification"] = "NOT_A_RECIPE_SOURCE"
+                    members = state.get("archive_members", {}).get(key, [])
+                    if (
+                        members
+                        and all(m["status"] == "excluded" for m in members)
+                        and any(m.get("classification") == "NOT_A_RECIPE_SOURCE" for m in members)
+                    ):
+                        state["failures"][key]["classification"] = "NOT_A_RECIPE_SOURCE"
+                        state["failures"][key]["error_message"] = (
+                            "Archive fully inspected: only assets and explicitly empty/anonymized recipe data"
+                        )
                     state["failure_history"].append(dict(state["failures"][key], event="failure"))
                 state["updated_at"] = now()
                 state["current_cursor"] = key
@@ -593,7 +767,7 @@ class RecipeCoordinator:
             try:
                 repo = self.root / ".cache/recipes" / key
                 source["revision"] = checkout(url, repo)
-                source["files"] = git(repo, "ls-tree", "-r", "--name-only", "HEAD").splitlines()
+                source["files"] = git_paths(repo, "HEAD")
                 source["file_count"] = len(source["files"])
             except (RuntimeError, subprocess.TimeoutExpired) as exc:
                 source.update(status="blocked", reason=str(exc))
@@ -670,7 +844,7 @@ class RecipeCoordinator:
                 continue
             repo = self.root / ".cache/recipes" / source["id"]
             checkout(source["url"], repo)
-            files = git(repo, "ls-tree", "-r", "--name-only", source["revision"]).splitlines()
+            files = git_paths(repo, source["revision"])
             paths = [
                 p
                 for p in files
@@ -736,9 +910,7 @@ class RecipeCoordinator:
             checkout(source["url"], repo)
             paths = [
                 path
-                for path in git(
-                    repo, "ls-tree", "-r", "--name-only", source["revision"]
-                ).splitlines()
+                for path in git_paths(repo, source["revision"])
                 if (source["id"], path) not in owned
                 and any(fnmatch.fnmatch(path, pattern) for pattern in source["include"])
                 and not any(fnmatch.fnmatch(path, pattern) for pattern in source.get("exclude", []))
@@ -810,6 +982,16 @@ class RecipeCoordinator:
                 completed_sources.append(source["id"])
         enabled = [s for s in config["sources"] if s["status"] == "enabled"]
         all_done = len(completed_sources) == len(enabled)
+        from .quality import source_coverage
+
+        coverage = source_coverage(self.root)
+        coverage_by_id = {row["id"]: row for row in coverage["sources"]}
+        extracted_sources = [
+            source["id"]
+            for source in enabled
+            if coverage_by_id[source["id"]]["status"] == "COMPLETE"
+        ]
+        extraction_done = len(extracted_sources) == len(enabled)
         records_written = sum(
             len(read_jsonl(p))
             for p in (self.root / "data/recipes/raw").glob("recipe-agent-*.jsonl")
@@ -826,30 +1008,43 @@ class RecipeCoordinator:
                     "candidate_files_processed": sum(k.startswith(prefix) for k in processed),
                     "candidate_files_failed": sum(k.startswith(prefix) for k in failures),
                     "index_entries_discovered": source.get("discovered_index_items"),
-                    "collection_complete": source["id"] in completed_sources,
+                    "collection_complete": source["id"] in extracted_sources,
+                    "candidate_accounting_complete": source["id"] in completed_sources,
+                    "completion_status": coverage_by_id[source["id"]]["status"],
+                    "unresolved_archive_members": coverage_by_id[source["id"]][
+                        "unresolved_archive_members"
+                    ],
+                    "deliberately_excluded": coverage_by_id[source["id"]][
+                        "confidently_nonrecipe_failures"
+                    ],
+                    "potential_unexplored_candidates": coverage_by_id[source["id"]][
+                        "potential_unexplored_candidate_count"
+                    ],
                 }
             )
         result = {
             "sources": per_source,
             "sources_discovered": len(config["sources"]),
             "sources_enabled": len(enabled),
-            "sources_completed": len(completed_sources),
-            "completed_source_ids": completed_sources,
+            "sources_completed": len(extracted_sources),
+            "completed_source_ids": extracted_sources,
+            "sources_accounted": len(completed_sources),
+            "accounted_source_ids": completed_sources,
+            "candidate_accounting_complete": all_done,
+            "source_status_counts": coverage["status_counts"],
             "candidate_files_discovered": len(discovered),
             "candidate_files_processed": len(processed),
             "candidate_files_failed": len(failures),
-            "recipes_discovered": records_written if not failures else None,
+            "recipes_discovered": records_written if extraction_done else None,
             "recipes_successfully_processed": records_written,
-            "recipes_failed": None if failures else 0,
+            "recipes_failed": 0 if extraction_done else None,
             "records_written": sum(
                 len(read_jsonl(p))
                 for p in (self.root / "data/recipes/raw").glob("recipe-agent-*.jsonl")
             ),
             "start_timestamp": min((s["started_at"] for s in states), default=None),
-            "completion_timestamp": now() if all_done else None,
-            "completion_status": ("complete-with-failures" if failures else "complete")
-            if all_done
-            else "incomplete",
+            "completion_timestamp": now() if extraction_done else None,
+            "completion_status": "COMPLETE" if extraction_done else "PARTIAL",
             "item_accounting": "Recipe candidate files; a structured file can contain multiple records.",
             "blocked_sources": [s["id"] for s in config["sources"] if s["status"] == "blocked"],
             "unsupported_sources": [

@@ -71,7 +71,8 @@ def test_unknown_inventory_does_not_become_missing_essential():
     result = evaluate(recipe, [], preferences, aliases)
     assert result["missing_essential"] == []
     assert result["unknown_ingredients"] == ["tomato"]
-    assert result["foodlion_score"] == 0
+    assert result["foodlion_score"] is None
+    assert result["foodlion_effective_weight"] == 0
 
 
 def test_distinct_chicken_cuts_are_not_silent_availability_substitutions():

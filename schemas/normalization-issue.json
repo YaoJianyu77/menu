@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "required": [
+    "recipe_id",
+    "raw_id",
+    "quality_issues",
+    "cleanup_decisions"
+  ],
+  "properties": {
+    "recipe_id": {
+      "type": "string"
+    },
+    "quality_issues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cleanup_decisions": {
+      "type": "array"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
