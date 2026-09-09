@@ -1,19 +1,11 @@
-# Personal recipe book
+# Dense personal recipe directory
 
-The homepage is the complete catalog: **2,556 recipes**, one search field, six combinable filters, sorting and pagination. Every title opens its existing static recipe detail page. No unique recipes were excluded, and no recipe identities or content changed.
+All **2,556 recipes** remain accessible. The homepage uses compact 36-pixel rows, three columns on wide desktops, two on tablets and one on phones. Titles are primary; desktop time/method text is muted, and mobile omits it. No catalog photographs, card boxes, cuisine labels, percentages or scores are rendered, including for recipes with permitted images. Detail pages retain their cooking layout and image support.
 
-The interface has no visible recommendation scores, score controls, dashboard sections or category navigation. Standalone category and recommendation pages are no longer generated. Categories are homepage filter choices: cuisine, meal type, main protein, cooking method, total time and Food Lion compatibility. Default order retains the existing internal practical ordering. Manual sorts are Default, Recipe Name, Total Time and Food Lion Compatibility; unknown times follow known times.
+A short sticky bar contains search, five dropdown filters (Type, Protein, Method, Time, Cuisine), Default/Name/Time sorting and Clear. Searches and combined filters cover the complete dataset. Count updates, URL state, keyboard navigation and stateful back links remain supported. Long titles remain available through tooltips and expand on keyboard focus.
 
-The build contains **2,643 HTML pages**: 2,556 recipe details, 54 static catalog pages (48 cards per page), and 33 redirects preserving old duplicate links. All recipes remain reachable through static pagination, including without JavaScript. Search/filtering works over the complete index. URL parameters retain the current controls and page; the detail back link restores these using tab-local session storage.
+There are **22 static directory pages**, up to **120 recipes per page**, 2,556 unchanged detail URLs and 33 historical duplicate redirects: **2,611 HTML pages** total. Every recipe is also reachable without JavaScript. No unique recipes were excluded. Collection, normalization, ranking, source records, displayed title cleanup and source permissions are unchanged.
 
-Cards and detail headers show title, optional image and time/cooking method in that order. Cuisine/meal-type labels and Food Lion percentages are omitted. Cuisine remains searchable/filterable, and compatibility filter options use qualitative labels with unchanged internal thresholds. The shared display-title helper removes terminal generic Chinese `做法` or `的做法`, without changing original or normalized source titles or recipe identifiers. **Zero recipes currently have permitted images**; no placeholders appear. Fixture tests verify valid-image ordering and image-free rendering. Detail pages show cooking information first, with notes collapsed and source attribution retained. Food Lion compatibility uses existing data.
+132 tests pass. Formatting, linting, full static build, persisted-data validation and deterministic matching checks pass. Chromium checks cover desktop (1366×900), tablet (900×900) and mobile (390×844), including measured column counts, row height, visible title density, sticky controls, keyboard focus, search, combined filters, sorting, pagination, back links, no directory images and no horizontal overflow. See [browser report](catalog-browser-validation.json) and [catalog validation](catalog-validation.json).
 
-## Unchanged publication limits
-
-533 pages contain local cooking instructions; 2,023 link to the original recipe under the existing publication-permission rules. [Per-recipe decisions](catalog-publication.json) and [image audit](catalog-images.json) are unchanged. Collection, normalization, recipe content, Food Lion evidence and deterministic ranking are untouched.
-
-## Validation
-
-132 automated tests pass. Formatting, linting, static build, full persisted-data validation and deterministic matching checks pass. Catalog checks validate every recipe link, complete static reachability, filter membership, stable URLs, image permissions, score-free UI and metric cooking units. Chromium checks at 1366×900 and 390×844 cover full-dataset search, all six filters, combined filters, sorting, unknown time handling, pagination, back-link state, notes, no horizontal overflow and no browser errors. JavaScript-disabled browsing also passes.
-
-See [browser validation](catalog-browser-validation.json) and [catalog validation](catalog-validation.json). GitHub Pages deploys successful pushes to `master`; the user authorized pushing and deploying this cleanup after validation.
+The existing publication rules still provide local instructions for 533 recipes and source links for 2,023. Photos remain optional on detail pages; none currently has permitted photo data. The user authorized pushing and deploying this catalog redesign after validation.

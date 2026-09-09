@@ -8,7 +8,7 @@ from collections import defaultdict
 
 from .core import atomic_json
 
-PAGE_SIZE = 48
+PAGE_SIZE = 120
 AXES = {
     "cuisine": "Cuisine",
     "meal-type": "Meal Type",
@@ -279,12 +279,12 @@ def image_html(image, prefix="", thumbnail=False):
 
 
 def recipe_card(row, prefix=""):
-    """Shared compact recipe card; no recommendation information is published."""
+    """Compact directory row; photographs belong only on recipe details."""
     from .publish import esc
 
-    facts = cooking_facts(row)
-    metadata = f'<p class="card-meta">{esc(facts)}</p>' if facts else ""
-    return f'<article class="card recipe-card" data-recipe-id="{esc(row["id"])}"><h2><a href="{esc(prefix + row["url"])}">{esc(row["title"])}</a></h2>{image_html(row.get("image"), thumbnail=True)}{metadata}</article>'
+    facts = cooking_facts({**row, "methods": row.get("methods", [])[:1]})
+    metadata = f'<p class="row-meta">{esc(facts)}</p>' if facts else ""
+    return f'<article class="recipe-row" data-recipe-id="{esc(row["id"])}"><h2><a title="{esc(row["title"])}" href="{esc(prefix + row["url"])}">{esc(row["title"])}</a></h2>{metadata}</article>'
 
 
 def build_catalog(root, records, dist):
@@ -307,18 +307,18 @@ def build_catalog(root, records, dist):
                 membership[axis][label].append(row["id"])
     pages = max(1, math.ceil(len(index) / PAGE_SIZE))
     fields = "".join(
-        f'<label>{label}<select data-catalog-filter="{key}"><option value="">All</option>'
+        f'<label><span class="sr-only">{label}</span><select data-catalog-filter="{key}"><option value="">{label}</option>'
         + "".join(f"<option>{esc(value)}</option>" for value in sorted(membership[axis]))
         + "</select></label>"
         for key, label, axis in [
             ("cuisine", "Cuisine", "cuisine"),
-            ("meal_type", "Meal Type", "meal-type"),
-            ("protein", "Main Protein", "protein"),
-            ("method", "Cooking Method", "method"),
+            ("meal_type", "Type", "meal-type"),
+            ("protein", "Protein", "protein"),
+            ("method", "Method", "method"),
         ]
     )
     fields += (
-        '<label>Total Time<select data-catalog-filter="time"><option value="">Any time</option>'
+        '<label><span class="sr-only">Time</span><select data-catalog-filter="time"><option value="">Time</option>'
         + "".join(
             f"<option>{esc(value)}</option>"
             for value in [
@@ -332,11 +332,10 @@ def build_catalog(root, records, dist):
         )
         + "</select></label>"
     )
-    fields += '<label>Food Lion Compatibility<select data-catalog-filter="coverage"><option value="">Any</option><option value="95">Highest compatibility</option><option value="85">High compatibility</option><option value="70">Good compatibility</option></select></label>'
     controls = (
         '<section class="filters" aria-label="Recipe filters"><label class="search"><span class="sr-only">Search recipes</span><input id="catalog-search" type="search" placeholder="Search recipes…"></label>'
         + fields
-        + '<label>Sort<select id="catalog-sort"><option value="default">Default</option><option value="name">Recipe Name</option><option value="time">Total Time</option><option value="coverage">Food Lion Compatibility</option></select></label><button id="catalog-reset" type="button">Clear filters</button></section>'
+        + '<label><span class="sr-only">Sort</span><select id="catalog-sort"><option value="default">Default</option><option value="name">Name</option><option value="time">Time</option></select></label><button id="catalog-reset" type="button">Clear</button></section>'
     )
     for number in range(1, pages + 1):
         path = "index.html" if number == 1 else f"page-{number}.html"
@@ -368,9 +367,9 @@ def build_catalog(root, records, dist):
             "initial_page": number,
         }
         body = (
-            "<h1>My Recipes</h1>"
+            '<div class="directory"><h1>My Recipes</h1>'
             + controls
-            + f'<p id="catalog-count" role="status">{len(index):,} recipes</p><section class="cards" id="catalog-results">'
+            + f'<p id="catalog-count" role="status">{len(index):,} recipes</p><section class="recipe-directory" id="catalog-results" aria-label="Recipes">'
             + "".join(
                 recipe_card(row) for row in index[(number - 1) * PAGE_SIZE : number * PAGE_SIZE]
             )
@@ -378,7 +377,7 @@ def build_catalog(root, records, dist):
             + " ".join(links)
             + '</nav><script id="catalog-config" type="application/json">'
             + json.dumps(config)
-            + '</script><script defer src="catalog.js"></script>'
+            + '</script><script defer src="catalog.js"></script></div>'
         )
         document = _page("My Recipes", body)
         if FORBIDDEN.search(visible_text(document)):

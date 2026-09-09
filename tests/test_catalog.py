@@ -9,7 +9,7 @@ from recipe_system.publish import build, publish
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def setup_catalog(tmp_path, count=51):
+def setup_catalog(tmp_path, count=125):
     (tmp_path / "site").mkdir()
     for name in ["app.js", "catalog.js", "style.css"]:
         shutil.copyfile(ROOT / "site" / name, tmp_path / "site" / name)
@@ -51,7 +51,7 @@ def test_full_unique_catalog_links_pagination_and_search(tmp_path):
     recipes = setup_catalog(tmp_path)
     data = publish(tmp_path)
     result = build(tmp_path)
-    assert result["recipe_detail_pages"] == 51
+    assert result["recipe_detail_pages"] == 125
     index = json.loads((tmp_path / "site/dist/search-index.json").read_text())
     assert {r["id"] for r in index} == {r["id"] for r in recipes}
     assert len(index) == len(data["recipes"])
@@ -62,7 +62,7 @@ def test_full_unique_catalog_links_pagination_and_search(tmp_path):
     for row in index:
         assert any(f'href="{row["url"]}"' in page for page in pages)
         assert (tmp_path / "site/dist" / row["url"]).exists()
-    assert sum(page.count("data-recipe-id=") for page in pages) == 51
+    assert sum(page.count("data-recipe-id=") for page in pages) == 125
     first = (tmp_path / "site/dist/search-index.json").read_bytes()
     build(tmp_path)
     assert first == (tmp_path / "site/dist/search-index.json").read_bytes()
@@ -108,12 +108,8 @@ def test_images_and_no_image_cards(tmp_path):
     index = json.loads((tmp_path / "site/dist/search-index.json").read_text())
     image = next(r for r in index if r["id"] == "row-000")
     none = next(r for r in index if r["id"] == "row-001")
-    assert "photo.jpg" in recipe_card(image)
-    assert (
-        recipe_card(image).index("</h2>")
-        < recipe_card(image).index("<figure")
-        < recipe_card(image).index('class="card-meta"')
-    )
+    assert "<img" not in recipe_card(image)
+    assert "<figure" not in recipe_card(image)
     assert "<img" not in recipe_card(none)
     page = (tmp_path / "site/dist" / image["url"]).read_text()
     assert "Photographer" in page and "CC-BY-4.0" in page
@@ -155,17 +151,17 @@ def test_time_boundaries_and_explicit_method_evidence():
 def test_complete_offline_catalog_validation(tmp_path):
     from recipe_system.catalog_validation import validate_catalog
 
-    setup_catalog(tmp_path, 52)
+    setup_catalog(tmp_path, 125)
     publish(tmp_path)
     build(tmp_path)
     report = validate_catalog(tmp_path)
-    assert report["recipes_published"] == 52
+    assert report["recipes_published"] == 125
     assert report["all_recipes_reachable"]
     assert report["all_local_links"] == "passed"
 
 
 def test_single_home_catalog_has_no_dashboard_or_scores(tmp_path):
-    setup_catalog(tmp_path, 52)
+    setup_catalog(tmp_path, 125)
     publish(tmp_path)
     build(tmp_path)
     dist = tmp_path / "site/dist"
@@ -175,7 +171,7 @@ def test_single_home_catalog_has_no_dashboard_or_scores(tmp_path):
     )
     home = (dist / "index.html").read_text()
     assert "<h1>My Recipes</h1>" in home
-    assert home.count("data-catalog-filter=") == 6
+    assert home.count("data-catalog-filter=") == 5
     assert 'href="page-2.html"' in home
     assert 'href="index.html"' in (dist / "page-2.html").read_text()
     assert not (dist / "recipes/index.html").exists()
@@ -256,6 +252,6 @@ def test_clean_titles_and_metadata_only_affect_rendering(tmp_path):
     for text in ["Chinese", "Main dish", "%", "Unknown", "Food Lion"]:
         assert text not in head
     none = recipe_card(next(r for r in index if r["id"] == "row-001"))
-    assert 'class="card-meta"' not in none
+    assert 'class="row-meta"' not in none
     assert "Unknown" not in none
     assert "%" not in (dist / "index.html").read_text()

@@ -85,7 +85,6 @@ def test_build_generates_offline_browse_and_recipe_pages(tmp_path):
         "time",
         "protein",
         "method",
-        "coverage",
     ):
         assert f'data-catalog-filter="{field}"' in catalog
     assert "My Recipes" in index
@@ -235,7 +234,7 @@ def test_homepage_focuses_on_meals_without_collection_jargon(tmp_path):
     atomic_json(tmp_path / "site/content/recipes.json", data)
     build(tmp_path)
     page = (tmp_path / "site/dist/index.html").read_text()
-    for label in ("My Recipes", "Search recipes", "Cuisine", "Cooking Method", "Clear filters"):
+    for label in ("My Recipes", "Search recipes", "Cuisine", "Method", "Clear"):
         assert label in page
     assert "72/100" not in page
     for jargon in ("shard", "parser", "completion", "catalog IDs", "verified at the store"):

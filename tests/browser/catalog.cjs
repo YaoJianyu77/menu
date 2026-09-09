@@ -43,6 +43,7 @@ const server = process.env.BASE_URL
     browser = await chromium.launch({ headless: true });
     for (const viewport of [
       { width: 1366, height: 900 },
+      { width: 900, height: 900 },
       { width: 390, height: 844 },
     ]) {
       const context = await browser.newContext({ viewport });
@@ -71,17 +72,15 @@ const server = process.env.BASE_URL
       };
       const ids = () =>
         page
-          .locator("#catalog-results .card")
+          .locator("#catalog-results .recipe-row")
           .evaluateAll((cards) => cards.map((c) => c.dataset.recipeId));
       const reset = () =>
-        page
-          .getByRole("button", { name: "Clear filters", exact: true })
-          .click();
+        page.getByRole("button", { name: "Clear", exact: true }).click();
       const filter = (key) => page.locator(`[data-catalog-filter="${key}"]`);
       const expected = async (rows) => {
         assert.deepEqual(
           await ids(),
-          rows.slice(0, 48).map((r) => r.id),
+          rows.slice(0, 120).map((r) => r.id),
         );
         assert.equal(
           await page.locator("#catalog-count").textContent(),
@@ -91,12 +90,42 @@ const server = process.env.BASE_URL
       await go();
       assert.equal(index.length, 2556);
       assert.equal(await page.locator("h1").textContent(), "My Recipes");
+      const layout = await page.evaluate(() => {
+        const list = document.querySelector(".recipe-directory");
+        const rows = [...list.children];
+        return {
+          columns: getComputedStyle(list).gridTemplateColumns.split(" ").length,
+          visible: rows.filter(
+            (r) => r.getBoundingClientRect().bottom <= innerHeight,
+          ).length,
+          height: rows[0].getBoundingClientRect().height,
+          top: list.getBoundingClientRect().top,
+        };
+      });
+      assert.equal(
+        layout.columns,
+        viewport.width > 1100 ? 3 : viewport.width > 600 ? 2 : 1,
+      );
+      assert(layout.height >= 32 && layout.height <= 40);
+      assert(layout.top < 210);
+      if (viewport.width > 1100) assert(layout.visible >= 40);
+      await page.locator("#catalog-search").focus();
+      await page.keyboard.press("Tab");
+      assert(
+        await page
+          .locator('[data-catalog-filter="cuisine"]')
+          .evaluate((n) => n === document.activeElement),
+      );
+      await page.evaluate(() => window.scrollTo(0, 600));
+      assert(Math.abs((await page.locator(".filters").boundingBox()).y) < 2);
+      await page.evaluate(() => window.scrollTo(0, 0));
+
       await expected(index);
       assert.equal(await page.locator(".site-nav").count(), 0);
-      assert.equal(await page.locator("[data-catalog-filter]").count(), 6);
+      assert.equal(await page.locator("[data-catalog-filter]").count(), 5);
       assert.deepEqual(
         await page.locator("#catalog-sort option").allTextContents(),
-        ["Default", "Recipe Name", "Total Time", "Food Lion Compatibility"],
+        ["Default", "Name", "Time"],
       );
       assert(
         !/recommendation|\bscore\b|\branking\b|\d+\/100/i.test(
@@ -105,15 +134,15 @@ const server = process.env.BASE_URL
       );
       assert(!index.some((r) => "score" in r || "rank" in r));
       const links = await page
-        .locator(".card h2 a")
+        .locator(".recipe-row h2 a")
         .evaluateAll((nodes) => nodes.map((a) => a.href));
       assert.deepEqual(
         links,
-        index.slice(0, 48).map((r) => base + r.url),
+        index.slice(0, 120).map((r) => base + r.url),
       );
-      assert.equal(await page.locator(".card img").count(), 0);
+      assert.equal(await page.locator(".recipe-row img").count(), 0);
       async function cleanCardMetadata() {
-        const cards = await page.locator(".card").evaluateAll((nodes) =>
+        const cards = await page.locator(".recipe-row").evaluateAll((nodes) =>
           nodes.map((node) => ({
             id: node.dataset.recipeId,
             title: node.querySelector("h2").textContent,
@@ -124,7 +153,9 @@ const server = process.env.BASE_URL
           const r = lookup.get(card.id);
           const facts = [
             ...(r.total_minutes > 0 ? [`${r.total_minutes} min`] : []),
-            ...r.methods.filter((v) => !["Other", "Unknown"].includes(v)),
+            ...r.methods
+              .slice(0, 1)
+              .filter((v) => !["Other", "Unknown"].includes(v)),
           ].join(" · ");
           assert.equal(card.title, r.title);
           assert.deepEqual(card.metadata, facts ? [facts] : []);
@@ -139,12 +170,12 @@ const server = process.env.BASE_URL
       await page.getByRole("button", { name: "Next", exact: true }).click();
       assert.deepEqual(
         await ids(),
-        index.slice(48, 96).map((r) => r.id),
+        index.slice(120, 240).map((r) => r.id),
       );
       await go("page-2.html");
       assert.deepEqual(
         await ids(),
-        index.slice(48, 96).map((r) => r.id),
+        index.slice(120, 240).map((r) => r.id),
       );
       const remote = index[1200];
       await page.locator("#catalog-search").fill(remote.title);
@@ -193,11 +224,6 @@ const server = process.env.BASE_URL
         );
         await reset();
       }
-      await filter("coverage").selectOption("85");
-      await expected(
-        index.filter((r) => r.coverage != null && r.coverage >= 0.85),
-      );
-      await reset();
       const sample = index.find(
         (r) =>
           r.cuisines[0] !== "Unknown" &&
@@ -217,7 +243,7 @@ const server = process.env.BASE_URL
         ),
       );
       const before = await ids();
-      await page.locator(".card h2 a").first().click();
+      await page.locator(".recipe-row h2 a").first().click();
       assert.equal(
         await page.locator("h1").textContent(),
         lookup.get(before[0]).title,
@@ -259,7 +285,7 @@ const server = process.env.BASE_URL
       assert.deepEqual(await ids(), before);
       assert.equal(await filter("cuisine").inputValue(), sample.cuisines[0]);
       await reset();
-      for (const value of ["name", "time", "coverage"]) {
+      for (const value of ["name", "time"]) {
         await page.locator("#catalog-sort").selectOption(value);
         const rows = (await ids()).map((id) => lookup.get(id));
         for (let n = 1; n < rows.length; n++) {
@@ -270,14 +296,12 @@ const server = process.env.BASE_URL
               (rows[n - 1].total_minutes ?? Infinity) <=
                 (rows[n].total_minutes ?? Infinity),
             );
-          if (value === "coverage")
-            assert((rows[n - 1].coverage ?? -1) >= (rows[n].coverage ?? -1));
         }
       }
       await page.locator("#catalog-sort").selectOption("time");
       await page
         .getByRole("button", {
-          name: String(Math.ceil(index.length / 48)),
+          name: String(Math.ceil(index.length / 120)),
           exact: true,
         })
         .click();
@@ -301,11 +325,12 @@ const server = process.env.BASE_URL
       assert.deepEqual(errors, []);
       checks.push({
         viewport,
+        layout,
         status: "passed",
         checks: [
           "full_catalog",
           "full_dataset_search",
-          "six_filters",
+          "five_filters",
           "combined_filters",
           "sorting",
           "unknown_time_last",
@@ -318,6 +343,7 @@ const server = process.env.BASE_URL
           "metric_units",
           "personal_notes",
           "no_overflow",
+          "responsive_density_sticky_keyboard",
           "no_browser_errors",
         ],
       });
@@ -327,10 +353,10 @@ const server = process.env.BASE_URL
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
     await page.goto(base);
-    assert.equal(await page.locator(".card").count(), 48);
+    assert.equal(await page.locator(".recipe-row").count(), 120);
     await page.getByRole("link", { name: "Next", exact: true }).click();
     assert(page.url().endsWith("page-2.html"));
-    assert.equal(await page.locator(".card").count(), 48);
+    assert.equal(await page.locator(".recipe-row").count(), 120);
     await context.close();
     const report = {
       status: "passed",

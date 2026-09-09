@@ -27,34 +27,23 @@
     return node;
   };
   function recipeCard(recipe) {
-    const card = element("article", undefined, "card recipe-card");
+    const card = element("article", undefined, "recipe-row");
     card.dataset.recipeId = recipe.id;
     const title = element("h2");
     const link = element("a", recipe.title);
     link.href = recipe.url;
+    link.title = recipe.title;
     title.append(link);
     card.append(title);
-    if (recipe.image && /^https?:\/\//i.test(recipe.image.url)) {
-      const figure = element("figure", undefined, "card-image");
-      const img = element("img");
-      img.src = recipe.image.url;
-      img.alt = "";
-      img.loading = "lazy";
-      img.decoding = "async";
-      img.referrerPolicy = "no-referrer";
-      img.addEventListener("error", () => figure.remove());
-      figure.append(img);
-      if (recipe.image.attribution)
-        figure.append(element("figcaption", recipe.image.attribution));
-      card.append(figure);
-    }
     const facts = [];
     if (known(recipe.total_minutes) && recipe.total_minutes > 0)
       facts.push(`${recipe.total_minutes} min`);
     facts.push(
-      ...recipe.methods.filter((v) => !["Other", "Unknown"].includes(v)),
+      ...recipe.methods
+        .slice(0, 1)
+        .filter((v) => !["Other", "Unknown"].includes(v)),
     );
-    if (facts.length) card.append(element("p", facts.join(" · "), "card-meta"));
+    if (facts.length) card.append(element("p", facts.join(" · "), "row-meta"));
     return card;
   }
   async function start() {
@@ -92,10 +81,6 @@
       return filters.every((filter) => {
         if (!filter.value) return true;
         const key = filter.dataset.catalogFilter;
-        if (key === "coverage")
-          return (
-            known(row.coverage) && row.coverage * 100 >= Number(filter.value)
-          );
         const value = row[fields[key] || key];
         return Array.isArray(value)
           ? value.includes(filter.value)
@@ -104,9 +89,7 @@
     }
     function order(a, b) {
       let difference = 0;
-      if (sort.value === "coverage")
-        difference = (b.coverage ?? -1) - (a.coverage ?? -1);
-      else if (sort.value === "time")
+      if (sort.value === "time")
         difference =
           (a.total_minutes ?? Infinity) - (b.total_minutes ?? Infinity);
       else if (sort.value === "default") difference = a.position - b.position;

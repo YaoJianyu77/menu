@@ -17,7 +17,7 @@
   "deterministic_order": "passed",
   "metric_rendering": "passed",
   "all_local_links": "passed",
-  "static_pages": 2643,
+  "static_pages": 2611,
   "excluded_recipes": [],
   "instructions_linked_to_source": 2023
 }

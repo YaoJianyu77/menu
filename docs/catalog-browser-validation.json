@@ -13,7 +13,7 @@
       "checks": [
         "full_catalog",
         "full_dataset_search",
-        "six_filters",
+        "five_filters",
         "combined_filters",
         "sorting",
         "unknown_time_last",
@@ -26,6 +26,33 @@
         "metric_units",
         "personal_notes",
         "no_overflow",
+        "responsive_density_sticky_keyboard",
+        "no_browser_errors"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 900,
+        "height": 900
+      },
+      "status": "passed",
+      "checks": [
+        "full_catalog",
+        "full_dataset_search",
+        "five_filters",
+        "combined_filters",
+        "sorting",
+        "unknown_time_last",
+        "pagination",
+        "stateful_back_link",
+        "stable_recipe_links",
+        "no_scores",
+        "clean_titles_and_metadata",
+        "no_image_layout",
+        "metric_units",
+        "personal_notes",
+        "no_overflow",
+        "responsive_density_sticky_keyboard",
         "no_browser_errors"
       ]
     },
@@ -38,7 +65,7 @@
       "checks": [
         "full_catalog",
         "full_dataset_search",
-        "six_filters",
+        "five_filters",
         "combined_filters",
         "sorting",
         "unknown_time_last",
@@ -51,6 +78,7 @@
         "metric_units",
         "personal_notes",
         "no_overflow",
+        "responsive_density_sticky_keyboard",
         "no_browser_errors"
       ]
     }
