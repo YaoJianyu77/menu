@@ -202,7 +202,7 @@ Repository: https://github.com/YaoJianyu77/menu
 
 Site: https://yaojianyu77.github.io/menu/
 
-`.github/workflows/pages.yml` tests and builds the persisted catalog on pushes to `main`, then publishes `site/dist` using GitHub's official Pages artifact and deployment actions. It does not collect, normalize, or rerank data. Repository Settings → Pages → Source must be **GitHub Actions**. The older `master` branch remains as historical remote history; ongoing deployments use `main`.
+`.github/workflows/pages.yml` tests and builds the persisted catalog on pushes to `master`, then publishes `site/dist` using GitHub's official Pages artifact and deployment actions. It does not collect, normalize, or rerank data. Repository Settings → Pages → Source must be **GitHub Actions**. The complete `main` history has been merged into `master`; ongoing deployments use `master`, the repository default and permitted Pages deployment branch.
 
 All site assets, navigation, pagination, recipe URLs and the search index use relative URLs, so the same artifact works under `/menu/` without a localhost or domain-specific build setting. No credentials or personal browser notes enter the artifact. Browser checks accept a production URL:
 
