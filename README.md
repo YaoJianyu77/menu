@@ -2,7 +2,7 @@
 
 A local, private, static recipe library with independent, resumable collection pipelines. No backend, live rendering requests, paid services, deployment, or remote Git pushes are required.
 
-**What to cook:** browse practical everyday meals, quick meals, easy dishes, air-fryer meals and high Food Lion compatibility. Public Food Lion catalog evidence is enough: **Yes** means catalog-supported, **Probably** means a common pantry assumption, and **Unknown** means no mapped evidence. Local stock may vary. Missing time or nutrition metadata does not disqualify a meal. See [practical ranking review](docs/practical-top100.md) for the current recommendations.
+**All Recipes contains the complete 2,556-recipe catalog**, including desserts, baking, sides, condiments and lower-scoring dishes. Recommended is a separate everyday-meal view. Every recipe has a clickable title and a stable detail page. Browse by cuisine, meal type, protein, cooking method or time, or search ingredients across the whole catalog. Food Lion compatibility retains Yes / Probably / Unknown; local stock may vary. See the [catalog report](docs/catalog-report.md).
 
 ## Quick start
 
@@ -19,7 +19,7 @@ make format
 
 Without uv, create a Python virtual environment with `python3 -m venv .venv`, then run `.venv/bin/pip install -r requirements-dev.txt`. Python must have its standard venv/ensurepip support installed.
 
-`site/dist/` is generated and ignored by Git. Rebuild it from committed source datasets. The private site has no authentication because it is served on your own loopback interface; do not expose the server publicly. No analytics, remote fonts, remote images, cookies, or secret configuration are needed.
+`site/dist/` and `site/content/` are generated and ignored by Git. Rebuild it from committed source datasets. The private site has no authentication because it is served on your own loopback interface; do not expose the server publicly. No analytics, remote fonts, cookies, or secret configuration are needed. Recipe images are optional and require persisted image-specific permission; the current catalog has no eligible photographs.
 
 ## Architecture and durable files
 
@@ -39,7 +39,10 @@ Match results + normalized recipes + personal annotations → site/content → s
 - `recipe_system/recovery.py`, `archives.py`: root-cause audits and generalized failure recovery.
 - `recipe_system/quality.py`: source coverage and representative recommendation audits.
 - `recipe_system/match.py`: deterministic scoring; all evaluated records retained.
-- `recipe_system/publish.py`: explicit publication allowlist and static HTML generation.
+- `recipe_system/publish.py`: explicit publication allowlist and cooking detail pages.
+- `recipe_system/catalog.py`: complete unique catalog, reusable cards, taxonomy, static pagination and local search index.
+- `recipe_system/recipe_images.py`: explicit persisted image rights and attribution checks.
+- `recipe_system/catalog_validation.py`: reachability, category membership, stable links and rendering checks.
 - `data/foodlion/`: current derived product and ingredient views.
 - `data/recipes/raw/`: immutable successful source records in agent-owned JSONL shards.
 - `data/recipes/normalized/recipes.jsonl`: centrally regenerated recipes with raw provenance.
@@ -132,7 +135,7 @@ Changing preferences requires only `make match publish build validate`. Collecti
 
 The awesome-recipes index license does not license linked recipe text. Source license inspection and publication permission are separate fields. Unknown third-party content inside MIT/GPL software fixtures remains unknown. Full expressive instructions are published only when the source grant has been affirmatively assessed for this use. Other pages publish structured ingredient facts and attribution and link back for instructions; raw source prose is not copied to the site. Full raw records are local research data, not a publicly licensed redistribution bundle. Review source permissions before any future publication.
 
-The static site exposes recipe name/cuisine/status/time/protein/method/coverage filters and individual recipe pages. It builds from published JSON; rendering never calls grocery or recipe sources. Collection diagnostics stay in developer reports; the website focuses on meals, ingredients, effort and compatibility.
+The static site exposes full-catalog title/cuisine/meal-type/ingredient/protein/method search, score/compatibility/time/category filters and individual recipe pages. It builds from published JSON; rendering never calls grocery or recipe sources. Collection diagnostics stay in developer reports; the website focuses on meals, ingredients, effort and compatibility.
 
 ## Validation
 
@@ -169,3 +172,26 @@ make pipeline
 ```
 
 Recovery retries only affected failed items accepted by the improved parser. `state/recipes/recovery/baseline.jsonl` freezes the original 934 failures; outcomes and per-shard improvement reports retain original errors and later resolution. New-source exclusions and archive member outcomes are separate. Source completeness is measured from pinned trees and actual checkpoints, not inferred from a zero pending-worker count. Quality audits preserve past manual review passes; new cohort rows require renewed review when inputs change.
+
+## Complete catalog website
+
+```sh
+make publish build validate      # uses persisted data; does not collect or normalize
+make serve                      # http://127.0.0.1:8000
+.venv/bin/python -m recipe_system.catalog_validation
+PLAYWRIGHT_MODULE="$PWD/.cache/browser/node_modules/playwright" node tests/browser/catalog.cjs
+```
+
+Routes: `/index.html` (home), `/recommended/index.html`, `/recipes/index.html` (All Recipes), and `/cuisine/`, `/meal-type/`, `/protein/`, `/method/`, `/time/` category indexes. Static paths explicitly end in `index.html` where linked, so ordinary static servers work. Each category has its own index and `page-2.html` etc. All Recipes has 54 static pages with at most 48 compact cards each. Every recipe is discoverable without JavaScript. With JavaScript, `search-index.json` provides full-catalog or category-scoped searching, filters, sorting and pagination without a backend. Instructions never enter the listing/search payload.
+
+`RecipeCard` in `catalog.py` renders every static listing. The small matching DOM renderer in `site/catalog.js` updates those cards for client-side search. Both consume the same published index fields. Unknown times sort last; default ordering is score descending, case-folded title, then stable ID. Browsing All Recipes never applies recommendation or same-title suppression. Recommended alone may suppress same-title variants for variety.
+
+Detail URLs preserve the existing `/recipes/<stable-id>.html` identity; changing a title does not change the URL. Unsafe ID characters receive a deterministic hash rather than collision-prone replacement. Thirty-three old duplicate-record URLs redirect to their final unique representatives. This preserves bookmarks while publishing exactly 2,556 distinct detail pages.
+
+Cuisine categories use only explicit source cuisine values, with deterministic spelling/translation aliases; missing or non-cuisine metadata goes to Unknown. Protein groups use the persisted major ingredient. Vegetarian is used only when all ingredient identities are known and no meat, seafood or identified meat-derived ingredient is present. Cooking methods use persisted methods plus explicit title/equipment words for grill, pressure cooker and slow cooker. Time ranges use supplied total time; Under 15 is a subset of Under 30, 30–45 includes 45, and 45–60 excludes 45. No ranking model changes are involved.
+
+Images require explicit persisted image URLs, source attribution, and image-specific permission/license evidence. A general recipe-text license never silently authorizes unrelated photographs. Current image count is zero; cards have no missing-image placeholders. The helper and rendering tests cover legitimate optional images. No image requests occur in the current site.
+
+All recipes get metadata/ingredient pages. Existing source redistribution permissions still control copied instructions: 533 pages include cooking steps; 2,023 link to the source for instructions. Exact per-recipe reasons are recorded in `site/content/publication-report.json` and the committed `docs/catalog-publication.json`. Collection reports and raw provenance remain unchanged. Personal notes remain keyed by stable recipe ID in localStorage.
+
+`make validate` now checks full catalog completeness, every card link, all local links, category membership, stable URLs, search-index completeness, and rendered metric units in addition to existing data checks. Browser coverage is recorded in `docs/catalog-browser-validation.json`; the older recommendation-only browser report remains historical.

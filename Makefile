@@ -12,6 +12,7 @@ format:
 lint:
 	$(RUFF) check recipe_system tests scripts
 	node --check site/app.js
+	node --check site/catalog.js
 test:
 	$(PYTHON) -m pytest -q
 check: format lint test pipeline

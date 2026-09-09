@@ -1,0 +1,15 @@
+{
+  "catalog": {
+    "cuisine": 35,
+    "meal-type": 14,
+    "method": 12,
+    "protein": 11,
+    "time": 6
+  },
+  "collection_normalization_ranking_unchanged": true,
+  "output": "site/dist",
+  "pages": 3005,
+  "recipe_detail_pages": 2556,
+  "repeated_build_identical": true,
+  "static_sha256": "314919f4f1ed4fceafee74e074aaec4f0f562ea6d693987d5152f7a172b90ec4"
+}

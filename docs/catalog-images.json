@@ -1,0 +1,28 @@
+{
+  "eligible_unique_recipe_images": 0,
+  "embedded_image_rights_review": "Embedded JSON references include third-party EatingWell/Meredith and Chefkoch photo hosts. These recipe-manager fixture records do not supply image-specific license, copyright, attribution, or permission fields. Fixture repository licenses are not treated as licenses for third-party photos.",
+  "embedded_image_source_counts": {
+    "https://github.com/mealie-recipes/mealie": 23,
+    "https://github.com/nextcloud/cookbook": 13
+  },
+  "future_contract": {
+    "image": {
+      "attribution": "image creator credit when required",
+      "license": "image-specific license identifier",
+      "permission_evidence": "permission evidence URL if permission is used instead of a recognized image-specific license",
+      "publication_allowed": "optional explicit boolean; false always suppresses",
+      "source_url": "image source page URL",
+      "url": "absolute HTTP(S) image URL"
+    }
+  },
+  "normalized_records": 2589,
+  "normalized_records_with_explicit_image_fields": 0,
+  "omission_reason": "No persisted recipe image fields with image-specific display rights and provenance. Embedded source-body image references are not assumed to be licensed recipe photographs.",
+  "policy": "Select explicit image/image_url fields only with image-specific license and attribution or explicit publication permission with evidence URL; never infer image rights from recipe prose licenses. No network requests, downloads or invented URLs.",
+  "raw_records": 2589,
+  "raw_records_with_explicit_image_fields": 0,
+  "raw_records_with_top_level_embedded_json_image_key": 36,
+  "raw_records_with_unstructured_image_markup": 766,
+  "recipes_excluded_due_to_missing_images": 0,
+  "unique_recipe_records": 2556
+}

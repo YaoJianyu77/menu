@@ -140,7 +140,7 @@ def validate(root):
                 assert not FORBIDDEN.search(value), f"Forbidden unit in published field {key}"
 
         check_content(json.loads(content.read_text()))
-    return {
+    result = {
         "validated_files": len(counts),
         "records": sum(counts.values()),
         "counts": counts,
@@ -148,3 +148,8 @@ def validate(root):
         "ownership": "verified",
         "determinism": "verified",
     }
+    if (root / "site/content/catalog-manifest.json").exists():
+        from .catalog_validation import validate_catalog
+
+        result["catalog"] = validate_catalog(root)
+    return result
