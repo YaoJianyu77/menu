@@ -6,7 +6,7 @@ The interface has no visible recommendation scores, score controls, dashboard se
 
 The build contains **2,643 HTML pages**: 2,556 recipe details, 54 static catalog pages (48 cards per page), and 33 redirects preserving old duplicate links. All recipes remain reachable through static pagination, including without JavaScript. Search/filtering works over the complete index. URL parameters retain the current controls and page; the detail back link restores these using tab-local session storage.
 
-Cards show title, optional image and concise metadata in that order. **Zero recipes currently have permitted images**; no placeholders appear. Fixture tests verify valid-image ordering and image-free rendering. Detail pages show cooking information first, with notes collapsed and source attribution retained. Food Lion compatibility uses existing data.
+Cards and detail headers show title, optional image and time/cooking method in that order. Cuisine/meal-type labels and Food Lion percentages are omitted. Cuisine remains searchable/filterable, and compatibility filter options use qualitative labels with unchanged internal thresholds. The shared display-title helper removes terminal generic Chinese `做法` or `的做法`, without changing original or normalized source titles or recipe identifiers. **Zero recipes currently have permitted images**; no placeholders appear. Fixture tests verify valid-image ordering and image-free rendering. Detail pages show cooking information first, with notes collapsed and source attribution retained. Food Lion compatibility uses existing data.
 
 ## Unchanged publication limits
 
@@ -14,6 +14,6 @@ Cards show title, optional image and concise metadata in that order. **Zero reci
 
 ## Validation
 
-130 automated tests pass. Formatting, linting, static build, full persisted-data validation and deterministic matching checks pass. Catalog checks validate every recipe link, complete static reachability, filter membership, stable URLs, image permissions, score-free UI and metric cooking units. Chromium checks at 1366×900 and 390×844 cover full-dataset search, all six filters, combined filters, sorting, unknown time handling, pagination, back-link state, notes, no horizontal overflow and no browser errors. JavaScript-disabled browsing also passes.
+132 automated tests pass. Formatting, linting, static build, full persisted-data validation and deterministic matching checks pass. Catalog checks validate every recipe link, complete static reachability, filter membership, stable URLs, image permissions, score-free UI and metric cooking units. Chromium checks at 1366×900 and 390×844 cover full-dataset search, all six filters, combined filters, sorting, unknown time handling, pagination, back-link state, notes, no horizontal overflow and no browser errors. JavaScript-disabled browsing also passes.
 
-See [browser validation](catalog-browser-validation.json) and [catalog validation](catalog-validation.json). This UI update is committed locally only; it is not pushed or deployed.
+See [browser validation](catalog-browser-validation.json) and [catalog validation](catalog-validation.json). GitHub Pages deploys successful pushes to `master`; the user authorized pushing and deploying this cleanup after validation.

@@ -48,24 +48,13 @@
         figure.append(element("figcaption", recipe.image.attribution));
       card.append(figure);
     }
-    const labels = [
-      ...recipe.cuisines.filter((v) => v !== "Unknown"),
-      recipe.meal_type,
-    ];
-    card.append(element("p", labels.join(" · "), "card-category"));
     const facts = [];
-    if (known(recipe.total_minutes)) facts.push(`${recipe.total_minutes} min`);
-    facts.push(...recipe.methods.filter((v) => v !== "Other"));
-    card.append(element("p", facts.join(" · "), "card-meta"));
-    card.append(
-      element(
-        "p",
-        known(recipe.coverage)
-          ? `Food Lion ${Math.round(recipe.coverage * 100)}%`
-          : "Food Lion Unknown",
-        "card-meta",
-      ),
+    if (known(recipe.total_minutes) && recipe.total_minutes > 0)
+      facts.push(`${recipe.total_minutes} min`);
+    facts.push(
+      ...recipe.methods.filter((v) => !["Other", "Unknown"].includes(v)),
     );
+    if (facts.length) card.append(element("p", facts.join(" · "), "card-meta"));
     return card;
   }
   async function start() {

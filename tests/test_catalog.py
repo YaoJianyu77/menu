@@ -112,7 +112,7 @@ def test_images_and_no_image_cards(tmp_path):
     assert (
         recipe_card(image).index("</h2>")
         < recipe_card(image).index("<figure")
-        < recipe_card(image).index('class="card-category"')
+        < recipe_card(image).index('class="card-meta"')
     )
     assert "<img" not in recipe_card(none)
     page = (tmp_path / "site/dist" / image["url"]).read_text()
@@ -195,3 +195,67 @@ def test_single_home_catalog_has_no_dashboard_or_scores(tmp_path):
             assert marker not in html
     detail = (dist / index[0]["url"]).read_text()
     assert 'data-back-to-recipes href="../index.html"' in detail
+
+
+def test_display_title_suffix_is_conservative():
+    from recipe_system.catalog import display_title
+
+    for original, expected in {
+        "西红柿炒鸡蛋做法": "西红柿炒鸡蛋",
+        "红烧肉做法": "红烧肉",
+        "凉拌豆腐做法": "凉拌豆腐",
+        "菠菜炒鸡蛋的做法": "菠菜炒鸡蛋",
+        "糖醋排骨的做法 ": "糖醋排骨",
+        "做法": "做法",
+        "做法不同的红烧肉": "做法不同的红烧肉",
+        "红烧肉做法比较": "红烧肉做法比较",
+        "红烧肉的不同做法": "红烧肉的不同做法",
+        "两种做法": "两种做法",
+        "传统做法": "传统做法",
+        "Pasta": "Pasta",
+    }.items():
+        assert display_title(original) == expected
+        assert display_title(expected) == expected
+
+
+def test_clean_titles_and_metadata_only_affect_rendering(tmp_path):
+    records = setup_catalog(tmp_path, 2)
+    records[0]["title"] = "红烧肉的做法"
+    records[0]["cuisine"] = "Chinese"
+    records[0]["total_minutes"] = 23
+    records[1]["cooking_method"] = []
+    records[1]["total_minutes"] = None
+    normalized = tmp_path / "data/recipes/normalized/recipes.jsonl"
+    write_jsonl(normalized, records)
+    raw = tmp_path / "data/recipes/raw/test.jsonl"
+    write_jsonl(raw, [{"id": "raw-0", "title": "红烧肉的做法"}])
+    before = {
+        path: path.read_bytes()
+        for path in [normalized, raw, tmp_path / "data/matches/results.jsonl"]
+    }
+    published = publish(tmp_path)
+    build(tmp_path)
+    assert all(path.read_bytes() == content for path, content in before.items())
+    assert next(r for r in published["recipes"] if r["id"] == "row-000")["title"] == "红烧肉的做法"
+    dist = tmp_path / "site/dist"
+    index = json.loads((dist / "search-index.json").read_text())
+    row = next(r for r in index if r["id"] == "row-000")
+    assert row["title"] == "红烧肉"
+    assert row["cuisine"] == "Chinese"
+    assert row["coverage"] == 0.8
+    assert row["url"] == "recipes/row-000.html"
+    card = recipe_card(row)
+    assert "红烧肉</a>" in card
+    assert "23 min · Oven" in card
+    for text in ["Chinese", "Main dish", "80%", "Food Lion"]:
+        assert text not in card
+    detail = (dist / row["url"]).read_text()
+    assert "<title>红烧肉 · My Recipes</title>" in detail
+    head = detail.split('<section class="recipe-head">')[1].split("</section>")[0]
+    assert "<h1>红烧肉</h1>" in head and "23 min · Oven" in head
+    for text in ["Chinese", "Main dish", "%", "Unknown", "Food Lion"]:
+        assert text not in head
+    none = recipe_card(next(r for r in index if r["id"] == "row-001"))
+    assert 'class="card-meta"' not in none
+    assert "Unknown" not in none
+    assert "%" not in (dist / "index.html").read_text()

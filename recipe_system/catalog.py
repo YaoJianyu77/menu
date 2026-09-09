@@ -208,14 +208,42 @@ def categories(row, aliases=None):
     }
 
 
+def display_title(value):
+    """Presentation only: strip a terminal Chinese recipe-label suffix.
+
+    Interior occurrences and phrases describing kinds of methods stay intact.
+    Source/published recipe records and identity never change.
+    """
+    title = value or "Untitled recipe"
+    match = re.fullmatch(r"(.+?)(?:的)?做法\s*", title)
+    if not match:
+        return title
+    stem = match[1].rstrip()
+    if not re.search(r"[\u3400-\u9fff]", stem):
+        return title
+    if re.search(
+        r"(?:传统|常见|不同|惯用|这种|那种|某种|其他|其它|[一二三四五六七八九十两0-9]+种)$", stem
+    ):
+        return title
+    return stem
+
+
+def cooking_facts(row):
+    facts = []
+    if isinstance(row.get("total_minutes"), (int, float)) and row["total_minutes"] > 0:
+        facts.append(f"{row['total_minutes']:g} min")
+    facts.extend(x for x in row.get("methods", []) if x not in {"Other", "Unknown"})
+    return " · ".join(facts)
+
+
 def index_entry(row):
     match = row.get("match", {})
     cats = row["categories"]
     return {
         "id": row["id"],
         "url": row["url"],
-        "title": row.get("title") or "Untitled recipe",
-        "sort_title": (row.get("title") or "").casefold(),
+        "title": display_title(row.get("title")),
+        "sort_title": display_title(row.get("title")).casefold(),
         "cuisine": ", ".join(cats["cuisine"]),
         "cuisines": cats["cuisine"],
         "meal_type": cats["meal-type"][0],
@@ -254,26 +282,9 @@ def recipe_card(row, prefix=""):
     """Shared compact recipe card; no recommendation information is published."""
     from .publish import esc
 
-    labels = [x for x in row["cuisines"] if x != "Unknown"] + [row["meal_type"]]
-    facts = []
-    if isinstance(row.get("total_minutes"), (int, float)):
-        facts.append(f"{row['total_minutes']:g} min")
-    facts.extend(x for x in row["methods"] if x != "Other")
-    coverage = f"{row['coverage']:.0%}" if row.get("coverage") is not None else "Unknown"
-    return f'<article class="card recipe-card" data-recipe-id="{esc(row["id"])}"><h2><a href="{esc(prefix + row["url"])}">{esc(row["title"])}</a></h2>{image_html(row.get("image"), thumbnail=True)}<p class="card-category">{esc(" · ".join(labels))}</p><p class="card-meta">{esc(" · ".join(facts))}</p><p class="card-meta">Food Lion {coverage}</p></article>'
-
-
-def category_links(row, prefix="../"):
-    """Quiet detail metadata, with filters available on the homepage."""
-    from .publish import esc
-
-    labels = [
-        label
-        for axis in ("cuisine", "meal-type", "method")
-        for label in row["categories"][axis]
-        if label not in {"Unknown", "Other"}
-    ]
-    return '<p class="recipe-categories">' + esc(" · ".join(labels)) + "</p>"
+    facts = cooking_facts(row)
+    metadata = f'<p class="card-meta">{esc(facts)}</p>' if facts else ""
+    return f'<article class="card recipe-card" data-recipe-id="{esc(row["id"])}"><h2><a href="{esc(prefix + row["url"])}">{esc(row["title"])}</a></h2>{image_html(row.get("image"), thumbnail=True)}{metadata}</article>'
 
 
 def build_catalog(root, records, dist):
@@ -321,7 +332,7 @@ def build_catalog(root, records, dist):
         )
         + "</select></label>"
     )
-    fields += '<label>Food Lion Compatibility<select data-catalog-filter="coverage"><option value="">Any</option><option value="95">95% or more</option><option value="85">85% or more</option><option value="70">70% or more</option></select></label>'
+    fields += '<label>Food Lion Compatibility<select data-catalog-filter="coverage"><option value="">Any</option><option value="95">Highest compatibility</option><option value="85">High compatibility</option><option value="70">Good compatibility</option></select></label>'
     controls = (
         '<section class="filters" aria-label="Recipe filters"><label class="search"><span class="sr-only">Search recipes</span><input id="catalog-search" type="search" placeholder="Search recipes…"></label>'
         + fields

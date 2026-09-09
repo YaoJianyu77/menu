@@ -170,7 +170,8 @@ def test_catalog_compatibility_states_are_visible(tmp_path):
     assert "Food Lion: Yes" in page
     assert "Food Lion: Probably" in page
     assert "Verified store coverage" not in page
-    assert "Food Lion compatibility" in page
+    assert "Food Lion compatibility</dt>" not in page
+    assert "67%" not in page
     assert "Local stock may vary." in page
     assert "Provisional recommendation" not in page
     assert "assessed weight points" not in page
@@ -236,7 +237,6 @@ def test_homepage_focuses_on_meals_without_collection_jargon(tmp_path):
     page = (tmp_path / "site/dist/index.html").read_text()
     for label in ("My Recipes", "Search recipes", "Cuisine", "Cooking Method", "Clear filters"):
         assert label in page
-    assert "Full meal" in page
     assert "72/100" not in page
     for jargon in ("shard", "parser", "completion", "catalog IDs", "verified at the store"):
         assert jargon not in page

@@ -5,7 +5,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-from .catalog import AXES, recipe_url
+from .catalog import AXES, cooking_facts, display_title, recipe_url
 from .core import read_jsonl
 from .publish import FORBIDDEN, visible_text
 
@@ -58,6 +58,7 @@ def validate_catalog(root):
         ),
     )
     assert [r["id"] for r in index] == [r["id"] for r in ordered]
+    assert [r["title"] for r in index] == [display_title(r.get("title")) for r in ordered]
     assert all("score" not in r and "rank" not in r for r in index)
     assert all("ingredients" in r and "methods" in r and "proteins" in r for r in index)
     urls = {r["id"]: r["url"] for r in index}
@@ -94,6 +95,13 @@ def validate_catalog(root):
         text = path.read_text()
         assert row["url"] == recipe_url(row["id"])
         assert 'id="recipe-data"' in text
+        header = text.split('<section class="recipe-head">')[1].split("</section>")[0]
+        assert "Food Lion" not in header and 'class="recipe-categories"' not in header
+        assert "<dl>" not in header
+        from .publish import esc
+
+        assert f"<h1>{esc(row['title'])}</h1>" in header
+        assert esc(cooking_facts(row)) in header
         assert (
             text.index("<h2>Ingredients")
             < text.index("<h2>Instructions")

@@ -112,6 +112,30 @@ const server = process.env.BASE_URL
         index.slice(0, 48).map((r) => base + r.url),
       );
       assert.equal(await page.locator(".card img").count(), 0);
+      async function cleanCardMetadata() {
+        const cards = await page.locator(".card").evaluateAll((nodes) =>
+          nodes.map((node) => ({
+            id: node.dataset.recipeId,
+            title: node.querySelector("h2").textContent,
+            metadata: [...node.querySelectorAll("p")].map((p) => p.textContent),
+          })),
+        );
+        for (const card of cards) {
+          const r = lookup.get(card.id);
+          const facts = [
+            ...(r.total_minutes > 0 ? [`${r.total_minutes} min`] : []),
+            ...r.methods.filter((v) => !["Other", "Unknown"].includes(v)),
+          ].join(" · ");
+          assert.equal(card.title, r.title);
+          assert.deepEqual(card.metadata, facts ? [facts] : []);
+        }
+        assert(!/%/.test(await page.locator(".filters").innerText()));
+      }
+      await cleanCardMetadata();
+      const chinese = index.find((r) => /[\u3400-\u9fff]/.test(r.title));
+      await page.locator("#catalog-search").fill(chinese.title);
+      await cleanCardMetadata();
+      await reset();
       await page.getByRole("button", { name: "Next", exact: true }).click();
       assert.deepEqual(
         await ids(),
@@ -203,6 +227,14 @@ const server = process.env.BASE_URL
           await page.locator("body").innerText(),
         ),
       );
+      const header = await page.locator(".recipe-head").innerText();
+      assert(!/Food Lion|%|Unknown|N\/A/.test(header));
+      assert.equal(
+        await page
+          .locator(".recipe-head .recipe-categories,.recipe-head dl")
+          .count(),
+        0,
+      );
       const h = await page.locator("h2").allTextContents();
       assert(h.indexOf("Ingredients") < h.indexOf("Instructions"));
       assert(
@@ -281,6 +313,7 @@ const server = process.env.BASE_URL
           "stateful_back_link",
           "stable_recipe_links",
           "no_scores",
+          "clean_titles_and_metadata",
           "no_image_layout",
           "metric_units",
           "personal_notes",
