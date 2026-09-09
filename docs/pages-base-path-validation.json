@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "base_url": "http://127.0.0.1:8000/menu/",
+  "recipes": 2556,
+  "images": 0,
+  "checks": [
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "status": "passed",
+      "checks": [
+        "complete_catalog",
+        "title_and_ingredient_search",
+        "all_filters",
+        "sorts_unknown_time_last",
+        "pagination_and_direct_page_2",
+        "five_category_axes",
+        "card_links",
+        "no_image_layout",
+        "detail_cooking_order",
+        "metric_instructions",
+        "personal_notes",
+        "mobile_overflow",
+        "no_browser_errors"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "passed",
+      "checks": [
+        "complete_catalog",
+        "title_and_ingredient_search",
+        "all_filters",
+        "sorts_unknown_time_last",
+        "pagination_and_direct_page_2",
+        "five_category_axes",
+        "card_links",
+        "no_image_layout",
+        "detail_cooking_order",
+        "metric_instructions",
+        "personal_notes",
+        "mobile_overflow",
+        "no_browser_errors"
+      ]
+    }
+  ]
+}

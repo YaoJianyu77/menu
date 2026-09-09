@@ -195,3 +195,22 @@ Images require explicit persisted image URLs, source attribution, and image-spec
 All recipes get metadata/ingredient pages. Existing source redistribution permissions still control copied instructions: 533 pages include cooking steps; 2,023 link to the source for instructions. Exact per-recipe reasons are recorded in `site/content/publication-report.json` and the committed `docs/catalog-publication.json`. Collection reports and raw provenance remain unchanged. Personal notes remain keyed by stable recipe ID in localStorage.
 
 `make validate` now checks full catalog completeness, every card link, all local links, category membership, stable URLs, search-index completeness, and rendered metric units in addition to existing data checks. Browser coverage is recorded in `docs/catalog-browser-validation.json`; the older recommendation-only browser report remains historical.
+
+## GitHub Pages
+
+Repository: https://github.com/YaoJianyu77/menu
+
+Site: https://yaojianyu77.github.io/menu/
+
+`.github/workflows/pages.yml` tests and builds the persisted catalog on pushes to `main`, then publishes `site/dist` using GitHub's official Pages artifact and deployment actions. It does not collect, normalize, or rerank data. Repository Settings → Pages → Source must be **GitHub Actions**. The older `master` branch remains as historical remote history; ongoing deployments use `main`.
+
+All site assets, navigation, pagination, recipe URLs and the search index use relative URLs, so the same artifact works under `/menu/` without a localhost or domain-specific build setting. No credentials or personal browser notes enter the artifact. Browser checks accept a production URL:
+
+```sh
+BASE_URL=https://yaojianyu77.github.io/menu/ \
+BROWSER_REPORT=/tmp/menu-live-browser.json \
+PLAYWRIGHT_MODULE="$PWD/.cache/browser/node_modules/playwright" \
+node tests/browser/catalog.cjs
+```
+
+The public site exposes published recipe content only. Developer data stays out of the Pages artifact; the GitHub repository itself is public. Browser notes remain local to each browser/origin and are not synchronized.

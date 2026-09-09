@@ -3,30 +3,35 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const { spawn } = require("node:child_process");
-const base = "http://127.0.0.1:8000/";
+const base = (process.env.BASE_URL || "http://127.0.0.1:8000/").replace(
+  /\/?$/,
+  "/",
+);
 const index = JSON.parse(
   fs.readFileSync("site/dist/search-index.json", "utf8"),
 );
 const lookup = new Map(index.map((row) => [row.id, row]));
 const checks = [];
-const server = spawn(
-  "python3",
-  [
-    "-m",
-    "http.server",
-    "8000",
-    "--bind",
-    "127.0.0.1",
-    "--directory",
-    "site/dist",
-  ],
-  { stdio: "ignore" },
-);
+const server = process.env.BASE_URL
+  ? null
+  : spawn(
+      "python3",
+      [
+        "-m",
+        "http.server",
+        "8000",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "site/dist",
+      ],
+      { stdio: "ignore" },
+    );
 (async () => {
   let browser;
   try {
     for (let attempt = 0; attempt < 50; attempt++) {
-      if (server.exitCode !== null)
+      if (server && server.exitCode !== null)
         throw Error("Could not start dedicated catalog server");
       try {
         if ((await fetch(base)).ok) break;
@@ -44,8 +49,24 @@ const server = spawn(
       const page = await context.newPage();
       const errors = [];
       page.on("pageerror", (error) => errors.push(error.message));
+      page.on("response", (response) => {
+        if (
+          response.url().startsWith(new URL(base).origin) &&
+          response.status() >= 400
+        )
+          errors.push(`${response.status()} ${response.url()}`);
+      });
+      page.on("request", (request) => {
+        const url = new URL(request.url());
+        if (url.origin === new URL(base).origin)
+          assert(
+            url.pathname.startsWith(new URL(base).pathname),
+            `Outside base path: ${url}`,
+          );
+      });
       const go = async (path) => {
-        await page.goto(base + path);
+        const response = await page.goto(base + path);
+        assert.equal(response.status(), 200);
         await page
           .locator('#catalog-config[data-loaded="true"]')
           .waitFor({ state: "attached" });
@@ -284,10 +305,11 @@ const server = spawn(
       await context.close();
     }
     fs.writeFileSync(
-      "docs/catalog-browser-validation.json",
+      process.env.BROWSER_REPORT || "docs/catalog-browser-validation.json",
       JSON.stringify(
         {
           status: "passed",
+          base_url: base,
           recipes: index.length,
           images: index.filter((row) => row.image).length,
           checks,
@@ -305,7 +327,7 @@ const server = spawn(
     );
   } finally {
     await browser?.close();
-    server.kill();
+    server?.kill();
   }
 })().catch((error) => {
   console.error(error);
