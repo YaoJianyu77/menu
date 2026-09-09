@@ -1,0 +1,22 @@
+{
+  "validated_files": 13,
+  "records": 20684,
+  "counts": {
+    "data/recipes/raw/recipe-agent-01.jsonl": 759,
+    "data/recipes/raw/recipe-agent-02.jsonl": 750,
+    "data/recipes/raw/recipe-agent-03.jsonl": 726,
+    "data/recipes/normalized/recipes.jsonl": 2235,
+    "data/foodlion/products.jsonl": 0,
+    "data/foodlion/ingredients.jsonl": 0,
+    "data/matches/results.jsonl": 2235,
+    "data/recipes/duplicates/groups.jsonl": 2219,
+    "state/recipes/bbc-index.jsonl": 11161,
+    "state/recipes/yunyoujun-index.jsonl": 599,
+    "snapshots/foodlion/2026-09-08/raw/fl-agent-01.jsonl": 0,
+    "snapshots/foodlion/2026-09-08/products.jsonl": 0,
+    "snapshots/foodlion/2026-09-08/ingredients.jsonl": 0
+  },
+  "provenance": "verified",
+  "ownership": "verified",
+  "determinism": "verified"
+}

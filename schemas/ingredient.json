@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "canonical_ingredient",
+    "product_ids",
+    "product_count",
+    "currently_available"
+  ],
+  "properties": {
+    "canonical_ingredient": {
+      "type": "string"
+    },
+    "product_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "product_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "currently_available": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

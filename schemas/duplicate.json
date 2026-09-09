@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "fingerprint",
+    "recipe_ids",
+    "representative_id",
+    "method"
+  ],
+  "properties": {
+    "fingerprint": {
+      "type": "string"
+    },
+    "recipe_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "representative_id": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    }
+  }
+}

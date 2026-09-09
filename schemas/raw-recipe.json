@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "source",
+    "source_url",
+    "source_license",
+    "ingredients",
+    "instructions",
+    "retrieved_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_url": {
+      "type": "string",
+      "pattern": "^https?://"
+    },
+    "source": {
+      "type": "string"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d\\d-\\d\\dT.*[+-]\\d\\d:\\d\\d$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_license": {
+      "type": "string"
+    },
+    "ingredients": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "instructions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

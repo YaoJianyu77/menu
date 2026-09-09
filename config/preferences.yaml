@@ -1,0 +1,47 @@
+version: 1
+max_active_minutes: 15
+preferred_max_total_minutes: 40
+minimum_approval_score: 65
+require_known_active_time: true
+foodlion:
+  minimum_ingredient_coverage: 0.85
+  max_missing_essential_ingredients: 0
+  max_missing_optional_ingredients: 2
+preferences:
+  prefer_common_ingredients: true
+  prefer_reusable_ingredients: true
+  prefer_low_cleanup: true
+  prefer_batch_cooking: true
+  prefer_one_pan: true
+  prefer_sheet_pan: true
+  prefer_air_fryer: true
+  prefer_simple_oven: true
+  prefer_stovetop_simple: true
+nutrition:
+  prefer_meaningful_protein_source: true
+  prefer_vegetables: true
+  prefer_balanced_meal: true
+  penalize_highly_processed_food_heavy_meals: true
+units:
+  system: metric
+  liquid_units: [mL, L]
+  forbidden_output_units: [tsp, tbsp, teaspoon, teaspoons, tablespoon, tablespoons]
+scoring:
+  weights: {foodlion: 40, time: 25, nutrition: 20, simplicity: 15}
+  essential_availability_share: 0.85
+  active_time_share: 0.7
+  protein_share: 0.4
+  vegetables_share: 0.35
+  balance_share: 0.25
+  processed_fraction_threshold: 0.5
+  processed_penalty: 0.5
+  simple_ingredient_count: 8
+  complex_ingredient_count: 20
+  simple_step_count: 6
+  complex_step_count: 18
+  simplicity_ingredient_share: 0.45
+  simplicity_step_share: 0.35
+  simplicity_method_share: 0.2
+  unknown_evidence_credit: 0
+  method_bonus: 0.5
+  batch_servings: 4

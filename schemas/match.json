@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "required": [
+    "recipe_id",
+    "total_score",
+    "status",
+    "foodlion_coverage",
+    "ingredient_matches",
+    "input_fingerprint"
+  ],
+  "properties": {
+    "recipe_id": {
+      "type": "string"
+    },
+    "total_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "foodlion_coverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "status": {
+      "enum": [
+        "approved",
+        "rejected",
+        "needs-review"
+      ]
+    },
+    "ingredient_matches": {
+      "type": "array"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

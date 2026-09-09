@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "source_url",
+    "retrieved_at",
+    "store_id",
+    "availability"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_url": {
+      "type": "string",
+      "pattern": "^https?://"
+    },
+    "source": {
+      "type": "string"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d\\d-\\d\\dT.*[+-]\\d\\d:\\d\\d$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "availability": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "store_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "price": {
+      "type": [
+        "number",
+        "null"
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "source",
+    "source_revision",
+    "retrieved_at",
+    "body_status",
+    "metadata"
+  ],
+  "properties": {
+    "source": {
+      "type": "string",
+      "pattern": "^https?://"
+    },
+    "source_revision": {
+      "type": "string"
+    },
+    "retrieved_at": {
+      "type": "string"
+    },
+    "body_status": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    }
+  }
+}

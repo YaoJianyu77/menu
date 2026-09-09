@@ -1,0 +1,32 @@
+{
+  "agent": "fl-agent-01",
+  "completion_status": "blocked",
+  "cursor": null,
+  "discovered": [],
+  "discovery_complete": false,
+  "failed": [
+    {
+      "error_message": "HTTP 403 at https://foodlion.com/; no bypass attempted",
+      "error_type": "AccessBlocked",
+      "item_identifier": "https://foodlion.com/",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "foodlion",
+      "timestamp": "2026-09-08T23:24:30-04:00"
+    },
+    {
+      "error_message": "Store catalog ID unresolved; inventory cannot be attributed to the configured Williamsburg store",
+      "error_type": "AccessBlocked",
+      "item_identifier": "store-context",
+      "retry_count": 0,
+      "retryable": false,
+      "source": "foodlion",
+      "timestamp": "2026-09-08T23:24:30-04:00"
+    }
+  ],
+  "pagination": {},
+  "processed": [],
+  "snapshot_id": "2026-09-08",
+  "source": "foodlion",
+  "updated_at": "2026-09-08T23:24:30-04:00"
+}

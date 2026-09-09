@@ -1,0 +1,612 @@
+index_url: https://github.com/bbbenji/awesome-recipes
+index_revision: 0f0f029279922b0981e6cfb3b8105efa2f98096a
+discovered_at: '2026-09-08T23:23:32.619742-04:00'
+scope: All linked sources inspected; enabled candidate files enumerated from pinned
+  complete Git trees. Counts are candidate files, not assumed successful recipes.
+sources:
+- id: panozzaj--recipes
+  name: Recipes
+  url: https://github.com/panozzaj/recipes
+  revision: ba37591aac2810503f0e796cafc41b5c175f8922
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 100
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - '*.markdown'
+  exclude:
+  - README.markdown
+  - archive.markdown
+  - meal-planning.markdown
+  - tips.markdown
+  - great-big-pressure-cooker-book.markdown
+  estimated_items: 81
+  publication_allowed: false
+- id: obfuscurity--food-recipes
+  name: Food Recipes
+  url: https://github.com/obfuscurity/food-recipes
+  revision: 289e32cadb9b27f8459bbe0652cf407515806a2e
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 24
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - '*/*.md'
+  exclude:
+  - drinks/*
+  estimated_items: 14
+  publication_allowed: false
+- id: dolph--recipes
+  name: Recipes
+  url: https://github.com/dolph/recipes
+  revision: 92a5f1ebae355379c6202d5bf33e9241e52aebe0
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 162
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - '*.md'
+  exclude:
+  - README.md
+  - cheatsheet.md
+  - holidays/*
+  - cocktails.md
+  estimated_items: 151
+  publication_allowed: false
+- id: kmcconnell--recipyzer
+  name: recipyzer
+  url: https://github.com/kmcconnell/recipyzer
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 0
+  status: blocked
+  reason: Command '['git', 'clone', '--depth', '1', '--filter=blob:none', '--sparse',
+    'https://github.com/kmcconnell/recipyzer', '.cache/recipes/kmcconnell--recipyzer']'
+    returned non-zero exit status 128.
+  publication_allowed: false
+- id: DEAD10C5--1337-Noms-The-Hacker-Cookbook
+  name: 1337 Noms The Hacker Cookbook
+  url: https://github.com/DEAD10C5/1337-Noms-The-Hacker-Cookbook
+  revision: 5279d72d2915de5fa2e1f661d43942798cd6339d
+  license: CC-BY-ND-4.0
+  license_path: LICENSE
+  recipe_license: CC-BY-ND-4.0
+  inspected_file_count: 224
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - '*/*.md'
+  exclude:
+  - .*
+  - COOKWARE/*
+  - DRINKS/*
+  estimated_items: 60
+  publication_allowed: false
+- id: user24--auntiesrecipes
+  name: auntiesrecipes
+  url: https://github.com/user24/auntiesrecipes
+  revision: 113c6a5c712c463a562ff387c1ec062027390ac2
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 14
+  status: blocked
+  reason: 11,161 title/search entries discovered. BBC robots explicitly disallow ChatGPT-User/GPTBot/OAI-SearchBot
+    and agentic extraction; no remote sitemap or bodies fetched. See state/recipes/bbc-access.json.
+  publication_allowed: false
+  discovered_index_items: 11161
+  index_path: state/recipes/bbc-index.jsonl
+- id: Anduin2017--HowToCook
+  name: Anduin2017/HowToCook
+  url: https://github.com/Anduin2017/HowToCook
+  revision: 2b19c9e9ee926fd925a68207a57582a338813f9c
+  license: Unlicense
+  license_path: LICENSE
+  recipe_license: Unlicense
+  inspected_file_count: 757
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - dishes/**/*.md
+  exclude: []
+  estimated_items: 370
+  publication_allowed: true
+- id: hendricius--the-bread-code
+  name: The Bread code
+  url: https://github.com/hendricius/the-bread-code
+  revision: 5a778daa94bc765b3bb9fdfc11051b5311496d9f
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 106
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - recipes/**/*.md
+  exclude: []
+  estimated_items: 14
+  publication_allowed: true
+- id: usmanayubsh--cooking-recipes
+  name: Cooking Recipes
+  url: https://github.com/usmanayubsh/cooking-recipes
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 0
+  status: blocked
+  reason: Command '['git', 'clone', '--depth', '1', '--filter=blob:none', '--sparse',
+    'https://github.com/usmanayubsh/cooking-recipes', '.cache/recipes/usmanayubsh--cooking-recipes']'
+    returned non-zero exit status 128.
+  publication_allowed: false
+- id: AshtarCodes--Con-Sazon
+  name: Con Sazón
+  url: https://github.com/AshtarCodes/Con-Sazon
+  revision: 69fc3d73234e88493691c727ef77a6047b081e9d
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 46
+  status: not-a-recipe-source
+  reason: Repository is a server application; recipes live in a separate authenticated
+    database, no recipe corpus in the complete tree.
+  publication_allowed: false
+- id: douvy--tasty-cooking
+  name: Tasty Cooking
+  url: https://github.com/douvy/tasty-cooking
+  revision: ea6c105bd0eaaac77ae7d91f2e06f18f4f8bd156
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 170
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - src/content/recipes/*.mdx
+  exclude: []
+  estimated_items: 55
+  publication_allowed: false
+- id: YunYouJun--cook
+  name: YunYouJun/cook
+  url: https://github.com/YunYouJun/cook
+  revision: 7bc18f58bf8359ea1f56d985b1aa48364d663502
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 275
+  status: unsupported
+  reason: CSV contains ingredient names and video links, but no written instructions.
+    Video transcription adapter unavailable; index preserved for future collection.
+  publication_allowed: false
+  discovered_index_items: 599
+  index_path: state/recipes/yunyoujun-index.jsonl
+- id: aweijnitz--recipe-el_fuego_viviente
+  name: Recipe El Fuego Viviente
+  url: https://github.com/aweijnitz/recipe-el_fuego_viviente
+  revision: 3cba4686e0c1512544baed12d2363c92f514de7d
+  license: CC-BY-NC-SA-4.0
+  license_path: LICENSE.md
+  recipe_license: CC-BY-NC-SA-4.0
+  inspected_file_count: 17
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - README*.md
+  exclude: []
+  estimated_items: 5
+  publication_allowed: false
+- id: hendricius--pizza-dough
+  name: pizza-dough
+  url: https://github.com/hendricius/pizza-dough
+  revision: f24aaf6e8feb239a3513855737c2b48123b61f96
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 117
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - README.md
+  exclude: []
+  estimated_items: 1
+  publication_allowed: true
+- id: sinker--tacofancy
+  name: tacofancy
+  url: https://github.com/sinker/tacofancy
+  revision: 075ba589da8bea2d8c46fa3e0e5c9421a7e462e7
+  license: Unlicense
+  license_path: LICENSE
+  recipe_license: Unlicense
+  inspected_file_count: 183
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - '*/*.md'
+  exclude:
+  - '*/README.md'
+  estimated_items: 163
+  publication_allowed: true
+- id: buggymcbugfix--602f34214a37d972993830c2c9526cf0
+  name: Sexy Chicken Schnitzel
+  url: https://gist.github.com/buggymcbugfix/602f34214a37d972993830c2c9526cf0
+  revision: 26e5e5e5c4014645bd4e217788d9749089204ff7
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 1
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - '*.md'
+  exclude: []
+  estimated_items: 1
+  publication_allowed: false
+- id: hendricius--the-sourdough-framework
+  name: The Sourdough Framework
+  url: https://github.com/hendricius/the-sourdough-framework
+  revision: aabae670ba63b9315a2aaec7afb92050cfb7a054
+  license: CC-BY-SA-4.0
+  license_path: LICENSE
+  recipe_license: CC-BY-SA-4.0
+  inspected_file_count: 200
+  status: unsupported
+  reason: LaTeX instructional book with formulas spread across chapters and included
+    tables; no reliable recipe-boundary adapter yet.
+  publication_allowed: false
+- id: andrewkern--bagels
+  name: Open Source Bagels
+  url: https://github.com/andrewkern/bagels
+  revision: e7112875ba72f55c7fc6c051432c22cc35fd9d3a
+  license: GPL-3.0 (see source for exact grant)
+  license_path: LICENSE
+  recipe_license: GPL-3.0 (see source for exact grant)
+  inspected_file_count: 2
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - README.md
+  exclude: []
+  estimated_items: 1
+  publication_allowed: false
+- id: frenchguycooking--doughsheeter
+  name: Open Source Dough Sheeter
+  url: https://github.com/frenchguycooking/doughsheeter
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 0
+  status: blocked
+  reason: Command '['git', 'clone', '--depth', '1', '--filter=blob:none', '--sparse',
+    'https://github.com/frenchguycooking/doughsheeter', '.cache/recipes/frenchguycooking--doughsheeter']'
+    returned non-zero exit status 128.
+  publication_allowed: false
+- id: karlomikus--bar-assistant
+  name: Bar Assistant
+  url: https://github.com/karlomikus/bar-assistant
+  revision: 6629fc4e819b45c675e67514fec243e88d67a55f
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 1106
+  status: disabled
+  reason: Cocktail-only software excluded by source type.
+  publication_allowed: false
+- id: AndreWohnsland--CocktailBerry
+  name: CocktailBerry
+  url: https://github.com/AndreWohnsland/CocktailBerry
+  revision: 4b5e8a2cef65d65fa00902678fab30fbf8de1b3f
+  license: GPL-3.0 (see source for exact grant)
+  license_path: LICENSE
+  recipe_license: GPL-3.0 (see source for exact grant)
+  inspected_file_count: 726
+  status: disabled
+  reason: Cocktail machine software excluded by source type.
+  publication_allowed: false
+- id: alfg--opendrinks
+  name: Open Drinks
+  url: https://github.com/alfg/opendrinks
+  revision: f446f0e9356b9b43155d207b4f7c5214d9da91ab
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 1597
+  status: disabled
+  reason: Drinks/cocktail-only corpus excluded by source type.
+  publication_allowed: false
+- id: clarklab--chowdown
+  name: Chowdown
+  url: https://github.com/clarklab/chowdown
+  revision: 48d56ea7a0115f722653dac6466b861f7eed4ca3
+  license: Unlicense
+  license_path: LICENSE
+  recipe_license: Unlicense
+  inspected_file_count: 113
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - _recipes/*.md
+  - _components/*.md
+  exclude: []
+  estimated_items: 37
+  publication_allowed: true
+- id: domingoclub--fermenter-software
+  name: Domingo Fermenter Software
+  url: https://github.com/domingoclub/fermenter-software
+  revision: fa9c30bd0a111f148bc313b7ce143a422a61bcdb
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 60
+  status: not-a-recipe-source
+  reason: Fermentation hardware control software, no recipe corpus in inspected tree.
+  publication_allowed: false
+- id: Murgio--Food-Recipe-CNN
+  name: Food Recipe CNN
+  url: https://github.com/Murgio/Food-Recipe-CNN
+  revision: 3a8e3c96dc28f93fe520265e533e52e5f895253d
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 78
+  status: disabled
+  reason: ML classification project excluded by source type (includes scraped classifier
+    data).
+  publication_allowed: false
+- id: pearofducks--foodprocessor
+  name: foodprocessor
+  url: https://github.com/pearofducks/foodprocessor
+  revision: cb3e036865f04ea39045079e71180f657409cf81
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 13
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - '*.recipe'
+  exclude: []
+  estimated_items: 1
+  publication_allowed: true
+- id: grocy--grocy
+  name: Grocy
+  url: https://github.com/grocy/grocy
+  revision: 7d15c46bbdc35d4958cae99209ba170667dc1d64
+  license: MIT
+  license_path: LICENSE.md
+  recipe_license: MIT
+  inspected_file_count: 967
+  status: not-a-recipe-source
+  reason: Household management software; tree has synthetic data generators, no authored
+    recipe corpus.
+  publication_allowed: false
+- id: hmontazeri--is-vegan
+  name: is-vegan
+  url: https://github.com/hmontazeri/is-vegan
+  revision: 4a8705f6bc2e9d0b4afa4a15148b9ef24282a9fa
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 32
+  status: not-a-recipe-source
+  reason: Vegan ingredient identification tool, not recipes.
+  publication_allowed: false
+- id: mealie-recipes--mealie
+  name: Mealie
+  url: https://github.com/mealie-recipes/mealie
+  revision: 7083998807081fc31c57984e54df0425268398af
+  license: AGPL-3.0 (see source for exact grant)
+  license_path: LICENSE
+  recipe_license: unknown
+  inspected_file_count: 1669
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - tests/data/html/*.html
+  - tests/data/json/*.json
+  exclude: []
+  estimated_items: 22
+  license_note: Repository software license does not establish third-party recipe
+    redistribution rights.
+  publication_allowed: false
+- id: kirmanak--Mealient
+  name: Mealient
+  url: https://github.com/kirmanak/Mealient
+  revision: 2dd0ec34030716a4038f6d482439aa1a3cc1a08d
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 391
+  status: not-a-recipe-source
+  reason: Recipe-manager Android client; no recipe corpus in inspected tree.
+  publication_allowed: false
+- id: eleow--IRS-MR-2019-07-01-IS1FT-GRP-MEWPlanner
+  name: MEWPlanner
+  url: https://github.com/eleow/IRS-MR-2019-07-01-IS1FT-GRP-MEWPlanner
+  revision: 52c9dbb3ad8090322fc23d366eeaa314f63d7969
+  license: unknown
+  license_path: null
+  recipe_license: unknown
+  inspected_file_count: 300
+  status: not-a-recipe-source
+  reason: Meal planning software includes a nutrient/food database, not ingredient-and-instruction
+    recipes.
+  publication_allowed: false
+- id: schollz--meanrecipe
+  name: meanrecipe
+  url: https://github.com/schollz/meanrecipe
+  revision: 10ee77d55eb318a464e00dc08bc7125fdf243667
+  license: MIT
+  license_path: LICENSE
+  recipe_license: unknown
+  inspected_file_count: 1658
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - src/testing/**/*.gz
+  exclude: []
+  estimated_items: 1608
+  license_note: Repository software license does not establish third-party recipe
+    redistribution rights.
+  publication_allowed: false
+- id: nextcloud--cookbook
+  name: Nextcloud Cookbook
+  url: https://github.com/nextcloud/cookbook
+  revision: 9dab723d4f6fdb62bee8eaf5fbc9c271129060e5
+  license: AGPL-3.0 (see source for exact grant)
+  license_path: LICENSE
+  recipe_license: unknown
+  inspected_file_count: 976
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - tests/Unit/Helper/HTMLParser/**/*.html
+  exclude: []
+  estimated_items: 26
+  license_note: Repository software license does not establish third-party recipe
+    redistribution rights.
+  publication_allowed: false
+- id: steve71--RasPiBrew
+  name: RasPiBrew
+  url: https://github.com/steve71/RasPiBrew
+  revision: c2c8cbbe5dd04ca171f60766efa3cb73d4c2ecc5
+  license: MIT
+  license_path: LICENSE.txt
+  recipe_license: MIT
+  inspected_file_count: 74
+  status: disabled
+  reason: Brewing/temperature-controller software excluded by source type.
+  publication_allowed: false
+- id: bryceadams--Recipe-Hero
+  name: Recipe Hero
+  url: https://github.com/bryceadams/Recipe-Hero
+  revision: 27ecb484bcfc038426305eea617f5941202536e6
+  license: GPL-2.0 (see source for exact grant)
+  license_path: LICENSE.txt
+  recipe_license: GPL-2.0 (see source for exact grant)
+  inspected_file_count: 200
+  status: not-a-recipe-source
+  reason: Recipe management plugin, no recipe corpus in inspected tree.
+  publication_allowed: false
+- id: Brooke-white--RecipeParser
+  name: RecipeParser
+  url: https://github.com/Brooke-white/RecipeParser
+  revision: 53104805d8b49b9111a75a4e5604eaf027e96cbd
+  license: MIT
+  license_path: LICENSE.txt
+  recipe_license: unknown
+  inspected_file_count: 122
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - Recipes/*.md
+  exclude: []
+  estimated_items: 114
+  license_note: Repository software license does not establish third-party recipe
+    redistribution rights.
+  publication_allowed: false
+- id: reaper47--recipya
+  name: Recipya
+  url: https://github.com/reaper47/recipya
+  revision: 7dad2d386faf26322c782ed28a8e124ea8190525
+  license: GPL-3.0 (see source for exact grant)
+  license_path: LICENSE
+  recipe_license: unknown
+  inspected_file_count: 860
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - internal/scraper/testdata/*.html
+  exclude: []
+  estimated_items: 416
+  license_note: Repository software license does not establish third-party recipe
+    redistribution rights.
+  publication_allowed: false
+- id: dpapathanasiou--recipebook
+  name: recipebook
+  url: https://github.com/dpapathanasiou/recipebook
+  revision: 555241649f41af6c7a312f1d799b8754ed6c3c24
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 22
+  status: not-a-recipe-source
+  reason: Scraping application; site adapters present but no bundled recipe corpus.
+  publication_allowed: false
+- id: TandoorRecipes--recipes
+  name: Tandoor Recipes
+  url: https://github.com/TandoorRecipes/recipes
+  revision: 9cb5914823f9cf0a8a9b751bb46ec4308c74d123
+  license: MIT with Commons Clause
+  license_path: LICENSE.md
+  recipe_license: unknown
+  inspected_file_count: 1687
+  status: enabled
+  reason: Inspected complete Git tree; process every candidate in the declared corpus,
+    preserving parse failures.
+  include:
+  - cookbook/tests/other/test_data/*.html
+  - cookbook/tests/other/test_data/*.json
+  - cookbook/tests/resources/websites/*.html
+  exclude: []
+  estimated_items: 27
+  license_note: Repository software license does not establish third-party recipe
+    redistribution rights.
+  publication_allowed: false
+- id: dytlabs--Cook-It-Android-XML-Template
+  name: Cook-It Android XML Template
+  url: https://github.com/dytlabs/Cook-It-Android-XML-Template
+  revision: 3a33211a66e636e08b8f58c7b744ccfae953e5a0
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 141
+  status: disabled
+  reason: Developer Android XML UI template, excluded by source type.
+  publication_allowed: false
+- id: mrezkys--hungry
+  name: Flutter Recipe App Template (hungry)
+  url: https://github.com/mrezkys/hungry
+  revision: 23478700fb065deb64fbbf6c1b0220d957775d56
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 169
+  status: disabled
+  reason: Developer Flutter UI template, excluded by source type.
+  publication_allowed: false
+- id: dopebase--react-native-recipes-app
+  name: React Native Recipes App Template
+  url: https://github.com/dopebase/react-native-recipes-app
+  revision: f7de9231a922b962c7453bc6f8aa6b1162081154
+  license: MIT
+  license_path: LICENSE
+  recipe_license: MIT
+  inspected_file_count: 60
+  status: disabled
+  reason: Developer UI template with mock sample data, excluded by source type.
+  publication_allowed: false

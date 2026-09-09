@@ -1,0 +1,275 @@
+version: 1
+ingredients:
+  tomato:
+    aliases:
+    - tomatoes
+    - roma tomatoes
+    - cherry tomatoes
+    - grape tomatoes
+    - organic grape tomatoes
+    - food lion roma tomatoes
+    - 番茄
+    - 西红柿
+    category: produce
+    vegetable: true
+  chicken breast:
+    aliases:
+    - chicken breasts
+    - boneless skinless chicken breast
+    - boneless skinless chicken breasts
+    - chicken breast fillets
+    - 鸡胸肉
+    category: meat
+    protein: true
+  chicken:
+    aliases: []
+    category: meat
+    protein: true
+  olive oil:
+    aliases:
+    - EVOO
+    - extra virgin olive oil
+    - extra-virgin olive oil
+    - 橄榄油
+    category: pantry
+  rice:
+    aliases:
+    - white rice
+    - long grain white rice
+    - long-grain white rice
+    - basmati rice
+    - jasmine rice
+    - 大米
+    - 白米
+    category: grain
+  green onion:
+    aliases:
+    - scallions
+    - scallion
+    - green onions
+    - spring onions
+    - spring onion
+    - 小葱
+    - 葱
+    category: produce
+    vegetable: true
+  onion:
+    aliases:
+    - onions
+    - yellow onion
+    - yellow onions
+    - white onion
+    - white onions
+    - red onion
+    - red onions
+    - 洋葱
+    category: produce
+    vegetable: true
+  garlic:
+    aliases:
+    - garlic cloves
+    - clove garlic
+    - cloves garlic
+    - garlic clove
+    - 大蒜
+    - 蒜
+    category: produce
+  broccoli:
+    aliases:
+    - broccoli florets
+    - 西兰花
+    category: produce
+    vegetable: true
+  spinach:
+    aliases:
+    - baby spinach
+    - fresh spinach
+    - 菠菜
+    category: produce
+    vegetable: true
+  carrot:
+    aliases:
+    - carrots
+    - 胡萝卜
+    category: produce
+    vegetable: true
+  bell pepper:
+    aliases:
+    - bell peppers
+    - red bell pepper
+    - green bell pepper
+    - yellow bell pepper
+    category: produce
+    vegetable: true
+  zucchini:
+    aliases:
+    - courgette
+    - courgettes
+    category: produce
+    vegetable: true
+  potato:
+    aliases:
+    - potatoes
+    - russet potatoes
+    - yukon gold potatoes
+    - 土豆
+    category: produce
+  sweet potato:
+    aliases:
+    - sweet potatoes
+    category: produce
+    vegetable: true
+  egg:
+    aliases:
+    - eggs
+    - large eggs
+    - large egg
+    - 鸡蛋
+    category: dairy
+    protein: true
+  milk:
+    aliases:
+    - whole milk
+    - 牛奶
+    category: dairy
+  butter:
+    aliases:
+    - unsalted butter
+    - salted butter
+    - 黄油
+    category: dairy
+  cheddar:
+    aliases:
+    - cheddar cheese
+    - shredded cheddar cheese
+    category: dairy
+    protein: true
+  parmesan:
+    aliases:
+    - parmesan cheese
+    - grated parmesan
+    - parmigiano reggiano
+    category: dairy
+  ground beef:
+    aliases:
+    - minced beef
+    - lean ground beef
+    - beef mince
+    category: meat
+    protein: true
+  salmon:
+    aliases:
+    - salmon fillet
+    - salmon fillets
+    category: seafood
+    protein: true
+  tuna:
+    aliases:
+    - canned tuna
+    category: seafood
+    protein: true
+  tofu:
+    aliases:
+    - firm tofu
+    - extra firm tofu
+    - extra-firm tofu
+    - 豆腐
+    category: plant-protein
+    protein: true
+  chickpea:
+    aliases:
+    - chickpeas
+    - garbanzo beans
+    - canned chickpeas
+    category: legumes
+    protein: true
+  black bean:
+    aliases:
+    - black beans
+    - canned black beans
+    category: legumes
+    protein: true
+  lentil:
+    aliases:
+    - lentils
+    - red lentils
+    - green lentils
+    category: legumes
+    protein: true
+  pasta:
+    aliases:
+    - spaghetti
+    - penne
+    - fusilli
+    - macaroni
+    category: grain
+  flour:
+    aliases:
+    - all purpose flour
+    - all-purpose flour
+    - plain flour
+    - 面粉
+    category: pantry
+  salt:
+    aliases:
+    - kosher salt
+    - sea salt
+    - table salt
+    - 食盐
+    - 食用盐
+    - 盐
+    category: pantry
+  black pepper:
+    aliases:
+    - ground black pepper
+    - freshly ground black pepper
+    category: spice
+  sugar:
+    aliases:
+    - white sugar
+    - granulated sugar
+    - 白砂糖
+    - 白糖
+    category: pantry
+  soy sauce:
+    aliases:
+    - light soy sauce
+    category: condiment
+  water:
+    aliases:
+    - cold water
+    - warm water
+    - hot water
+    - 水
+    category: water
+  bacon:
+    aliases: []
+    category: meat
+    protein: true
+    processed: true
+  sausage:
+    aliases:
+    - sausages
+    category: meat
+    protein: true
+    processed: true
+  chicken thigh:
+    aliases:
+    - chicken thighs
+    category: meat
+    protein: true
+  chicken drumstick:
+    aliases:
+    - chicken drumsticks
+    category: meat
+    protein: true
+  whole chicken:
+    aliases: []
+    category: meat
+    protein: true
+  hot dog:
+    aliases:
+    - hot dogs
+    category: meat
+    protein: true
+    processed: true
