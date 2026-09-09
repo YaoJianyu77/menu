@@ -31,7 +31,6 @@ jobs:
         run: |
           ruff format --check recipe_system tests scripts
           ruff check recipe_system tests scripts
-          node --check site/app.js
           node --check site/catalog.js
           node --check site/hidden.js
           python -m pytest -q

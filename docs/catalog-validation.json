@@ -1,23 +1,10 @@
 {
-  "unique_normalized_recipes": 2556,
   "recipes_published": 2556,
-  "recipe_detail_pages": 2556,
-  "recipes_with_images": 0,
-  "categories": {
-    "cuisine": 35,
-    "meal-type": 13,
-    "method": 12,
-    "protein": 11,
-    "time": 6
-  },
+  "recipe_detail_pages": 0,
+  "static_pages": 1,
   "all_recipes_reachable": true,
-  "recipe_card_links": "passed",
-  "category_membership": "passed",
-  "search_index_completeness": "passed",
+  "external_links": "passed",
+  "missing_source_urls": 0,
   "deterministic_order": "passed",
-  "metric_rendering": "passed",
-  "all_local_links": "passed",
-  "static_pages": 2611,
-  "excluded_recipes": [],
-  "instructions_linked_to_source": 2023
+  "metric_rendering": "passed"
 }

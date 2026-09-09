@@ -13,7 +13,7 @@
         "columns": 3,
         "visible": 60,
         "height": 37,
-        "top": 130.65625
+        "top": 153.84375
       },
       "status": "passed",
       "checks": [
@@ -24,15 +24,14 @@
         "sorting",
         "unknown_time_last",
         "pagination",
-        "stateful_back_link",
-        "stable_recipe_links",
+        "query_state",
+        "persisted_external_source_links",
         "no_scores",
         "clean_titles_and_metadata",
         "no_image_layout",
         "metric_units",
-        "personal_notes",
         "no_overflow",
-        "hide_undo_restore_persistence_invalid_storage_detail_pagination",
+        "hide_undo_restore_persistence_invalid_storage_pagination",
         "responsive_density_sticky_keyboard",
         "no_browser_errors"
       ]
@@ -46,7 +45,7 @@
         "columns": 2,
         "visible": 38,
         "height": 37,
-        "top": 170.65625
+        "top": 193.84375
       },
       "status": "passed",
       "checks": [
@@ -57,15 +56,14 @@
         "sorting",
         "unknown_time_last",
         "pagination",
-        "stateful_back_link",
-        "stable_recipe_links",
+        "query_state",
+        "persisted_external_source_links",
         "no_scores",
         "clean_titles_and_metadata",
         "no_image_layout",
         "metric_units",
-        "personal_notes",
         "no_overflow",
-        "hide_undo_restore_persistence_invalid_storage_detail_pagination",
+        "hide_undo_restore_persistence_invalid_storage_pagination",
         "responsive_density_sticky_keyboard",
         "no_browser_errors"
       ]
@@ -77,9 +75,9 @@
       },
       "layout": {
         "columns": 1,
-        "visible": 17,
+        "visible": 16,
         "height": 37,
-        "top": 204.65625
+        "top": 227.84375
       },
       "status": "passed",
       "checks": [
@@ -90,15 +88,14 @@
         "sorting",
         "unknown_time_last",
         "pagination",
-        "stateful_back_link",
-        "stable_recipe_links",
+        "query_state",
+        "persisted_external_source_links",
         "no_scores",
         "clean_titles_and_metadata",
         "no_image_layout",
         "metric_units",
-        "personal_notes",
         "no_overflow",
-        "hide_undo_restore_persistence_invalid_storage_detail_pagination",
+        "hide_undo_restore_persistence_invalid_storage_pagination",
         "responsive_density_sticky_keyboard",
         "no_browser_errors"
       ]

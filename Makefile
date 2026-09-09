@@ -11,7 +11,6 @@ format:
 	$(RUFF) format recipe_system tests scripts
 lint:
 	$(RUFF) check recipe_system tests scripts
-	node --check site/app.js
 	node --check site/catalog.js
 	node --check site/hidden.js
 test:

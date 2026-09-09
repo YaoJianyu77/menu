@@ -26,13 +26,21 @@
     if (cls) node.className = cls;
     return node;
   };
+  function sourceLink(recipe) {
+    const link = element(recipe.url ? "a" : "span", recipe.title);
+    if (recipe.url) {
+      link.href = recipe.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.title = recipe.title;
+    }
+    return link;
+  }
   function recipeCard(recipe) {
     const card = element("article", undefined, "recipe-row");
     card.dataset.recipeId = recipe.id;
     const title = element("h2");
-    const link = element("a", recipe.title);
-    link.href = recipe.url;
-    link.title = recipe.title;
+    const link = sourceLink(recipe);
     title.append(link);
     card.append(title);
     const facts = [];
@@ -106,8 +114,7 @@
       hiddenList.replaceChildren(
         ...hiddenRows.map((r) => {
           const li = element("li");
-          const link = element("a", r.title);
-          link.href = r.url;
+          const link = sourceLink(r);
           const restore = element("button", "Restore");
           restore.type = "button";
           restore.dataset.restoreId = r.id;
@@ -237,11 +244,6 @@
       params.set("page", page);
       const query = `?${params}`;
       history.replaceState(null, "", query);
-      try {
-        sessionStorage.setItem("my-recipes-catalog-query", query);
-      } catch {
-        /* URL still preserves state. */
-      }
     }
     function render() {
       const matching = rows.filter(matches).sort(order);
@@ -313,20 +315,13 @@
     restore();
     render();
     renderHidden();
-    try {
-      const pending = sessionStorage.getItem("my-recipes:hidden-undo");
-      sessionStorage.removeItem("my-recipes:hidden-undo");
-      if (pending && hiddenIds.has(pending)) notify(pending);
-    } catch {
-      /* Session storage is optional. */
-    }
     configElement.dataset.loaded = "true";
   }
   start().catch(() =>
     count.after(
       element(
         "p",
-        "Search is unavailable. You can still browse using the page links below.",
+        "Search is unavailable. All recipe titles remain available below.",
         "catalog-notice",
       ),
     ),

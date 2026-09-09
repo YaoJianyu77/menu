@@ -73,16 +73,6 @@ module.exports = async function checkHiding(page, base, index) {
   assert.equal(await count(), allCount);
   assert.deepEqual(await read(), []);
   await page.locator("#hidden-close").click();
-  // Detail hide returns to the filtered catalog, and offers Undo there.
-  await page.locator("#catalog-search").fill(r.title);
-  await page.locator(`#catalog-results [data-recipe-id="${r.id}"] a`).click();
-  await page.locator("#hide-recipe").click();
-  await ready();
-  assert.equal(await has(r), 0);
-  assert.equal(await page.locator("#catalog-search").inputValue(), r.title);
-  await page.locator("#hidden-undo").click();
-  assert.equal(await has(r), 1);
-  await page.locator("#catalog-reset").click();
   // Removing the sole item from the final page clamps pagination to page 1.
   await page.evaluate(
     ({ key, ids }) => localStorage.setItem(key, JSON.stringify(ids)),

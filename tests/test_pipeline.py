@@ -161,7 +161,7 @@ def test_end_to_end_fixture(tmp_path, raw):
     build(tmp_path)
     assert (tmp_path / "site/dist/index.html").exists()
     htmls = list((tmp_path / "site/dist").rglob("*.html"))
-    assert len(htmls) >= 2
+    assert len(htmls) == 1
     from recipe_system.normalize import FORBIDDEN
 
     assert not any(FORBIDDEN.search(path.read_text()) for path in htmls)

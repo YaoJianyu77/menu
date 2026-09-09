@@ -108,7 +108,7 @@ const server = process.env.BASE_URL
         viewport.width > 1100 ? 3 : viewport.width > 600 ? 2 : 1,
       );
       assert(layout.height >= 32 && layout.height <= 40);
-      assert(layout.top < 210);
+      assert(layout.top < 245);
       if (viewport.width > 1100) assert(layout.visible >= 40);
       await page.locator("#catalog-search").focus();
       await page.keyboard.press("Tab");
@@ -139,7 +139,10 @@ const server = process.env.BASE_URL
         .evaluateAll((nodes) => nodes.map((a) => a.href));
       assert.deepEqual(
         links,
-        index.slice(0, 120).map((r) => base + r.url),
+        index
+          .slice(0, 120)
+          .filter((r) => r.url)
+          .map((r) => new URL(r.url).href),
       );
       assert.equal(await page.locator(".recipe-row img").count(), 0);
       async function cleanCardMetadata() {
@@ -173,7 +176,7 @@ const server = process.env.BASE_URL
         await ids(),
         index.slice(120, 240).map((r) => r.id),
       );
-      await go("page-2.html");
+      await go("index.html?page=2");
       assert.deepEqual(
         await ids(),
         index.slice(120, 240).map((r) => r.id),
@@ -244,47 +247,31 @@ const server = process.env.BASE_URL
         ),
       );
       const before = await ids();
-      await page.locator(".recipe-row h2 a").first().click();
-      assert.equal(
-        await page.locator("h1").textContent(),
-        lookup.get(before[0]).title,
+      const catalogURL = page.url();
+      const link = page.locator(".recipe-row h2 a").first();
+      const destination = await link.getAttribute("href");
+      assert.equal(await link.getAttribute("target"), "_blank");
+      assert.equal(await link.getAttribute("rel"), "noopener noreferrer");
+      // Intercept the external navigation: verify the stored destination without scraping it.
+      await context.route(destination, (route) =>
+        route.fulfill({
+          status: 200,
+          contentType: "text/html",
+          body: "<title>Source test</title>",
+        }),
       );
-      assert(
-        !/recommendation|\bscore\b|\branking\b|\d+\/100/i.test(
-          await page.locator("body").innerText(),
-        ),
-      );
-      const header = await page.locator(".recipe-head").innerText();
-      assert(!/Food Lion|%|Unknown|N\/A/.test(header));
-      assert.equal(
-        await page
-          .locator(".recipe-head .recipe-categories,.recipe-head dl")
-          .count(),
-        0,
-      );
-      const h = await page.locator("h2").allTextContents();
-      assert(h.indexOf("Ingredients") < h.indexOf("Instructions"));
-      assert(
-        !/\b(tsp|tbsp|teaspoons?|tablespoons?)\b/i.test(
-          (await page.locator(".ingredients,.steps").allTextContents()).join(
-            " ",
-          ),
-        ),
-      );
-      await page.getByText("My kitchen notes", { exact: true }).click();
-      await page.locator('[name="notes"]').fill("Browser verification");
-      await page.locator('#personal-form button[type="submit"]').click();
+      const popupPromise = page.waitForEvent("popup");
+      await link.click();
+      const popup = await popupPromise;
+      await popup.waitForLoadState();
+      assert.equal(popup.url(), new URL(destination).href);
+      assert.equal(await popup.evaluate(() => window.opener), null);
+      await popup.close();
+      assert.equal(page.url(), catalogURL);
+      assert.deepEqual(await ids(), before);
       await page.reload();
-      assert.equal(
-        await page.locator('[name="notes"]').inputValue(),
-        "Browser verification",
-      );
-      await page
-        .getByRole("link", { name: "Back to recipes", exact: false })
-        .click();
       await ready();
       assert.deepEqual(await ids(), before);
-      assert.equal(await filter("cuisine").inputValue(), sample.cuisines[0]);
       await reset();
       for (const value of ["name", "time"]) {
         await page.locator("#catalog-sort").selectOption(value);
@@ -311,7 +298,7 @@ const server = process.env.BASE_URL
       assert.equal((await ids()).length, 0);
       await reset();
       await expected(index);
-      for (const path of ["index.html", index[0].url]) {
+      for (const path of ["index.html"]) {
         await page.goto(base + path);
         if (path === "index.html") await ready();
         assert(
@@ -323,6 +310,21 @@ const server = process.env.BASE_URL
           path: `/tmp/menu-book-${viewport.width}-${path === "index.html" ? "catalog" : "detail"}.png`,
         });
       }
+      const indexURL = new URL("search-index.json", base).href;
+      await context.route(indexURL, (route) =>
+        route.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify(
+            index.map((r, i) => (i === 0 ? { ...r, url: null } : r)),
+          ),
+        }),
+      );
+      await go();
+      const unlinked = page.locator(`[data-recipe-id="${index[0].id}"]`);
+      assert.equal(await unlinked.locator("h2 a").count(), 0);
+      assert.equal(await unlinked.locator("h2").textContent(), index[0].title);
+      assert.equal(await page.locator('a[href^="recipes/"]').count(), 0);
       assert.deepEqual(errors, []);
       checks.push({
         viewport,
@@ -336,29 +338,27 @@ const server = process.env.BASE_URL
           "sorting",
           "unknown_time_last",
           "pagination",
-          "stateful_back_link",
-          "stable_recipe_links",
+          "query_state",
+          "persisted_external_source_links",
+          "missing_url_plain_title",
           "no_scores",
           "clean_titles_and_metadata",
           "no_image_layout",
           "metric_units",
-          "personal_notes",
           "no_overflow",
-          "hide_undo_restore_persistence_invalid_storage_detail_pagination",
+          "hide_undo_restore_persistence_invalid_storage_pagination",
           "responsive_density_sticky_keyboard",
           "no_browser_errors",
         ],
       });
       await context.close();
     }
-    // Static fallback exposes every page through ordinary previous/next links.
+    // Without JavaScript every title remains available on the single homepage.
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
     await page.goto(base);
-    assert.equal(await page.locator(".recipe-row").count(), 120);
-    await page.getByRole("link", { name: "Next", exact: true }).click();
-    assert(page.url().endsWith("page-2.html"));
-    assert.equal(await page.locator(".recipe-row").count(), 120);
+    assert.equal(await page.locator(".recipe-row").count(), index.length);
+    assert.equal(await page.locator('a[href^="recipes/"]').count(), 0);
     await context.close();
     const report = {
       status: "passed",

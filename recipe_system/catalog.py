@@ -1,10 +1,9 @@
 """Static, complete catalog views over persisted unique recipes; no ranking changes."""
 
-import hashlib
 import json
-import math
 import re
 from collections import defaultdict
+from urllib.parse import urlsplit
 
 from .core import atomic_json
 
@@ -125,18 +124,24 @@ PROTEIN_GROUPS = {
 }
 
 
-def slug(value):
-    cleaned = re.sub(r"[^a-z0-9]+", "-", value.casefold()).strip("-")
-    return cleaned or "category-" + hashlib.sha256(value.encode()).hexdigest()[:12]
-
-
-def recipe_url(identifier):
-    name = (
-        identifier
-        if re.fullmatch(r"[A-Za-z0-9_-]+", identifier)
-        else "recipe-" + hashlib.sha256(identifier.encode()).hexdigest()[:24]
-    )
-    return "recipes/" + name + ".html"
+def source_url(row):
+    """Use only persisted, safe HTTP(S) locations; prefer the original recipe."""
+    for value in (row.get("original_source_url"), row.get("source_url")):
+        if not isinstance(value, str) or not value or re.search(r"[\s<>\\]", value):
+            continue
+        try:
+            parsed = urlsplit(value)
+            if (
+                parsed.scheme in {"http", "https"}
+                and parsed.hostname
+                and not parsed.username
+                and not parsed.password
+            ):
+                _ = parsed.port  # Reject malformed port values too.
+                return value
+        except ValueError:
+            pass
+    return None
 
 
 def cuisine_labels(value):
@@ -237,11 +242,10 @@ def cooking_facts(row):
 
 
 def index_entry(row):
-    match = row.get("match", {})
     cats = row["categories"]
     return {
         "id": row["id"],
-        "url": row["url"],
+        "url": source_url(row),
         "title": display_title(row.get("title")),
         "sort_title": display_title(row.get("title")).casefold(),
         "cuisine": ", ".join(cats["cuisine"]),
@@ -251,40 +255,26 @@ def index_entry(row):
         "methods": cats["method"],
         "time_categories": cats["time"],
         "total_minutes": row.get("total_minutes"),
-        "active_minutes": row.get("active_minutes"),
-        "coverage": match.get("foodlion_coverage"),
         "ingredients": [
             i["canonical_ingredient"]
             for i in row.get("ingredients", [])
             if i.get("canonical_ingredient")
         ],
-        "image": row.get("image"),
     }
 
 
-def image_html(image, prefix="", thumbnail=False):
-    from .publish import _url, esc
-
-    if not image or _url(image.get("url")) == "#":
-        return ""
-    size = (
-        ' class="recipe-thumbnail" width="120" height="90"'
-        if thumbnail
-        else ' class="recipe-image"'
-    )
-    photo = f'<img src="{esc(image["url"])}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"{size}>'
-    if thumbnail:
-        return f'<figure class="card-image">{photo}<figcaption>{esc(image.get("attribution") or "")}</figcaption></figure>'
-    return f'<figure>{photo}<figcaption>{esc(image.get("attribution") or "")} <a href="{esc(_url(image.get("source_url")))}">Image source</a> · {esc(image.get("license") or "Permission recorded")}</figcaption></figure>'
-
-
-def recipe_card(row, prefix=""):
-    """Compact directory row; photographs belong only on recipe details."""
+def recipe_card(row):
+    """Compact external-link directory row; no local recipe content."""
     from .publish import esc
 
     facts = cooking_facts({**row, "methods": row.get("methods", [])[:1]})
     metadata = f'<p class="row-meta">{esc(facts)}</p>' if facts else ""
-    return f'<article class="recipe-row" data-recipe-id="{esc(row["id"])}"><h2><a title="{esc(row["title"])}" href="{esc(prefix + row["url"])}">{esc(row["title"])}</a></h2>{metadata}</article>'
+    title = (
+        f'<a title="{esc(row["title"])}" href="{esc(row["url"])}" target="_blank" rel="noopener noreferrer">{esc(row["title"])}</a>'
+        if row.get("url")
+        else esc(row["title"])
+    )
+    return f'<article class="recipe-row" data-recipe-id="{esc(row["id"])}"><h2>{title}</h2>{metadata}</article>'
 
 
 def build_catalog(root, records, dist):
@@ -305,7 +295,6 @@ def build_catalog(root, records, dist):
         for axis, labels in row["categories"].items():
             for label in labels:
                 membership[axis][label].append(row["id"])
-    pages = max(1, math.ceil(len(index) / PAGE_SIZE))
     fields = "".join(
         f'<label><span class="sr-only">{label}</span><select data-catalog-filter="{key}"><option value="">{label}</option>'
         + "".join(f"<option>{esc(value)}</option>" for value in sorted(membership[axis]))
@@ -337,61 +326,36 @@ def build_catalog(root, records, dist):
         + fields
         + '<label><span class="sr-only">Sort</span><select id="catalog-sort"><option value="default">Default</option><option value="name">Name</option><option value="time">Time</option></select></label><button id="catalog-reset" type="button">Clear</button></section>'
     )
-    for number in range(1, pages + 1):
-        path = "index.html" if number == 1 else f"page-{number}.html"
-        links = []
-
-        def link(n, label, current=number):
-            href = "index.html" if n == 1 else f"page-{n}.html"
-            return (
-                f'<a href="{href}"'
-                + (' aria-current="page"' if n == current else "")
-                + f">{label}</a>"
-            )
-
-        if number > 1:
-            links.append(link(number - 1, "Previous"))
-        shown = sorted({1, pages} | set(range(max(1, number - 2), min(pages, number + 2) + 1)))
-        previous = 0
-        for n in shown:
-            if previous and n > previous + 1:
-                links.append("<span>…</span>")
-            links.append(link(n, str(n)))
-            previous = n
-        if number < pages:
-            links.append(link(number + 1, "Next"))
-        config = {
-            "index_url": "search-index.json",
-            "base_url": "",
-            "page_size": PAGE_SIZE,
-            "initial_page": number,
-        }
-        body = (
-            '<div class="directory"><h1>My Recipes</h1>'
-            + controls
-            + f'<div class="catalog-summary"><p id="catalog-count" role="status">{len(index):,} recipes</p><button id="hidden-toggle" type="button" hidden aria-expanded="false" aria-controls="hidden-panel">Hidden (0)</button></div><section id="hidden-panel" hidden aria-label="Hidden recipes"><h2>Hidden recipes</h2><p>Hidden in this browser only.</p><button id="restore-all" type="button">Restore all</button><button id="hidden-close" type="button">Close</button><ul id="hidden-list"></ul></section><div id="hidden-toast" hidden><span role="status" id="hidden-message"></span> <button id="hidden-undo" type="button">Undo</button></div><section class="recipe-directory" id="catalog-results" aria-label="Recipes">'
-            + "".join(
-                recipe_card(row) for row in index[(number - 1) * PAGE_SIZE : number * PAGE_SIZE]
-            )
-            + '</section><nav id="catalog-pagination" aria-label="Catalog pages">'
-            + " ".join(links)
-            + '</nav><script id="catalog-config" type="application/json">'
-            + json.dumps(config)
-            + '</script><script defer src="catalog.js"></script></div>'
-        )
-        document = _page("My Recipes", body)
-        if FORBIDDEN.search(visible_text(document)):
-            raise ValueError("Forbidden unit on " + path)
-        (dist / path).write_text(document)
+    config = {
+        "index_url": "search-index.json",
+        "base_url": "",
+        "page_size": PAGE_SIZE,
+        "initial_page": 1,
+    }
+    body = (
+        '<div class="directory"><h1>My Recipes</h1>'
+        + controls
+        + f'<div class="catalog-summary"><p id="catalog-count" role="status">{len(index):,} recipes</p><button id="hidden-toggle" type="button" hidden aria-expanded="false" aria-controls="hidden-panel">Hidden (0)</button></div><section id="hidden-panel" hidden aria-label="Hidden recipes"><h2>Hidden recipes</h2><p>Hidden in this browser only.</p><button id="restore-all" type="button">Restore all</button><button id="hidden-close" type="button">Close</button><ul id="hidden-list"></ul></section><div id="hidden-toast" hidden><span role="status" id="hidden-message"></span> <button id="hidden-undo" type="button">Undo</button></div><p class="source-note">Recipe names open the original recipe in a new tab.</p><section class="recipe-directory" id="catalog-results" aria-label="Recipes">'
+        + "".join(recipe_card(row) for row in index)
+        + '</section><nav id="catalog-pagination" aria-label="Catalog pages">'
+        + '</nav><script id="catalog-config" type="application/json">'
+        + json.dumps(config)
+        + '</script><script defer src="catalog.js"></script></div>'
+    )
+    document = _page("My Recipes", body)
+    if FORBIDDEN.search(visible_text(document)):
+        raise ValueError("Forbidden unit on homepage")
+    (dist / "index.html").write_text(document)
     manifest = {
         "recipes_published": len(index),
-        "recipe_detail_pages": len(index),
-        "recipes_with_images": sum(bool(r["image"]) for r in index),
+        "recipe_detail_pages": 0,
+        "recipes_with_images": 0,
         "categories": {axis: len(groups) for axis, groups in membership.items()},
-        "listing_pages": pages,
+        "listing_pages": 1,
         "search_index_records": len(index),
         "page_size": PAGE_SIZE,
         "recipe_urls": {r["id"]: r["url"] for r in index},
+        "missing_source_urls": [r["id"] for r in index if not r["url"]],
         "membership": membership,
     }
     atomic_json(root / "site/content/catalog-manifest.json", manifest)
