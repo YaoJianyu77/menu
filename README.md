@@ -135,7 +135,7 @@ Changing preferences requires only `make match publish build validate`. Collecti
 
 The awesome-recipes index license does not license linked recipe text. Source license inspection and publication permission are separate fields. Unknown third-party content inside MIT/GPL software fixtures remains unknown. Full expressive instructions are published only when the source grant has been affirmatively assessed for this use. Other pages publish structured ingredient facts and attribution and link back for instructions; raw source prose is not copied to the site. Full raw records are local research data, not a publicly licensed redistribution bundle. Review source permissions before any future publication.
 
-The static site exposes full-catalog title/cuisine/meal-type/ingredient/protein/method search, score/compatibility/time/category filters and individual recipe pages. It builds from published JSON; rendering never calls grocery or recipe sources. Collection diagnostics stay in developer reports; the website focuses on meals, ingredients, effort and compatibility.
+The static site exposes full-catalog title/cuisine/meal-type/ingredient/protein/method search, compatibility/time/category filters and individual recipe pages. It builds from published JSON; rendering never calls grocery or recipe sources. Collection diagnostics stay in developer reports; the website focuses on meals, ingredients, effort and compatibility.
 
 ## Validation
 
@@ -151,14 +151,13 @@ The final collection report records what was collected, which adapters still fai
 Optional web formatting and real-browser verification (development tools only):
 
 ```sh
-npx --yes prettier@3.6.2 --check site/app.js site/style.css tests/browser/smoke.cjs
+npx --yes prettier@3.6.2 --check site/app.js site/catalog.js site/style.css tests/browser/catalog.cjs
 npm install --prefix .cache/browser --no-save --package-lock=false playwright@1.63.0
 .cache/browser/node_modules/.bin/playwright install chromium
-make serve  # keep running in another terminal
-PLAYWRIGHT_MODULE="$PWD/.cache/browser/node_modules/playwright" node tests/browser/smoke.cjs
+PLAYWRIGHT_MODULE="$PWD/.cache/browser/node_modules/playwright" node tests/browser/catalog.cjs
 ```
 
-The browser smoke test checks everyday browsing, compatibility labels, meal shortcuts, similar-version visibility, recipe pages, local annotations and mobile layout. It creates annotations only in its temporary browser profile.
+The browser smoke test starts its own local server and checks full-catalog search, combined filters, sorting, pagination, recipe pages, stateful back navigation, local annotations and mobile layout. It creates annotations only in its temporary browser profile.
 
 ## Data quality workflows
 
@@ -182,19 +181,15 @@ make serve                      # http://127.0.0.1:8000
 PLAYWRIGHT_MODULE="$PWD/.cache/browser/node_modules/playwright" node tests/browser/catalog.cjs
 ```
 
-Routes: `/index.html` (home), `/recommended/index.html`, `/recipes/index.html` (All Recipes), and `/cuisine/`, `/meal-type/`, `/protein/`, `/method/`, `/time/` category indexes. Static paths explicitly end in `index.html` where linked, so ordinary static servers work. Each category has its own index and `page-2.html` etc. All Recipes has 54 static pages with at most 48 compact cards each. Every recipe is discoverable without JavaScript. With JavaScript, `search-index.json` provides full-catalog or category-scoped searching, filters, sorting and pagination without a backend. Instructions never enter the listing/search payload.
+The homepage is the complete recipe book: `My Recipes`, one search field, six combinable filters (cuisine, meal type, main protein, cooking method, total time and Food Lion compatibility), sorting, and compact cards. Default ordering uses the existing internal practical order. Scores and recommendation labels are absent from all pages and from the browser search index. Manual sorts are Default, Recipe Name, Total Time and Food Lion Compatibility; missing times sort last.
 
-`RecipeCard` in `catalog.py` renders every static listing. The small matching DOM renderer in `site/catalog.js` updates those cards for client-side search. Both consume the same published index fields. Unknown times sort last; default ordering is score descending, case-folded title, then stable ID. Browsing All Recipes never applies recommendation or same-title suppression. Recommended alone may suppress same-title variants for variety.
+Routes are `/index.html`, `/page-2.html` through `/page-54.html`, and stable `/recipes/<id>.html` detail pages. There are no standalone category or recommendation pages. All 2,556 recipes remain reachable through static previous/next links, 48 cards per page. JavaScript filters the entire local `search-index.json`; changing a filter resets pagination. URL query parameters preserve search, filters, sort and page. The detail page’s “Back to recipes” link uses tab-local session storage to restore that query; browser storage failure leaves a working plain homepage link.
 
-Detail URLs preserve the existing `/recipes/<stable-id>.html` identity; changing a title does not change the URL. Unsafe ID characters receive a deterministic hash rather than collision-prone replacement. Thirty-three old duplicate-record URLs redirect to their final unique representatives. This preserves bookmarks while publishing exactly 2,556 distinct detail pages.
+RecipeCard in `catalog.py` and the matching DOM renderer in `site/catalog.js` put the linked title first, an optional permitted image second, and concise metadata last. Missing images produce no placeholder. Image licensing and ingredient/cuisine classification are unchanged. The current corpus has no permitted image assets; fixture tests cover image ordering and omission. The search index includes ingredients for full-text search but never includes instructions or score fields.
 
-Cuisine categories use only explicit source cuisine values, with deterministic spelling/translation aliases; missing or non-cuisine metadata goes to Unknown. Protein groups use the persisted major ingredient. Vegetarian is used only when all ingredient identities are known and no meat, seafood or identified meat-derived ingredient is present. Cooking methods use persisted methods plus explicit title/equipment words for grill, pressure cooker and slow cooker. Time ranges use supplied total time; Under 15 is a subset of Under 30, 30–45 includes 45, and 45–60 excludes 45. No ranking model changes are involved.
+Detail URLs and 33 older duplicate redirects remain stable. Source permission still controls local instructions: 533 pages include them and 2,023 link to the source. Personal annotations keep their existing browser storage keys; kitchen notes are tucked into an expandable section. Collection, normalization, grocery evidence, recipe content and ranking data remain unchanged.
 
-Images require explicit persisted image URLs, source attribution, and image-specific permission/license evidence. A general recipe-text license never silently authorizes unrelated photographs. Current image count is zero; cards have no missing-image placeholders. The helper and rendering tests cover legitimate optional images. No image requests occur in the current site.
-
-All recipes get metadata/ingredient pages. Existing source redistribution permissions still control copied instructions: 533 pages include cooking steps; 2,023 link to the source for instructions. Exact per-recipe reasons are recorded in `site/content/publication-report.json` and the committed `docs/catalog-publication.json`. Collection reports and raw provenance remain unchanged. Personal notes remain keyed by stable recipe ID in localStorage.
-
-`make validate` now checks full catalog completeness, every card link, all local links, category membership, stable URLs, search-index completeness, and rendered metric units in addition to existing data checks. Browser coverage is recorded in `docs/catalog-browser-validation.json`; the older recommendation-only browser report remains historical.
+`make validate` checks completeness, static card links, filter membership, stable URLs, search-index completeness, absence of score UI, metric units and all local links. [Catalog report](docs/catalog-report.md) and [browser checks](docs/catalog-browser-validation.json) describe the current recipe-book interface. Older reports remain historical.
 
 ## GitHub Pages
 

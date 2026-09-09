@@ -75,22 +75,20 @@ def test_build_generates_offline_browse_and_recipe_pages(tmp_path):
     publish(tmp_path)
     result = build(tmp_path)
     assert result["recipe_detail_pages"] == 1
-    assert result["pages"] > 2
+    assert result["pages"] == 2
     index = (tmp_path / "site/dist/index.html").read_text()
     recipe = (tmp_path / "site/dist/recipes/test.html").read_text()
-    catalog = (tmp_path / "site/dist/recipes/index.html").read_text()
+    catalog = (tmp_path / "site/dist/index.html").read_text()
     for field in (
         "cuisine",
         "meal_type",
-        "total",
+        "time",
         "protein",
         "method",
         "coverage",
-        "min-score",
-        "max-score",
     ):
         assert f'data-catalog-filter="{field}"' in catalog
-    assert "All Recipes" in index
+    assert "My Recipes" in index
     assert "30 mL" in recipe
     assert "raw-test" not in recipe
     assert "Unknown" in recipe
@@ -185,9 +183,9 @@ def test_variant_control_preserves_access_to_all_records(tmp_path):
     atomic_json(tmp_path / "site/content/recipes.json", data)
     build(tmp_path)
     page = (tmp_path / "site/dist/index.html").read_text()
-    catalog = (tmp_path / "site/dist/recipes/index.html").read_text()
-    assert "All Recipes" in page
-    assert 'href="../recipes/test.html"' in catalog
+    catalog = (tmp_path / "site/dist/index.html").read_text()
+    assert "My Recipes" in page
+    assert 'href="recipes/test.html"' in catalog
 
 
 def test_package_and_count_display_preserves_cooking_facts(tmp_path):
@@ -236,24 +234,16 @@ def test_homepage_focuses_on_meals_without_collection_jargon(tmp_path):
     atomic_json(tmp_path / "site/content/recipes.json", data)
     build(tmp_path)
     page = (tmp_path / "site/dist/index.html").read_text()
-    for label in (
-        "Best everyday meals",
-        "Under 30 minutes",
-        "Recommended",
-        "Air fryer",
-        "One-pan / one-pot",
-        "High Food Lion compatibility",
-        "Cuisine",
-    ):
+    for label in ("My Recipes", "Search recipes", "Cuisine", "Cooking Method", "Clear filters"):
         assert label in page
     assert "Full meal" in page
-    assert "72/100" in page
+    assert "72/100" not in page
     for jargon in ("shard", "parser", "completion", "catalog IDs", "verified at the store"):
         assert jargon not in page
     assert "collections" not in data
 
 
-def test_discovery_variant_is_hidden_without_losing_exact_identity(tmp_path):
+def test_discovery_variant_remains_on_homepage(tmp_path):
     prepare(tmp_path)
     data = publish(tmp_path)
     data["recipes"][0]["match"].update(
@@ -262,7 +252,7 @@ def test_discovery_variant_is_hidden_without_losing_exact_identity(tmp_path):
     atomic_json(tmp_path / "site/content/recipes.json", data)
     build(tmp_path)
     page = (tmp_path / "site/dist/index.html").read_text()
-    assert 'href="recipes/test.html"' not in page
-    catalog = (tmp_path / "site/dist/recipes/index.html").read_text()
-    assert 'href="../recipes/test.html"' in catalog
+    assert 'href="recipes/test.html"' in page
+    catalog = (tmp_path / "site/dist/index.html").read_text()
+    assert 'href="recipes/test.html"' in catalog
     assert data["recipes"][0]["match"]["ranking_representative"] is True

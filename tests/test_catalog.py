@@ -58,11 +58,9 @@ def test_full_unique_catalog_links_pagination_and_search(tmp_path):
     assert all(r["ingredients"] == ["tomato"] for r in index)
     # Same-title and low-score dessert remain in the full catalog.
     assert sum(r["title"] == "Same title" for r in index) == 2
-    pages = [
-        (tmp_path / "site/dist/recipes" / p).read_text() for p in ["index.html", "page-2.html"]
-    ]
+    pages = [(tmp_path / "site/dist" / p).read_text() for p in ["index.html", "page-2.html"]]
     for row in index:
-        assert any(f'href="../{row["url"]}"' in page for page in pages)
+        assert any(f'href="{row["url"]}"' in page for page in pages)
         assert (tmp_path / "site/dist" / row["url"]).exists()
     assert sum(page.count("data-recipe-id=") for page in pages) == 51
     first = (tmp_path / "site/dist/search-index.json").read_bytes()
@@ -87,7 +85,7 @@ def test_categories_are_all_score_levels_and_no_invented_cuisine(tmp_path):
         "method/oven",
         "time/under-30-min",
     ]:
-        assert (tmp_path / "site/dist" / path / "index.html").exists()
+        assert not (tmp_path / "site/dist" / path / "index.html").exists()
 
 
 def test_recipe_urls_stable_and_collision_safe():
@@ -111,6 +109,11 @@ def test_images_and_no_image_cards(tmp_path):
     image = next(r for r in index if r["id"] == "row-000")
     none = next(r for r in index if r["id"] == "row-001")
     assert "photo.jpg" in recipe_card(image)
+    assert (
+        recipe_card(image).index("</h2>")
+        < recipe_card(image).index("<figure")
+        < recipe_card(image).index('class="card-category"')
+    )
     assert "<img" not in recipe_card(none)
     page = (tmp_path / "site/dist" / image["url"]).read_text()
     assert "Photographer" in page and "CC-BY-4.0" in page
@@ -159,3 +162,36 @@ def test_complete_offline_catalog_validation(tmp_path):
     assert report["recipes_published"] == 52
     assert report["all_recipes_reachable"]
     assert report["all_local_links"] == "passed"
+
+
+def test_single_home_catalog_has_no_dashboard_or_scores(tmp_path):
+    setup_catalog(tmp_path, 52)
+    publish(tmp_path)
+    build(tmp_path)
+    dist = tmp_path / "site/dist"
+    index = json.loads((dist / "search-index.json").read_text())
+    assert all(
+        "score" not in row and "rank" not in row and "recommended" not in row for row in index
+    )
+    home = (dist / "index.html").read_text()
+    assert "<h1>My Recipes</h1>" in home
+    assert home.count("data-catalog-filter=") == 6
+    assert 'href="page-2.html"' in home
+    assert 'href="index.html"' in (dist / "page-2.html").read_text()
+    assert not (dist / "recipes/index.html").exists()
+    for directory in ["cuisine", "meal-type", "protein", "method", "time", "recommended"]:
+        assert not (dist / directory).exists()
+    for path in dist.rglob("*.html"):
+        html = path.read_text()
+        for marker in [
+            "/100",
+            "Recommendation",
+            "Why this recipe ranks",
+            "Minimum score",
+            "Maximum score",
+            'value="score"',
+            'class="site-nav"',
+        ]:
+            assert marker not in html
+    detail = (dist / index[0]["url"]).read_text()
+    assert 'data-back-to-recipes href="../index.html"' in detail

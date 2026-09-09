@@ -5,7 +5,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-from .catalog import AXES, recipe_url, slug
+from .catalog import AXES, recipe_url
 from .core import read_jsonl
 from .publish import FORBIDDEN, visible_text
 
@@ -48,7 +48,17 @@ def validate_catalog(root):
     excluded = {r.get("recipe_id") for r in publication["excluded_recipes"]}
     assert {r["id"] for r in index} == expected - excluded
     assert len(index) == len({r["id"] for r in index})
-    assert index == sorted(index, key=lambda r: (-r["score"], r["sort_title"], r["id"]))
+    published = json.loads((root / "site/content/recipes.json").read_text())["recipes"]
+    ordered = sorted(
+        published,
+        key=lambda r: (
+            -(r.get("match", {}).get("total_score") or 0),
+            (r.get("title") or "").casefold(),
+            r["id"],
+        ),
+    )
+    assert [r["id"] for r in index] == [r["id"] for r in ordered]
+    assert all("score" not in r and "rank" not in r for r in index)
     assert all("ingredients" in r and "methods" in r and "proteins" in r for r in index)
     urls = {r["id"]: r["url"] for r in index}
     pages = {}
@@ -58,6 +68,15 @@ def validate_catalog(root):
         parser.feed(document)
         pages[path] = parser
         assert not FORBIDDEN.search(visible_text(document)), str(path)
+        for marker in (
+            "/100</dd>",
+            "Recommendation score",
+            "Why this recipe ranks",
+            'data-catalog-filter="min-score"',
+            'data-catalog-filter="max-score"',
+            'value="score"',
+        ):
+            assert marker not in document, (path, marker)
         for href in parser.links:
             parsed = urlsplit(href)
             if parsed.scheme or parsed.netloc or not parsed.path:
@@ -92,11 +111,25 @@ def validate_catalog(root):
         )
         return [rid for path in files for rid, _ in pages[path].cards]
 
-    all_ids = listing_ids(dist / "recipes")
+    all_ids = listing_ids(dist)
     assert all_ids == [r["id"] for r in index]
     for axis in AXES:
         for label, ids in manifest["membership"][axis].items():
-            assert listing_ids(dist / axis / slug(label)) == ids
+            field = {
+                "cuisine": "cuisines",
+                "meal-type": "meal_type",
+                "protein": "proteins",
+                "method": "methods",
+                "time": "time_categories",
+            }[axis]
+            assert [
+                r["id"]
+                for r in index
+                if (label in r[field] if isinstance(r[field], list) else label == r[field])
+            ] == ids
+        assert not (dist / axis).exists()
+    assert not (dist / "recommended").exists()
+    assert not (dist / "recipes/index.html").exists()
     return {
         "unique_normalized_recipes": len(expected),
         "recipes_published": len(index),

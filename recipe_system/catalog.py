@@ -5,7 +5,6 @@ import json
 import math
 import re
 from collections import defaultdict
-from pathlib import Path
 
 from .core import atomic_json
 
@@ -225,7 +224,6 @@ def index_entry(row):
         "time_categories": cats["time"],
         "total_minutes": row.get("total_minutes"),
         "active_minutes": row.get("active_minutes"),
-        "score": match.get("total_score") or 0,
         "coverage": match.get("foodlion_coverage"),
         "ingredients": [
             i["canonical_ingredient"]
@@ -233,10 +231,6 @@ def index_entry(row):
             if i.get("canonical_ingredient")
         ],
         "image": row.get("image"),
-        "effort_level": match.get("effort_level", "Unknown"),
-        "everyday_eligible": match.get("everyday_eligible", False),
-        "recommended": match.get("total_score", 0) >= 60 and match.get("everyday_eligible", False),
-        "discovery_representative": match.get("discovery_representative", True),
     }
 
 
@@ -257,240 +251,138 @@ def image_html(image, prefix="", thumbnail=False):
 
 
 def recipe_card(row, prefix=""):
-    """One compact card renderer shared by every statically generated listing."""
+    """Shared compact recipe card; no recommendation information is published."""
     from .publish import esc
 
-    time = (
-        f"{row['total_minutes']:g} min"
-        if isinstance(row.get("total_minutes"), (int, float))
-        else "Time unknown"
-    )
+    labels = [x for x in row["cuisines"] if x != "Unknown"] + [row["meal_type"]]
+    facts = []
+    if isinstance(row.get("total_minutes"), (int, float)):
+        facts.append(f"{row['total_minutes']:g} min")
+    facts.extend(x for x in row["methods"] if x != "Other")
     coverage = f"{row['coverage']:.0%}" if row.get("coverage") is not None else "Unknown"
-    return f'<article class="card recipe-card" data-recipe-id="{esc(row["id"])}">{image_html(row.get("image"), thumbnail=True)}<h2><a href="{esc(prefix + row["url"])}">{esc(row["title"])}</a></h2><p>{esc(row["cuisine"])} · {esc(row["meal_type"])}</p><p>{time} · {esc(", ".join(row["methods"]))}</p><p>Food Lion: {coverage} · <strong>{row["score"]:g}/100</strong></p></article>'
+    return f'<article class="card recipe-card" data-recipe-id="{esc(row["id"])}"><h2><a href="{esc(prefix + row["url"])}">{esc(row["title"])}</a></h2>{image_html(row.get("image"), thumbnail=True)}<p class="card-category">{esc(" · ".join(labels))}</p><p class="card-meta">{esc(" · ".join(facts))}</p><p class="card-meta">Food Lion {coverage}</p></article>'
 
 
 def category_links(row, prefix="../"):
+    """Quiet detail metadata, with filters available on the homepage."""
     from .publish import esc
 
-    parts = []
-    for axis, labels in row["categories"].items():
-        if axis == "time":
-            continue
-        links = ", ".join(
-            f'<a href="{prefix}{axis}/{slug(label)}/index.html">{esc(label)}</a>'
-            for label in labels
-        )
-        parts.append(f"<span>{AXES[axis]}: {links}</span>")
-    return (
-        '<nav class="recipe-categories" aria-label="Recipe categories">'
-        + " · ".join(parts)
-        + "</nav>"
-    )
-
-
-def navigation(prefix=""):
-    return (
-        '<nav class="site-nav" aria-label="Main navigation">'
-        + "".join(
-            f'<a href="{prefix}{path}">{title}</a>'
-            for path, title in [
-                ("index.html", "Home"),
-                ("recommended/index.html", "Recommended"),
-                ("recipes/index.html", "All Recipes"),
-            ]
-            + [(axis + "/index.html", label) for axis, label in AXES.items()]
-        )
-        + "</nav>"
-    )
+    labels = [
+        label
+        for axis in ("cuisine", "meal-type", "method")
+        for label in row["categories"][axis]
+        if label not in {"Unknown", "Other"}
+    ]
+    return '<p class="recipe-categories">' + esc(" · ".join(labels)) + "</p>"
 
 
 def build_catalog(root, records, dist):
     from .publish import FORBIDDEN, _page, esc, visible_text
 
-    index = sorted(
-        [index_entry(row) for row in records], key=lambda r: (-r["score"], r["sort_title"], r["id"])
+    ordered = sorted(
+        records,
+        key=lambda r: (
+            -(r.get("match", {}).get("total_score") or 0),
+            (r.get("title") or "").casefold(),
+            r["id"],
+        ),
     )
-    for rank, row in enumerate(index):
-        row["rank"] = rank
+    index = [index_entry(row) for row in ordered]
     atomic_json(dist / "search-index.json", index)
     membership = {axis: defaultdict(list) for axis in AXES}
-    for label in MEALS:
-        membership["meal-type"][label] = []
-    for label in list(METHODS.values()) + ["Other"]:
-        membership["method"][label] = []
-    by_id = {r["id"]: r for r in records}
-    for entry in index:
-        for axis, values in by_id[entry["id"]]["categories"].items():
-            for value in values:
-                membership[axis][value].append(entry)
-    written = []
+    for row in ordered:
+        for axis, labels in row["categories"].items():
+            for label in labels:
+                membership[axis][label].append(row["id"])
+    pages = max(1, math.ceil(len(index) / PAGE_SIZE))
+    fields = "".join(
+        f'<label>{label}<select data-catalog-filter="{key}"><option value="">All</option>'
+        + "".join(f"<option>{esc(value)}</option>" for value in sorted(membership[axis]))
+        + "</select></label>"
+        for key, label, axis in [
+            ("cuisine", "Cuisine", "cuisine"),
+            ("meal_type", "Meal Type", "meal-type"),
+            ("protein", "Main Protein", "protein"),
+            ("method", "Cooking Method", "method"),
+        ]
+    )
+    fields += (
+        '<label>Total Time<select data-catalog-filter="time"><option value="">Any time</option>'
+        + "".join(
+            f"<option>{esc(value)}</option>"
+            for value in [
+                "Under 15 min",
+                "Under 30 min",
+                "30–45 min",
+                "45–60 min",
+                "Over 60 min",
+                "Unknown",
+            ]
+        )
+        + "</select></label>"
+    )
+    fields += '<label>Food Lion Compatibility<select data-catalog-filter="coverage"><option value="">Any</option><option value="95">95% or more</option><option value="85">85% or more</option><option value="70">70% or more</option></select></label>'
+    controls = (
+        '<section class="filters" aria-label="Recipe filters"><label class="search"><span class="sr-only">Search recipes</span><input id="catalog-search" type="search" placeholder="Search recipes…"></label>'
+        + fields
+        + '<label>Sort<select id="catalog-sort"><option value="default">Default</option><option value="name">Recipe Name</option><option value="time">Total Time</option><option value="coverage">Food Lion Compatibility</option></select></label><button id="catalog-reset" type="button">Clear filters</button></section>'
+    )
+    for number in range(1, pages + 1):
+        path = "index.html" if number == 1 else f"page-{number}.html"
+        links = []
 
-    def write(path, title, body):
-        destination = dist / path
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        prefix = "../" * (len(Path(path).parts) - 1)
-        document = _page(title, navigation(prefix) + body, prefix)
+        def link(n, label, current=number):
+            href = "index.html" if n == 1 else f"page-{n}.html"
+            return (
+                f'<a href="{href}"'
+                + (' aria-current="page"' if n == current else "")
+                + f">{label}</a>"
+            )
+
+        if number > 1:
+            links.append(link(number - 1, "Previous"))
+        shown = sorted({1, pages} | set(range(max(1, number - 2), min(pages, number + 2) + 1)))
+        previous = 0
+        for n in shown:
+            if previous and n > previous + 1:
+                links.append("<span>…</span>")
+            links.append(link(n, str(n)))
+            previous = n
+        if number < pages:
+            links.append(link(number + 1, "Next"))
+        config = {
+            "index_url": "search-index.json",
+            "base_url": "",
+            "page_size": PAGE_SIZE,
+            "initial_page": number,
+        }
+        body = (
+            "<h1>My Recipes</h1>"
+            + controls
+            + f'<p id="catalog-count" role="status">{len(index):,} recipes</p><section class="cards" id="catalog-results">'
+            + "".join(
+                recipe_card(row) for row in index[(number - 1) * PAGE_SIZE : number * PAGE_SIZE]
+            )
+            + '</section><nav id="catalog-pagination" aria-label="Catalog pages">'
+            + " ".join(links)
+            + '</nav><script id="catalog-config" type="application/json">'
+            + json.dumps(config)
+            + '</script><script defer src="catalog.js"></script>'
+        )
+        document = _page("My Recipes", body)
         if FORBIDDEN.search(visible_text(document)):
             raise ValueError("Forbidden unit on " + path)
-        destination.write_text(document)
-        written.append(path)
-
-    def listing(path, title, rows, scope):
-        pages = max(1, math.ceil(len(rows) / PAGE_SIZE))
-        for number in range(1, pages + 1):
-            target = path if number == 1 else str(Path(path).parent / f"page-{number}.html")
-            prefix = "../" * (len(Path(target).parts) - 1)
-            config = {
-                "index_url": prefix + "search-index.json",
-                "base_url": prefix,
-                "scope": scope,
-                "page_size": PAGE_SIZE,
-                "initial_page": number,
-            }
-            fields = "".join(
-                f'<label>{label}<select data-catalog-filter="{key}"><option value="">All</option></select></label>'
-                for key, label in [
-                    ("cuisine", "Cuisine"),
-                    ("meal_type", "Meal type"),
-                    ("protein", "Protein"),
-                    ("method", "Cooking method"),
-                ]
-            )
-            numeric = "".join(
-                f'<label>{label}<input data-catalog-filter="{key}" type="number" min="0" {maximum}></label>'
-                for key, label, maximum in [
-                    ("min-score", "Minimum score", 'max="100"'),
-                    ("max-score", "Maximum score", 'max="100"'),
-                    ("coverage", "Minimum Food Lion %", 'max="100"'),
-                    ("total", "Maximum total minutes", ""),
-                ]
-            )
-            controls = f'<section class="filters"><label>Search<input id="catalog-search" type="search" placeholder="Title, ingredient, cuisine…"></label>{fields}{numeric}<label>Sort<select id="catalog-sort"><option value="score">Recommendation score</option><option value="coverage">Food Lion compatibility</option><option value="time">Total time</option><option value="name">Recipe name</option></select></label><button id="catalog-reset">Reset</button></section>'
-            links = " ".join(
-                f'<a href="{"index.html" if n == 1 else "page-" + str(n) + ".html"}" {"aria-current=page" if n == number else ""}>{n}</a>'
-                for n in range(1, pages + 1)
-            )
-            body = (
-                f'<h1>{esc(title)}</h1>{controls}<p id="catalog-count" role="status">{len(rows)} recipes</p><section class="cards" id="catalog-results">'
-                + "".join(
-                    recipe_card(r, prefix)
-                    for r in rows[(number - 1) * PAGE_SIZE : number * PAGE_SIZE]
-                )
-                + f'</section><nav id="catalog-pagination" aria-label="Catalog pages">{links}</nav><script id="catalog-config" type="application/json">{json.dumps(config).replace("<", chr(92) + "u003c")}</script><script defer src="{prefix}catalog.js"></script>'
-            )
-            write(target, title, body)
-
-    listing("recipes/index.html", "All Recipes", index, {})
-    eligible = [r for r in index if r["everyday_eligible"] and r["discovery_representative"]]
-    listing("recommended/index.html", "Recommended", eligible, {"recommended": True})
-    groups = [
-        ("everyday", "Best Everyday Meals", lambda r: r["score"] >= 60, {"score_min": 60}),
-        ("90-plus", "90+", lambda r: r["score"] >= 90, {"score_min": 90}),
-        ("80-89", "80–89", lambda r: 80 <= r["score"] < 90, {"score_min": 80, "score_max": 89.999}),
-        ("70-79", "70–79", lambda r: 70 <= r["score"] < 80, {"score_min": 70, "score_max": 79.999}),
-        ("60-69", "60–69", lambda r: 60 <= r["score"] < 70, {"score_min": 60, "score_max": 69.999}),
-        (
-            "under-30",
-            "Under 30 minutes",
-            lambda r: r["total_minutes"] is not None and r["total_minutes"] < 30,
-            {"max_time": 29.999},
-        ),
-        ("easy", "Easy / Low Effort", lambda r: r["effort_level"] == "Easy", {"easy": True}),
-        (
-            "compatible",
-            "High Food Lion compatibility",
-            lambda r: r["coverage"] is not None and r["coverage"] >= 0.85,
-            {"minimum_coverage": 0.85},
-        ),
-    ]
-    recommendation_links = "".join(
-        f'<a href="{key}/index.html">{label}</a> ' for key, label, _, _ in groups
-    )
-    # Section links stay available on the complete Recommended view.
-    rp = dist / "recommended/index.html"
-    rp.write_text(
-        rp.read_text().replace(
-            "<h1>Recommended</h1>",
-            '<h1>Recommended</h1><nav class="presets">' + recommendation_links + "</nav>",
-        )
-    )
-    for key, label, predicate, scope in groups:
-        listing(
-            f"recommended/{key}/index.html",
-            label,
-            [r for r in eligible if predicate(r)],
-            {"recommended": True, **scope},
-        )
-    for axis, groups_by_label in membership.items():
-        links = []
-        for label, rows in sorted(groups_by_label.items()):
-            path = f"{axis}/{slug(label)}/index.html"
-            listing(
-                path,
-                label,
-                rows,
-                {"axis": {"meal-type": "meal_type"}.get(axis, axis), "value": label},
-            )
-            links.append(
-                f'<li><a href="{slug(label)}/index.html">{esc(label)}</a> ({len(rows)})</li>'
-            )
-        write(
-            axis + "/index.html",
-            AXES[axis],
-            f'<h1>{AXES[axis]}</h1><ul class="category-list">' + "".join(links) + "</ul>",
-        )
-    home = (
-        "<h1>Your recipe catalog</h1><p>Find an everyday meal or explore all "
-        + str(len(index))
-        + " recipes.</p>"
-    )
-    home_groups = [
-        (
-            "Best everyday meals",
-            [r for r in eligible if r["score"] >= 60],
-            "recommended/index.html",
-        ),
-        (
-            "Under 30 minutes",
-            [r for r in eligible if r["total_minutes"] is not None and r["total_minutes"] < 30],
-            "recommended/under-30/index.html",
-        ),
-        (
-            "Air fryer",
-            [r for r in eligible if "Air fryer" in r["methods"]],
-            "method/air-fryer/index.html",
-        ),
-        (
-            "One-pan / one-pot",
-            [r for r in eligible if set(r["methods"]) & {"One-pan", "One-pot", "Sheet-pan"}],
-            "method/index.html",
-        ),
-        (
-            "High Food Lion compatibility",
-            [r for r in eligible if (r["coverage"] or 0) >= 0.85],
-            "recommended/compatible/index.html",
-        ),
-    ]
-    for title, rows, url in home_groups:
-        home += (
-            f'<section><h2><a href="{url}">{title}</a></h2><div class="cards">'
-            + "".join(recipe_card(r) for r in rows[:6])
-            + "</div></section>"
-        )
-    write("index.html", "Home", home)
+        (dist / path).write_text(document)
     manifest = {
         "recipes_published": len(index),
         "recipe_detail_pages": len(index),
         "recipes_with_images": sum(bool(r["image"]) for r in index),
         "categories": {axis: len(groups) for axis, groups in membership.items()},
-        "listing_pages": len(written),
+        "listing_pages": pages,
         "search_index_records": len(index),
         "page_size": PAGE_SIZE,
         "recipe_urls": {r["id"]: r["url"] for r in index},
-        "membership": {
-            axis: {label: [r["id"] for r in rows] for label, rows in groups.items()}
-            for axis, groups in membership.items()
-        },
+        "membership": membership,
     }
     atomic_json(root / "site/content/catalog-manifest.json", manifest)
     return manifest

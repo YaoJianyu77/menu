@@ -10,7 +10,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse
 
-from .catalog import build_catalog, categories, category_links, image_html, navigation, recipe_url
+from .catalog import build_catalog, categories, category_links, image_html, recipe_url
 from .core import atomic_json, load_yaml, read_jsonl
 from .recipe_images import select_image
 
@@ -199,7 +199,7 @@ def visible_text(document):
 
 
 def _page(title, body, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{esc(title)} · Everyday recipes</title><link rel="stylesheet" href="{prefix}style.css"><script defer src="{prefix}app.js"></script></head><body><header><a href="{prefix}index.html">Everyday recipes</a><span>Williamsburg, Virginia · Personal collection</span></header><main>{body}</main><footer>Food Lion compatibility reflects ingredients the store generally sells. Local stock may vary.</footer></body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{esc(title)} · My Recipes</title><link rel="stylesheet" href="{prefix}style.css"><script defer src="{prefix}app.js"></script></head><body><main>{body}</main><footer>Food Lion compatibility reflects ingredients the store generally sells. Local stock may vary.</footer></body></html>'''
 
 
 def _options(label, key):
@@ -228,9 +228,6 @@ def build(root):
         match = row["match"]
         coverage = match.get("foodlion_coverage")
         coverage_text = f"{coverage:.0%}" if coverage is not None else "Unknown"
-        match.get("score_band", "Not ranked")
-        match.get("meal_type", "Other")
-        effort = match.get("effort_level", "Unknown")
         total_text = (
             f"{row['total_minutes']:g} min"
             if isinstance(row.get("total_minutes"), (int, float))
@@ -289,7 +286,7 @@ def build(root):
                 f"<li>{ingredient_label}{' (optional)' if item.get('optional') else ''}</li>"
             )
             availability_rows.append(
-                f"<li>{esc(name)} — <span data-availability='{esc(availability)}'>Food Lion: {esc(availability_label)}</span>{details}</li>"
+                f"<li>{esc(name)} — <span>Food Lion: {esc(availability_label)}</span>{details}</li>"
             )
             if evidence.get("substitution"):
                 substitutions.append(f"<li>{esc(name)}: {esc(evidence['substitution'])}</li>")
@@ -298,7 +295,7 @@ def build(root):
             + "".join(f"<li>{esc(step)}</li>" for step in row["instructions"])
             + "</ol>"
             if row["instructions"]
-            else "<p>Open the original recipe for the cooking instructions. Cooking instructions are available at the source link below.</p>"
+            else "<p>Open the original recipe for cooking instructions.</p>"
         )
         payload = json.dumps(
             {"id": identifier, "personal": row.get("personal", {})}, ensure_ascii=False
@@ -333,7 +330,7 @@ def build(root):
             if substitutions
             else ""
         )
-        body = f'''{navigation("../")}<a class="back" href="../recipes/index.html">← All Recipes</a><section class="recipe-head"><h1>{esc(row.get("title"))}</h1>{image_html(row.get("image"))}{source_category_links}<dl><div><dt>Recommendation</dt><dd>{esc(match.get("total_score"))}/100</dd></div><div><dt>Food Lion compatibility</dt><dd>{coverage_text}</dd></div><div><dt>Total time</dt><dd>{esc(total_text)}</dd></div>{active_html}{servings_html}<div><dt>Effort</dt><dd>{esc(effort)}</dd></div></dl><p>Local stock may vary.</p></section>{quality_warning}<div class="recipe-columns"><section><h2>Ingredients</h2><ul class="ingredients">{"".join(ingredient_rows)}</ul></section><section><h2>Instructions</h2>{instructions}<a class="button" href="{esc(_url(row.get("original_source_url") or row.get("source_url")))}" rel="noreferrer">Open original recipe ↗</a></section></div>{availability_html}{substitution_html}<details><summary>Why this recipe ranks here</summary><p>Food Lion compatibility: {esc(match.get("foodlion_score"))}/35 · Convenience: {esc(match.get("time_score"))}/25 · Meal balance: {esc(match.get("nutrition_score"))}/25 · Simplicity: {esc(match.get("simplicity_score"))}/15</p><p>Meal balance reflects the ingredients, not a calculated nutrition label.</p><ul>{"".join(f"<li>{esc(reason)}</li>" for reason in match.get("reasons", []))}</ul></details><section class="personal"><h2>My kitchen notes</h2><p>Saved in this browser. Export a backup to preserve your annotations.</p><form id="personal-form"><label><input type="checkbox" name="favorite"> Favorite</label><label><input type="checkbox" name="cooked"> Cooked</label><label><input type="checkbox" name="would_cook_again"> Would cook again</label><label>Rating<select name="rating"><option value="">Unrated</option>{"".join(f"<option>{n}</option>" for n in range(1, 6))}</select></label><label>Last cooked<input type="date" name="last_cooked_date"></label><label class="wide">Notes<textarea name="notes" rows="4"></textarea></label><label class="wide">Modifications<textarea name="modifications" rows="2"></textarea></label><button type="submit">Save notes</button><output id="save-status" aria-live="polite"></output></form><button id="export-notes" type="button">Export all notes</button><label class="import-label">Import notes<input id="import-notes" type="file" accept="application/json"></label></section><details><summary>Nutrition & source</summary><p>Nutrition: {esc(json.dumps(row.get("nutrition"), ensure_ascii=False) if row.get("nutrition") else "Not provided")}</p><p>Attribution: {esc(row.get("attribution") or row.get("source"))}<br>License: {esc(row.get("source_license"))}<br>{license_link}<br><a href="{esc(_url(row.get("source_url")))}" rel="noreferrer">Recipe source ↗</a></p></details><script id="recipe-data" type="application/json">{payload}</script>'''
+        body = f'''<a class="back" data-back-to-recipes href="../index.html">← Back to recipes</a><section class="recipe-head"><h1>{esc(row.get("title"))}</h1>{image_html(row.get("image"))}{source_category_links}<dl><div><dt>Food Lion compatibility</dt><dd>{coverage_text}</dd></div><div><dt>Total time</dt><dd>{esc(total_text)}</dd></div>{active_html}{servings_html}</dl><p>Local stock may vary.</p></section>{quality_warning}<div class="recipe-columns"><section><h2>Ingredients</h2><ul class="ingredients">{"".join(ingredient_rows)}</ul></section><section><h2>Instructions</h2>{instructions}<a class="button" href="{esc(_url(row.get("original_source_url") or row.get("source_url")))}" rel="noreferrer">Open original recipe ↗</a></section></div>{availability_html}{substitution_html}<details class="personal"><summary>My kitchen notes</summary><p>Saved in this browser. Export a backup to preserve your annotations.</p><form id="personal-form"><label><input type="checkbox" name="favorite"> Favorite</label><label><input type="checkbox" name="cooked"> Cooked</label><label><input type="checkbox" name="would_cook_again"> Would cook again</label><label>Rating<select name="rating"><option value="">Unrated</option>{"".join(f"<option>{n}</option>" for n in range(1, 6))}</select></label><label>Last cooked<input type="date" name="last_cooked_date"></label><label class="wide">Notes<textarea name="notes" rows="4"></textarea></label><label class="wide">Modifications<textarea name="modifications" rows="2"></textarea></label><button type="submit">Save notes</button><output id="save-status" aria-live="polite"></output></form><button id="export-notes" type="button">Export all notes</button><label class="import-label">Import notes<input id="import-notes" type="file" accept="application/json"></label></details><details><summary>Source attribution</summary><p>Nutrition: {esc(json.dumps(row.get("nutrition"), ensure_ascii=False) if row.get("nutrition") else "Not provided")}</p><p>Attribution: {esc(row.get("attribution") or row.get("source"))}<br>License: {esc(row.get("source_license"))}<br>{license_link}<br><a href="{esc(_url(row.get("source_url")))}" rel="noreferrer">Recipe source ↗</a></p></details><script id="recipe-data" type="application/json">{payload}</script>'''
         output = _page(row.get("title"), body, "../")
         if FORBIDDEN.search(visible_text(output)):
             raise ValueError(f"Forbidden output unit in {identifier}")

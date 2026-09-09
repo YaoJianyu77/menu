@@ -1,4 +1,4 @@
-/* Run from the repository root; starts and stops its own loopback-only server. */
+/* Local Chromium checks; BASE_URL also supports a mounted project subpath. */
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
@@ -10,8 +10,7 @@ const base = (process.env.BASE_URL || "http://127.0.0.1:8000/").replace(
 const index = JSON.parse(
   fs.readFileSync("site/dist/search-index.json", "utf8"),
 );
-const lookup = new Map(index.map((row) => [row.id, row]));
-const checks = [];
+const lookup = new Map(index.map((r) => [r.id, r]));
 const server = process.env.BASE_URL
   ? null
   : spawn(
@@ -29,14 +28,15 @@ const server = process.env.BASE_URL
     );
 (async () => {
   let browser;
+  const checks = [];
   try {
-    for (let attempt = 0; attempt < 50; attempt++) {
+    for (let n = 0; n < 50; n++) {
       if (server && server.exitCode !== null)
-        throw Error("Could not start dedicated catalog server");
+        throw Error("Catalog server failed");
       try {
         if ((await fetch(base)).ok) break;
       } catch {
-        /* Wait for startup. */
+        /* startup */
       }
       await new Promise((resolve) => setTimeout(resolve, 100));
     }
@@ -48,288 +48,274 @@ const server = process.env.BASE_URL
       const context = await browser.newContext({ viewport });
       const page = await context.newPage();
       const errors = [];
-      page.on("pageerror", (error) => errors.push(error.message));
-      page.on("response", (response) => {
+      page.on("pageerror", (e) => errors.push(e.message));
+      page.on("response", (r) => {
+        if (r.url().startsWith(base) && r.status() >= 400)
+          errors.push(`${r.status()} ${r.url()}`);
+      });
+      page.on("request", (r) => {
+        const u = new URL(r.url());
         if (
-          response.url().startsWith(new URL(base).origin) &&
-          response.status() >= 400
+          u.origin === new URL(base).origin &&
+          !u.pathname.startsWith(new URL(base).pathname)
         )
-          errors.push(`${response.status()} ${response.url()}`);
+          errors.push(`Outside base: ${u}`);
       });
-      page.on("request", (request) => {
-        const url = new URL(request.url());
-        if (url.origin === new URL(base).origin)
-          assert(
-            url.pathname.startsWith(new URL(base).pathname),
-            `Outside base path: ${url}`,
-          );
-      });
-      const go = async (path) => {
-        const response = await page.goto(base + path);
-        assert.equal(response.status(), 200);
-        await page
+      const ready = () =>
+        page
           .locator('#catalog-config[data-loaded="true"]')
           .waitFor({ state: "attached" });
+      const go = async (path = "index.html") => {
+        assert.equal((await page.goto(base + path)).status(), 200);
+        await ready();
       };
       const ids = () =>
         page
           .locator("#catalog-results .card")
-          .evaluateAll((cards) => cards.map((card) => card.dataset.recipeId));
-      const checkRows = async (predicate) => {
-        const visible = await ids();
-        assert(visible.length > 0);
-        assert(visible.every((id) => predicate(lookup.get(id))));
-      };
-      const reset = () => page.locator("#catalog-reset").click();
-      await go("recipes/index.html");
-      assert.equal(index.length, 2556);
-      assert(
-        (await page.locator("#catalog-count").textContent()).includes("2,556"),
-      );
-      assert.deepEqual(
-        await ids(),
-        index.slice(0, 48).map((row) => row.id),
-      );
-      assert.equal(
-        await page.locator("#catalog-results img").count(),
-        index.slice(0, 48).filter((row) => row.image).length,
-      );
-      const links = await page
-        .locator("#catalog-results .card")
-        .evaluateAll((cards) =>
-          cards.map((card) => ({
-            id: card.dataset.recipeId,
-            url: card.querySelector("h2 a").href,
-          })),
+          .evaluateAll((cards) => cards.map((c) => c.dataset.recipeId));
+      const reset = () =>
+        page
+          .getByRole("button", { name: "Clear filters", exact: true })
+          .click();
+      const filter = (key) => page.locator(`[data-catalog-filter="${key}"]`);
+      const expected = async (rows) => {
+        assert.deepEqual(
+          await ids(),
+          rows.slice(0, 48).map((r) => r.id),
         );
-      assert(
-        links.every((link) => link.url === base + lookup.get(link.id).url),
+        assert.equal(
+          await page.locator("#catalog-count").textContent(),
+          `${rows.length.toLocaleString()} recipes`,
+        );
+      };
+      await go();
+      assert.equal(index.length, 2556);
+      assert.equal(await page.locator("h1").textContent(), "My Recipes");
+      await expected(index);
+      assert.equal(await page.locator(".site-nav").count(), 0);
+      assert.equal(await page.locator("[data-catalog-filter]").count(), 6);
+      assert.deepEqual(
+        await page.locator("#catalog-sort option").allTextContents(),
+        ["Default", "Recipe Name", "Total Time", "Food Lion Compatibility"],
       );
+      assert(
+        !/recommendation|\bscore\b|\branking\b|\d+\/100/i.test(
+          await page.locator("body").innerText(),
+        ),
+      );
+      assert(!index.some((r) => "score" in r || "rank" in r));
+      const links = await page
+        .locator(".card h2 a")
+        .evaluateAll((nodes) => nodes.map((a) => a.href));
+      assert.deepEqual(
+        links,
+        index.slice(0, 48).map((r) => base + r.url),
+      );
+      assert.equal(await page.locator(".card img").count(), 0);
       await page.getByRole("button", { name: "Next", exact: true }).click();
       assert.deepEqual(
         await ids(),
-        index.slice(48, 96).map((row) => row.id),
+        index.slice(48, 96).map((r) => r.id),
       );
-      await go("recipes/page-2.html");
+      await go("page-2.html");
       assert.deepEqual(
         await ids(),
-        index.slice(48, 96).map((row) => row.id),
+        index.slice(48, 96).map((r) => r.id),
       );
-      const distant = index.find(
-        (row, i) =>
-          i > 500 &&
-          row.title.length > 10 &&
-          index.filter((other) => other.title === row.title).length === 1,
-      );
-      await page.locator("#catalog-search").fill(distant.title);
-      assert((await ids()).includes(distant.id));
+      const remote = index[1200];
+      await page.locator("#catalog-search").fill(remote.title);
+      assert((await ids()).some((id) => lookup.get(id).title === remote.title));
+      assert.equal(new URL(page.url()).searchParams.get("page"), "1");
       await reset();
-      await page.locator("#catalog-search").fill("chicken");
-      await checkRows((row) =>
-        [
-          row.title,
-          row.cuisine,
-          row.meal_type,
-          ...row.ingredients,
-          ...row.proteins,
-          ...row.methods,
-        ]
-          .join(" ")
-          .toLowerCase()
-          .includes("chicken"),
-      );
+      await page.locator("#catalog-search").fill("tomato");
+      assert((await ids()).length > 0);
+      for (const id of await ids()) {
+        const r = lookup.get(id);
+        assert(
+          [
+            r.title,
+            r.cuisine,
+            r.meal_type,
+            ...r.ingredients,
+            ...r.proteins,
+            ...r.methods,
+          ]
+            .join(" ")
+            .toLowerCase()
+            .includes("tomato"),
+        );
+      }
       await reset();
-      for (const [key, value, predicate] of [
-        ["cuisine", "American", (row) => row.cuisines.includes("American")],
-        ["meal_type", "Dessert", (row) => row.meal_type === "Dessert"],
-        ["protein", "Chicken", (row) => row.proteins.includes("Chicken")],
-        ["method", "Oven", (row) => row.methods.includes("Oven")],
-      ]) {
-        await page
-          .locator(`[data-catalog-filter="${key}"]`)
-          .selectOption(value);
-        await checkRows(predicate);
-        await reset();
-      }
-      for (const [key, value, predicate] of [
-        ["min-score", "80", (row) => row.score >= 80],
-        ["max-score", "59", (row) => row.score <= 59],
-        [
-          "coverage",
-          "85",
-          (row) => row.coverage != null && row.coverage >= 0.85,
-        ],
-        [
-          "total",
-          "30",
-          (row) => row.total_minutes != null && row.total_minutes <= 30,
-        ],
-      ]) {
-        await page.locator(`[data-catalog-filter="${key}"]`).fill(value);
-        await checkRows(predicate);
-        await reset();
-      }
-      for (const sort of ["name", "coverage", "time"]) {
-        await page.locator("#catalog-sort").selectOption(sort);
-        const actual = (await ids()).map((id) => lookup.get(id));
-        for (let i = 1; i < actual.length; i++) {
-          if (sort === "name")
-            assert(actual[i - 1].sort_title <= actual[i].sort_title);
-          if (sort === "coverage")
-            assert(
-              (actual[i - 1].coverage ?? -1) >= (actual[i].coverage ?? -1),
-            );
-          if (sort === "time")
-            assert(
-              (actual[i - 1].total_minutes ?? Infinity) <=
-                (actual[i].total_minutes ?? Infinity),
-            );
-        }
-      }
-      // Unknown times must follow all known times, including on the final page.
-      while (
-        !(await page
-          .getByRole("button", { name: "Next", exact: true })
-          .isDisabled())
-      )
-        await page.getByRole("button", { name: "Next", exact: true }).click();
-      assert((await ids()).every((id) => lookup.get(id).total_minutes == null));
-      await reset();
-      await page.locator("#catalog-search").fill("zz-no-recipe-exists-zz");
-      assert.equal((await ids()).length, 0);
-      assert(
-        await page
-          .getByText("No recipes match these filters.", { exact: false })
-          .isVisible(),
-      );
-      for (const [axis, field] of [
+      for (const [key, field] of [
         ["cuisine", "cuisines"],
-        ["meal-type", "meal_type"],
+        ["meal_type", "meal_type"],
         ["protein", "proteins"],
         ["method", "methods"],
         ["time", "time_categories"],
       ]) {
-        await page.goto(base + axis + "/index.html");
-        await page.locator(".category-list a").first().click();
-        await page
-          .locator('#catalog-config[data-loaded="true"]')
-          .waitFor({ state: "attached" });
-        const scope = await page
-          .locator("#catalog-config")
-          .evaluate((node) => JSON.parse(node.textContent).scope);
-        await checkRows((row) =>
-          Array.isArray(row[field])
-            ? row[field].includes(scope.value)
-            : row[field] === scope.value,
-        );
-        const expected = index.filter((row) =>
-          Array.isArray(row[field])
-            ? row[field].includes(scope.value)
-            : row[field] === scope.value,
-        ).length;
-        assert(
-          (await page.locator("#catalog-count").textContent()).startsWith(
-            expected.toLocaleString() + " recipes",
+        const choice = index.find((r) =>
+          Array.isArray(r[field])
+            ? r[field].some((v) => !["Other", "Unknown"].includes(v))
+            : r[field] !== "Other",
+        )[field];
+        const value = Array.isArray(choice) ? choice[0] : choice;
+        await filter(key).selectOption(value);
+        await expected(
+          index.filter((r) =>
+            Array.isArray(r[field])
+              ? r[field].includes(value)
+              : r[field] === value,
           ),
         );
+        await reset();
       }
-      await go("recommended/index.html");
-      await checkRows(
-        (row) => row.everyday_eligible && row.discovery_representative,
+      await filter("coverage").selectOption("85");
+      await expected(
+        index.filter((r) => r.coverage != null && r.coverage >= 0.85),
       );
-      await page.goto(base + index[0].url);
-      assert.equal(await page.locator("h1").textContent(), index[0].title);
-      const headings = await page.locator("h2").allTextContents();
-      assert(
-        headings.indexOf("Ingredients") < headings.indexOf("Instructions"),
+      await reset();
+      const sample = index.find(
+        (r) =>
+          r.cuisines[0] !== "Unknown" &&
+          r.proteins[0] !== "Other" &&
+          r.total_minutes > 0 &&
+          r.total_minutes < 30,
       );
-      assert(
-        headings.indexOf("Instructions") <
-          headings.indexOf("Food Lion ingredients"),
-      );
-      assert(
-        !/\b(?:tsp|tbsp|teaspoons?|tablespoons?)\b/i.test(
-          await page
-            .locator(".ingredients,.steps")
-            .allTextContents()
-            .then((items) => items.join(" ")),
+      await filter("cuisine").selectOption(sample.cuisines[0]);
+      await filter("protein").selectOption(sample.proteins[0]);
+      await filter("time").selectOption("Under 30 min");
+      await expected(
+        index.filter(
+          (r) =>
+            r.cuisines.includes(sample.cuisines[0]) &&
+            r.proteins.includes(sample.proteins[0]) &&
+            r.time_categories.includes("Under 30 min"),
         ),
       );
-      assert(
-        await page.getByText("Local stock may vary.", { exact: false }).count(),
+      const before = await ids();
+      await page.locator(".card h2 a").first().click();
+      assert.equal(
+        await page.locator("h1").textContent(),
+        lookup.get(before[0]).title,
       );
-      await page.locator('[name="notes"]').fill("Catalog browser verification");
+      assert(
+        !/recommendation|\bscore\b|\branking\b|\d+\/100/i.test(
+          await page.locator("body").innerText(),
+        ),
+      );
+      const h = await page.locator("h2").allTextContents();
+      assert(h.indexOf("Ingredients") < h.indexOf("Instructions"));
+      assert(
+        !/\b(tsp|tbsp|teaspoons?|tablespoons?)\b/i.test(
+          (await page.locator(".ingredients,.steps").allTextContents()).join(
+            " ",
+          ),
+        ),
+      );
+      await page.getByText("My kitchen notes", { exact: true }).click();
+      await page.locator('[name="notes"]').fill("Browser verification");
       await page.locator('#personal-form button[type="submit"]').click();
       await page.reload();
       assert.equal(
         await page.locator('[name="notes"]').inputValue(),
-        "Catalog browser verification",
+        "Browser verification",
       );
-      for (const path of ["index.html", "recipes/index.html", index[0].url]) {
-        await page.goto(base + path);
-        if (path === "recipes/index.html") {
-          await page
-            .locator('#catalog-config[data-loaded="true"]')
-            .waitFor({ state: "attached" });
-          await page.screenshot({
-            path: `/tmp/menu-catalog-${viewport.width}.png`,
-          });
+      await page
+        .getByRole("link", { name: "Back to recipes", exact: false })
+        .click();
+      await ready();
+      assert.deepEqual(await ids(), before);
+      assert.equal(await filter("cuisine").inputValue(), sample.cuisines[0]);
+      await reset();
+      for (const value of ["name", "time", "coverage"]) {
+        await page.locator("#catalog-sort").selectOption(value);
+        const rows = (await ids()).map((id) => lookup.get(id));
+        for (let n = 1; n < rows.length; n++) {
+          if (value === "name")
+            assert(rows[n - 1].sort_title <= rows[n].sort_title);
+          if (value === "time")
+            assert(
+              (rows[n - 1].total_minutes ?? Infinity) <=
+                (rows[n].total_minutes ?? Infinity),
+            );
+          if (value === "coverage")
+            assert((rows[n - 1].coverage ?? -1) >= (rows[n].coverage ?? -1));
         }
+      }
+      await page.locator("#catalog-sort").selectOption("time");
+      await page
+        .getByRole("button", {
+          name: String(Math.ceil(index.length / 48)),
+          exact: true,
+        })
+        .click();
+      assert((await ids()).every((id) => lookup.get(id).total_minutes == null));
+      await page.locator("#catalog-search").fill("zz-no-recipe-exists-zz");
+      assert.equal((await ids()).length, 0);
+      await reset();
+      await expected(index);
+      for (const path of ["index.html", index[0].url]) {
+        await page.goto(base + path);
+        if (path === "index.html") await ready();
         assert(
           await page.evaluate(
-            () => document.documentElement.scrollWidth <= innerWidth + 1,
+            () => document.documentElement.scrollWidth <= window.innerWidth,
           ),
-          `Horizontal overflow: ${path}`,
         );
+        await page.screenshot({
+          path: `/tmp/menu-book-${viewport.width}-${path === "index.html" ? "catalog" : "detail"}.png`,
+        });
       }
       assert.deepEqual(errors, []);
       checks.push({
         viewport,
         status: "passed",
         checks: [
-          "complete_catalog",
-          "title_and_ingredient_search",
-          "all_filters",
-          "sorts_unknown_time_last",
-          "pagination_and_direct_page_2",
-          "five_category_axes",
-          "card_links",
+          "full_catalog",
+          "full_dataset_search",
+          "six_filters",
+          "combined_filters",
+          "sorting",
+          "unknown_time_last",
+          "pagination",
+          "stateful_back_link",
+          "stable_recipe_links",
+          "no_scores",
           "no_image_layout",
-          "detail_cooking_order",
-          "metric_instructions",
+          "metric_units",
           "personal_notes",
-          "mobile_overflow",
+          "no_overflow",
           "no_browser_errors",
         ],
       });
       await context.close();
     }
+    // Static fallback exposes every page through ordinary previous/next links.
+    const context = await browser.newContext({ javaScriptEnabled: false });
+    const page = await context.newPage();
+    await page.goto(base);
+    assert.equal(await page.locator(".card").count(), 48);
+    await page.getByRole("link", { name: "Next", exact: true }).click();
+    assert(page.url().endsWith("page-2.html"));
+    assert.equal(await page.locator(".card").count(), 48);
+    await context.close();
+    const report = {
+      status: "passed",
+      base_url: base,
+      recipes: index.length,
+      static_fallback: "passed",
+      checks,
+    };
     fs.writeFileSync(
       process.env.BROWSER_REPORT || "docs/catalog-browser-validation.json",
-      JSON.stringify(
-        {
-          status: "passed",
-          base_url: base,
-          recipes: index.length,
-          images: index.filter((row) => row.image).length,
-          checks,
-        },
-        null,
-        2,
-      ) + "\n",
+      JSON.stringify(report, null, 2) + "\n",
     );
-    console.log(
-      JSON.stringify({
-        status: "passed",
-        viewports: checks.length,
-        recipes: index.length,
-      }),
-    );
+    console.log(JSON.stringify(report));
   } finally {
     await browser?.close();
     server?.kill();
   }
-})().catch((error) => {
-  console.error(error);
+})().catch((e) => {
+  console.error(e);
   process.exitCode = 1;
 });

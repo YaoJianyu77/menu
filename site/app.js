@@ -1,5 +1,17 @@
 /* Personal notes stay in this browser. */
 (() => {
+  const back = document.querySelector("[data-back-to-recipes]");
+  try {
+    const query = sessionStorage.getItem("my-recipes-catalog-query");
+    if (back && query?.startsWith("?")) back.href += query;
+  } catch {
+    /* A plain homepage link remains available. */
+  }
+  document.querySelectorAll("figure img").forEach((img) => {
+    const remove = () => img.closest("figure")?.remove();
+    img.addEventListener("error", remove);
+    if (img.complete && !img.naturalWidth) remove();
+  });
   const payload = document.querySelector("#recipe-data");
   if (!payload) return;
   const recipe = JSON.parse(payload.textContent);
