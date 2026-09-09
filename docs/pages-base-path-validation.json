@@ -32,6 +32,7 @@
         "metric_units",
         "personal_notes",
         "no_overflow",
+        "hide_undo_restore_persistence_invalid_storage_detail_pagination",
         "responsive_density_sticky_keyboard",
         "no_browser_errors"
       ]
@@ -64,6 +65,7 @@
         "metric_units",
         "personal_notes",
         "no_overflow",
+        "hide_undo_restore_persistence_invalid_storage_detail_pagination",
         "responsive_density_sticky_keyboard",
         "no_browser_errors"
       ]
@@ -76,7 +78,7 @@
       "layout": {
         "columns": 1,
         "visible": 17,
-        "height": 36,
+        "height": 37,
         "top": 204.65625
       },
       "status": "passed",
@@ -96,6 +98,7 @@
         "metric_units",
         "personal_notes",
         "no_overflow",
+        "hide_undo_restore_persistence_invalid_storage_detail_pagination",
         "responsive_density_sticky_keyboard",
         "no_browser_errors"
       ]

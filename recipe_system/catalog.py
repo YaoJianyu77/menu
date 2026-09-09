@@ -369,7 +369,7 @@ def build_catalog(root, records, dist):
         body = (
             '<div class="directory"><h1>My Recipes</h1>'
             + controls
-            + f'<p id="catalog-count" role="status">{len(index):,} recipes</p><section class="recipe-directory" id="catalog-results" aria-label="Recipes">'
+            + f'<div class="catalog-summary"><p id="catalog-count" role="status">{len(index):,} recipes</p><button id="hidden-toggle" type="button" hidden aria-expanded="false" aria-controls="hidden-panel">Hidden (0)</button></div><section id="hidden-panel" hidden aria-label="Hidden recipes"><h2>Hidden recipes</h2><p>Hidden in this browser only.</p><button id="restore-all" type="button">Restore all</button><button id="hidden-close" type="button">Close</button><ul id="hidden-list"></ul></section><div id="hidden-toast" hidden><span role="status" id="hidden-message"></span> <button id="hidden-undo" type="button">Undo</button></div><section class="recipe-directory" id="catalog-results" aria-label="Recipes">'
             + "".join(
                 recipe_card(row) for row in index[(number - 1) * PAGE_SIZE : number * PAGE_SIZE]
             )

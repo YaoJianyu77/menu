@@ -9,6 +9,12 @@
         "width": 1366,
         "height": 900
       },
+      "layout": {
+        "columns": 3,
+        "visible": 60,
+        "height": 37,
+        "top": 130.65625
+      },
       "status": "passed",
       "checks": [
         "full_catalog",
@@ -26,6 +32,7 @@
         "metric_units",
         "personal_notes",
         "no_overflow",
+        "hide_undo_restore_persistence_invalid_storage_detail_pagination",
         "responsive_density_sticky_keyboard",
         "no_browser_errors"
       ]
@@ -35,31 +42,11 @@
         "width": 900,
         "height": 900
       },
-      "status": "passed",
-      "checks": [
-        "full_catalog",
-        "full_dataset_search",
-        "five_filters",
-        "combined_filters",
-        "sorting",
-        "unknown_time_last",
-        "pagination",
-        "stateful_back_link",
-        "stable_recipe_links",
-        "no_scores",
-        "clean_titles_and_metadata",
-        "no_image_layout",
-        "metric_units",
-        "personal_notes",
-        "no_overflow",
-        "responsive_density_sticky_keyboard",
-        "no_browser_errors"
-      ]
-    },
-    {
-      "viewport": {
-        "width": 390,
-        "height": 844
+      "layout": {
+        "columns": 2,
+        "visible": 38,
+        "height": 37,
+        "top": 170.65625
       },
       "status": "passed",
       "checks": [
@@ -78,6 +65,40 @@
         "metric_units",
         "personal_notes",
         "no_overflow",
+        "hide_undo_restore_persistence_invalid_storage_detail_pagination",
+        "responsive_density_sticky_keyboard",
+        "no_browser_errors"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "layout": {
+        "columns": 1,
+        "visible": 17,
+        "height": 37,
+        "top": 204.65625
+      },
+      "status": "passed",
+      "checks": [
+        "full_catalog",
+        "full_dataset_search",
+        "five_filters",
+        "combined_filters",
+        "sorting",
+        "unknown_time_last",
+        "pagination",
+        "stateful_back_link",
+        "stable_recipe_links",
+        "no_scores",
+        "clean_titles_and_metadata",
+        "no_image_layout",
+        "metric_units",
+        "personal_notes",
+        "no_overflow",
+        "hide_undo_restore_persistence_invalid_storage_detail_pagination",
         "responsive_density_sticky_keyboard",
         "no_browser_errors"
       ]

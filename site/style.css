@@ -308,15 +308,6 @@ main:has(.directory) {
 .recipe-row a:focus-visible {
   text-decoration: underline;
 }
-.recipe-row:focus-within h2 {
-  flex-basis: 100%;
-}
-.recipe-row:focus-within {
-  flex-wrap: wrap;
-}
-.recipe-row a:focus-visible {
-  white-space: normal;
-}
 .row-meta {
   font-size: 0.72rem;
   color: #687168;
@@ -368,5 +359,99 @@ main:has(.directory) {
   .recipe-directory,
   .recipe-row {
     scroll-margin-top: 140px;
+  }
+}
+.catalog-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 32px;
+}
+#hidden-toggle,
+#hide-recipe {
+  font-size: 0.8rem;
+  background: transparent;
+  padding: 3px 8px;
+}
+.hide-row {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #72796f;
+  font-size: 1.1rem;
+  line-height: 28px;
+  align-self: center;
+}
+.hide-row:hover,
+.hide-row:focus-visible {
+  color: #28342c;
+  background: #ecefe8;
+}
+.recipe-row:has(.hide-row) {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+#hidden-panel {
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #dfe3da;
+  border-radius: 5px;
+}
+#hidden-panel h2 {
+  margin: 0;
+}
+#hidden-panel p {
+  font-size: 0.8rem;
+}
+#hidden-list {
+  list-style: none;
+  padding: 0;
+  max-height: 40vh;
+  overflow: auto;
+}
+#hidden-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 4px;
+  border-bottom: 1px solid #e8ebe4;
+}
+#hidden-list button {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+}
+#hidden-toast {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  background: #fff;
+  border: 1px solid #bdc9b9;
+  border-radius: 6px;
+  padding: 8px 12px;
+  max-width: calc(100% - 24px);
+  width: max-content;
+  box-shadow: 0 2px 8px #0001;
+  font-size: 0.85rem;
+}
+#hide-error {
+  display: block;
+  font-size: 0.85rem;
+}
+@media (max-width: 600px) {
+  .hide-row {
+    flex-basis: 36px;
+    width: 36px;
+    height: 32px;
+    line-height: 32px;
+  }
+  .recipe-row:has(.hide-row) {
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }

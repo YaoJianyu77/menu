@@ -33,6 +33,7 @@ jobs:
           ruff check recipe_system tests scripts
           node --check site/app.js
           node --check site/catalog.js
+          node --check site/hidden.js
           python -m pytest -q
       - name: Build from persisted recipe data
         run: |

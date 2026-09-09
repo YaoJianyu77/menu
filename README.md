@@ -185,11 +185,19 @@ The homepage is a dense directory of all 2,556 recipes. Each compact row contain
 
 Routes are `/index.html`, `/page-2.html` through `/page-22.html`, and stable `/recipes/<id>.html` detail pages. There are no standalone category or recommendation pages. Static pagination contains up to 120 titles per page and remains usable without JavaScript. Search and combined filters operate over the entire local index, resetting pagination when changed. URL query state and the detail back link preserve searches, filters, sorting and page selection.
 
-The static row renderer in `catalog.py` and DOM renderer in `site/catalog.js` use the same title/time/method fields. Unknown time/method values are omitted; mobile hides secondary metadata. Long titles have native tooltips and expand when keyboard-focused. Detail styling remains separate and optimized for cooking. The shared display-title helper still removes generic Chinese `做法` / `的做法` suffixes without changing underlying records. Internal practical ordering, source metadata, image rights and recipe identities are unchanged.
+The static row renderer in `catalog.py` and DOM renderer in `site/catalog.js` use the same title/time/method fields. Unknown time/method values are omitted; mobile hides secondary metadata. Long titles have native tooltips and retain a visible keyboard focus outline. Detail styling remains separate and optimized for cooking. The shared display-title helper still removes generic Chinese `做法` / `的做法` suffixes without changing underlying records. Internal practical ordering, source metadata, image rights and recipe identities are unchanged.
 
 Detail URLs and 33 older duplicate redirects remain stable. Source permission still controls local instructions: 533 pages include them and 2,023 link to the source. Personal annotations keep their existing browser storage keys; kitchen notes are tucked into an expandable section. Collection, normalization, grocery evidence, recipe content and ranking data remain unchanged.
 
 `make validate` checks completeness, static card links, filter membership, stable URLs, search-index completeness, absence of score UI, metric units and all local links. [Catalog report](docs/catalog-report.md) and [browser checks](docs/catalog-browser-validation.json) describe the current recipe-book interface. Older reports remain historical.
+
+## Browser-local hidden recipes
+
+Each directory row has a small × button with an accessible “Hide [title]” label. Hiding excludes the stable recipe ID from search, filters, counts and pagination immediately. Undo is offered for 10 seconds (longer while hovered or keyboard-focused). `Hidden (N)` opens a secondary panel with Restore and Restore all. Clear resets only search/filter/sort controls, never hidden IDs. Detail pages use the same preference and return to the previous catalog query after hiding.
+
+`site/hidden.js` shares the versioned `my-recipes:hidden:v1` localStorage key across the directory and detail pages. The value is a JSON array of stable IDs, independent of recipe titles. Duplicate/invalid entries are ignored safely. IDs absent from the current dataset do not affect counts or browsing. Hidden state is not put in URLs and never edits recipe data or Git. Preferences persist only in that browser/origin: they do not synchronize across devices, browsers or the local preview and public site. Same-origin tabs receive storage updates. If storage is unavailable, catalog hiding works in memory with a notice; the detail action reports the save failure rather than navigating and losing the preference.
+
+Static links still expose every recipe when JavaScript is unavailable. JavaScript enables the hide controls and applies saved preferences. Tests include a Node-based storage suite in pytest, plus real browser coverage for Undo, restoration, corrupt data, old IDs, search/filter exclusion, empty/last pages and detail-page hiding.
 
 ## GitHub Pages
 

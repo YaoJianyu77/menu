@@ -15,6 +15,23 @@
   const payload = document.querySelector("#recipe-data");
   if (!payload) return;
   const recipe = JSON.parse(payload.textContent);
+  const hide = document.querySelector("#hide-recipe");
+  if (hide && window.recipeHidden) {
+    hide.hidden = false;
+    hide.addEventListener("click", () => {
+      if (!window.recipeHidden.hide(recipe.id)) {
+        document.querySelector("#hide-error").textContent =
+          "Could not save hidden recipes. Allow browser storage to keep this preference.";
+        return;
+      }
+      try {
+        sessionStorage.setItem("my-recipes:hidden-undo", recipe.id);
+      } catch {
+        /* Hiding still persists. */
+      }
+      location.assign(back.href);
+    });
+  }
   const form = document.querySelector("#personal-form");
   const status = document.querySelector("#save-status");
   const storageKey = "everyday-recipes-annotations-v1";

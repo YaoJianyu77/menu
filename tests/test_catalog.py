@@ -255,3 +255,22 @@ def test_clean_titles_and_metadata_only_affect_rendering(tmp_path):
     assert 'class="row-meta"' not in none
     assert "Unknown" not in none
     assert "%" not in (dist / "index.html").read_text()
+
+
+def test_hidden_controls_keep_static_dataset_and_detail_links(tmp_path):
+    setup_catalog(tmp_path, 3)
+    publish(tmp_path)
+    result = build(tmp_path)
+    dist = tmp_path / "site/dist"
+    home = (dist / "index.html").read_text()
+    assert result["recipe_detail_pages"] == 3
+    assert home.count("data-recipe-id=") == 3
+    assert 'id="hidden-toggle" type="button" hidden' in home
+    assert 'id="hidden-panel" hidden' in home
+    assert 'id="hidden-undo"' in home
+    assert home.index('src="hidden.js"') < home.index('src="catalog.js"')
+    assert (dist / "hidden.js").exists()
+    for entry in json.loads((dist / "search-index.json").read_text()):
+        detail = (dist / entry["url"]).read_text()
+        assert 'id="hide-recipe" type="button" hidden' in detail
+        assert detail.index('src="../hidden.js"') < detail.index('src="../app.js"')

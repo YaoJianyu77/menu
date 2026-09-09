@@ -88,6 +88,7 @@ const server = process.env.BASE_URL
         );
       };
       await go();
+      await require("./hiding.cjs")(page, base, index);
       assert.equal(index.length, 2556);
       assert.equal(await page.locator("h1").textContent(), "My Recipes");
       const layout = await page.evaluate(() => {
@@ -343,6 +344,7 @@ const server = process.env.BASE_URL
           "metric_units",
           "personal_notes",
           "no_overflow",
+          "hide_undo_restore_persistence_invalid_storage_detail_pagination",
           "responsive_density_sticky_keyboard",
           "no_browser_errors",
         ],

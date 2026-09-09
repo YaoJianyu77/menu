@@ -44,6 +44,12 @@
         .filter((v) => !["Other", "Unknown"].includes(v)),
     );
     if (facts.length) card.append(element("p", facts.join(" · "), "row-meta"));
+    const hide = element("button", "×", "hide-row");
+    hide.type = "button";
+    hide.dataset.hideId = recipe.id;
+    hide.setAttribute("aria-label", `Hide ${recipe.title}`);
+    hide.title = `Hide ${recipe.title}`;
+    card.append(hide);
     return card;
   }
   async function start() {
@@ -63,7 +69,125 @@
         ].join(" "),
       );
     });
+    const hiddenStore = window.recipeHidden;
+    let hiddenIds = hiddenStore.read();
+    const toggle = document.querySelector("#hidden-toggle");
+    const panel = document.querySelector("#hidden-panel");
+    const hiddenList = document.querySelector("#hidden-list");
+    const toast = document.querySelector("#hidden-toast");
+    const undo = document.querySelector("#hidden-undo");
+    let undoId = null;
+    let toastTimer;
     let page;
+    function expireToast() {
+      if (toast.contains(document.activeElement) || toast.matches(":hover")) {
+        toastTimer = setTimeout(expireToast, 2000);
+      } else toast.hidden = true;
+    }
+    function notify(id, saved = true) {
+      undoId = id;
+      document.querySelector("#hidden-message").textContent = saved
+        ? "Recipe hidden."
+        : "Recipe hidden for now. Browser storage could not save it.";
+      toast.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(expireToast, 10000);
+    }
+    function refresh() {
+      hiddenIds = hiddenStore.read();
+      render();
+      renderHidden();
+    }
+    function renderHidden() {
+      const hiddenRows = rows.filter((r) => hiddenIds.has(r.id));
+      toggle.textContent = `Hidden (${hiddenRows.length.toLocaleString()})`;
+      document.querySelector("#restore-all").disabled = hiddenRows.length === 0;
+      if (panel.hidden) return;
+      hiddenList.replaceChildren(
+        ...hiddenRows.map((r) => {
+          const li = element("li");
+          const link = element("a", r.title);
+          link.href = r.url;
+          const restore = element("button", "Restore");
+          restore.type = "button";
+          restore.dataset.restoreId = r.id;
+          restore.setAttribute("aria-label", `Restore ${r.title}`);
+          li.append(link, restore);
+          return li;
+        }),
+      );
+      if (!hiddenRows.length)
+        hiddenList.append(element("li", "No hidden recipes."));
+    }
+    toggle.hidden = false;
+    toggle.addEventListener("click", () => {
+      panel.hidden = !panel.hidden;
+      toggle.setAttribute("aria-expanded", String(!panel.hidden));
+      renderHidden();
+    });
+    function closePanel() {
+      panel.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.focus();
+    }
+    document
+      .querySelector("#hidden-close")
+      .addEventListener("click", closePanel);
+    panel.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closePanel();
+    });
+    results.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-hide-id]");
+      if (!button) return;
+      const ordinal = [...results.querySelectorAll("[data-hide-id]")].indexOf(
+        button,
+      );
+      const id = button.dataset.hideId;
+      hiddenIds.add(id);
+      const saved = hiddenStore.write(hiddenIds);
+      render();
+      renderHidden();
+      notify(id, saved);
+      const buttons = results.querySelectorAll("[data-hide-id]");
+      (buttons[Math.min(ordinal, buttons.length - 1)] || toggle).focus({
+        preventScroll: true,
+      });
+    });
+    undo.addEventListener("click", () => {
+      if (undoId) hiddenStore.restore(undoId);
+      hiddenIds.delete(undoId);
+      toast.hidden = true;
+      clearTimeout(toastTimer);
+      render();
+      renderHidden();
+      const row = [...results.querySelectorAll(".recipe-row")].find(
+        (r) => r.dataset.recipeId === undoId,
+      );
+      (row?.querySelector("a") || toggle).focus({ preventScroll: true });
+      undoId = null;
+    });
+    hiddenList.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-restore-id]");
+      if (!button) return;
+      hiddenStore.restore(button.dataset.restoreId);
+      hiddenIds.delete(button.dataset.restoreId);
+      render();
+      renderHidden();
+      (
+        hiddenList.querySelector("button") ||
+        document.querySelector("#hidden-close")
+      ).focus({ preventScroll: true });
+    });
+    document.querySelector("#restore-all").addEventListener("click", () => {
+      hiddenStore.write([]);
+      hiddenIds.clear();
+      render();
+      renderHidden();
+      document.querySelector("#hidden-close").focus();
+    });
+    window.addEventListener("storage", (e) => {
+      if (e.key === hiddenStore.key || e.key === null) refresh();
+    });
     function restore() {
       const params = new URLSearchParams(location.search);
       search.value = params.get("q") || "";
@@ -76,6 +200,7 @@
       page = Number.isSafeInteger(candidate) && candidate > 0 ? candidate : 1;
     }
     function matches(row) {
+      if (hiddenIds.has(row.id)) return false;
       const terms = normalize(search.value.trim()).split(/\s+/).filter(Boolean);
       if (!terms.every((term) => row.searchText.includes(term))) return false;
       return filters.every((filter) => {
@@ -187,6 +312,14 @@
     });
     restore();
     render();
+    renderHidden();
+    try {
+      const pending = sessionStorage.getItem("my-recipes:hidden-undo");
+      sessionStorage.removeItem("my-recipes:hidden-undo");
+      if (pending && hiddenIds.has(pending)) notify(pending);
+    } catch {
+      /* Session storage is optional. */
+    }
     configElement.dataset.loaded = "true";
   }
   start().catch(() =>
