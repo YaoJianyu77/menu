@@ -80,7 +80,7 @@ def test_build_generates_offline_browse_and_recipe_pages(tmp_path):
     for field in ("cuisine", "status", "total", "active", "protein", "method", "coverage"):
         assert f'data-filter="{field}"' in index
     assert "30 mL" in recipe
-    assert "raw-test" in recipe
+    assert "raw-test" not in recipe
     assert "Unknown" in recipe
     assert 'id="personal-form"' in recipe
     assert "https://example.com/recipe" in recipe
@@ -126,7 +126,7 @@ def test_source_urls_are_immutable_even_when_containing_measure_words(tmp_path):
     assert not FORBIDDEN.search(visible_text(page))
 
 
-def test_evidence_states_and_unassessed_score_are_visible(tmp_path):
+def test_catalog_compatibility_states_are_visible(tmp_path):
     prepare(tmp_path)
     data = publish(tmp_path)
     row = data["recipes"][0]
@@ -146,22 +146,24 @@ def test_evidence_states_and_unassessed_score_are_visible(tmp_path):
         score_denominator=60,
         ingredient_matches=[
             {"canonical_ingredient": "olive oil", "status": "likely_available"},
-            {"canonical_ingredient": "salt", "status": "unknown"},
+            {
+                "canonical_ingredient": "salt",
+                "status": "unknown",
+                "compatibility_status": "probably",
+            },
             {"canonical_ingredient": "tomato", "status": "verified_available"},
         ],
     )
     atomic_json(tmp_path / "site/content/recipes.json", data)
     build(tmp_path)
     page = (tmp_path / "site/dist/recipes/test.html").read_text()
-    assert "Likely available" in page
-    assert "data-availability='unknown'>Unknown" in page
-    assert "data-availability='verified_available'>Verified" in page
-    assert "Food Lion: Not assessed" in page
-    assert "Verified store coverage" in page
-    assert 'data-verified-coverage="0">0%' in page
-    assert "Food Lion catalog coverage" in page
-    assert "Provisional recommendation" in page
-    assert "60 assessed weight points" in page
+    assert "Food Lion: Yes" in page
+    assert "Food Lion: Probably" in page
+    assert "Verified store coverage" not in page
+    assert "Food Lion compatibility" in page
+    assert "Local stock may vary." in page
+    assert "Provisional recommendation" not in page
+    assert "assessed weight points" not in page
 
 
 def test_variant_control_preserves_access_to_all_records(tmp_path):
@@ -202,6 +204,53 @@ def test_package_and_count_display_preserves_cooking_facts(tmp_path):
     build(tmp_path)
     page = (tmp_path / "site/dist/recipes/test.html").read_text()
     assert "2 (425 g) cans chickpeas, drained" in page
-    assert "Recipe data needs review" in page
-    assert "ingredient table contains an unresolved row" in page
+    assert "Some recipe details need checking" in page
+    assert "ingredient table contains an unresolved row" not in page
     assert "15 oz" not in page
+
+
+def test_homepage_focuses_on_meals_without_collection_jargon(tmp_path):
+    prepare(tmp_path)
+    data = publish(tmp_path)
+    row = data["recipes"][0]
+    row["match"].update(
+        meal_type="Full meal",
+        everyday_eligible=True,
+        effort_level="Easy",
+        score_band="Good",
+        total_score=72,
+    )
+    atomic_json(tmp_path / "site/content/recipes.json", data)
+    build(tmp_path)
+    page = (tmp_path / "site/dist/index.html").read_text()
+    for label in (
+        "Best everyday meals",
+        "Under 30 minutes",
+        "Easy / low-effort",
+        "Air fryer",
+        "One-pan / one-pot",
+        "High Food Lion compatibility",
+        "By cuisine",
+    ):
+        assert label in page
+    assert 'data-everyday="true"' in page
+    assert "Full meal" in page
+    assert "72/100" in page
+    for jargon in ("shard", "parser", "completion", "catalog IDs", "verified at the store"):
+        assert jargon not in page
+    assert "collections" not in data
+
+
+def test_discovery_variant_is_hidden_without_losing_exact_identity(tmp_path):
+    prepare(tmp_path)
+    data = publish(tmp_path)
+    data["recipes"][0]["match"].update(
+        ranking_representative=True, discovery_representative=False, everyday_eligible=True
+    )
+    atomic_json(tmp_path / "site/content/recipes.json", data)
+    build(tmp_path)
+    page = (tmp_path / "site/dist/index.html").read_text()
+    assert 'data-representative="false"' in page
+    assert 'hidden><span class="badge"' in page
+    assert 'href="recipes/test.html"' in page
+    assert data["recipes"][0]["match"]["ranking_representative"] is True

@@ -53,7 +53,7 @@ def test_available_claim_requires_verification_timestamp():
         for name in ["chicken breast", "tomato"]
     ]
     result = evaluate(recipe, inventory, preferences, aliases)
-    assert result["status"] != "approved"
+    assert result["verified_ingredient_count"] == 0
     assert result["matched_ingredients"] == 0
     assert all(item["status"] == "unknown" for item in result["ingredient_matches"])
 
@@ -71,8 +71,8 @@ def test_unknown_inventory_does_not_become_missing_essential():
     result = evaluate(recipe, [], preferences, aliases)
     assert result["missing_essential"] == []
     assert result["unknown_ingredients"] == ["tomato"]
-    assert result["foodlion_score"] is None
-    assert result["foodlion_effective_weight"] == 0
+    assert result["foodlion_score"] > 0
+    assert result["foodlion_effective_weight"] == 35
 
 
 def test_distinct_chicken_cuts_are_not_silent_availability_substitutions():

@@ -15,10 +15,29 @@
   }
   const search = document.querySelector("#search");
   const includeVariants = document.querySelector("#include-variants");
+  let preset = "everyday";
+  const presets = [...document.querySelectorAll("[data-preset]")];
+  function matchesPreset(card) {
+    if (preset === "all") return true;
+    if (card.dataset.everyday === "false") return false;
+    const methods = card.dataset.method.toLowerCase();
+    if (preset === "quick")
+      return card.dataset.total !== "" && Number(card.dataset.total) <= 30;
+    if (preset === "easy") return card.dataset.effort === "Easy";
+    if (preset === "airfryer") return /air[ -]?fryer/.test(methods);
+    if (preset === "onepan")
+      return /one[ -]?(pan|pot)|sheet[ -]?pan/.test(methods);
+    if (preset === "compatible")
+      return (
+        card.dataset.coverage !== "" && Number(card.dataset.coverage) >= 0.85
+      );
+    return true;
+  }
   function filter() {
     let count = 0;
     for (const card of cards) {
       const visible =
+        matchesPreset(card) &&
         (includeVariants.checked || card.dataset.representative !== "false") &&
         card.dataset.name.toLowerCase().includes(search.value.toLowerCase()) &&
         filters.every((input) => {
@@ -40,12 +59,29 @@
     document.querySelector("#empty").hidden = count > 0;
   }
   if (search) {
+    for (const button of presets)
+      button.addEventListener("click", () => {
+        preset = button.dataset.preset;
+        presets.forEach((item) =>
+          item.setAttribute("aria-pressed", String(item === button)),
+        );
+        filter();
+        if (preset === "cuisine")
+          document.querySelector('[data-filter="cuisine"]').focus();
+      });
     includeVariants.addEventListener("change", filter);
     [search, ...filters].forEach((input) =>
       input.addEventListener("input", filter),
     );
     document.querySelector("#reset").addEventListener("click", () => {
       includeVariants.checked = false;
+      preset = "everyday";
+      presets.forEach((item) =>
+        item.setAttribute(
+          "aria-pressed",
+          String(item.dataset.preset === preset),
+        ),
+      );
       [search, ...filters].forEach((input) => {
         input.value = "";
       });

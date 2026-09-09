@@ -1,6 +1,6 @@
 version: 1
 roles:
-  dessert: (?i)\b(cookies?|brownies?|cupcakes?|cheesecakes?|cakes?|ice cream|gelato|fudge|truffles?|sweets?|desserts?|sorbet|panna
+  dessert: (?i)\b(cookies?|brownies?|cupcakes?|cheesecakes?|cakes?|ice cream|gelato|fudge|truffles?|candy|confections?|desserts?|sorbet|panna
     cotta|tiramisu|baklava|pudding|cobbler|crumble)\b|蛋糕|饼干|甜品|布丁|冰淇淋|曲奇|糖水|(?i:\b(frosting|icing|energy
     balls|no.bake bites|chocolate bark)\b)
   condiment: '(?i)\b(dressing|vinaigrette|marinade|seasoning|spice blend|hot sauce|ketchup|mayonnaise|aioli|pesto|salsa|guacamole|hummus|tzatziki|jam|jelly|chutney|za.atar)\b|\b(?:pistachio|almond|peanut|cashew|sunflower)

@@ -5,7 +5,6 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from .core import load_yaml, read_jsonl, stable_id, write_jsonl
-from .meal_quality import meal_signals
 
 
 def falling(value, good, bad):
@@ -65,331 +64,314 @@ def ingredient_evidence(entry, configured_store_id=None):
 
 
 def evaluate(recipe, inventory, preferences, aliases, snapshot=None, meal_rules=None):
+    """Catalog compatibility plus practical meal ranking; local stock is not a gate."""
+    from .practical import practical_signals
+
     snapshot = snapshot or {}
-    p, s = preferences, preferences["scoring"]
-    fl = p["foodlion"]
-    weights = s["weights"]
-    meal_rules = meal_rules or load_yaml(
-        Path(__file__).resolve().parents[1] / "config/meal-rules.yaml"
-    )
-    quality = meal_signals(recipe, aliases, meal_rules)
-    configured_store_id = (snapshot.get("configured_store") or {}).get("store_id")
+    rules = meal_rules or load_yaml(Path(__file__).resolve().parents[1] / "config/meal-rules.yaml")
+    p, fl = preferences["practical"], preferences["foodlion"]
+    weights = preferences["scoring"]["weights"]
+    quality = practical_signals(recipe, aliases, rules, preferences)
     by_name = {}
-    priority = {"unknown": 0, "likely_available": 1, "unavailable": 2, "verified_available": 3}
     for entry in inventory:
         name = entry.get("canonical_ingredient", entry.get("name"))
-        if (
-            priority[ingredient_evidence(entry, configured_store_id)[0]]
-            > priority[ingredient_evidence(by_name.get(name), configured_store_id)[0]]
-        ):
+        previous = by_name.get(name)
+        if previous is None or len(entry.get("evidence", [])) > len(previous.get("evidence", [])):
             by_name[name] = entry
     unique = {}
-    for ingredient in recipe["ingredients"]:
-        name = ingredient["canonical_ingredient"]
-        if name:
-            unique[name] = unique.get(name, True) and bool(ingredient.get("optional", False))
+    for i in recipe["ingredients"]:
+        if i["canonical_ingredient"]:
+            unique[i["canonical_ingredient"]] = unique.get(
+                i["canonical_ingredient"], True
+            ) and bool(i.get("optional"))
     matches = []
     for name, optional in sorted(unique.items()):
-        entry = by_name.get(name) or {}
-        status, evidence = ingredient_evidence(entry, configured_store_id)
+        entry = by_name.get(name, {})
+        status, evidence = ingredient_evidence(
+            entry, (snapshot.get("configured_store") or {}).get("store_id")
+        )
+        catalog = status in {"verified_available", "likely_available"} or bool(
+            entry.get("product_ids")
+            and evidence
+            and all(
+                (
+                    (urlparse(e.get("source_url", "")).hostname or "") == "foodlion.com"
+                    or (urlparse(e.get("source_url", "")).hostname or "").endswith(".foodlion.com")
+                )
+                for e in evidence
+            )
+        )
+        compatibility = (
+            "yes" if catalog else "probably" if name in fl["pantry_basics"] else "unknown"
+        )
         matches.append(
             {
                 "canonical_ingredient": name,
                 "optional": optional,
                 "status": status,
+                "compatibility_status": compatibility,
+                "foodlion_compatible": compatibility != "unknown",
+                "compatibility_basis": "Food Lion catalog product"
+                if catalog
+                else "common pantry basic; not a stock assertion"
+                if compatibility == "probably"
+                else "no mapped catalog evidence",
                 "product_ids": entry.get("product_ids", []) if status != "unknown" else [],
-                "snapshot_id": entry.get("snapshot_id"),
-                "store_id": entry.get("store_id"),
-                "verified_at": entry.get("last_verified_at"),
-                "observed_at": entry.get("last_observed_at") or entry.get("last_verified_at"),
                 "evidence": evidence[:3],
                 "evidence_count": len(evidence),
                 "evidence_index": "data/foodlion/evidence/ingredients.jsonl" if evidence else None,
+                "snapshot_id": entry.get("snapshot_id"),
+                "store_id": entry.get("store_id"),
+                "verified_at": entry.get("last_verified_at"),
+                "observed_at": entry.get("last_observed_at"),
                 "store_specificity": sorted(
                     {e.get("store_specificity", "unknown") for e in evidence}
                 ),
                 "substitution": None,
             }
         )
-    essential = [m for m in matches if not m["optional"]]
-    optional = [m for m in matches if m["optional"]]
-    verified = sum(m["status"] == "verified_available" for m in matches)
-    likely = sum(m["status"] == "likely_available" for m in matches)
-    unavailable = sum(m["status"] == "unavailable" for m in matches)
-    known = verified + likely
-    coverage = known / max(1, len(matches))
-    evidence_fraction = (known + unavailable) / max(1, len(matches))
+    required = [i for i in matches if not i["optional"]] or matches
+    optional = [i for i in matches if i["optional"]]
+    coverage = sum(i["foodlion_compatible"] for i in required) / max(1, len(required))
 
-    # Unknown weight is omitted, not assigned zero availability. The point score is
-    # conditional on observed evidence; effective contribution scales with coverage.
-    def coverage_parts(items):
-        if not items:
-            return 0, 0
-        credit = sum(
-            1
-            if m["status"] == "verified_available"
-            else fl.get("likely_score_credit", 0.85)
-            if m["status"] == "likely_available"
-            else 0
-            for m in items
-        ) / len(items)
-        observed = sum(m["status"] != "unknown" for m in items) / len(items)
-        return credit, observed
+    def compatibility_credit(items):
+        return sum(
+            1 if i["foodlion_compatible"] else fl["unknown_compatibility_credit"] for i in items
+        ) / max(1, len(items))
 
-    ec, eo = coverage_parts(essential or matches)
-    oc, oo = coverage_parts(optional or essential or matches)
-    share = s["essential_availability_share"]
-    available_credit = share * ec + (1 - share) * oc
-    observed_weight = share * eo + (1 - share) * oo
-    foodlion = weights["foodlion"] * available_credit / observed_weight if observed_weight else None
-    effective_foodlion = weights["foodlion"] * available_credit
-    active = recipe.get("active_minutes")
-    total = recipe.get("total_minutes")
-    active_credit = (
-        min(1, p["max_active_minutes"] / max(1, active))
-        if isinstance(active, (int, float)) and active >= 0
-        else s["unknown_evidence_credit"]
+    optional_share = fl["optional_share"] if optional else 0
+    foodlion = weights["foodlion"] * (
+        (1 - optional_share) * compatibility_credit(required)
+        + optional_share * compatibility_credit(optional)
     )
-    active_bound_supported = (
-        active is None and isinstance(total, (int, float)) and 0 < total <= p["max_active_minutes"]
-    )
-    if active_bound_supported:
-        active_credit = 1
-    total_credit = (
-        min(1, p["preferred_max_total_minutes"] / max(1, total))
-        if isinstance(total, (int, float)) and total >= 0
-        else s["unknown_evidence_credit"]
-    )
-    time = weights["time"] * (
-        s["active_time_share"] * active_credit + (1 - s["active_time_share"]) * total_credit
-    )
-    entries = aliases.get("ingredients", {})
-    protein = bool(quality["protein_ingredients"])
-    vegetable = bool(quality["vegetable_ingredients"])
-    nutrition_preferences = p["nutrition"]
-    signals = [
-        ("prefer_meaningful_protein_source", protein, s["protein_share"]),
-        ("prefer_vegetables", vegetable, s["vegetables_share"]),
-        ("prefer_balanced_meal", protein and vegetable, s["balance_share"]),
-    ]
-    enabled_weight = sum(weight for key, signal, weight in signals if nutrition_preferences[key])
-    nutrition_credit = (
-        sum(weight * bool(signal) for key, signal, weight in signals if nutrition_preferences[key])
-        / enabled_weight
-        if enabled_weight
-        else 0
-    )
-    processed_fraction = sum(bool(entries.get(name, {}).get("processed")) for name in unique) / max(
-        1, len(unique)
-    )
-    if (
-        nutrition_preferences["penalize_highly_processed_food_heavy_meals"]
-        and processed_fraction >= s["processed_fraction_threshold"]
-    ):
-        nutrition_credit *= 1 - s["processed_penalty"]
-    if quality["rich_ingredient_fraction"] >= meal_rules["rich_fraction_threshold"]:
-        nutrition_credit *= meal_rules["rich_balance_multiplier"]
-    nutrition = weights["nutrition"] * nutrition_credit
-    ingredient_credit = falling(
-        len(unique), s["simple_ingredient_count"], s["complex_ingredient_count"]
-    )
-    step_credit = (
-        falling(len(recipe["instructions"]), s["simple_step_count"], s["complex_step_count"])
-        if recipe["instructions"]
-        else 0
-    )
-    pref = p["preferences"]
-    methods = set(recipe.get("cooking_method", []))
-    method_preferences = {
-        "one-pan": "prefer_one_pan",
-        "sheet-pan": "prefer_sheet_pan",
-        "air fryer": "prefer_air_fryer",
-        "oven": "prefer_simple_oven",
-        "stovetop": "prefer_stovetop_simple",
+    unknown_names = {
+        i["canonical_ingredient"] for i in matches if i["compatibility_status"] == "unknown"
     }
-    bonuses = [bool(method in methods and pref[key]) for method, key in method_preferences.items()]
-    low_cleanup = bool(methods & {"one-pan", "sheet-pan", "no-cook"}) and pref["prefer_low_cleanup"]
+    unknown_main = sorted(
+        {
+            i["canonical_ingredient"]
+            for i in recipe["ingredients"]
+            if i["canonical_ingredient"] in unknown_names
+            and not i.get("optional")
+            and isinstance(i.get("quantity"), (int, float))
+            and i.get("unit") in {"g", "kg"}
+            and i["quantity"] * (1000 if i["unit"] == "kg" else 1) >= p["unknown_main_min_g"]
+        }
+    )
+    if unknown_main:
+        foodlion *= p["unknown_main_compatibility_multiplier"]
+    active, total = recipe.get("active_minutes"), recipe.get("total_minutes")
+    timing = recipe.get("timing_quality") or {}
+    scored_total = (
+        max(
+            total or 0,
+            timing.get("step_time_lower_bound_minutes") or 0,
+            quality["instruction_time_lower_bound"],
+        )
+        or None
+    )
+
+    def band(value, bands, unknown):
+        return (
+            unknown
+            if value is None
+            else next((credit for limit, credit in bands if value <= limit), bands[-1][1])
+        )
+
+    active_credit = band(active, p["active_bands"], p["unknown_active_credit"])
+    total_credit = band(scored_total, p["total_bands"], p["unknown_total_credit"])
+    estimated_active = {
+        "Easy": p["unknown_active_credit"],
+        "Moderate": p["moderate_unknown_active_credit"],
+        "Involved": 0.45,
+    }[quality["effort_level"]]
+    if active is None:
+        active_credit = estimated_active
+    if (
+        active is None
+        and scored_total is not None
+        and scored_total <= preferences["max_active_minutes"]
+    ) and quality["effort_level"] == "Easy":
+        active_credit = 1
+    time_credit = (
+        p["active_time_share"] * active_credit + (1 - p["active_time_share"]) * total_credit
+    )
+    if active is None and scored_total is None:
+        time_credit = min(p["both_unknown_credit"], estimated_active)
+    if timing.get("requires_advance_preparation") or quality["advance_preparation"]:
+        time_credit *= p["advance_preparation_multiplier"]
+    time = weights["time"] * time_credit
+    protein, vegetables, staple = (
+        bool(quality[k])
+        for k in ["protein_ingredients", "vegetable_ingredients", "staple_ingredients"]
+    )
+    aliases.get("ingredients", {})
+    processed = quality["processed_ingredient_fraction"]
+    nutrition_credit = (
+        p["protein_share"] * protein
+        + p["vegetable_share"] * vegetables
+        + p["staple_share"] * staple
+        + p["balanced_share"] * (protein and vegetables)
+    )
+    if processed >= p["processed_fraction_threshold"]:
+        nutrition_credit *= 1 - p["processed_penalty"]
+    if quality["rich_ingredient_fraction"] >= p["rich_fraction_threshold"]:
+        nutrition_credit *= 1 - p["rich_penalty"]
+    added_fat_ml = sum(
+        i.get("quantity", 0) * (1000 if i.get("unit") == "L" else 1)
+        for i in recipe["ingredients"]
+        if i["canonical_ingredient"]
+        in {"cooking oil", "vegetable oil", "olive oil", "coconut oil", "butter"}
+        and i.get("unit") in {"mL", "L"}
+        and isinstance(i.get("quantity"), (int, float))
+    )
+    servings = recipe.get("servings")
+    prominent_fat = added_fat_ml >= p["prominent_added_fat_ml"] and (
+        not isinstance(servings, (int, float))
+        or servings <= 0
+        or added_fat_ml / servings >= p["added_fat_ml_per_serving"]
+    )
+    if prominent_fat:
+        nutrition_credit *= p["added_fat_proxy_multiplier"]
+    nutrition = weights["nutrition"] * nutrition_credit
+    ingredient_credit = falling(len(unique), p["simple_ingredients"], p["complex_ingredients"])
+    step_credit = falling(
+        max(len(recipe["instructions"]), quality["preparation_operations"]),
+        p["simple_steps"],
+        p["complex_steps"],
+    )
+    easy_cleanup = bool(
+        set(quality["cooking_method"]) & {"one-pan", "one-pot", "sheet-pan", "air fryer", "no-cook"}
+    )
     batch = (
         isinstance(recipe.get("servings"), (int, float))
-        and recipe["servings"] >= s["batch_servings"]
-        and pref["prefer_batch_cooking"]
+        and recipe["servings"] >= preferences["scoring"]["batch_servings"]
     )
-    common = (
-        sum(name in entries for name in unique) / max(1, len(unique))
-        if pref["prefer_common_ingredients"]
-        else 0
-    )
-    # Known canonical pantry ingredients are reusable proxies, not price/usage claims.
-    reusable = (
-        any(
-            entries.get(name, {}).get("category") in {"pantry", "grain", "spice"} for name in unique
-        )
-        and pref["prefer_reusable_ingredients"]
-    )
-    method_credit = min(
-        1,
-        s["method_bonus"] * bool(any(bonuses) or low_cleanup or batch)
-        + (1 - s["method_bonus"]) * (common + bool(reusable)) / 2,
-    )
+    cleanup_credit = 1 if easy_cleanup else max(0.3, 0.9 - 0.15 * quality["vessel_count"])
     simplicity = weights["simplicity"] * (
-        s["simplicity_ingredient_share"] * ingredient_credit
-        + s["simplicity_step_share"] * step_credit
-        + s["simplicity_method_share"] * method_credit
+        0.4 * ingredient_credit
+        + 0.35 * step_credit
+        + 0.2 * cleanup_credit
+        + 0.05 * (1 if batch else 0.5)
     )
-    missing_essential = [
-        m["canonical_ingredient"] for m in essential if m["status"] == "unavailable"
-    ]
-    missing_optional = [m["canonical_ingredient"] for m in optional if m["status"] == "unavailable"]
-    unknown = [m["canonical_ingredient"] for m in matches if m["status"] == "unknown"]
-    reasons, restrictions = [], []
-    if unknown:
-        reasons.append(
-            "Food Lion evidence unknown for some ingredients; unobserved availability weight excluded"
-        )
-    if likely:
-        reasons.append(
-            "Food Lion catalog evidence supports likely availability, not configured-store stock"
-        )
-    if missing_essential:
-        restrictions.append("explicit unavailable essential Food Lion ingredient")
-    if len(missing_optional) > fl["max_missing_optional_ingredients"]:
-        restrictions.append("too many explicitly unavailable optional Food Lion ingredients")
-    if active_bound_supported:
-        reasons.append(
-            "active effort is bounded by explicit total time within the configured active-time budget"
-        )
-    elif active is None:
-        reasons.append("active cooking time unknown; no active-time credit")
-    elif active > p["max_active_minutes"]:
-        restrictions.append("active cooking time exceeds preference")
-    if total is None:
-        reasons.append("total cooking time unknown; no total-time credit")
-    if quality["meal_role"] in {"dessert", "condiment", "drink", "bread", "component", "side"}:
-        restrictions.append("dish role is not an everyday complete meal: " + quality["meal_role"])
-    if quality["quality_issues"]:
-        restrictions.extend(quality["quality_issues"])
-    quality_points = time + nutrition + simplicity
-    denominator = (
-        weights["time"]
-        + weights["nutrition"]
-        + weights["simplicity"]
-        + weights["foodlion"] * observed_weight
-    )
-    score = 100 * (quality_points + effective_foodlion) / denominator
+    score = foodlion + time + nutrition + simplicity
     adjustments = []
-    if quality["meal_role"] in {"dessert", "condiment", "drink", "bread", "component", "side"}:
-        score *= meal_rules["non_meal_score_multiplier"]
-        adjustments.append(
-            {"reason": "non-meal dish role", "multiplier": meal_rules["non_meal_score_multiplier"]}
-        )
-    if not (protein and vegetable):
-        score *= meal_rules.get("no_meal_structure_multiplier", 0.8)
+    if not quality["everyday_eligible"]:
+        cap = p["quality_score_cap"] if quality["structural_issues"] else p["non_meal_score_cap"]
+        score = min(score, cap)
         adjustments.append(
             {
-                "reason": "complete protein/vegetable structure not established",
-                "multiplier": meal_rules.get("no_meal_structure_multiplier", 0.8),
+                "reason": "recipe text needs review"
+                if quality["structural_issues"]
+                else "not a complete everyday meal",
+                "cap": cap,
             }
         )
-    identity_multiplier = (
-        1
-        - meal_rules.get("unresolved_score_penalty", 0.5)
-        * quality["unresolved_ingredient_fraction"]
+    score = round(score, 3)
+    score_band = next(
+        label
+        for cutoff, label in [
+            (90, "Excellent"),
+            (80, "Strong"),
+            (70, "Good"),
+            (60, "Usable"),
+            (0, "Low priority"),
+        ]
+        if score >= cutoff
     )
-    score *= identity_multiplier
-    if identity_multiplier < 1:
-        adjustments.append(
-            {
-                "reason": "unresolved ingredient identities limit ranking confidence (independent of stock evidence)",
-                "multiplier": identity_multiplier,
-            }
-        )
-    if quality["quality_issues"]:
-        score *= meal_rules["quality_failure_score_multiplier"]
-        adjustments.append(
-            {
-                "reason": "extraction quality issues",
-                "multiplier": meal_rules["quality_failure_score_multiplier"],
-            }
-        )
-    if score < p["minimum_approval_score"]:
-        reasons.append("score below configured approval threshold")
-    strict = (
-        not restrictions
-        and score >= p["minimum_approval_score"]
-        and verified / max(1, len(matches)) >= fl["minimum_ingredient_coverage"]
-        and not any(m["status"] != "verified_available" for m in essential)
-        and (active is not None or active_bound_supported or not p["require_known_active_time"])
-    )
-    recommendation = p.get("recommendations", {})
-    candidate = (
-        not restrictions
-        and score >= recommendation.get("minimum_score", 65)
-        and (total is not None or not recommendation.get("require_known_total_time", True))
-        and (total is None or total <= p["preferred_max_total_minutes"])
-        and (protein and vegetable or not recommendation.get("require_protein_and_vegetable", True))
-        and quality["unresolved_ingredient_fraction"]
-        <= meal_rules["maximum_unresolved_fraction_for_recommendation"]
-        and len(unique) <= meal_rules["maximum_ingredients_for_recommendation"]
-        and coverage >= recommendation.get("minimum_catalog_evidence_coverage", 0.5)
-    )
-    status = "approved" if strict else "rejected" if restrictions else "needs-review"
-    recommendation_status = (
-        "recommended" if strict else "recommended-with-caveats" if candidate else "not-recommended"
-    )
-    if candidate and not strict:
-        reasons.append(
-            "provisional recommendation: check active time and exact-store product availability"
-        )
+    eligible = quality["everyday_eligible"]
+    recommended = eligible and score >= preferences["recommendations"]["minimum_score"]
+    reasons = []
+    if unknown_main:
+        reasons.append("Check the main ingredient choice for your Food Lion shop")
+    if prominent_fat:
+        reasons.append("Uses a substantial amount of added cooking fat")
+    if coverage >= 0.85:
+        reasons.append("Ingredients generally sold at Food Lion")
+    elif coverage >= 0.7:
+        reasons.append("Most ingredients fit a Food Lion shop")
+    else:
+        reasons.append("Some ingredient choices may need checking")
+    if active is not None and active <= 15:
+        reasons.append("At most 15 minutes of active work")
+    elif total is not None and total <= 30:
+        reasons.append("Ready within 30 minutes")
+    elif active is None:
+        reasons.append("Active time not listed; effort estimated from recipe steps")
+    if protein and vegetables:
+        reasons.append("Protein and vegetables")
+    elif protein:
+        reasons.append("Includes a protein source")
+    if staple:
+        reasons.append("Includes a staple food")
+    if easy_cleanup:
+        reasons.append("Simple cooking method and cleanup")
+    if batch:
+        reasons.append("Makes several servings")
+    if timing.get("requires_advance_preparation") or quality["advance_preparation"]:
+        reasons.append("Plan ahead for preparation or resting")
+    if quality["structural_issues"]:
+        reasons.append("Check the original recipe before cooking")
+    verified = sum(i["status"] == "verified_available" for i in matches)
+    likely = sum(i["status"] == "likely_available" for i in matches)
+    unknown = [i["canonical_ingredient"] for i in matches if i["status"] == "unknown"]
+    unavailable = sum(i["status"] == "unavailable" for i in matches)
     return {
         "recipe_id": recipe["id"],
-        "foodlion_score": round(foodlion, 3) if foodlion is not None else None,
-        "foodlion_effective_points": round(effective_foodlion, 3),
-        "foodlion_effective_weight": round(weights["foodlion"] * observed_weight, 3),
+        "foodlion_score": round(foodlion, 3),
+        "foodlion_effective_points": round(foodlion, 3),
+        "foodlion_effective_weight": weights["foodlion"],
         "time_score": round(time, 3),
+        "nutrition_score": round(nutrition, 3),
+        "simplicity_score": round(simplicity, 3),
+        "total_score": score,
+        "score_denominator": 100,
+        "score_adjustments": adjustments,
         "active_time_evidence": "explicit"
         if active is not None
         else "total-time-upper-bound"
-        if active_bound_supported
-        else "unknown",
-        "nutrition_score": round(nutrition, 3),
-        "simplicity_score": round(simplicity, 3),
-        "total_score": round(score, 3),
-        "score_denominator": round(denominator, 3),
-        "score_adjustments": adjustments,
+        if scored_total is not None and scored_total <= preferences["max_active_minutes"]
+        else "estimated-effort",
+        "scored_total_minutes": scored_total,
         "foodlion_coverage": round(coverage, 6),
         "foodlion_verified_coverage": round(verified / max(1, len(matches)), 6),
-        "foodlion_evidence_coverage": round(evidence_fraction, 6),
-        "foodlion_confidence": round(
-            (verified + fl.get("likely_confidence_weight", 0.6) * likely) / max(1, len(matches)), 6
-        ),
+        "foodlion_evidence_coverage": round((verified + likely) / max(1, len(matches)), 6),
+        "foodlion_confidence": round((verified + likely) / max(1, len(matches)), 6),
         "verified_ingredient_count": verified,
         "likely_ingredient_count": likely,
         "unknown_ingredient_count": len(unknown),
         "unsupported_ingredient_count": unavailable,
-        "total_ingredients": len(unique),
-        "matched_ingredients": known,
-        "missing_essential": missing_essential,
-        "missing_optional": missing_optional,
+        "total_ingredients": len(matches),
+        "required_ingredients": len(required),
+        "matched_ingredients": sum(i["foodlion_compatible"] for i in required),
+        "missing_essential": [],
+        "missing_optional": [],
         "unknown_ingredients": unknown,
         "ingredient_matches": matches,
-        "status": status,
-        "recommendation_status": recommendation_status,
-        "reasons": restrictions + reasons or ["all configured approval gates passed"],
+        "status": "approved" if recommended else "needs-review" if eligible else "rejected",
+        "recommendation_status": "recommended" if recommended else "not-recommended",
+        "everyday_eligible": eligible,
+        "meal_type": quality["meal_type"],
+        "effort_level": quality["effort_level"],
+        "score_band": score_band,
+        "cooking_method": quality["cooking_method"],
+        "reasons": reasons,
         "quality": quality,
         "evidence": {
             "protein_ingredient_present": protein,
-            "vegetable_ingredient_present": vegetable,
-            "nutrition_method": "ingredient presence proxy; portions and nutritional adequacy not established",
-            "processed_ingredient_fraction": processed_fraction,
+            "vegetable_ingredient_present": vegetables,
+            "staple_ingredient_present": staple,
+            "processed_ingredient_fraction": processed,
+            "prominent_added_fat": prominent_fat,
+            "unknown_main_ingredients": unknown_main,
+            "nutrition_method": "ingredient structure; no calorie or macro estimates",
         },
-        "input_fingerprint": stable_id(
-            recipe, inventory, preferences, aliases, snapshot, meal_rules
-        ),
+        "input_fingerprint": stable_id(recipe, inventory, preferences, aliases, rules),
         "foodlion_snapshot": {
             key: snapshot.get(key)
             for key in ("snapshot_id", "snapshot_date", "completion_status", "configured_store")
         },
-        "matcher_version": 2,
+        "matcher_version": 3,
     }
 
 
@@ -431,5 +413,12 @@ def match_recipes(root):
             row["reasons"].append(
                 "exact duplicate retained; representative is used in recommendations"
             )
+    recipes_by_id = {r["id"]: r for r in read_jsonl(root / "data/recipes/normalized/recipes.jsonl")}
+    seen_titles = set()
+    for row in sorted(rows, key=lambda r: (-r["total_score"], r["recipe_id"])):
+        title = " ".join(recipes_by_id[row["recipe_id"]]["title"].casefold().split())
+        row["discovery_representative"] = row["ranking_representative"] and title not in seen_titles
+        if row["ranking_representative"]:
+            seen_titles.add(title)
     write_jsonl(root / "data/matches/results.jsonl", rows)
     return rows

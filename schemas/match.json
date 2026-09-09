@@ -13,7 +13,11 @@
     "unsupported_ingredient_count",
     "foodlion_verified_coverage",
     "foodlion_confidence",
-    "recommendation_status"
+    "recommendation_status",
+    "meal_type",
+    "everyday_eligible",
+    "effort_level",
+    "score_band"
   ],
   "properties": {
     "recipe_id": {
@@ -43,7 +47,8 @@
         "required": [
           "canonical_ingredient",
           "status",
-          "product_ids"
+          "product_ids",
+          "compatibility_status"
         ],
         "properties": {
           "status": {
@@ -52,6 +57,13 @@
               "likely_available",
               "unknown",
               "unavailable"
+            ]
+          },
+          "compatibility_status": {
+            "enum": [
+              "yes",
+              "probably",
+              "unknown"
             ]
           }
         }
@@ -74,12 +86,12 @@
       "minimum": 0
     },
     "foodlion_score": {
-      "type": [
-        "number",
-        "null"
-      ],
+      "type": "number",
       "minimum": 0,
-      "maximum": 40
+      "maximum": 35
+    },
+    "everyday_eligible": {
+      "type": "boolean"
     }
   },
   "$schema": "https://json-schema.org/draft/2020-12/schema"

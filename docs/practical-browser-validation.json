@@ -1,0 +1,38 @@
+{
+  "browser": "Chromium (Playwright)",
+  "browserErrors": [],
+  "cards": 2589,
+  "collectionJargonAbsent": true,
+  "compatibilityStates": "Yes / Probably / Unknown",
+  "coverageFilter": "passed",
+  "desktopOverflow": false,
+  "desktop_viewport": {
+    "height": 900,
+    "width": 1366
+  },
+  "duplicateVisibility": "passed",
+  "manual_visual_review": "Mobile homepage and recipe page; desktop homepage and recipe cards. Clean layout and readable practical labels; no horizontal overflow.",
+  "mealPresets": "passed",
+  "mobile": "passed",
+  "mobile_viewport": {
+    "height": 844,
+    "width": 390
+  },
+  "notes": "passed",
+  "presetCounts": {
+    "airfryer": 1,
+    "all": 2292,
+    "allWithVersions": 2589,
+    "compatible": 4,
+    "cuisine": 160,
+    "easy": 58,
+    "everyday": 160,
+    "onepan": 10,
+    "quick": 13
+  },
+  "recipePages": 3,
+  "search": "passed",
+  "status": "passed",
+  "timestamp": "2026-09-09T01:30:09-04:00",
+  "unknownIngredientLabels": "passed"
+}

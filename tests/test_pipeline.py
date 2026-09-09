@@ -116,11 +116,11 @@ def test_match_determinism_coverage_and_unknown(raw, aliases):
     partial = evaluate(recipe, inventory[:2], prefs, aliases, snapshot)
     assert partial["foodlion_coverage"] == 0.666667
     assert partial["unknown_ingredients"] == ["olive oil"]
-    assert partial["status"] != "approved"
+    assert partial["status"] == "approved"
     empty = evaluate(recipe, [], prefs, aliases)
-    assert empty["foodlion_score"] is None
-    assert empty["foodlion_effective_weight"] == 0
-    assert empty["status"] == "needs-review"
+    assert empty["foodlion_score"] > 0
+    assert empty["foodlion_effective_weight"] == 35
+    assert empty["everyday_eligible"]
     assert empty["missing_essential"] == []
 
 
@@ -182,7 +182,7 @@ def test_catalog_absence_is_not_explicit_stock_evidence(raw, aliases):
     result = evaluate(recipe, [], preferences, aliases, snapshot)
     assert result["missing_essential"] == []
     assert sorted(result["unknown_ingredients"]) == ["chicken breast", "olive oil", "tomato"]
-    assert result["status"] == "needs-review"
+    assert result["everyday_eligible"]
 
 
 def test_cuisine_markup_and_trailing_metric_quantities(raw, aliases):
@@ -233,9 +233,9 @@ def test_likely_catalog_and_unknown_are_not_store_stock(raw, aliases):
     unknown = evaluate(recipe, [], preferences, aliases)
     assert likely["verified_ingredient_count"] == 0
     assert likely["likely_ingredient_count"] == 3
-    assert likely["status"] != "approved"
-    assert unknown["foodlion_score"] is None
-    assert unknown["score_denominator"] == 60
+    assert likely["status"] == "approved"
+    assert unknown["foodlion_score"] > 0
+    assert unknown["score_denominator"] == 100
     assert unknown["total_score"] > 50
     assert unknown["missing_essential"] == []
     assert likely == evaluate(recipe, catalog, preferences, aliases)
@@ -284,7 +284,7 @@ def test_dessert_and_condiment_cannot_be_recommended_as_meals(raw, aliases):
         result = evaluate(recipe, [], preferences, aliases)
         assert result["status"] == "rejected"
         assert result["recommendation_status"] == "not-recommended"
-        assert result["total_score"] < 40
+        assert result["total_score"] < 60
 
 
 def test_unknown_time_never_outscores_supported_fast_time(raw, aliases):

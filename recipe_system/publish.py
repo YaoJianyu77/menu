@@ -100,51 +100,19 @@ def publish(root):
         recipe["match"] = matches.get(
             recipe["id"], {"status": "unknown", "reasons": ["Recipe has not been evaluated."]}
         )
+        recipe["cooking_method"] = recipe["match"].get("cooking_method", recipe["cooking_method"])
         recipe["personal"] = personal.get(recipe["id"], {})
         records.append(clean(recipe))
     records.sort(
         key=lambda row: (
-            not row["match"].get("ranking_representative", True),
+            not row["match"].get(
+                "discovery_representative", row["match"].get("ranking_representative", True)
+            ),
             -(row["match"].get("total_score") or 0),
             row["id"],
         )
     )
-    limitations = []
-    latest = _json(root / "state/foodlion/latest.json", {})
-    foodlion_manifest = root / "state/foodlion/manifest.json"
-    if latest.get("snapshot_id"):
-        foodlion_manifest = root / "snapshots/foodlion" / latest["snapshot_id"] / "manifest.json"
-    for name, path in (
-        ("Recipes", root / "state/recipes/manifest.json"),
-        ("Food Lion", foodlion_manifest),
-    ):
-        manifest = _json(path, {})
-        limitations.append(
-            {
-                "pipeline": name,
-                "status": manifest.get(
-                    "completion_status", manifest.get("status", "not collected")
-                ),
-                "warnings": manifest.get("warnings", []),
-                "failures": len(manifest.get("failures", []))
-                if isinstance(manifest.get("failures"), list)
-                else manifest.get("failures", 0),
-            }
-        )
-    evidence_manifest = _json(root / "data/foodlion/evidence/manifest.json", {})
-    data = {
-        "recipes": records,
-        "collections": clean(limitations),
-        "foodlion_evidence": {
-            key: evidence_manifest.get(key)
-            for key in (
-                "products_processed",
-                "canonical_ingredients_with_likely_evidence",
-                "store_verified_products",
-                "retrieved_at",
-            )
-        },
-    }
+    data = {"recipes": records}
     atomic_json(root / "site/content/recipes.json", data)
     return data
 
@@ -182,25 +150,8 @@ def visible_text(document):
     return " ".join(parser.parts)
 
 
-def _evidence_html(value):
-    if isinstance(value, dict):
-        return (
-            "<dl>"
-            + "".join(
-                f"<div><dt>{esc(key)}</dt><dd>{_evidence_html(item)}</dd></div>"
-                for key, item in value.items()
-            )
-            + "</dl>"
-        )
-    if isinstance(value, list):
-        return ", ".join(_evidence_html(item) for item in value)
-    if isinstance(value, str) and _url(value) != "#":
-        return f'<a href="{esc(value)}" rel="noreferrer">Source evidence ↗</a>'
-    return esc(value)
-
-
 def _page(title, body, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{esc(title)} · Everyday recipes</title><link rel="stylesheet" href="{prefix}style.css"><script defer src="{prefix}app.js"></script></head><body><header><a href="{prefix}index.html">Everyday recipes</a><span>Williamsburg, Virginia · Personal collection</span></header><main>{body}</main><footer>Local static collection. Verified means recorded store evidence. Likely available means Food Lion catalog evidence; local stock is unverified. Unknown means insufficient evidence, not unavailable.</footer></body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{esc(title)} · Everyday recipes</title><link rel="stylesheet" href="{prefix}style.css"><script defer src="{prefix}app.js"></script></head><body><header><a href="{prefix}index.html">Everyday recipes</a><span>Williamsburg, Virginia · Personal collection</span></header><main>{body}</main><footer>Food Lion compatibility reflects ingredients the store generally sells. Local stock may vary.</footer></body></html>'''
 
 
 def _options(label, key):
@@ -220,6 +171,7 @@ def build(root):
     for name in ("style.css", "app.js"):
         shutil.copyfile(root / "site" / name, dist / name)
     cards = []
+    everyday_count = 0
     for row in data["recipes"]:
         identifier = row["id"]
         filename = re.sub(r"[^a-zA-Z0-9_-]", "_", identifier)
@@ -227,37 +179,47 @@ def build(root):
         match = row["match"]
         coverage = match.get("foodlion_coverage")
         coverage_text = f"{coverage:.0%}" if coverage is not None else "Unknown"
-        verified = match.get("foodlion_verified_coverage")
-        verified_text = f"{verified:.0%}" if verified is not None else "Unknown"
-        status = match.get("recommendation_status", match.get("status", "unknown"))
-        foodlion_score = match.get("foodlion_score")
-        foodlion_score_text = (
-            f"{foodlion_score}/40" if foodlion_score is not None else "Not assessed"
+        status = match.get("score_band", "Not ranked")
+        meal_type = match.get("meal_type", "Main dish")
+        effort = match.get("effort_level", "Unknown")
+        total_text = (
+            f"{row['total_minutes']} min"
+            if row.get("total_minutes") is not None
+            else "Time not listed"
         )
-        recommendation_note = (
-            "Provisional recommendation: check unknown ingredients and local store stock."
-            if status == "recommended-with-caveats"
-            else ""
+        active_text = (
+            f"{row['active_minutes']} min"
+            if row.get("active_minutes") is not None
+            else "Not listed"
         )
         attrs = {
             "name": row.get("title") or "Untitled recipe",
             "cuisine": row.get("cuisine") or "Unknown",
             "status": status,
-            "representative": str(match.get("ranking_representative", True)).lower(),
+            "representative": str(
+                match.get("discovery_representative", match.get("ranking_representative", True))
+            ).lower(),
             "total": row.get("total_minutes"),
             "active": row.get("active_minutes"),
             "protein": row.get("major_protein") or "Unknown",
             "method": "|".join(row.get("cooking_method") or []),
             "coverage": coverage,
-            "verified": verified,
+            "everyday": str(match.get("everyday_eligible", True)).lower(),
+            "effort": effort,
+            "meal": meal_type,
             "unknown": match.get("unknown_ingredient_count"),
         }
         attr_html = " ".join(
             f'data-{key}="{esc(value) if value is not None else ""}"'
             for key, value in attrs.items()
         )
+        initially_visible = match.get("everyday_eligible", True) and match.get(
+            "discovery_representative", match.get("ranking_representative", True)
+        )
+        everyday_count += int(initially_visible)
+        initial_hidden = "" if initially_visible else " hidden"
         cards.append(
-            f'<article class="card" {attr_html}><span class="badge">{esc(status)}</span><h2><a href="recipes/{filename}.html">{esc(row.get("title"))}</a></h2><p>{esc(row.get("cuisine"))} · {esc(row.get("major_protein"))}</p><dl><div><dt>Score</dt><dd>{esc(match.get("total_score"))}/100</dd></div><div><dt>Active / total</dt><dd>{esc(row.get("active_minutes"))} / {esc(row.get("total_minutes"))} min</dd></div><div><dt>Food Lion catalog</dt><dd>{coverage_text}</dd></div></dl></article>'
+            f'<article class="card" {attr_html}{initial_hidden}><span class="badge">{esc(meal_type)}</span><h2><a href="recipes/{filename}.html">{esc(row.get("title"))}</a></h2><p>{esc(row.get("cuisine") or "Cuisine not listed")} · {esc(total_text)}</p><dl><div><dt>Score</dt><dd>{esc(match.get("total_score"))}/100</dd></div><div><dt>Effort</dt><dd>{esc(effort)}</dd></div><div><dt>Food Lion compatibility</dt><dd>{coverage_text}</dd></div></dl></article>'
         )
         ingredient_rows = []
         ingredient_matches = match.get("ingredient_matches") or []
@@ -282,25 +244,34 @@ def build(root):
                 {},
             )
             availability = evidence.get("status", "unknown")
-            availability_label = {
-                "verified_available": "Verified",
-                "available": "Verified",
-                "likely_available": "Likely available",
+            compatibility = evidence.get("compatibility_status")
+            availability_label = {"yes": "Yes", "probably": "Probably", "unknown": "Unknown"}.get(
+                compatibility
+            ) or {
+                "verified_available": "Yes",
+                "available": "Yes",
+                "likely_available": "Yes",
+                "probably_available": "Probably",
                 "unknown": "Unknown",
-                "unavailable": "Unavailable (verified)",
+                "unavailable": "Unknown",
             }.get(availability, "Unknown")
             details = ""
-            if evidence:
-                details = f"<details><summary>Food Lion evidence</summary>{_evidence_html(evidence)}</details>"
+            evidence_urls = [
+                item.get("source_url")
+                for item in evidence.get("evidence", [])
+                if isinstance(item, dict) and _url(item.get("source_url")) != "#"
+            ]
+            if evidence_urls:
+                details = f'<details><summary>Product links</summary><a href="{esc(evidence_urls[0])}" rel="noreferrer">Food Lion product ↗</a></details>'
             ingredient_rows.append(
-                f"<li><span>{ingredient_label}{' (optional)' if item.get('optional') else ''}</span><small data-availability='{esc(availability)}'>{esc(availability_label)}</small>{details}</li>"
+                f"<li><span>{ingredient_label}{' (optional)' if item.get('optional') else ''}</span><small data-availability='{esc(availability)}'>Food Lion: {esc(availability_label)}</small>{details}</li>"
             )
         instructions = (
             '<ol class="steps">'
             + "".join(f"<li>{esc(step)}</li>" for step in row["instructions"])
             + "</ol>"
             if row["instructions"]
-            else "<p>Open the original recipe for the cooking instructions. Full instruction redistribution is not confirmed for this source.</p>"
+            else "<p>Open the original recipe for the cooking instructions. Cooking instructions are available at the source link below.</p>"
         )
         payload = json.dumps(
             {"id": identifier, "personal": row.get("personal", {})}, ensure_ascii=False
@@ -312,27 +283,29 @@ def build(root):
         )
         quality_issues = match.get("quality", {}).get("quality_issues") or row.get("quality_issues")
         quality_warning = (
-            "<aside>Recipe data needs review: "
-            + esc("; ".join(quality_issues))
-            + ". Check the original source before cooking.</aside>"
+            "<aside>Some recipe details need checking. Read the original recipe before cooking.</aside>"
             if quality_issues
             else ""
         )
-        body = f'''<a class="back" href="../index.html">← Browse recipes</a><section class="recipe-head"><span class="badge">{esc(status)}</span><h1>{esc(row.get("title"))}</h1><p>{esc(row.get("cuisine"))} · {esc(row.get("servings"))} servings</p><dl><div><dt>Recommendation</dt><dd>{esc(match.get("total_score"))}/100</dd></div><div><dt>Active time</dt><dd>{esc(row.get("active_minutes"))} min</dd></div><div><dt>Total time</dt><dd>{esc(row.get("total_minutes"))} min</dd></div><div><dt>Food Lion catalog coverage</dt><dd>{coverage_text}</dd></div><div><dt>Verified store coverage</dt><dd data-verified-coverage="{esc(verified)}">{verified_text}</dd></div></dl><p>{esc(recommendation_note)}</p><p>Method: {esc(", ".join(row.get("cooking_method") or []) or "Unknown")} · Protein: {esc(row.get("major_protein"))}</p></section>{quality_warning}<div class="recipe-columns"><section><h2>Ingredients</h2><ul class="ingredients">{"".join(ingredient_rows)}</ul></section><section><h2>Instructions</h2>{instructions}<p>{esc("; ".join(row.get("normalization_warnings") or []))}</p><a class="button" href="{esc(_url(row.get("original_source_url") or row.get("source_url")))}" rel="noreferrer">Open original recipe ↗</a></section></div><details><summary>Recommendation details & provenance</summary><p>Food Lion: {esc(foodlion_score_text)} · Time: {esc(match.get("time_score"))}/25 · Meal balance: {esc(match.get("nutrition_score"))}/20 · Simplicity: {esc(match.get("simplicity_score"))}/15</p><p>Evidence: {esc(match.get("verified_ingredient_count"))} verified · {esc(match.get("likely_ingredient_count"))} likely · {esc(match.get("unknown_ingredient_count"))} unknown · {esc(match.get("unsupported_ingredient_count"))} unsupported. Score uses {esc(match.get("score_denominator"))} assessed weight points; unassessed components are excluded.</p><ul>{"".join(f"<li>{esc(reason)}</li>" for reason in match.get("reasons", []))}</ul><p>Nutrition: {esc(json.dumps(row.get("nutrition"), ensure_ascii=False) if row.get("nutrition") else "Unknown")}</p><p>Attribution: {esc(row.get("attribution") or row.get("source"))}<br>License: {esc(row.get("source_license"))}<br>{license_link}<br><a href="{esc(_url(row.get("source_url")))}" rel="noreferrer">Collected source & license context ↗</a><br>Raw record: {esc(row.get("raw_id"))}<br>Source revision: {esc(row.get("source_revision"))}<br>Retrieved: {esc(row.get("retrieved_at"))}</p></details><section class="personal"><h2>My kitchen notes</h2><p>Saved in this browser. Export a backup to preserve your annotations.</p><form id="personal-form"><label><input type="checkbox" name="favorite"> Favorite</label><label><input type="checkbox" name="cooked"> Cooked</label><label><input type="checkbox" name="would_cook_again"> Would cook again</label><label>Rating<select name="rating"><option value="">Unrated</option>{"".join(f"<option>{n}</option>" for n in range(1, 6))}</select></label><label>Last cooked<input type="date" name="last_cooked_date"></label><label class="wide">Notes<textarea name="notes" rows="4"></textarea></label><label class="wide">Modifications<textarea name="modifications" rows="2"></textarea></label><button type="submit">Save notes</button><output id="save-status" aria-live="polite"></output></form><button id="export-notes" type="button">Export all notes</button><label class="import-label">Import notes<input id="import-notes" type="file" accept="application/json"></label></section><script id="recipe-data" type="application/json">{payload}</script>'''
+        body = f'''<a class="back" href="../index.html">← Browse recipes</a><section class="recipe-head"><span class="badge">{esc(meal_type)} · {esc(status)}</span><h1>{esc(row.get("title"))}</h1><p>{esc(row.get("cuisine"))} · {esc(row.get("servings"))} servings</p><dl><div><dt>Recommendation</dt><dd>{esc(match.get("total_score"))}/100</dd></div><div><dt>Active time</dt><dd>{esc(active_text)}</dd></div><div><dt>Total time</dt><dd>{esc(total_text)}</dd></div><div><dt>Food Lion compatibility</dt><dd>{coverage_text}</dd></div><div><dt>Effort</dt><dd>{esc(effort)}</dd></div></dl><p>Local stock may vary.</p><p>Method: {esc(", ".join(row.get("cooking_method") or []) or "Unknown")} · Protein: {esc(row.get("major_protein"))}</p></section>{quality_warning}<div class="recipe-columns"><section><h2>Ingredients</h2><ul class="ingredients">{"".join(ingredient_rows)}</ul></section><section><h2>Instructions</h2>{instructions}<a class="button" href="{esc(_url(row.get("original_source_url") or row.get("source_url")))}" rel="noreferrer">Open original recipe ↗</a></section></div><details><summary>Why this recipe ranks here</summary><p>Food Lion compatibility: {esc(match.get("foodlion_score"))}/35 · Convenience: {esc(match.get("time_score"))}/25 · Meal balance: {esc(match.get("nutrition_score"))}/25 · Simplicity: {esc(match.get("simplicity_score"))}/15</p><p>Meal balance reflects the ingredients, not a calculated nutrition label.</p><ul>{"".join(f"<li>{esc(reason)}</li>" for reason in match.get("reasons", []))}</ul></details><details><summary>Nutrition & source</summary><p>Nutrition: {esc(json.dumps(row.get("nutrition"), ensure_ascii=False) if row.get("nutrition") else "Not provided")}</p><p>Attribution: {esc(row.get("attribution") or row.get("source"))}<br>License: {esc(row.get("source_license"))}<br>{license_link}<br><a href="{esc(_url(row.get("source_url")))}" rel="noreferrer">Recipe source ↗</a></p></details><section class="personal"><h2>My kitchen notes</h2><p>Saved in this browser. Export a backup to preserve your annotations.</p><form id="personal-form"><label><input type="checkbox" name="favorite"> Favorite</label><label><input type="checkbox" name="cooked"> Cooked</label><label><input type="checkbox" name="would_cook_again"> Would cook again</label><label>Rating<select name="rating"><option value="">Unrated</option>{"".join(f"<option>{n}</option>" for n in range(1, 6))}</select></label><label>Last cooked<input type="date" name="last_cooked_date"></label><label class="wide">Notes<textarea name="notes" rows="4"></textarea></label><label class="wide">Modifications<textarea name="modifications" rows="2"></textarea></label><button type="submit">Save notes</button><output id="save-status" aria-live="polite"></output></form><button id="export-notes" type="button">Export all notes</button><label class="import-label">Import notes<input id="import-notes" type="file" accept="application/json"></label></section><script id="recipe-data" type="application/json">{payload}</script>'''
         output = _page(row.get("title"), body, "../")
         if FORBIDDEN.search(visible_text(output)):
             raise ValueError(f"Forbidden output unit in {identifier}")
         (dist / "recipes" / f"{filename}.html").write_text(output)
-    limitations = " · ".join(
-        f"{esc(item['pipeline'])}: {esc(item['status'])}" for item in data["collections"]
+    presets = (
+        ("everyday", "Best everyday meals"),
+        ("quick", "Under 30 minutes"),
+        ("easy", "Easy / low-effort"),
+        ("airfryer", "Air fryer"),
+        ("onepan", "One-pan / one-pot"),
+        ("compatible", "High Food Lion compatibility"),
+        ("cuisine", "By cuisine"),
+        ("all", "All recipes"),
     )
-    evidence_summary = data.get("foodlion_evidence", {})
-    likely_ingredients = evidence_summary.get("canonical_ingredients_with_likely_evidence")
-    if likely_ingredients is not None:
-        limitations += (
-            f" · Food Lion public catalog: {esc(likely_ingredients)} ingredients likely available; "
-            f"{esc(evidence_summary.get('store_verified_products'))} products verified at the store."
-        )
-    body = f"""<h1>What’s for dinner?</h1><p class="intro">A practical recipe collection, with transparent ingredient coverage and cooking times.</p><aside>{limitations or "Collection status unknown"}</aside><section class="filters" aria-label="Recipe filters"><label class="search">Search recipes<input id="search" type="search" placeholder="Recipe name…"></label>{_options("Cuisine", "cuisine")}{_options("Status", "status")}{_options("Main protein", "protein")}{_options("Cooking method", "method")}<label>Max total minutes<input data-filter="total" type="number" min="0" placeholder="Any"></label><label>Max active minutes<input data-filter="active" type="number" min="0" placeholder="Any"></label><label>Min Food Lion catalog coverage %<input data-filter="coverage" type="number" min="0" max="100" placeholder="Any"></label><label><input id="include-variants" type="checkbox"> Include duplicate variants</label><button id="reset" type="button">Reset filters</button></section><p id="count" role="status">{len(cards)} recipes</p><section id="cards" class="cards">{"".join(cards)}</section><p id="empty" {"hidden" if cards else ""}>No recipes match. Change the filters or collect additional sources.</p>"""
+    preset_html = "".join(
+        f'<button type="button" data-preset="{key}" aria-pressed="{str(key == "everyday").lower()}">{label}</button>'
+        for key, label in presets
+    )
+    body = f"""<h1>What’s for dinner?</h1><p class="intro">Practical meals, ordinary ingredients, and less time in the kitchen. Local stock may vary.</p><nav class="presets" aria-label="Find a meal">{preset_html}</nav><section class="filters" aria-label="Recipe filters"><label class="search">Search recipes<input id="search" type="search" placeholder="Recipe name…"></label>{_options("Cuisine", "cuisine")}{_options("Recommendation", "status")}{_options("Meal type", "meal")}{_options("Main protein", "protein")}{_options("Cooking method", "method")}<label>Max total minutes<input data-filter="total" type="number" min="0" placeholder="Any"></label><label>Max active minutes<input data-filter="active" type="number" min="0" placeholder="Any"></label><label>Min Food Lion compatibility %<input data-filter="coverage" type="number" min="0" max="100" placeholder="Any"></label><label><input id="include-variants" type="checkbox"> Include similar versions</label><button id="reset" type="button">Reset filters</button></section><p id="count" role="status">{everyday_count} recipes</p><section id="cards" class="cards">{"".join(cards)}</section><p id="empty" {"hidden" if cards else ""}>No recipes match. Try another category or clear a filter.</p>"""
     (dist / "index.html").write_text(_page("Browse", body))
     return {"pages": len(cards) + 1, "output": str(dist)}

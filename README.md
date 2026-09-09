@@ -2,7 +2,7 @@
 
 A local, private, static recipe library with independent, resumable collection pipelines. No backend, live rendering requests, paid services, deployment, or remote Git pushes are required.
 
-**Availability is evidence, not a guess.** The configured store remains **1234 Richmond Road, Williamsburg, VA 23185**. Its exact inventory is unverified, but Food Lion's permitted public grocery catalog supplies 22,994 product IDs/URLs and conservative likelihood evidence for 155 canonical ingredients. Other Food Lion stores may supply additional evidence without changing the selected store. See the [collection report](docs/collection-report.md), [Food Lion evidence](docs/foodlion-evidence.md), and [parser recovery audit](docs/parser-recovery.md) for measured coverage and remaining failures.
+**What to cook:** browse practical everyday meals, quick meals, easy dishes, air-fryer meals and high Food Lion compatibility. Public Food Lion catalog evidence is enough: **Yes** means catalog-supported, **Probably** means a common pantry assumption, and **Unknown** means no mapped evidence. Local stock may vary. Missing time or nutrition metadata does not disqualify a meal. See [practical ranking review](docs/practical-top100.md) for the current recommendations.
 
 ## Quick start
 
@@ -107,29 +107,32 @@ Deduplication fingerprints exact normalized title, cuisine, quantities, ingredie
 
 ## Deterministic ranking
 
-Defaults live in `config/preferences.yaml` and `config/meal-rules.yaml`. Nominal weights are Food Lion 40, time 25, meal balance 20, simplicity 15.
+The practical matcher uses `config/preferences.yaml` and deterministic classification in `recipe_system/practical.py`. It never asks an LLM to choose meals.
 
-Food Lion states are **Verified**, **Likely available**, **Unknown**, and **Unavailable** only with affirmative absence evidence. Verified requires configured-store evidence; another store or national catalog supports likelihood. Missing catalog entries are unknown. Every observed match cites real Food Lion product IDs, source URLs, store specificity and observation time. Catalog coverage is `(verified + likely) / ingredient count`; verified-store coverage is separate. Confidence is `(verified + 0.6 × likely) / count`, an evidence indicator, not a stock probability.
+| Component | Maximum | Method |
+| --- | ---: | --- |
+| Food Lion compatibility | 35 | Required canonical ingredients count once; catalog evidence or an explicit pantry assumption earns full compatibility credit. Unmapped ingredients earn 0.35 uncertainty credit. Optional ingredients have only 5% weight. |
+| Convenience | 25 | Active effort 65%, total time 35%; explicit times use configured bands. Missing active time uses Easy/Moderate/Involved credits of 0.8/0.65/0.45. Both times absent receive at most 0.75 credit, without failing the recipe. |
+| Meal balance | 25 | Protein 45%, vegetables 35%, staple 15%, protein-plus-vegetables 5%. This is ingredient structure, not calorie or macro estimation. |
+| Simplicity/cleanup | 15 | Ingredient count 40%, preparation operations 35%, cleanup 20%, multiple servings 5%. Common cookware is supported. |
 
-The availability component averages essential (85%) and optional (15%) groups, falling back to the essential group when no optional ingredients exist. Within each group verified earns 1, likely 0.85, explicitly unavailable 0. Let `c` be weighted credit per ingredient and `o` the weighted fraction with observed evidence. Unknown contributes neither credit nor observed weight. Displayed Food Lion score is `40 × c / o`, or null when nothing is observed. The overall base score is:
+Catalog coverage shown on the site is compatible **required** ingredients divided by required ingredients. Optional garnishes do not lower that coverage. Yes and Probably remain distinguishable at ingredient level, with their basis preserved. Exact Richmond Road inventory never affects approval or score. Unknown does not mean unavailable. A substantial unmapped main ingredient (at least 100 g) reduces the compatibility component by 30%; this flags a potentially difficult shopping choice without rejecting the recipe or inventing a substitution.
 
-```text
-100 × (time + meal_balance + simplicity + 40 × c) / (60 + 40 × o)
-```
+Time bands give full total-time credit through 30 minutes and 90% through 45 minutes. Low active effort still ranks well with longer unattended cooking. Preparation operations, dough rolling/filling, breading, extra vessels, and English/Chinese action cues determine rough effort—not invented active minutes. Explicit instruction durations can provide a lower bound used for scoring while source times remain unchanged. Overnight preparation reduces convenience. Missing equipment, difficulty, or nutrition fields create no exclusion.
 
-Thus an inventory access block removes unobserved availability weight instead of assigning zero availability. A wholly unknown catalog does not artificially depress the score, but cannot support approval. All ingredient counts and the assessed denominator are persisted and displayed.
+Processed-food dependence and prominent cream/butter/sugar ingredients reduce the meal-balance proxy. Explicit large cooking-fat quantities trigger a modest reduction, adjusted for servings when known; this is not a claim about consumed fat or nutrients. Bread and ordinary cheese are not inherently penalized.
 
-Time uses 70% active and 30% total credit, each `min(1, preferred_limit / explicit_minutes)`. Missing times earn zero. Explicit total time no greater than 15 minutes supports the active-time upper bound; active minutes still remain null. Meal balance uses protein presence 40%, vegetable presence 35%, both 25%, normalized across enabled signals. These are ingredient-presence proxies, **not** measured nutrition or evidence of sufficient portions. Configured processed-food and rich-ingredient fractions reduce this proxy. Simplicity uses ingredient count 45%, instruction count 35%, method/common/reusable ingredient evidence 20%; thresholds and bonuses are configurable. Normal cookware receives no equipment penalty.
+Dish classification distinguishes full meals, mains, sandwiches, pasta, rice/grains, soups/stews, protein salads, breakfast, sides, snacks, desserts, condiments and baking. Dessert ingredient signatures work even when titles are unhelpful. Everyday browsing prioritizes meaningful protein-containing meals; main dishes may need a side. Non-meals are capped below 60 and remain available under All recipes. Genuinely corrupted recipe text is separately capped at 39; absent metadata is not corruption.
 
-Transparent adjustments then apply: non-meal roles multiply by 0.35; missing protein/vegetable structure by 0.8; unresolved ingredient identity by `1 − 0.5 × unresolved_fraction`; extraction/timing quality issues by 0.25. Unresolved identity is a parsing limitation, separate from missing stock evidence. Dish roles use explicit tags/title patterns; desserts, drinks, dips, sauces and components remain collected but are excluded from meal recommendations. Adjustments and evidence appear in every stored result.
+Scores mean **90+ Excellent, 80–89 Strong, 70–79 Good, 60–69 Usable, below 60 Low priority**. Everyday meals scoring at least 60 are recommended, and lower-scoring everyday meals remain browsable. Exact duplicate identities remain intact; the discovery view shows the highest-scoring version of each title, with similar versions accessible. All 2,556 unique identities are evaluated; all 2,589 source records retain stored results and provenance.
 
-Strict approval requires configured verified coverage, every essential ingredient verified, supported active-time budget and score at least 65. Provisional recommendations require score at least 65, explicit total time at most 40 minutes, protein and vegetable signals, catalog evidence coverage at least 50%, at most 20 ingredients, at most 50% unresolved ingredient identities, and no exclusion/quality restriction. They are labelled **recommended with caveats**, requiring a check of active time and exact-store availability. Zero current recipes have verified-store approval. Duplicates do not flood recommendations. All results—including rejected and unassessed records—remain stored. Matching has no clock, randomness, or free-form LLM judgment.
+Changing preferences requires only `make match publish build validate`. Collection and normalization are independent. The previous [collection report](docs/collection-report.md) is a historical engineering report, not the current recommendation policy.
 
 ## Publication and licensing
 
 The awesome-recipes index license does not license linked recipe text. Source license inspection and publication permission are separate fields. Unknown third-party content inside MIT/GPL software fixtures remains unknown. Full expressive instructions are published only when the source grant has been affirmatively assessed for this use. Other pages publish structured ingredient facts and attribution and link back for instructions; raw source prose is not copied to the site. Full raw records are local research data, not a publicly licensed redistribution bundle. Review source permissions before any future publication.
 
-The static site exposes recipe name/cuisine/status/time/protein/method/coverage filters and individual recipe pages. It builds from published JSON; rendering never calls grocery or recipe sources. It deliberately shows collection limitations and unverified values.
+The static site exposes recipe name/cuisine/status/time/protein/method/coverage filters and individual recipe pages. It builds from published JSON; rendering never calls grocery or recipe sources. Collection diagnostics stay in developer reports; the website focuses on meals, ingredients, effort and compatibility.
 
 ## Validation
 
@@ -152,7 +155,7 @@ make serve  # keep running in another terminal
 PLAYWRIGHT_MODULE="$PWD/.cache/browser/node_modules/playwright" node tests/browser/smoke.cjs
 ```
 
-The browser smoke test checks distinct catalog and verified-store coverage, duplicate visibility, recipe pages, local annotations and mobile layout against the generated dataset. It creates annotations only in its temporary browser profile.
+The browser smoke test checks everyday browsing, compatibility labels, meal shortcuts, similar-version visibility, recipe pages, local annotations and mobile layout. It creates annotations only in its temporary browser profile.
 
 ## Data quality workflows
 

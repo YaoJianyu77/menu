@@ -26,12 +26,43 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
   await page.locator("#reset").click();
   if (await page.locator('.card[data-representative="false"]:visible').count())
     throw Error("Duplicate variants should be hidden initially");
+  if (await page.locator('.card[data-everyday="false"]:visible').count())
+    throw Error("Default view must prioritize everyday meals");
+  await page.locator('[data-preset="all"]').click();
   await page.locator("#include-variants").check();
   if ((await page.locator(".card:visible").count()) !== count)
     throw Error("Include variants did not restore all records");
   await page.locator("#reset").click();
+  for (const preset of [
+    "quick",
+    "easy",
+    "airfryer",
+    "onepan",
+    "compatible",
+    "cuisine",
+  ]) {
+    await page.locator(`[data-preset="${preset}"]`).click();
+    const bad = await page.locator(".card:visible").evaluateAll(
+      (cards, preset) =>
+        cards.some((card) => {
+          const d = card.dataset;
+          if (d.everyday === "false") return true;
+          if (preset === "quick") return d.total === "" || Number(d.total) > 30;
+          if (preset === "easy") return d.effort !== "Easy";
+          if (preset === "airfryer") return !/air[ -]?fryer/i.test(d.method);
+          if (preset === "onepan")
+            return !/one[ -]?(pan|pot)|sheet[ -]?pan/i.test(d.method);
+          if (preset === "compatible")
+            return d.coverage === "" || Number(d.coverage) < 0.85;
+          return false;
+        }),
+      preset,
+    );
+    if (bad) throw Error(`Preset ${preset} returned incompatible cards`);
+  }
+  await page.locator("#reset").click();
   const urls = await page
-    .locator(".card h2 a")
+    .locator(".card:visible h2 a")
     .evaluateAll((links) => links.slice(0, 3).map((link) => link.href));
   const unknownUrl = await page.locator(".card").evaluateAll((cards) => {
     const card = cards.find((item) => Number(item.dataset.unknown) > 0);
@@ -45,14 +76,24 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
       throw Error("Missing recipe title");
     if ((await page.locator(".ingredients li").count()) < 1)
       throw Error("Missing ingredients");
-    const verified = page.locator("[data-verified-coverage]");
-    if ((await verified.textContent()) !== "0%")
-      throw Error("Current dataset must disclose zero verified store coverage");
+    if (
+      !(await page.locator("body").textContent()).includes(
+        "Local stock may vary.",
+      )
+    )
+      throw Error("Missing practical stock caveat");
     for (const label of await page
-      .locator('[data-availability="unknown"]')
+      .locator("[data-availability]")
       .allTextContents()) {
-      unknownSeen = true;
-      if (label !== "Unknown") throw Error("Unknown ingredient mislabeled");
+      if (
+        ![
+          "Food Lion: Yes",
+          "Food Lion: Probably",
+          "Food Lion: Unknown",
+        ].includes(label)
+      )
+        throw Error(`Unexpected compatibility label: ${label}`);
+      if (label === "Food Lion: Unknown") unknownSeen = true;
     }
     await page.locator('[name="notes"]').fill("Browser smoke test note");
     await page.locator('[name="cooked"]').check();
@@ -92,7 +133,8 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
       recipePages: urls.length,
       search: "passed",
       coverageFilter: "passed",
-      verifiedStoreCoverage: "0% on inspected pages",
+      compatibilityStates: "Yes / Probably / Unknown",
+      mealPresets: "passed",
       unknownIngredientLabels: "passed",
       duplicateVisibility: "passed",
       notes: "passed",
