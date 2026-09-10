@@ -12,6 +12,8 @@ format:
 lint:
 	$(RUFF) check recipe_system tests scripts
 	node --check site/catalog.js
+	node --check site/search.js
+	node --check site/detail.js
 	node --check site/hidden.js
 test:
 	$(PYTHON) -m pytest -q

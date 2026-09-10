@@ -135,21 +135,21 @@ const server = process.env.BASE_URL
       );
       assert(!index.some((r) => "score" in r || "rank" in r));
       const links = await page
-        .locator(".recipe-row h2 a")
+        .locator(".recipe-row .recipe-title")
         .evaluateAll((nodes) => nodes.map((a) => a.href));
       assert.deepEqual(
         links,
         index
           .slice(0, 120)
           .filter((r) => r.url)
-          .map((r) => new URL(r.url).href),
+          .map((r) => new URL(r.url, base).href),
       );
       assert.equal(await page.locator(".recipe-row img").count(), 0);
       async function cleanCardMetadata() {
         const cards = await page.locator(".recipe-row").evaluateAll((nodes) =>
           nodes.map((node) => ({
             id: node.dataset.recipeId,
-            title: node.querySelector("h2").textContent,
+            title: node.querySelector(".recipe-title").textContent,
             metadata: [...node.querySelectorAll("p")].map((p) => p.textContent),
           })),
         );
@@ -167,6 +167,20 @@ const server = process.env.BASE_URL
         assert(!/%/.test(await page.locator(".filters").innerText()));
       }
       await cleanCardMetadata();
+      assert(
+        await page.locator(".recipe-row").evaluateAll((rows) =>
+          rows.every((row) => {
+            const title = row.querySelector(".recipe-title");
+            const meta = row.querySelector(".row-meta");
+            return (
+              !meta ||
+              !meta.getBoundingClientRect().width ||
+              meta.hidden ||
+              title.scrollWidth <= title.clientWidth
+            );
+          }),
+        ),
+      );
       const chinese = index.find((r) => /[\u3400-\u9fff]/.test(r.title));
       await page.locator("#catalog-search").fill(chinese.title);
       await cleanCardMetadata();
@@ -186,25 +200,26 @@ const server = process.env.BASE_URL
       assert((await ids()).some((id) => lookup.get(id).title === remote.title));
       assert.equal(new URL(page.url()).searchParams.get("page"), "1");
       await reset();
-      await page.locator("#catalog-search").fill("tomato");
-      assert((await ids()).length > 0);
-      for (const id of await ids()) {
-        const r = lookup.get(id);
-        assert(
-          [
-            r.title,
-            r.cuisine,
-            r.meal_type,
-            ...r.ingredients,
-            ...r.proteins,
-            ...r.methods,
-          ]
-            .join(" ")
-            .toLowerCase()
-            .includes("tomato"),
-        );
+
+      for (const ingredient of [
+        "chicken",
+        "egg",
+        "tomato",
+        "mushroom",
+        "beef",
+        "potato",
+        "chicken mushroom",
+        "egg tomato",
+        "beef potato",
+        "scallion",
+      ]) {
+        await page.locator("#catalog-search").fill(ingredient);
+        assert((await ids()).length > 0, ingredient);
+        await filter("protein").selectOption("Chicken");
+        for (const id of await ids())
+          assert(lookup.get(id).proteins.includes("Chicken"));
+        await reset();
       }
-      await reset();
       for (const [key, field] of [
         ["cuisine", "cuisines"],
         ["meal_type", "meal_type"],
@@ -248,7 +263,35 @@ const server = process.env.BASE_URL
       );
       const before = await ids();
       const catalogURL = page.url();
-      const link = page.locator(".recipe-row h2 a").first();
+      const local = page.locator(".recipe-row .recipe-title").first();
+      const localURL = new URL(await local.getAttribute("href"), base).href;
+      await local.click();
+      assert.equal(page.url(), localURL);
+      assert(
+        await page
+          .getByRole("heading", { name: "Ingredients", exact: true })
+          .isVisible(),
+      );
+      assert(
+        await page
+          .getByRole("heading", { name: "Instructions", exact: true })
+          .isVisible(),
+      );
+      assert(
+        await page
+          .getByRole("link", { name: "View original recipe ↗" })
+          .isVisible(),
+      );
+      assert(
+        !/recommendation score|Food Lion.*%/.test(
+          await page.locator("body").innerText(),
+        ),
+      );
+      await page.getByRole("link", { name: "Back to recipes" }).click();
+      await ready();
+      assert.equal(page.url(), catalogURL);
+      assert.deepEqual(await ids(), before);
+      const link = page.locator(".recipe-row .source-link").first();
       const destination = await link.getAttribute("href");
       assert.equal(await link.getAttribute("target"), "_blank");
       assert.equal(await link.getAttribute("rel"), "noopener noreferrer");
@@ -298,7 +341,7 @@ const server = process.env.BASE_URL
       assert.equal((await ids()).length, 0);
       await reset();
       await expected(index);
-      for (const path of ["index.html"]) {
+      for (const path of ["index.html", index[0].url]) {
         await page.goto(base + path);
         if (path === "index.html") await ready();
         assert(
@@ -316,15 +359,19 @@ const server = process.env.BASE_URL
           status: 200,
           contentType: "application/json",
           body: JSON.stringify(
-            index.map((r, i) => (i === 0 ? { ...r, url: null } : r)),
+            index.map((r, i) => (i === 0 ? { ...r, source_url: null } : r)),
           ),
         }),
       );
       await go();
       const unlinked = page.locator(`[data-recipe-id="${index[0].id}"]`);
-      assert.equal(await unlinked.locator("h2 a").count(), 0);
+      assert.equal(await unlinked.locator(".recipe-title").count(), 1);
+      assert.equal(await unlinked.locator(".source-link").count(), 0);
       assert.equal(await unlinked.locator("h2").textContent(), index[0].title);
-      assert.equal(await page.locator('a[href^="recipes/"]').count(), 0);
+      assert.equal(
+        await page.locator('.recipe-title[href^="recipes/"]').count(),
+        120,
+      );
       assert.deepEqual(errors, []);
       checks.push({
         viewport,
@@ -339,8 +386,9 @@ const server = process.env.BASE_URL
           "unknown_time_last",
           "pagination",
           "query_state",
-          "persisted_external_source_links",
-          "missing_url_plain_title",
+          "local_detail_links_and_safe_source_icons",
+          "ingredient_alias_and_multi_ingredient_search",
+          "missing_source_keeps_local_title",
           "no_scores",
           "clean_titles_and_metadata",
           "no_image_layout",
@@ -358,7 +406,10 @@ const server = process.env.BASE_URL
     const page = await context.newPage();
     await page.goto(base);
     assert.equal(await page.locator(".recipe-row").count(), index.length);
-    assert.equal(await page.locator('a[href^="recipes/"]').count(), 0);
+    assert.equal(
+      await page.locator('.recipe-title[href^="recipes/"]').count(),
+      index.length,
+    );
     await context.close();
     const report = {
       status: "passed",

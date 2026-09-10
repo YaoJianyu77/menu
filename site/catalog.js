@@ -15,10 +15,6 @@
     method: "methods",
     time: "time_categories",
   };
-  const normalize = (v) =>
-    String(v ?? "")
-      .normalize("NFKC")
-      .toLowerCase();
   const known = (v) => typeof v === "number" && Number.isFinite(v);
   const element = (tag, text, cls) => {
     const node = document.createElement(tag);
@@ -27,13 +23,9 @@
     return node;
   };
   function sourceLink(recipe) {
-    const link = element(recipe.url ? "a" : "span", recipe.title);
-    if (recipe.url) {
-      link.href = recipe.url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.title = recipe.title;
-    }
+    const link = element("a", recipe.title, "recipe-title");
+    link.href = recipe.url;
+    link.title = recipe.title;
     return link;
   }
   function recipeCard(recipe) {
@@ -42,6 +34,18 @@
     const title = element("h2");
     const link = sourceLink(recipe);
     title.append(link);
+    if (recipe.source_url) {
+      const original = element("a", "↗", "source-link");
+      original.href = recipe.source_url;
+      original.target = "_blank";
+      original.rel = "noopener noreferrer";
+      original.setAttribute(
+        "aria-label",
+        `Open original recipe for ${recipe.title}`,
+      );
+      original.title = "Open original recipe";
+      title.append(original);
+    }
     card.append(title);
     const facts = [];
     if (known(recipe.total_minutes) && recipe.total_minutes > 0)
@@ -60,23 +64,32 @@
     card.append(hide);
     return card;
   }
+  function fitMetadata() {
+    const entries = [...results.querySelectorAll(".recipe-row")]
+      .map((row) => ({
+        title: row.querySelector(".recipe-title"),
+        meta: row.querySelector(".row-meta"),
+      }))
+      .filter((item) => item.meta);
+    entries.forEach(({ meta }) => {
+      meta.hidden = false;
+    });
+    const crowded = entries.filter(
+      ({ title, meta }) =>
+        title.scrollWidth > title.clientWidth ||
+        meta.scrollWidth > meta.clientWidth,
+    );
+    crowded.forEach(({ meta }) => {
+      meta.hidden = true;
+    });
+  }
+  window.addEventListener("resize", fitMetadata);
   async function start() {
     const response = await fetch(config.index_url);
     if (!response.ok) throw Error("Catalog index unavailable");
     const rows = await response.json();
-    rows.forEach((row, position) => {
-      row.position = position;
-      row.searchText = normalize(
-        [
-          row.title,
-          row.cuisine,
-          row.meal_type,
-          ...row.ingredients,
-          ...row.proteins,
-          ...row.methods,
-        ].join(" "),
-      );
-    });
+    const searchEngine = window.recipeSearch.prepare(rows);
+    let query;
     const hiddenStore = window.recipeHidden;
     let hiddenIds = hiddenStore.read();
     const toggle = document.querySelector("#hidden-toggle");
@@ -208,8 +221,7 @@
     }
     function matches(row) {
       if (hiddenIds.has(row.id)) return false;
-      const terms = normalize(search.value.trim()).split(/\s+/).filter(Boolean);
-      if (!terms.every((term) => row.searchText.includes(term))) return false;
+      if (!row.searchResult.eligible) return false;
       return filters.every((filter) => {
         if (!filter.value) return true;
         const key = filter.dataset.catalogFilter;
@@ -221,6 +233,12 @@
     }
     function order(a, b) {
       let difference = 0;
+      if (query.normalized && sort.value === "default") {
+        difference =
+          a.searchResult.priority - b.searchResult.priority ||
+          b.searchResult.ingredients - a.searchResult.ingredients;
+        if (difference) return difference;
+      }
       if (sort.value === "time")
         difference =
           (a.total_minutes ?? Infinity) - (b.total_minutes ?? Infinity);
@@ -244,8 +262,17 @@
       params.set("page", page);
       const query = `?${params}`;
       history.replaceState(null, "", query);
+      try {
+        sessionStorage.setItem("my-recipes-catalog-query", query);
+      } catch {
+        /* URL still retains state. */
+      }
     }
     function render() {
+      query = searchEngine.query(search.value);
+      rows.forEach((row) => {
+        row.searchResult = searchEngine.evaluate(row, query);
+      });
       const matching = rows.filter(matches).sort(order);
       const pages = Math.max(1, Math.ceil(matching.length / config.page_size));
       page = Math.min(page, pages);
@@ -291,6 +318,7 @@
         }
         button("Next", page + 1, page === pages);
       }
+      fitMetadata();
       remember();
     }
     count.tabIndex = -1;

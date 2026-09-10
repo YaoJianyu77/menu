@@ -1,5 +1,6 @@
 """Static, complete catalog views over persisted unique recipes; no ranking changes."""
 
+import hashlib
 import json
 import re
 from collections import defaultdict
@@ -124,6 +125,15 @@ PROTEIN_GROUPS = {
 }
 
 
+def recipe_url(identifier):
+    name = (
+        identifier
+        if re.fullmatch(r"[A-Za-z0-9_-]+", identifier)
+        else "recipe-" + hashlib.sha256(identifier.encode()).hexdigest()[:24]
+    )
+    return "recipes/" + name + ".html"
+
+
 def source_url(row):
     """Use only persisted, safe HTTP(S) locations; prefer the original recipe."""
     for value in (row.get("original_source_url"), row.get("source_url")):
@@ -245,7 +255,10 @@ def index_entry(row):
     cats = row["categories"]
     return {
         "id": row["id"],
-        "url": source_url(row),
+        "url": recipe_url(row["id"]),
+        "source_url": source_url(row),
+        "original_title": row.get("search_original_title") or row.get("title"),
+        "ingredient_search": row.get("ingredient_search", []),
         "title": display_title(row.get("title")),
         "sort_title": display_title(row.get("title")).casefold(),
         "cuisine": ", ".join(cats["cuisine"]),
@@ -264,16 +277,14 @@ def index_entry(row):
 
 
 def recipe_card(row):
-    """Compact external-link directory row; no local recipe content."""
+    """Dense local title link and independent original-source icon."""
     from .publish import esc
 
     facts = cooking_facts({**row, "methods": row.get("methods", [])[:1]})
     metadata = f'<p class="row-meta">{esc(facts)}</p>' if facts else ""
-    title = (
-        f'<a title="{esc(row["title"])}" href="{esc(row["url"])}" target="_blank" rel="noopener noreferrer">{esc(row["title"])}</a>'
-        if row.get("url")
-        else esc(row["title"])
-    )
+    title = f'<a class="recipe-title" title="{esc(row["title"])}" href="{esc(row["url"])}">{esc(row["title"])}</a>'
+    if row.get("source_url"):
+        title += f'<a class="source-link" href="{esc(row["source_url"])}" target="_blank" rel="noopener noreferrer" aria-label="Open original recipe for {esc(row["title"])}" title="Open original recipe">↗</a>'
     return f'<article class="recipe-row" data-recipe-id="{esc(row["id"])}"><h2>{title}</h2>{metadata}</article>'
 
 
@@ -322,7 +333,7 @@ def build_catalog(root, records, dist):
         + "</select></label>"
     )
     controls = (
-        '<section class="filters" aria-label="Recipe filters"><label class="search"><span class="sr-only">Search recipes</span><input id="catalog-search" type="search" placeholder="Search recipes…"></label>'
+        '<section class="filters" aria-label="Recipe filters"><label class="search"><span class="sr-only">Search recipes</span><input id="catalog-search" type="search" placeholder="Search recipes or ingredients…"></label>'
         + fields
         + '<label><span class="sr-only">Sort</span><select id="catalog-sort"><option value="default">Default</option><option value="name">Name</option><option value="time">Time</option></select></label><button id="catalog-reset" type="button">Clear</button></section>'
     )
@@ -335,7 +346,7 @@ def build_catalog(root, records, dist):
     body = (
         '<div class="directory"><h1>My Recipes</h1>'
         + controls
-        + f'<div class="catalog-summary"><p id="catalog-count" role="status">{len(index):,} recipes</p><button id="hidden-toggle" type="button" hidden aria-expanded="false" aria-controls="hidden-panel">Hidden (0)</button></div><section id="hidden-panel" hidden aria-label="Hidden recipes"><h2>Hidden recipes</h2><p>Hidden in this browser only.</p><button id="restore-all" type="button">Restore all</button><button id="hidden-close" type="button">Close</button><ul id="hidden-list"></ul></section><div id="hidden-toast" hidden><span role="status" id="hidden-message"></span> <button id="hidden-undo" type="button">Undo</button></div><p class="source-note">Recipe names open the original recipe in a new tab.</p><section class="recipe-directory" id="catalog-results" aria-label="Recipes">'
+        + f'<div class="catalog-summary"><p id="catalog-count" role="status">{len(index):,} recipes</p><button id="hidden-toggle" type="button" hidden aria-expanded="false" aria-controls="hidden-panel">Hidden (0)</button></div><section id="hidden-panel" hidden aria-label="Hidden recipes"><h2>Hidden recipes</h2><p>Hidden in this browser only.</p><button id="restore-all" type="button">Restore all</button><button id="hidden-close" type="button">Close</button><ul id="hidden-list"></ul></section><div id="hidden-toast" hidden><span role="status" id="hidden-message"></span> <button id="hidden-undo" type="button">Undo</button></div><p class="source-note">Titles open recipe details. ↗ opens the original in a new tab.</p><section class="recipe-directory" id="catalog-results" aria-label="Recipes">'
         + "".join(recipe_card(row) for row in index)
         + '</section><nav id="catalog-pagination" aria-label="Catalog pages">'
         + '</nav><script id="catalog-config" type="application/json">'
@@ -348,14 +359,14 @@ def build_catalog(root, records, dist):
     (dist / "index.html").write_text(document)
     manifest = {
         "recipes_published": len(index),
-        "recipe_detail_pages": 0,
-        "recipes_with_images": 0,
+        "recipe_detail_pages": len(index),
+        "recipes_with_images": sum(bool(r.get("image")) for r in records),
         "categories": {axis: len(groups) for axis, groups in membership.items()},
         "listing_pages": 1,
         "search_index_records": len(index),
         "page_size": PAGE_SIZE,
         "recipe_urls": {r["id"]: r["url"] for r in index},
-        "missing_source_urls": [r["id"] for r in index if not r["url"]],
+        "missing_source_urls": [r["id"] for r in index if not r["source_url"]],
         "membership": membership,
     }
     atomic_json(root / "site/content/catalog-manifest.json", manifest)

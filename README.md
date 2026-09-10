@@ -2,7 +2,7 @@
 
 A local, private, static recipe library with independent, resumable collection pipelines. No backend, live rendering requests, paid services, deployment, or remote Git pushes are required.
 
-**All Recipes contains the complete 2,556-recipe catalog**, including desserts, baking, sides, condiments and lower-scoring dishes. Recommended is a separate everyday-meal view. Every recipe has a clickable title and a stable detail page. Browse by cuisine, meal type, protein, cooking method or time, or search ingredients across the whole catalog. Food Lion compatibility retains Yes / Probably / Unknown; local stock may vary. See the [catalog report](docs/catalog-report.md).
+The homepage contains all **2,556 recipes** in a dense, searchable directory. Titles open local cooking pages; the adjacent ↗ opens the original recipe directly. Search ingredients, combine filters, or hide unwanted recipes in your browser. See the [catalog report](docs/catalog-report.md).
 
 ## Quick start
 
@@ -181,19 +181,19 @@ make serve                      # http://127.0.0.1:8000
 PLAYWRIGHT_MODULE="$PWD/.cache/browser/node_modules/playwright" node tests/browser/catalog.cjs
 ```
 
-The entire website is a single external-link recipe index. `site/dist/index.html` is the only HTML page; required assets are `style.css`, `catalog.js`, `hidden.js` and `search-index.json`. There are no local recipe details, category routes or static pagination pages. Build replaces the output directory so obsolete pages disappear.
+The website consists of one dense catalog and 2,556 local detail pages. There are no category or recommendation routes. Stable recipe paths retain the previous `recipes/<stable-id>.html` format; titles link locally, and a separate muted ↗ links directly to the persisted original source. Valid HTTP(S) source URLs open with `target="_blank" rel="noopener noreferrer"`. Missing source URLs omit only the icon; the local page remains available. No URLs are guessed or fetched during builds.
 
-All 2,556 unique recipes remain in the index. Titles link to the valid persisted `original_source_url`, falling back to a valid recorded `source_url`. Only HTTP(S) URLs with a hostname and no credentials or whitespace are allowed. Links use `target="_blank" rel="noopener noreferrer"`. Missing/invalid destinations render as plain titles and are reported in the catalog manifest. No source URLs are guessed or fetched during builds. Cuisine, ingredient names, protein, method and timing remain in search metadata; instructions, images, notes and nutrition are not shipped in the search index.
+The three/two/one-column directory retains 120 rows per JavaScript page, five filters, Default/Name/Time sorting and sticky controls. Search evaluates the full non-hidden dataset before pagination. Query parameters retain controls and pagination; sessionStorage preserves the last catalog query for the detail-page Back to recipes link. Without JavaScript every title remains available on the homepage.
 
-The three/two/one-column directory retains 120 rows per JavaScript page, five filters, Default/Name/Time sorting and sticky controls. Search and filters operate on all non-hidden recipes. Query parameters retain controls and pagination, while external recipes open separately. Without JavaScript the same single HTML page lists every title. Local reading and notes UI, detail images and duplicate redirect pages have been removed. Historical annotations and provenance datasets are not deleted.
+Ingredient search is generated from the existing canonical vocabulary and `config/ingredient-aliases.yaml`, original ingredient text, original/display titles and filter metadata. Text uses Unicode normalization and case folding. Longest known ingredient phrases are grouped, so “green onion” and “chicken breast” work as ingredients. Multiple query parts use AND matching. Under Default sorting, exact titles come first, then strong title matches, all-ingredient matches, other ingredient matches, and incidental metadata matches; ties preserve the existing order. Name and Time remain explicit manual sorts. Search does not alter the ranking pipeline or expose scores.
 
-Display-only Chinese title cleanup, stable IDs and internal default ranking are unchanged. The source datasets remain available for future rebuilds. The internal `site/content/recipes.json` publication interchange is not deployed; its source/ingredient/provenance records remain separate from the compact web index.
+Detail pages display metric ingredients, permitted normalized instructions, and a clear original-source link. Instruction redistribution remains permission-gated: 533 recipes provide local instructions; 2,023 provide ingredients and the source link. Only explicitly permitted persisted images can appear on detail pages; no images appear in the directory. Raw/provenance data, personal annotations and ranking remain intact. The internal `site/content/recipes.json` interchange is not deployed. Build replaces the output directory and emits 2,557 HTML pages plus static assets and the ingredient search index.
 
 ## Browser-local hidden recipes
 
 Rows provide an accessible × action. Hidden stable IDs use the existing localStorage key `my-recipes:hidden:v1`; this preference survives refreshes in the same browser/origin, without device synchronization or Git changes. Undo lasts ten seconds (longer while hovered or focused). Hidden management allows Restore and Restore all. Hidden recipes are excluded from search, filters, counts and pagination; Clear resets only filters. Corrupt storage and unknown IDs are safe. No backend, cookies or login are required.
 
-The browser suite verifies external links using intercepted test responses, without scraping original sites. It also covers all filters, URL state, dense layouts, keyboard controls, hiding, Undo, restoration, malformed storage and the JavaScript-disabled complete directory. Old multi-page collection/publication reports remain historical.
+The browser suite verifies local cooking pages and separate external icons using intercepted source responses, without scraping original sites. It also covers all filters, URL state, dense layouts, keyboard controls, hiding, Undo, restoration, malformed storage and the JavaScript-disabled complete directory. Old multi-page collection/publication reports remain historical.
 
 ## GitHub Pages
 

@@ -1,12 +1,12 @@
-"""Validate the complete single-page source index against persisted inputs."""
+"""Validate the complete catalog, dual links and detail pages against persisted inputs."""
 
 import json
 from html.parser import HTMLParser
 from pathlib import Path
 
-from .catalog import display_title, source_url
+from .catalog import display_title, recipe_url, source_url
 from .core import read_jsonl
-from .publish import FORBIDDEN, visible_text
+from .publish import FORBIDDEN, esc, visible_text
 
 
 class PageLinks(HTMLParser):
@@ -55,7 +55,11 @@ def validate_catalog(root):
         if aliases.get(r["id"], r["id"]) == r["id"]
     }
     assert {r["id"] for r in index} == expected
-    assert [p.relative_to(dist).as_posix() for p in dist.rglob("*.html")] == ["index.html"]
+    assert len(list(dist.rglob("*.html"))) == len(index) + 1
+    assert not any(
+        (dist / axis).exists()
+        for axis in ["cuisine", "method", "protein", "recommended", "meal-type", "time"]
+    )
     document = (dist / "index.html").read_text()
     page = PageLinks()
     page.feed(document)
@@ -64,29 +68,39 @@ def validate_catalog(root):
     assert not FORBIDDEN.search(visible_text(document))
     for row, original in zip(index, ordered):
         assert row["title"] == display_title(original.get("title"))
-        assert row["url"] == source_url(original)
+        assert row["url"] == recipe_url(row["id"])
+        assert row["source_url"] == source_url(original)
+        detail = (dist / row["url"]).read_text()
+        assert "<h2>Ingredients</h2>" in detail and "<h2>Instructions</h2>" in detail
+        assert not FORBIDDEN.search(visible_text(detail))
+        assert f"<h1>{esc(row['title'])}</h1>" in detail
+        for step in original.get("instructions", []):
+            assert esc(step) in detail
         assert "score" not in row and "image" not in row and "instructions" not in row
-    urls = {r["id"]: r["url"] for r in index}
-    assert len(page.links) == sum(bool(r["url"]) for r in index)
+    urls = {r["id"]: r for r in index}
+    assert len(page.links) == len(index) + sum(bool(r["source_url"]) for r in index)
     for rid, attrs in page.links:
-        assert attrs["href"] == urls[rid]
-        assert attrs["target"] == "_blank"
-        assert set(attrs["rel"].split()) >= {"noopener", "noreferrer"}
+        if attrs.get("class") == "source-link":
+            assert attrs["href"] == urls[rid]["source_url"]
+            assert attrs["target"] == "_blank"
+            assert set(attrs["rel"].split()) >= {"noopener", "noreferrer"}
+        else:
+            assert attrs["href"] == urls[rid]["url"]
+            assert "target" not in attrs
     for marker in [
         'value="score"',
         'data-catalog-filter="coverage"',
         "app.js",
         "recipe-data",
-        'href="recipes/',
     ]:
         assert marker not in document
     return {
         "recipes_published": len(index),
-        "recipe_detail_pages": 0,
-        "static_pages": 1,
+        "recipe_detail_pages": len(index),
+        "static_pages": len(index) + 1,
         "all_recipes_reachable": True,
         "external_links": "passed",
-        "missing_source_urls": sum(not r["url"] for r in index),
+        "missing_source_urls": sum(not r["source_url"] for r in index),
         "deterministic_order": "passed",
         "metric_rendering": "passed",
     }

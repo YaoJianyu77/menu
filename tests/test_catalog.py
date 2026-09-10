@@ -2,7 +2,7 @@ import json
 import shutil
 from pathlib import Path
 
-from recipe_system.catalog import categories, recipe_card, source_url
+from recipe_system.catalog import categories, recipe_card, recipe_url, source_url
 from recipe_system.core import write_jsonl
 from recipe_system.publish import build, publish
 
@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def setup_catalog(tmp_path, count=125):
     (tmp_path / "site").mkdir()
-    for name in ["hidden.js", "catalog.js", "style.css"]:
+    for name in ["hidden.js", "catalog.js", "search.js", "detail.js", "style.css"]:
         shutil.copyfile(ROOT / "site" / name, tmp_path / "site" / name)
     recipes = []
     matches = []
@@ -68,23 +68,23 @@ def test_display_title_suffix_is_conservative():
         assert display_title(expected) == expected
 
 
-def test_complete_external_index_and_single_html(tmp_path):
+def test_complete_catalog_and_stable_detail_pages(tmp_path):
     recipes = setup_catalog(tmp_path)
     before = (tmp_path / "data/recipes/normalized/recipes.jsonl").read_bytes()
     data = publish(tmp_path)
     result = build(tmp_path)
     dist = tmp_path / "site/dist"
-    assert result["pages"] == 1 and result["recipe_detail_pages"] == 0
-    assert [p.name for p in dist.rglob("*.html")] == ["index.html"]
+    assert result["pages"] == 126 and result["recipe_detail_pages"] == 125
+    assert len(list(dist.rglob("*.html"))) == 126
     index = json.loads((dist / "search-index.json").read_text())
     assert {r["id"] for r in index} == {r["id"] for r in recipes}
     assert len(data["recipes"]) == 125
-    assert all(r["url"] == "https://example.test/recipe" for r in index)
+    assert all(r["url"] == recipe_url(r["id"]) for r in index)
+    assert all(r["source_url"] == "https://example.test/recipe" for r in index)
     html = (dist / "index.html").read_text()
     assert html.count('target="_blank" rel="noopener noreferrer"') == 125
     assert html.count("data-recipe-id=") == 125
     for marker in [
-        "/recipes/",
         'value="score"',
         'data-catalog-filter="coverage"',
         "<img",
@@ -136,10 +136,12 @@ def test_safe_source_preference_and_missing_links(tmp_path):
     assert result["missing_source_urls"] == 1
     index = json.loads((tmp_path / "site/dist/search-index.json").read_text())
     a = next(r for r in index if r["id"] == "row-000")
-    assert a["title"] == "红烧肉" and a["url"] == records[0]["original_source_url"]
+    assert a["title"] == "红烧肉" and a["source_url"] == records[0]["original_source_url"]
     b = next(r for r in index if r["id"] == "row-001")
-    assert b["url"] is None
-    assert "<a " not in recipe_card(b)
+    assert b["source_url"] is None
+    assert b["url"] == recipe_url(b["id"])
+    assert 'class="source-link"' not in recipe_card(b)
+    assert 'class="recipe-title"' in recipe_card(b)
     assert "javascript:" not in recipe_card(b)
 
 
@@ -149,6 +151,7 @@ def test_images_never_enter_index_or_homepage(tmp_path):
         "url": "https://example.test/photo.jpg",
         "source_url": "https://example.test/photo",
         "license": "CC-BY-4.0",
+        "attribution": "Example photographer",
     }
     write_jsonl(tmp_path / "data/recipes/normalized/recipes.jsonl", records)
     publish(tmp_path)
@@ -156,6 +159,9 @@ def test_images_never_enter_index_or_homepage(tmp_path):
     index = json.loads((tmp_path / "site/dist/search-index.json").read_text())
     assert "image" not in index[0]
     assert "<img" not in (tmp_path / "site/dist/index.html").read_text()
+    detail = (tmp_path / "site/dist" / recipe_url("row-000")).read_text()
+    assert 'src="https://example.test/photo.jpg"' in detail
+    assert "Example photographer" in detail
 
 
 def test_duplicates_and_category_metadata_remain_internal(tmp_path):
@@ -169,7 +175,31 @@ def test_duplicates_and_category_metadata_remain_internal(tmp_path):
     assert len(data["recipes"]) == 2
     manifest = json.loads((tmp_path / "site/content/catalog-manifest.json").read_text())
     assert manifest["membership"]["meal-type"]["Dessert"] == ["row-001"]
-    assert not (tmp_path / "site/dist/recipes").exists()
+    assert len(list((tmp_path / "site/dist/recipes").glob("*.html"))) == 2
     assert categories({"title": "Instant Pot dinner", "ingredients": [], "total_minutes": 45})[
         "method"
     ] == ["Pressure cooker"]
+
+
+def test_stable_urls_ignore_titles_and_avoid_collisions():
+    assert recipe_url("recipe-123") == "recipes/recipe-123.html"
+    assert recipe_url("recipe-123") != recipe_url("recipe-124")
+    assert recipe_url("../unsafe") == recipe_url("../unsafe")
+    assert ".." not in recipe_url("../unsafe")
+
+
+def test_detail_instructions_and_source_fallback(tmp_path):
+    records = setup_catalog(tmp_path, 2)
+    records[1]["publication_allowed"] = False
+    write_jsonl(tmp_path / "data/recipes/normalized/recipes.jsonl", records)
+    publish(tmp_path)
+    build(tmp_path)
+    first = (tmp_path / "site/dist" / recipe_url("row-000")).read_text()
+    second = (tmp_path / "site/dist" / recipe_url("row-001")).read_text()
+    assert "100 g tomato" in first
+    assert "Cook tomatoes." in first
+    assert "Cook tomatoes." not in second
+    assert "View original recipe" in second
+    assert "Back to recipes" in first
+    assert "Italian" not in second
+    assert "Score" not in first and "80%" not in first

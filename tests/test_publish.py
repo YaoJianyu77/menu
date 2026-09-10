@@ -80,6 +80,7 @@ def test_publishing_retains_original_urls_and_provenance(tmp_path):
     write_jsonl(path, rows)
     before = path.read_bytes()
     data = publish(tmp_path)
-    assert data["recipes"][0]["url"] == rows[0]["original_source_url"]
+    assert data["recipes"][0]["original_source_url"] == rows[0]["original_source_url"]
+    assert data["recipes"][0]["url"] == "recipes/test.html"
     assert data["recipes"][0]["raw_id"] == "raw-test"
     assert path.read_bytes() == before

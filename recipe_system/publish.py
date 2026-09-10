@@ -9,8 +9,9 @@ import shutil
 from html.parser import HTMLParser
 from pathlib import Path
 
-from .catalog import build_catalog, categories, source_url
+from .catalog import build_catalog, categories, cooking_facts, display_title, recipe_url, source_url
 from .core import atomic_json, load_yaml, read_jsonl
+from .recipe_images import select_image
 
 FORBIDDEN = re.compile(r"\b(?:tsp|tbsp|teaspoons?|tablespoons?)\b", re.IGNORECASE)
 
@@ -58,6 +59,11 @@ def publish(root):
         if (root / "config/ingredient-aliases.yaml").exists()
         else {}
     )
+    raw_metadata = {
+        r["id"]: {k: v for k, v in r.items() if k in {"id", "title"} or k.startswith("image")}
+        for path in sorted((root / "data/recipes/raw").glob("*.jsonl"))
+        for r in read_jsonl(path)
+    }
     withheld, excluded, duplicate_aliases = [], [], {}
 
     fields = (
@@ -123,7 +129,28 @@ def publish(root):
         )
         recipe["cooking_method"] = recipe["match"].get("cooking_method", recipe["cooking_method"])
         recipe["categories"] = categories(recipe, aliases)
-        recipe["url"] = source_url(recipe)
+        recipe["url"] = recipe_url(recipe["id"])
+        recipe["search_original_title"] = raw_metadata.get(raw.get("raw_id"), {}).get(
+            "title"
+        ) or raw.get("title")
+        recipe["image"] = select_image(raw, raw_metadata.get(raw.get("raw_id")))
+        recipe["ingredient_search"] = [
+            {
+                "canonical": item.get("canonical_ingredient") or "",
+                "aliases": aliases.get("ingredients", {})
+                .get(item.get("canonical_ingredient"), {})
+                .get("aliases", []),
+                "terms": [
+                    item.get("canonical_ingredient") or "",
+                    item.get("original_text") or "",
+                    item.get("display") or "",
+                    *aliases.get("ingredients", {})
+                    .get(item.get("canonical_ingredient"), {})
+                    .get("aliases", []),
+                ],
+            }
+            for item in raw.get("ingredients", [])
+        ]
         if not recipe["publication_allowed"]:
             withheld.append(
                 {
@@ -187,7 +214,7 @@ def visible_text(document):
 
 
 def _page(title, body, prefix=""):
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{esc(title)} · My Recipes</title><link rel="stylesheet" href="{prefix}style.css"><script defer src="{prefix}hidden.js"></script></head><body><main>{body}</main></body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{esc(title)} · My Recipes</title><link rel="stylesheet" href="{prefix}style.css"><script defer src="{prefix}hidden.js"></script><script defer src="{prefix}search.js"></script><script defer src="{prefix}detail.js"></script></head><body><main>{body}</main></body></html>'''
 
 
 def build(root):
@@ -197,15 +224,59 @@ def build(root):
     if dist.exists():
         shutil.rmtree(dist)
     dist.mkdir(parents=True)
-    for name in ("style.css", "hidden.js", "catalog.js"):
+    for name in ("style.css", "hidden.js", "catalog.js", "search.js", "detail.js"):
         source = root / "site" / name
         if not source.exists():
             source = Path(__file__).resolve().parents[1] / "site" / name
         shutil.copyfile(source, dist / name)
+    (dist / "recipes").mkdir()
+    for row in data["recipes"]:
+        title = display_title(row.get("title"))
+        facts = cooking_facts({**row, "methods": row["categories"]["method"]})
+        ingredients = []
+        for item in row.get("ingredients", []):
+            quantity = " ".join(
+                str(item[k]) for k in ("quantity", "unit") if item.get(k) is not None
+            )
+            if item.get("quantity_max") is not None:
+                quantity = f"{item.get('quantity')}–{item['quantity_max']} {item.get('unit') or ''}"
+            label = (
+                item.get("display")
+                or f"{quantity} {item.get('canonical_ingredient') or ''}".strip()
+            )
+            ingredients.append(
+                f"<li>{esc(label)}{' (optional)' if item.get('optional') else ''}</li>"
+            )
+        source = source_url(row)
+        original = (
+            f'<a class="original-recipe" href="{esc(source)}" target="_blank" rel="noopener noreferrer">View original recipe ↗</a>'
+            if source
+            else ""
+        )
+        instructions = (
+            '<ol class="steps">'
+            + "".join(f"<li>{esc(step)}</li>" for step in row["instructions"])
+            + "</ol>"
+            if row.get("instructions")
+            else "<p>Cooking instructions are available in the original recipe.</p>"
+            if source
+            else ""
+        )
+        image = row.get("image")
+        photo = (
+            f'<figure><img class="recipe-image" src="{esc(image["url"])}" alt="" referrerpolicy="no-referrer"><figcaption>{esc(image.get("attribution") or "")} · {esc(image.get("license") or "Permission recorded")}</figcaption></figure>'
+            if image
+            else ""
+        )
+        body = f'<article class="recipe-detail"><a data-back-to-recipes href="../index.html">← Back to recipes</a><h1>{esc(title)}</h1>{photo}<p class="recipe-facts">{esc(facts)}</p><section><h2>Ingredients</h2><ul class="ingredients">{"".join(ingredients)}</ul></section><section><h2>Instructions</h2>{instructions}{original}</section><section class="attribution"><h2>Source attribution</h2><p>{esc(row.get("attribution") or row.get("source") or "")}</p><p>{esc(row.get("source_license") or "License unknown")}</p></section></article>'
+        document = _page(title, body, "../")
+        if FORBIDDEN.search(visible_text(document)):
+            raise ValueError("Forbidden cooking unit in " + row["id"])
+        (dist / recipe_url(row["id"])).write_text(document)
     manifest = build_catalog(root, data["recipes"], dist)
     return {
-        "pages": 1,
-        "recipe_detail_pages": 0,
+        "pages": len(data["recipes"]) + 1,
+        "recipe_detail_pages": len(data["recipes"]),
         "catalog": manifest["categories"],
         "missing_source_urls": len(manifest["missing_source_urls"]),
         "output": str(dist),
